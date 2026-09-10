@@ -1,0 +1,115 @@
+.section {
+  position: relative;
+  padding: 90px 0;
+  background-color: #1a1a1a;
+  overflow: hidden;
+}
+
+.background {
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.figure {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+}
+
+.quote {
+  width: 50%;
+  margin: 0;
+  padding-right: 20px;
+  font-family: var(--font-titillium), sans-serif;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 48px;
+  text-align: right;
+  color: #fff;
+}
+
+.caption {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  padding-left: 20px;
+  background: url("/images/signature.png") 87% 92% no-repeat;
+}
+
+.avatar {
+  flex-shrink: 0;
+  margin-right: 30px;
+  border-radius: 50%;
+}
+
+.name {
+  margin: 0 0 6px;
+  font-family: var(--font-titillium), sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 33.6px;
+  color: #fff;
+}
+
+.role {
+  margin: 0;
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 14px;
+  line-height: 26.25px;
+  text-transform: uppercase;
+  color: #d0cfcf;
+}
+
+@media (max-width: 991px) {
+  .figure {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .quote {
+    width: 100%;
+    padding-right: 0;
+    text-align: center;
+    font-size: 24px;
+    line-height: 38px;
+  }
+
+  .caption {
+    width: 100%;
+    padding-left: 0;
+    justify-content: center;
+    background-image: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .quote {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .caption {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .avatar {
+    margin: 0 0 20px;
+  }
+}
