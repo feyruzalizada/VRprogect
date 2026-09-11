@@ -6,7 +6,7 @@ import { useCallback, useEffect, useState } from "react";
 import styles from "./HeroSlider.module.css";
 import { heroSlides, heroSocial, type HeroSlide } from "@/content/hero";
 
-const AUTOPLAY_MS = 6000;
+const AUTOPLAY_MS = 8000;
 const CHAR_STAGGER = 60;
 
 function Watermark({ word }: { word: string }) {

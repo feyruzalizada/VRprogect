@@ -10,10 +10,10 @@ export interface QuoteBannerContent {
 
 export const quoteBanner: QuoteBannerContent = {
   quote:
-    "“Even if you don’t have a ready sketch of what you want – we will help you to get the result you dreamed of.”",
+    "Novator Memar",
   author: {
-    name: "David Oswald",
-    role: "founder of company",
+    name: "Muxtar Ərturan",
+    role: "İnşaat məsələləri üzrə ekspert",
     avatar: "/images/image1-home1.jpeg",
   },
   background: "/images/bg1-home1.jpg",
