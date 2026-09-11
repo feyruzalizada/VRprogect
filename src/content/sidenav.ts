@@ -6,7 +6,6 @@ export interface SideNavLink {
 export interface SideNavContent {
   logo: string;
   links: SideNavLink[];
-  social: { label: string; href: string }[];
   slides: string[];
   mark: string;
   heading: string[];
@@ -26,12 +25,6 @@ export const sideNav: SideNavContent = {
     { label: "Portfolio", href: "#" },
     { label: "Blog", href: "#" },
     { label: "Contacts", href: "#" },
-  ],
-  social: [
-    { label: "X", href: "#" },
-    { label: "Facebook", href: "#" },
-    { label: "Linkedin", href: "#" },
-    { label: "Instagram", href: "#" },
   ],
   slides: ["/images/slideshow1-home6.jpg", "/images/slideshow2-home6.jpg"],
   mark: "/images/logo-home6.png",

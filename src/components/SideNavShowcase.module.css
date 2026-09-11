@@ -60,41 +60,6 @@
   border-bottom-color: #fff;
 }
 
-.social {
-  position: absolute;
-  bottom: 50px;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.socialLink {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 50%;
-  background-color: #1a1a1a;
-  transition: background-color 200ms ease;
-}
-
-.socialLink svg {
-  width: 13px;
-  height: 13px;
-  fill: #fff;
-}
-
-.socialLink:hover {
-  background-color: #333;
-}
-
 .stage {
   position: relative;
   flex: 1;
@@ -233,8 +198,7 @@
     padding: 30px 15px;
   }
 
-  .logo,
-  .social {
+  .logo {
     position: static;
     transform: none;
   }
@@ -256,10 +220,6 @@
 
   .navLink {
     line-height: 32px;
-  }
-
-  .social {
-    margin-top: 20px;
   }
 
   .stage {
