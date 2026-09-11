@@ -18,7 +18,7 @@
 
 .colLogo {
   width: 19.962%;
-  padding-left: 40px;
+  padding-left: 16px;
 }
 
 .colMenu {
@@ -35,7 +35,7 @@
 }
 
 .logo {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 14px;
 }
@@ -48,7 +48,6 @@
 .brand {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
   font-family: var(--font-titillium), sans-serif;
   font-size: 16px;
   font-weight: 600;

@@ -14,7 +14,7 @@ export const quoteBanner: QuoteBannerContent = {
   author: {
     name: "David Oswald",
     role: "founder of company",
-    avatar: "/images/image1-home1.png",
+    avatar: "/images/image1-home1.jpeg",
   },
   background: "/images/bg1-home1.jpg",
 };
