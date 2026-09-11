@@ -56,8 +56,6 @@ export default function SideNavShowcase() {
           />
         ))}
 
-        <p className={styles.slogan}>{sideNav.slogan}</p>
-
         <div className={styles.content}>
           <Image
             src={sideNav.mark}

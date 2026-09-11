@@ -11,7 +11,6 @@ export interface SideNavContent {
   heading: string[];
   ctaLabel: string;
   ctaHref: string;
-  slogan: string;
   scrollLabel: string;
   scrollHref: string;
 }
@@ -31,7 +30,6 @@ export const sideNav: SideNavContent = {
   heading: ["Loft Interior Design", "for All House"],
   ctaLabel: "View Project",
   ctaHref: "#",
-  slogan: "we will help you to build a dream",
   scrollLabel: "Scroll Down",
   scrollHref: "#",
 };
