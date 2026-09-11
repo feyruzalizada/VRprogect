@@ -18,6 +18,7 @@
 
 .colLogo {
   width: 19.962%;
+  padding-left: 40px;
 }
 
 .colMenu {
@@ -36,11 +37,25 @@
 .logo {
   display: inline-flex;
   align-items: center;
+  gap: 14px;
 }
 
 .logo img {
   height: 72px;
   width: auto;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-titillium), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #fff;
+  white-space: nowrap;
 }
 
 .nav {
@@ -408,9 +423,21 @@
   box-shadow: 1px 0 10px 0 rgba(255, 255, 255, 0.1);
 }
 
+.mobileLogo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .mobileLogo img {
   height: 58px;
   width: auto;
+}
+
+.mobileLogo .brand {
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: 1.2px;
 }
 
 .mobileActions {
