@@ -96,7 +96,7 @@ export const mainNav: NavItem[] = [
 ];
 
 export const sidePanel = {
-  logo: "/images/logo-footer.svg",
+  logo: "/images/vr_logo.png",
   galleryTitle: "Our Gallery",
   gallery: [
     "/images/panel/p4-gallery2-150x150.jpg",

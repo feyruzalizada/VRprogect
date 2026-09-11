@@ -130,12 +130,12 @@ export default function Header() {
       <div className={styles.bar}>
         <div className={`${styles.inner} ${styles.desktopBar}`}>
           <div className={styles.colLogo}>
-            <Link href="/" className={styles.logo} aria-label="Theratio">
+            <Link href="/" className={styles.logo} aria-label="VR Standartlari">
               <Image
-                src="/images/logo.svg"
-                alt="Theratio"
-                width={180}
-                height={91}
+                src="/images/vr_logo.png"
+                alt="VR Standartlari"
+                width={216}
+                height={217}
                 priority
                 unoptimized
               />
@@ -213,8 +213,8 @@ export default function Header() {
         </div>
 
         <div className={styles.mobileBar}>
-          <Link href="/" className={styles.mobileLogo} aria-label="Theratio">
-            <Image src="/images/logo.svg" alt="Theratio" width={150} height={76} unoptimized />
+          <Link href="/" className={styles.mobileLogo} aria-label="VR Standartlari">
+            <Image src="/images/vr_logo.png" alt="VR Standartlari" width={216} height={217} unoptimized />
           </Link>
           <div className={styles.mobileActions}>
             <button
@@ -290,9 +290,9 @@ export default function Header() {
 
         <Image
           src={sidePanel.logo}
-          alt="Theratio"
-          width={160}
-          height={40}
+          alt="VR Standartlari"
+          width={216}
+          height={217}
           className={styles.panelLogo}
           unoptimized
         />
