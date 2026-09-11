@@ -12,9 +12,9 @@ export const heroSlides: HeroSlide[] = [
   {
     id: "slide-1",
     watermark: "design",
-    title: "New Level of Interior",
+    title: "VR Standartlari 2026",
     description:
-      "We pride ourselves on being builders — creating architectural and creative solutions to help people realize their vision and make them a reality. Wanna work with us?",
+      "Məkanı insan və ailə profilinə, istifadə ssenarisinə, funksiyaya və təhlükəsizlik tələblərinə uyğunlaşdıran müəllif metodologiyası və onun rəqəmsal tətbiq sistemi.",
     image: "/images/slider1-home1-1.jpg",
     ctaLabel: "View Projects",
     ctaHref: "#projects",
@@ -22,7 +22,7 @@ export const heroSlides: HeroSlide[] = [
   {
     id: "slide-2",
     watermark: "quality",
-    title: "High-end Interior Design",
+    title: "Temir",
     description:
       "We pride ourselves on being builders — creating architectural and creative solutions to help people realize their vision and make them a reality. Wanna work with us?",
     image: "/images/slider2-home1-1.jpg",
@@ -42,8 +42,8 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const heroSocial = [
-  { label: "Pinterest", href: "#" },
-  { label: "Twitter", href: "#" },
+  { label: "Youtube", href: "#" },
+  { label: "Tik Tok", href: "#" },
   { label: "Facebook", href: "#" },
   { label: "Instagram", href: "#" },
 ];

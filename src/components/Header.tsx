@@ -131,6 +131,11 @@ export default function Header() {
         <div className={`${styles.inner} ${styles.desktopBar}`}>
           <div className={styles.colLogo}>
             <Link href="/" className={styles.logo} aria-label="VR Global Group">
+              <span className={styles.brand}>
+                <span>VR</span>
+                <span>Global</span>
+                <span>Group</span>
+              </span>
               <Image
                 src="/images/vr_logo.png"
                 alt=""
@@ -139,11 +144,6 @@ export default function Header() {
                 priority
                 unoptimized
               />
-              <span className={styles.brand}>
-                <span>VR</span>
-                <span>Global</span>
-                <span>Group</span>
-              </span>
             </Link>
           </div>
 
@@ -219,12 +219,12 @@ export default function Header() {
 
         <div className={styles.mobileBar}>
           <Link href="/" className={styles.mobileLogo} aria-label="VR Global Group">
-            <Image src="/images/vr_logo.png" alt="" width={216} height={217} unoptimized />
             <span className={styles.brand}>
               <span>VR</span>
               <span>Global</span>
               <span>Group</span>
             </span>
+            <Image src="/images/vr_logo.png" alt="" width={216} height={217} unoptimized />
           </Link>
           <div className={styles.mobileActions}>
             <button
