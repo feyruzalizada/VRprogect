@@ -7,6 +7,7 @@ import styles from "./SideNavShowcase.module.css";
 import { sideNav } from "@/content/sidenav";
 
 const SLIDE_MS = 7000;
+const PANEL_MS = 20000;
 
 export default function SideNavShowcase() {
   const [active, setActive] = useState(0);
@@ -19,6 +20,12 @@ export default function SideNavShowcase() {
     );
     return () => clearInterval(id);
   }, []);
+
+  useEffect(() => {
+    if (!openId) return;
+    const id = setTimeout(() => setOpenId(null), PANEL_MS);
+    return () => clearTimeout(id);
+  }, [openId]);
 
   return (
     <section className={styles.section}>
