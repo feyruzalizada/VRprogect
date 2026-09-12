@@ -74,7 +74,7 @@ export const sideNav: SideNavContent = {
         { kind: "p", text: "Üçölçülü vizual layihənin görünən hissəsidir. Peşəkar layihə isə obyektin necə tikiləcəyini, hansı materialların istifadə olunacağını, mühəndis sistemlərinin necə əlaqələndiriləcəyini və nəticənin necə yoxlanılacağını göstərməlidir." },
         { kind: "p", text: "VR Adaptiv Erqonomik Əmsalı hazır ölçülərin mexaniki tətbiqini insan, funksiya, təhlükəsizlik və real istifadə əsasında verilən qərarla əvəz edir." },
         { kind: "p", text: "Muxtar Ərturanın Novator Memar yaradıcılığı nəzəri biliklə tikinti meydançası arasında milli peşəkarlıq körpüsü yaradır." },
-        { kind: "author", text: "Muxtar Ərturan" },
+        { kind: "flow", text: "Muxtar Ərturan" },
         { kind: "quote", text: "“Peşəkar nə etdiyini, nə üçün etdiyini və nəticənin necə yoxlanılacağını göstərməlidir.”" },
       ],
     },
