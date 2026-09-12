@@ -69,8 +69,13 @@ export const sideNav: SideNavContent = {
       id: "panel-4",
       label: "PEŞƏKARLIQDA YENİ MƏRHƏLƏ",
       body: [
-        { kind: "p", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo." },
-        { kind: "p", text: "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper." },
+        { kind: "p", text: "Yeni dövrün memarı, dizayneri və mühəndisi yalnız layihə yaradan deyil, verdiyi qərarı əsaslandıran və nəticəsinə cavabdeh olan mütəxəssisdir." },
+        { kind: "p", text: "“VR Standartları 2026” layihəçilər, mühəndislər, icraçılar və auditorlar üçün vahid peşəkar dil yaradır. Planlar, işçi çertyojlar, şərti işarələr, material spesifikasiyaları, mühəndis həlləri və dəyişikliklər eyni sistem daxilində idarə olunur." },
+        { kind: "p", text: "Üçölçülü vizual layihənin görünən hissəsidir. Peşəkar layihə isə obyektin necə tikiləcəyini, hansı materialların istifadə olunacağını, mühəndis sistemlərinin necə əlaqələndiriləcəyini və nəticənin necə yoxlanılacağını göstərməlidir." },
+        { kind: "p", text: "VR Adaptiv Erqonomik Əmsalı hazır ölçülərin mexaniki tətbiqini insan, funksiya, təhlükəsizlik və real istifadə əsasında verilən qərarla əvəz edir." },
+        { kind: "p", text: "Muxtar Ərturanın Novator Memar yaradıcılığı nəzəri biliklə tikinti meydançası arasında milli peşəkarlıq körpüsü yaradır." },
+        { kind: "author", text: "Muxtar Ərturan" },
+        { kind: "quote", text: "“Peşəkar nə etdiyini, nə üçün etdiyini və nəticənin necə yoxlanılacağını göstərməlidir.”" },
       ],
     },
     {
