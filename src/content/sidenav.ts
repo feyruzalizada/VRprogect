@@ -15,8 +15,6 @@ export interface SideNavContent {
   authorRole: string;
   ctaLabel: string;
   ctaHref: string;
-  scrollLabel: string;
-  scrollHref: string;
 }
 
 export const sideNav: SideNavContent = {
@@ -41,6 +39,4 @@ export const sideNav: SideNavContent = {
   authorRole: "Novator-memar, inşaat məsələləri üzrə ekspert",
   ctaLabel: "View Project",
   ctaHref: "#",
-  scrollLabel: "Scroll Down",
-  scrollHref: "#",
 };

@@ -92,13 +92,6 @@ export default function SideNavShowcase() {
             {sideNav.ctaLabel}
           </Link>
         </div>
-
-        <Link href={sideNav.scrollHref} className={styles.scroll}>
-          {sideNav.scrollLabel}
-          <svg viewBox="0 0 24 24" aria-hidden>
-            <path d="M12 4v14m0 0l-5-5m5 5l5-5" />
-          </svg>
-        </Link>
       </div>
     </section>
   );
