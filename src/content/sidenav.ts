@@ -57,8 +57,12 @@ export const sideNav: SideNavContent = {
       id: "panel-3",
       label: "MÜASİR TƏMİR EKOSİSTEMİ",
       body: [
-        { kind: "p", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo." },
-        { kind: "p", text: "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper." },
+        { kind: "p", text: "Müasir təmir yalnız dizayn və icra deyil. O, insan ehtiyacı, layihə, smeta, material, mühəndis sistemləri, audit, nəzarət və təhvil proseslərini birləşdirən bütöv ekosistemdir." },
+        { kind: "p", text: "“VR Standartları 2026” sifarişçini prosesdən kənarda qalan müşahidəçidən məlumatlı qərar sahibinə çevirir. İstifadəçi hansı sənədləri tələb etməli, hansı işləri bağlanmazdan əvvəl yoxlatmalı və nəticəni hansı sübutlarla qəbul etməli olduğunu anlayır." },
+        { kind: "p", text: "Elektrik, qaz, su, havalandırma, istilik və hidroizolyasiya üzrə gizli səhvlər insan həyatı və dövlətin ümumi tikinti fondu üçün ciddi riskdir. Buna görə VR metodologiyasında təhlükəsizlik estetikadan üstün tutulur. Gizli işlər ölçü, foto, video, sınaq və aktlarla sənədləşdirilir." },
+        { kind: "p", text: "Muxtar Ərturanın Novator Memar yanaşması sifarişçi ilə icraçı arasındakı etimadı şifahi vədlərdən çıxararaq layihə, audit və sübut üzərində qurur." },
+        { kind: "author", text: "Muxtar Ərturan;" },
+        { kind: "quote", text: "“Keyfiyyət görünən nəticədən əvvəl, görünməyən işlərin necə yoxlanılması ilə başlayır.”" },
       ],
     },
     {
