@@ -82,8 +82,13 @@ export const sideNav: SideNavContent = {
       id: "panel-5",
       label: "İNSAN MƏRKƏZLİ TƏHLÜKƏSİZ MƏKAN",
       body: [
-        { kind: "p", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo." },
-        { kind: "p", text: "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper." },
+        { kind: "p", text: "Memarlığın əsas vəzifəsi yalnız gözəl görünən deyil, insanın sağlamlığını, təhlükəsizliyini və ləyaqətli həyatını qoruyan məkan yaratmaqdır." },
+        { kind: "p", text: "“VR Standartları 2026” layihənin mərkəzinə real insanı gətirir. Boy, yaş, fiziki imkanlar, ailə tərkibi və gündəlik davranışlar məkan qərarlarının əsas məlumatlarına çevrilir. Uşaq, yaşlı və hərəkət imkanları məhdud insan üçün eyni ölçü eyni rahatlığı yaratmır." },
+        { kind: "p", text: "VR Adaptiv Erqonomik Əmsalı ölçülərin istifadəçiyə uyğunlaşdırılmasına kömək edir. Təhlükəsizlik, əlçatanlıq, mühəndis tələbləri və qanunla müəyyənləşdirilən minimumlar isə hər zaman üstün tutulur." },
+        { kind: "p", text: "İşıqlandırma, havalandırma, daxili hava keyfiyyəti, temperatur, material təhlükəsizliyi, rahat keçidlər və təxliyə imkanları vahid sistem daxilində qiymətləndirilir. Audit bu prinsiplərin layihədən real icraya qədər qorunmasını təmin edir." },
+        { kind: "p", text: "Muxtar Ərturanın Novator Memar baxışında insan təhlükəsizliyi memarlığın əlavəsi deyil, dövlət və cəmiyyət qarşısında peşəkar borcdur." },
+        { kind: "flow", text: "Muxtar Ərturan:" },
+        { kind: "quote", text: "“Gözəl məkan heyran edir, insan mərkəzli təhlükəsiz məkan isə həyatı qoruyur.”" },
       ],
     },
     {
