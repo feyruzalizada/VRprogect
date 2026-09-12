@@ -49,7 +49,7 @@ export const sideNav: SideNavContent = {
         { kind: "p", text: "Muxtar Ərturanın yaratdığı metodologiya Azərbaycan insanının yaşayış xüsusiyyətlərini, yerli iqlimi, tikinti təcrübəsini, material bazarını və qüvvədə olan normativləri nəzərə alır. Beynəlxalq ergonomika, əlçatanlıq və təhlükəsizlik prinsipləri isə müqayisəli elmi baza kimi tətbiq edilir." },
         { kind: "p", text: "Sistemdə hər qərarın mənbəyi, ölçüsü, risk səviyyəsi və yoxlama üsulu müəyyənləşdirilir. Bu yanaşma qanunun aliliyinə, ictimai təhlükəsizliyə və dövlətçilik məsuliyyətinə əsaslanan tikinti mədəniyyətinin inkişafına xidmət edir." },
         { kind: "p", text: "VR metodologiyası hazırda rəsmi dövlət standartını əvəz etmir. O, ekspertiza, pilot tətbiq və gələcək standartlaşdırma üçün yaradılmış milli elmi-metodoloji bazadır." },
-        { kind: "author",kind: "flow", text: "Muxtar Ərturan:" },
+        { kind: "flow", text: "Muxtar Ərturan:" },
         { kind: "quote", text: "“Milli model dünya təcrübəsini Azərbaycan insanının ehtiyacları və dövlətimizin inkişaf məqsədləri ilə birləşdirən sistemdir.”" },
       ],
     },
