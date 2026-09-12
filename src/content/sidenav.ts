@@ -45,8 +45,12 @@ export const sideNav: SideNavContent = {
       id: "panel-2",
       label: "MİLLİ STANDARTLAŞDIRMA MODELİ",
       body: [
-        { kind: "p", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo." },
-        { kind: "p", text: "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper." },
+        { kind: "p", text: "Güclü dövlət yalnız böyük layihələr deyil, vahid keyfiyyət, təhlükəsizlik və məsuliyyət sistemi yaradır. “VR Standartları 2026” Azərbaycanın tikinti, təmir və dizayn təcrübəsində ortaq texniki dilin formalaşdırılmasına xidmət edən milli müəllif modelidir." },
+        { kind: "p", text: "Muxtar Ərturanın yaratdığı metodologiya Azərbaycan insanının yaşayış xüsusiyyətlərini, yerli iqlimi, tikinti təcrübəsini, material bazarını və qüvvədə olan normativləri nəzərə alır. Beynəlxalq ergonomika, əlçatanlıq və təhlükəsizlik prinsipləri isə müqayisəli elmi baza kimi tətbiq edilir." },
+        { kind: "p", text: "Sistemdə hər qərarın mənbəyi, ölçüsü, risk səviyyəsi və yoxlama üsulu müəyyənləşdirilir. Bu yanaşma qanunun aliliyinə, ictimai təhlükəsizliyə və dövlətçilik məsuliyyətinə əsaslanan tikinti mədəniyyətinin inkişafına xidmət edir." },
+        { kind: "p", text: "VR metodologiyası hazırda rəsmi dövlət standartını əvəz etmir. O, ekspertiza, pilot tətbiq və gələcək standartlaşdırma üçün yaradılmış milli elmi-metodoloji bazadır." },
+        { kind: "author",kind: "flow", text: "Muxtar Ərturan:" },
+        { kind: "quote", text: "“Milli model dünya təcrübəsini Azərbaycan insanının ehtiyacları və dövlətimizin inkişaf məqsədləri ilə birləşdirən sistemdir.”" },
       ],
     },
     {
