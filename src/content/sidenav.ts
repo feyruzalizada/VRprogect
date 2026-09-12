@@ -20,12 +20,13 @@ export interface SideNavContent {
 export const sideNav: SideNavContent = {
   logo: "/images/home6.svg",
   links: [
-    { label: "Home", href: "#" },
-    { label: "About Us", href: "#" },
-    { label: "Services", href: "#" },
-    { label: "Portfolio", href: "#" },
-    { label: "Blog", href: "#" },
-    { label: "Contacts", href: "#" },
+    { label: "MİLLİ STANDARTLAŞDIRMA MODELİ", href: "#" },
+    { label: "MÜASİR TƏMİR EKOSİSTEMİ", href: "#" },
+    { label: "PEŞƏKARLIQDA YENİ MƏRHƏLƏ", href: "#" },
+    { label: "İNSAN MƏRKƏZLİ TƏHLÜKƏSİZ MƏKAN", href: "#" },
+    { label: "MİLLİ İNKİŞAF VƏ RƏQƏMSAL GƏLƏCƏK", href: "#" },
+    { label: "MÜASİR AZƏRBAYCAN — DÜNYAYA AÇILAN MODEL", href: "#" },
+    { label: "DİZAYN VƏ MƏKANIN YENİ VİZYONU", href: "#" },
   ],
   slides: ["/images/slideshow1-home6.jpg", "/images/slideshow2-home6.jpg"],
   mark: "/images/logo-home6.png",
@@ -37,6 +38,6 @@ export const sideNav: SideNavContent = {
   ],
   author: "Müəllif: Muxtar Ərturan",
   authorRole: "Novator-memar, inşaat məsələləri üzrə ekspert",
-  ctaLabel: "View Project",
+  ctaLabel: "Kitabı yüklə",
   ctaHref: "#",
 };
