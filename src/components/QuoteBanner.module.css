@@ -47,11 +47,11 @@
 
 .quoteName {
   margin: 14px 0 0;
-  font-size: 20px;
+  font-family: var(--font-titillium), sans-serif;
+  font-size: 24px;
   font-weight: 400;
-  line-height: 28px;
-  letter-spacing: 0.5px;
-  color: rgba(255, 255, 255, 0.75);
+  line-height: 33.6px;
+  color: #fff;
 }
 
 .caption {
@@ -103,7 +103,7 @@
   }
 
   .quoteName {
-    font-size: 18px;
+    font-size: 22px;
     margin-top: 10px;
   }
 
@@ -126,7 +126,7 @@
   }
 
   .quoteName {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .caption {
