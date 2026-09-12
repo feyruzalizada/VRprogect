@@ -306,14 +306,21 @@ export default function Header() {
           <CloseIcon />
         </button>
 
-        <Image
-          src={sidePanel.logo}
-          alt="VR Standartlari"
-          width={216}
-          height={217}
-          className={styles.panelLogo}
-          unoptimized
-        />
+        <div className={styles.panelBrand}>
+          <Image
+            src={sidePanel.logo}
+            alt=""
+            width={216}
+            height={217}
+            className={styles.panelLogo}
+            unoptimized
+          />
+          <span className={styles.brand}>
+            <span>VR</span>
+            <span>Global</span>
+            <span>Group</span>
+          </span>
+        </div>
 
         <h2 className={styles.panelHeading}>{sidePanel.galleryTitle}</h2>
         <ul className={styles.panelGallery}>
