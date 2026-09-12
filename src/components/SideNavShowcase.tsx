@@ -9,6 +9,12 @@ import { sideNav } from "@/content/sidenav";
 const SLIDE_MS = 7000;
 const PANEL_MS = 20000;
 
+const blockStyle: Record<string, string> = {
+  flow: styles.panelFlow,
+  quote: styles.panelQuote,
+  author: styles.panelAuthor,
+};
+
 export default function SideNavShowcase() {
   const [active, setActive] = useState(0);
   const [openId, setOpenId] = useState<string | null>(null);
@@ -57,9 +63,12 @@ export default function SideNavShowcase() {
                     aria-hidden={!isOpen}
                   >
                     <h3 className={styles.panelTitle}>{link.label}</h3>
-                    {link.body.map((text) => (
-                      <p key={text} className={styles.panelText}>
-                        {text}
+                    {link.body.map((block) => (
+                      <p
+                        key={block.text}
+                        className={`${styles.panelText} ${blockStyle[block.kind] ?? ""}`}
+                      >
+                        {block.text}
                       </p>
                     ))}
                   </div>
