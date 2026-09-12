@@ -18,7 +18,7 @@ export interface SideNavContent {
 }
 
 export const sideNav: SideNavContent = {
-  logo: "/images/home6.svg",
+  logo: "/images/vr_logo.png",
   links: [
     { label: "MİLLİ STANDARTLAŞDIRMA MODELİ", href: "#" },
     { label: "MÜASİR TƏMİR EKOSİSTEMİ", href: "#" },

@@ -22,8 +22,8 @@ export default function SideNavShowcase() {
   return (
     <section className={styles.section}>
       <aside className={styles.aside}>
-        <Link href="#" className={styles.logo} aria-label="Theratio">
-          <Image src={sideNav.logo} alt="" width={80} height={107} unoptimized />
+        <Link href="#" className={styles.logo} aria-label="VR Global Group">
+          <Image src={sideNav.logo} alt="" width={216} height={217} unoptimized />
         </Link>
 
         <nav className={styles.nav} aria-label="Showcase">
