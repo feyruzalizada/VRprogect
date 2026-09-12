@@ -95,8 +95,13 @@ export const sideNav: SideNavContent = {
       id: "panel-6",
       label: "MİLLİ İNKİŞAF VƏ RƏQƏMSAL GƏLƏCƏK",
       body: [
-        { kind: "p", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo." },
-        { kind: "p", text: "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper." },
+        { kind: "p", text: "Müasir Azərbaycanın inkişafı tikililərin sayı ilə yanaşı, onların keyfiyyəti, təhlükəsizliyi və insan həyatına verdiyi dəyərlə ölçülməlidir. Dövlətçilik düşüncəsi bu keyfiyyətin sistemləşdirilməsini və gələcək nəsillərə ötürülməsini tələb edir." },
+        { kind: "p", text: "“VR Standartları 2026” ölçü, mənbə, qərar və sübut arasında rəqəmsal əlaqə yaradır. VR Adaptiv Atlası, erqonomik kalkulyator, versiya reyestri, elektron audit və layihə tarixçəsi bu gələcəyin əsas alətləridir." },
+        { kind: "p", text: "Rəqəmsal sistem yalnız nəticə göstərməməli, həmin nəticənin hansı məlumat, əmsal və təhlükəsizlik sərhədi əsasında yaradıldığını da izah etməlidir." },
+        { kind: "p", text: "2026-cı ilin “Şəhərsalma və Memarlıq İli” elan olunması milli ənənələrin qorunmasını, qabaqcıl yanaşmaların tətbiqini və dayanıqlı məskunlaşmanı dövlət inkişafının mühüm istiqamətinə çevirir." },
+        { kind: "p", text: "Muxtar Ərturanın Novator Memar vizyonu VR sisteminin gələcəkdə yaşayış kompleksləri, ictimai binalar, şəhər məkanları və infrastruktur layihələri üçün ayrıca modullarla genişləndirilməsini nəzərdə tutur." },
+        { kind: "flow", text: "Muxtar Ərturan:" },
+        { kind: "quote", text: "“Rəqəmsal gələcək hər qərarın mənbəyinin, məsuliyyətinin və nəticəsinin görünməsidir.”" },
       ],
     },
     {
