@@ -16,7 +16,7 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: "Theratio — Interior Design Studio",
+  title: "VR Global Group",
   description:
     "We create architectural and creative solutions to help people realize their vision and make them a reality.",
 };
