@@ -376,7 +376,7 @@
 .panelBrand {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 15px;
 }
 
 .panelLogo {
@@ -386,9 +386,48 @@
 
 .panelBrand .brand {
   align-items: flex-start;
-  font-size: 18px;
+  gap: 8px;
+  font-size: 25px;
   line-height: 21px;
   letter-spacing: 1.8px;
+}
+
+@media (max-width: 991px) {
+  .panelBrand {
+    gap: 12px;
+  }
+
+  .panelLogo {
+    width: 92px;
+  }
+
+  .panelBrand .brand {
+    gap: 6px;
+    font-size: 21px;
+    line-height: 18px;
+    letter-spacing: 1.4px;
+  }
+}
+
+@media (max-width: 575px) {
+  .sidePanel {
+    padding: 40px 24px;
+  }
+
+  .panelBrand {
+    gap: 10px;
+  }
+
+  .panelLogo {
+    width: 76px;
+  }
+
+  .panelBrand .brand {
+    gap: 5px;
+    font-size: 18px;
+    line-height: 16px;
+    letter-spacing: 1.1px;
+  }
 }
 
 .panelHeading {
