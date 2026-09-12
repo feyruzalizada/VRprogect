@@ -281,8 +281,9 @@
   }
 
   .aside {
+    order: 2;
     width: 100%;
-    padding: 106px 15px 40px;
+    padding: 45px 15px 50px;
   }
 
   .asideTitle {
