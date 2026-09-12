@@ -80,6 +80,19 @@
   opacity: 1;
 }
 
+.stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(26, 26, 26, 0.5) 0%,
+    rgba(26, 26, 26, 0.35) 45%,
+    rgba(26, 26, 26, 0.6) 100%
+  );
+}
+
 .content {
   position: relative;
   z-index: 2;
@@ -99,14 +112,54 @@
 .heading {
   margin: 0;
   font-family: var(--font-titillium), sans-serif;
-  font-size: 90px;
+  font-size: 72px;
   font-weight: 200;
-  line-height: 100px;
+  line-height: 80px;
   color: #fff;
 }
 
+.subtitle {
+  margin: 14px 0 0;
+  font-family: var(--font-titillium), sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 34px;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.description {
+  max-width: 820px;
+  text-wrap: balance;
+  margin: 12px 0 0;
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.author {
+  margin: 26px 0 0;
+  font-family: var(--font-titillium), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.authorRole {
+  display: block;
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
 .button {
-  margin-top: 43px;
+  margin-top: 34px;
   padding: 18px 41px;
   border: 1px solid #fff;
   background-color: #fff;
@@ -154,8 +207,13 @@
 
 @media (max-width: 1240px) {
   .heading {
-    font-size: 72px;
-    line-height: 80px;
+    font-size: 58px;
+    line-height: 66px;
+  }
+
+  .subtitle {
+    font-size: 21px;
+    line-height: 30px;
   }
 }
 
@@ -195,19 +253,37 @@
   }
 
   .stage {
-    min-height: 560px;
+    flex-direction: column;
+    min-height: 0;
+    padding: 70px 0 45px;
+  }
+
+  .scroll {
+    position: static;
+    margin-top: 34px;
+    transform: none;
   }
 
   .heading {
-    font-size: 55px;
-    line-height: 62px;
+    font-size: 46px;
+    line-height: 54px;
   }
 }
 
 @media (max-width: 575px) {
   .heading {
-    font-size: 34px;
-    line-height: 42px;
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    line-height: 26px;
+  }
+
+  .description {
+    font-size: 15px;
+    line-height: 25px;
   }
 
   .mark {
@@ -221,6 +297,6 @@
   }
 
   .stage {
-    min-height: 460px;
+    padding: 55px 0 35px;
   }
 }

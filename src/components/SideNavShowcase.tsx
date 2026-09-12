@@ -67,10 +67,26 @@ export default function SideNavShowcase() {
           />
 
           <h2 className={styles.heading}>
-            {sideNav.heading[0]}
-            <br />
-            {sideNav.heading[1]}
+            {sideNav.heading.map((line, index) => (
+              <span key={line}>
+                {index > 0 && <br />}
+                {line}
+              </span>
+            ))}
           </h2>
+
+          <p className={styles.subtitle}>{sideNav.subtitle}</p>
+
+          {sideNav.description.map((line) => (
+            <p key={line} className={styles.description}>
+              {line}
+            </p>
+          ))}
+
+          <p className={styles.author}>
+            {sideNav.author}
+            <span className={styles.authorRole}>{sideNav.authorRole}</span>
+          </p>
 
           <Link href={sideNav.ctaHref} className={styles.button}>
             {sideNav.ctaLabel}

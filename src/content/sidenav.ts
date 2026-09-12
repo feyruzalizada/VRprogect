@@ -9,6 +9,10 @@ export interface SideNavContent {
   slides: string[];
   mark: string;
   heading: string[];
+  subtitle: string;
+  description: string[];
+  author: string;
+  authorRole: string;
   ctaLabel: string;
   ctaHref: string;
   scrollLabel: string;
@@ -27,7 +31,14 @@ export const sideNav: SideNavContent = {
   ],
   slides: ["/images/slideshow1-home6.jpg", "/images/slideshow2-home6.jpg"],
   mark: "/images/logo-home6.png",
-  heading: ["Loft Interior Design", "for All House"],
+  heading: ["VR STANDARTLARI 2026"],
+  subtitle: "VR Adaptiv Erqonomik Ölçü Sistemi",
+  description: [
+    "Daxili məkanların insan mərkəzli planlaşdırılması, layihələndirilməsi, icrası və auditi üzrə metodoloji elmi əsər",
+    "2026-cı ilin “Şəhərsalma və Memarlıq İli” elan edilməsi münasibətilə hazırlanmışdır",
+  ],
+  author: "Müəllif: Muxtar Ərturan",
+  authorRole: "Novator-memar, inşaat məsələləri üzrə ekspert",
   ctaLabel: "View Project",
   ctaHref: "#",
   scrollLabel: "Scroll Down",
