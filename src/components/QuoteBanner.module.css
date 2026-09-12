@@ -39,9 +39,9 @@
 
 .motto {
   margin: 0;
-  font-size: 30px;
+  font-size: 24px;
   font-weight: 300;
-  line-height: 48px;
+  line-height: 38px;
 }
 
 .quoteName {
@@ -97,8 +97,8 @@
   }
 
   .motto {
-    font-size: 24px;
-    line-height: 38px;
+    font-size: 20px;
+    line-height: 32px;
   }
 
   .quoteName {
@@ -120,12 +120,12 @@
   }
 
   .motto {
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 18px;
+    line-height: 28px;
   }
 
   .quoteName {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .caption {
