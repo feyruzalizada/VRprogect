@@ -23,7 +23,7 @@ export const sideNav: SideNavContent = {
   links: [
     {
       id: "panel-1",
-      label: "MİLLİ STANDARTLAŞDIRMA MODELİ",
+      label: "ADAPTİV ERQONOMİK ÖLÇÜ SİSTEMİ VƏ ƏMSAL",
       body: [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.",
         "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.",
@@ -31,7 +31,7 @@ export const sideNav: SideNavContent = {
     },
     {
       id: "panel-2",
-      label: "MÜASİR TƏMİR EKOSİSTEMİ",
+      label: "MİLLİ STANDARTLAŞDIRMA MODELİ",
       body: [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.",
         "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.",
@@ -39,7 +39,7 @@ export const sideNav: SideNavContent = {
     },
     {
       id: "panel-3",
-      label: "PEŞƏKARLIQDA YENİ MƏRHƏLƏ",
+      label: "MÜASİR TƏMİR EKOSİSTEMİ",
       body: [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.",
         "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.",
@@ -47,7 +47,7 @@ export const sideNav: SideNavContent = {
     },
     {
       id: "panel-4",
-      label: "İNSAN MƏRKƏZLİ TƏHLÜKƏSİZ MƏKAN",
+      label: "PEŞƏKARLIQDA YENİ MƏRHƏLƏ",
       body: [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.",
         "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.",
@@ -55,7 +55,7 @@ export const sideNav: SideNavContent = {
     },
     {
       id: "panel-5",
-      label: "MİLLİ İNKİŞAF VƏ RƏQƏMSAL GƏLƏCƏK",
+      label: "İNSAN MƏRKƏZLİ TƏHLÜKƏSİZ MƏKAN",
       body: [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.",
         "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.",
@@ -63,7 +63,7 @@ export const sideNav: SideNavContent = {
     },
     {
       id: "panel-6",
-      label: "MÜASİR AZƏRBAYCAN — DÜNYA MODELI",
+      label: "MİLLİ İNKİŞAF VƏ RƏQƏMSAL GƏLƏCƏK",
       body: [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.",
         "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.",
@@ -71,6 +71,14 @@ export const sideNav: SideNavContent = {
     },
     {
       id: "panel-7",
+      label: "MÜASİR AZƏRBAYCAN — DÜNYA MODELI",
+      body: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.",
+        "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.",
+      ],
+    },
+    {
+      id: "panel-8",
       label: "DİZAYN VƏ MƏKANDA YENİ VİZYON",
       body: [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.",
