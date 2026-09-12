@@ -1,4 +1,5 @@
 export interface QuoteBannerContent {
+  motto: string;
   quote: string;
   author: {
     name: string;
@@ -9,10 +10,11 @@ export interface QuoteBannerContent {
 }
 
 export const quoteBanner: QuoteBannerContent = {
+  motto: "“Məkan insana uyğunlaşır; insan məkana məcbur edilmir.”",
   quote:
-    "Novator Memar",
+    "Muxtar Ərturan",
   author: {
-    name: "Muxtar Ərturan",
+    name: "Novator Memar",
     role: "İnşaat məsələləri üzrə ekspert",
     avatar: "/images/image1-home1.jpeg",
   },

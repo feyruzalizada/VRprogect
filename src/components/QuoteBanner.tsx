@@ -3,7 +3,7 @@ import styles from "./QuoteBanner.module.css";
 import { quoteBanner } from "@/content/quote";
 
 export default function QuoteBanner() {
-  const { quote, author, background } = quoteBanner;
+  const { motto, quote, author, background } = quoteBanner;
 
   return (
     <section className={styles.section}>
@@ -18,7 +18,10 @@ export default function QuoteBanner() {
 
       <div className={styles.container}>
         <figure className={styles.figure}>
-          <blockquote className={styles.quote}>{quote}</blockquote>
+          <blockquote className={styles.quote}>
+            <p className={styles.motto}>{motto}</p>
+            <p className={styles.quoteName}>{quote}</p>
+          </blockquote>
 
           <figcaption className={styles.caption}>
             <Image
