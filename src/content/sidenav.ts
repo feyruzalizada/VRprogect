@@ -26,7 +26,7 @@ export interface SideNavContent {
 }
 
 export const sideNav: SideNavContent = {
-  asideTitle: "VR standartları nədir?",
+  asideTitle: "VR STANDARTLARI NƏDİR?",
   links: [
     {
       id: "panel-1",
