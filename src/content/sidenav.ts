@@ -12,7 +12,6 @@ export interface SideNavLink {
 }
 
 export interface SideNavContent {
-  logo: string;
   links: SideNavLink[];
   slides: string[];
   mark: string;
@@ -26,7 +25,6 @@ export interface SideNavContent {
 }
 
 export const sideNav: SideNavContent = {
-  logo: "/images/vr_logo.png",
   links: [
     {
       id: "panel-1",
@@ -99,7 +97,7 @@ export const sideNav: SideNavContent = {
     },
   ],
   slides: ["/images/slideshow1-home6.jpg", "/images/slideshow2-home6.jpg"],
-  mark: "/images/logo-home6.png",
+  mark: "/images/vr_logo.png",
   heading: ["VR STANDARTLARI 2026"],
   subtitle: "VR Adaptiv Erqonomik Ölçü Sistemi",
   description: [

@@ -18,15 +18,6 @@
   background: url("/images/bg-left-menu.jpg") 50% 50% / cover no-repeat;
 }
 
-.logo {
-  margin-bottom: 44px;
-}
-
-.logo img {
-  width: 120px;
-  height: auto;
-}
-
 .nav {
   position: relative;
   width: 100%;
@@ -186,9 +177,9 @@
 }
 
 .mark {
-  width: 95px;
+  width: 120px;
   height: auto;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
 }
 
 .heading {
@@ -283,10 +274,6 @@
     padding: 30px 15px;
   }
 
-  .logo {
-    margin-bottom: 24px;
-  }
-
   .navList {
     display: flex;
     flex-direction: column;
@@ -346,6 +333,11 @@
     font-size: 46px;
     line-height: 54px;
   }
+
+  .mark {
+    width: 96px;
+    margin-bottom: 22px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -365,8 +357,8 @@
   }
 
   .mark {
-    width: 70px;
-    margin-bottom: 20px;
+    width: 78px;
+    margin-bottom: 18px;
   }
 
   .button {

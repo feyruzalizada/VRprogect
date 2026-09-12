@@ -36,10 +36,6 @@ export default function SideNavShowcase() {
   return (
     <section className={styles.section}>
       <aside className={styles.aside}>
-        <Link href="#" className={styles.logo} aria-label="VR Global Group">
-          <Image src={sideNav.logo} alt="" width={216} height={217} unoptimized />
-        </Link>
-
         <nav className={styles.nav} aria-label="Showcase">
           <ul className={styles.navList}>
             {sideNav.links.map((link) => {
@@ -97,8 +93,8 @@ export default function SideNavShowcase() {
           <Image
             src={sideNav.mark}
             alt=""
-            width={95}
-            height={90}
+            width={216}
+            height={217}
             loading="lazy"
             className={styles.mark}
           />
