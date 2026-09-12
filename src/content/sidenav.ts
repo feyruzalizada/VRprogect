@@ -35,10 +35,10 @@ export const sideNav: SideNavContent = {
         { kind: "p", text: "VR Adaptiv Erqonomik Ölçü Sistemi məkanı insanın boyuna, yaşına, fiziki imkanlarına, ailə tərkibinə və həyat tərzinə uyğunlaşdıran elmi-metodoloji müəllif modelidir." },
         { kind: "p", text: "VR Adaptiv Erqonomik Əmsalı və VR Adaptiv Erqonomik Ölçü Sisteminin müəllifi azərbaycanlı Novator Memar Muxtar Ərturandır. Metod onun müəllif kəşfi kimi ilk dəfə “VR Standartları 2026” əsərində sistemli şəkildə təqdim edilmişdir." },
         { kind: "p", text: "VR əmsalı baza ölçüsündən fərdi nəticəyə keçidi təmin edir. P5, P50 və P95 göstəriciləri, yaş, cins, əlçatanlıq, məkanın funksiyası və təhlükəsizlik sərhədləri vahid hesablama məntiqində qiymətləndirilir:" },
-        { kind: "flow", text: "Baza ölçüsü → adaptiv hesablama → antropometrik yoxlama → təhlükəsizlik sərhədi → layihə → icra → audit." },
+        { kind: "quote", text: "Baza ölçüsü → adaptiv hesablama → antropometrik yoxlama → təhlükəsizlik sərhədi → layihə → icra → audit." },
         { kind: "p", text: "Nəticə dəyişməz rəqəm deyil; normativ tələblər və real istifadə sınaqları ilə dəqiqləşdirilən ölçü diapazonudur. Bu yanaşma Azərbaycan memarlıq düşüncəsinin insan mərkəzli və elmi inkişafına verilən orijinal müəllif töhfəsidir." },
+        { kind: "flow", text: "Muxtar Ərturan" },
         { kind: "quote", text: "“İnsan layihənin son istifadəçisi deyil, onun başlanğıc nöqtəsidir.”" },
-        { kind: "author", text: "Novator-Memar, inşaat məsələləri üzrə ekspert Muxtar Ərturan" },
       ],
     },
     {
