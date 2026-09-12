@@ -39,8 +39,9 @@
 
 .motto {
   margin: 0;
-  font-size: 22px;
-  font-weight: 400;
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 21px;
+  font-weight: 300;
   line-height: 34px;
 }
 
