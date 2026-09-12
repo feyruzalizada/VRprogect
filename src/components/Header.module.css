@@ -13,10 +13,10 @@
 
 @keyframes dropIn {
   from {
-    transform: translateY(-100%);
+    top: -92px;
   }
   to {
-    transform: translateY(0);
+    top: 0;
   }
 }
 
