@@ -12,6 +12,7 @@ export interface SideNavLink {
 }
 
 export interface SideNavContent {
+  asideTitle: string;
   links: SideNavLink[];
   slides: string[];
   mark: string;
@@ -25,6 +26,7 @@ export interface SideNavContent {
 }
 
 export const sideNav: SideNavContent = {
+  asideTitle: "VR standartları nədir?",
   links: [
     {
       id: "panel-1",

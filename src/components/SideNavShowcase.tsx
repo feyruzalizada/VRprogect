@@ -36,6 +36,8 @@ export default function SideNavShowcase() {
   return (
     <section className={styles.section}>
       <aside className={styles.aside}>
+        <h2 className={styles.asideTitle}>{sideNav.asideTitle}</h2>
+
         <nav className={styles.nav} aria-label="Showcase">
           <ul className={styles.navList}>
             {sideNav.links.map((link) => {
