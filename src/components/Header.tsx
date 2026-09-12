@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 import { mainNav, sidePanel, type NavItem } from "@/content/navigation";
 
@@ -124,9 +124,17 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   // visual only — no locale routing yet
   const [lang, setLang] = useState<(typeof LANGUAGES)[number]>("AZ");
+  const [stuck, setStuck] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setStuck(window.scrollY > 120);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${stuck ? styles.stuck : ""}`}>
       <div className={styles.bar}>
         <div className={`${styles.inner} ${styles.desktopBar}`}>
           <div className={styles.colLogo}>

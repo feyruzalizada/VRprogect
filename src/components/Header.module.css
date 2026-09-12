@@ -5,6 +5,27 @@
   height: 92px;
 }
 
+.stuck {
+  position: fixed;
+  background-color: rgba(26, 26, 26, 0.95);
+  animation: dropIn 400ms ease both;
+}
+
+@keyframes dropIn {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stuck {
+    animation: none;
+  }
+}
+
 .bar {
   height: 92px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
