@@ -10,6 +10,7 @@ const SLIDE_MS = 7000;
 
 export default function SideNavShowcase() {
   const [active, setActive] = useState(0);
+  const [openId, setOpenId] = useState<string | null>(null);
 
   useEffect(() => {
     const id = setInterval(
@@ -28,16 +29,36 @@ export default function SideNavShowcase() {
 
         <nav className={styles.nav} aria-label="Showcase">
           <ul className={styles.navList}>
-            {sideNav.links.map((link, index) => (
-              <li key={link.label} className={styles.navItem}>
-                <Link
-                  href={link.href}
-                  className={`${styles.navLink} ${index === 0 ? styles.navCurrent : ""}`}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {sideNav.links.map((link) => {
+              const isOpen = link.id === openId;
+
+              return (
+                <li key={link.id} className={styles.navItem}>
+                  <button
+                    type="button"
+                    className={`${styles.navLink} ${isOpen ? styles.navCurrent : ""}`}
+                    aria-expanded={isOpen}
+                    aria-controls={link.id}
+                    onClick={() => setOpenId(isOpen ? null : link.id)}
+                  >
+                    {link.label}
+                  </button>
+
+                  <div
+                    id={link.id}
+                    className={`${styles.panel} ${isOpen ? styles.panelOpen : ""}`}
+                    aria-hidden={!isOpen}
+                  >
+                    <h3 className={styles.panelTitle}>{link.label}</h3>
+                    {link.body.map((text) => (
+                      <p key={text} className={styles.panelText}>
+                        {text}
+                      </p>
+                    ))}
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 

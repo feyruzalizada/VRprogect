@@ -1,6 +1,7 @@
 export interface SideNavLink {
+  id: string;
   label: string;
-  href: string;
+  body: string[];
 }
 
 export interface SideNavContent {
@@ -20,13 +21,62 @@ export interface SideNavContent {
 export const sideNav: SideNavContent = {
   logo: "/images/vr_logo.png",
   links: [
-    { label: "MİLLİ STANDARTLAŞDIRMA MODELİ", href: "#" },
-    { label: "MÜASİR TƏMİR EKOSİSTEMİ", href: "#" },
-    { label: "PEŞƏKARLIQDA YENİ MƏRHƏLƏ", href: "#" },
-    { label: "İNSAN MƏRKƏZLİ TƏHLÜKƏSİZ MƏKAN", href: "#" },
-    { label: "MİLLİ İNKİŞAF VƏ RƏQƏMSAL GƏLƏCƏK", href: "#" },
-    { label: "MÜASİR AZƏRBAYCAN — DÜNYAYA AÇILAN MODEL", href: "#" },
-    { label: "DİZAYN VƏ MƏKANIN YENİ VİZYONU", href: "#" },
+    {
+      id: "panel-1",
+      label: "MİLLİ STANDARTLAŞDIRMA MODELİ",
+      body: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.",
+        "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.",
+      ],
+    },
+    {
+      id: "panel-2",
+      label: "MÜASİR TƏMİR EKOSİSTEMİ",
+      body: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.",
+        "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.",
+      ],
+    },
+    {
+      id: "panel-3",
+      label: "PEŞƏKARLIQDA YENİ MƏRHƏLƏ",
+      body: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.",
+        "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.",
+      ],
+    },
+    {
+      id: "panel-4",
+      label: "İNSAN MƏRKƏZLİ TƏHLÜKƏSİZ MƏKAN",
+      body: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.",
+        "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.",
+      ],
+    },
+    {
+      id: "panel-5",
+      label: "MİLLİ İNKİŞAF VƏ RƏQƏMSAL GƏLƏCƏK",
+      body: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.",
+        "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.",
+      ],
+    },
+    {
+      id: "panel-6",
+      label: "MÜASİR AZƏRBAYCAN — DÜNYA MODELI",
+      body: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.",
+        "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.",
+      ],
+    },
+    {
+      id: "panel-7",
+      label: "DİZAYN VƏ MƏKANDA YENİ VİZYON",
+      body: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo.",
+        "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.",
+      ],
+    },
   ],
   slides: ["/images/slideshow1-home6.jpg", "/images/slideshow2-home6.jpg"],
   mark: "/images/logo-home6.png",

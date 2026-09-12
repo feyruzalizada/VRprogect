@@ -7,6 +7,7 @@
 
 .aside {
   position: relative;
+  z-index: 5;
   flex-shrink: 0;
   width: 340px;
   display: flex;
@@ -46,6 +47,10 @@
 .navLink {
   display: inline-block;
   max-width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
   font-family: var(--font-titillium), sans-serif;
   font-size: 13px;
   font-weight: 400;
@@ -63,6 +68,54 @@
 
 .navCurrent {
   border-bottom-color: #fff;
+}
+
+.panel {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  z-index: 6;
+  width: 460px;
+  height: 100%;
+  padding: 70px 46px;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(6px);
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-100%);
+  transition: transform 420ms cubic-bezier(0.4, 0, 0.2, 1), opacity 300ms ease,
+    visibility 420ms;
+}
+
+.panelOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.panelTitle {
+  margin: 0 0 22px;
+  font-family: var(--font-titillium), sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+.panelText {
+  margin: 0 0 18px;
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.panelText:last-child {
+  margin-bottom: 0;
 }
 
 .stage {
@@ -217,20 +270,52 @@
 
   .navList {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    width: 100%;
   }
 
   .navItem {
-    padding: 0 12px;
+    padding: 0;
   }
 
   .navItem + .navItem {
-    margin-top: 8px;
+    margin-top: 14px;
   }
 
   .navLink {
     line-height: 24px;
+  }
+
+  .panel {
+    position: static;
+    width: 100%;
+    height: auto;
+    max-height: 0;
+    padding: 0 18px;
+    overflow: hidden;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    backdrop-filter: none;
+    transition: max-height 380ms ease, padding 380ms ease, margin 380ms ease;
+  }
+
+  .panelOpen {
+    max-height: 460px;
+    margin-top: 14px;
+    padding: 22px 18px 26px;
+  }
+
+  .panelTitle {
+    font-size: 17px;
+    line-height: 24px;
+    margin-bottom: 14px;
+  }
+
+  .panelText {
+    font-size: 14px;
+    line-height: 25px;
+    margin-bottom: 14px;
   }
 
   .stage {
