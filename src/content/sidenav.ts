@@ -118,9 +118,9 @@ export const sideNav: SideNavContent = {
     },
     {
       id: "panel-8",
-      label: "DİZAYN VƏ MƏKANDA YENİ VİZYON",
+      label: "DİZAYN VƏ MEMARLIQDA YENİ VİZYON",
       body: [
-        { kind: "p", text: "Yeni dövrün dizaynı yalnız rəng və forma deyil. O, insan ehtiyacını, funksiyanı, mühəndisliyi, təhlükəsizliyi və bədii ideyanı vahid məkan həllində birləşdirən sənətdir." },
+        { kind: "p", text: "Yeni dövrün dizayn və memarlığı yalnız rəng və forma deyil. O, insan ehtiyacını, funksiyanı, mühəndisliyi, təhlükəsizliyi və bədii ideyanı vahid məkan həllində birləşdirən sənətdir." },
         { kind: "p", text: "“VR Standartları 2026” dizaynı subyektiv zövqdən ölçülə, əsaslandırıla və yoxlanıla bilən qərarlar sisteminə yüksəldir. Hər elementin harada yerləşməsi ilə yanaşı, nə üçün orada olduğu, kim tərəfindən istifadə ediləcəyi və nəticəsinin necə qəbul olunacağı müəyyənləşdirilir." },
         { kind: "p", text: "VR Adaptiv Erqonomik Əmsalı məkanın real istifadəçiyə uyğunlaşdırılmasını təmin edir. Elektrik, su, havalandırma, istilik, akustika, işıqlandırma və material həlləri dizaynın görünməyən, lakin həlledici hissəsinə çevrilir." },
         { kind: "p", text: "Muxtar Ərturanın Novator Memar yaradıcılığı Azərbaycan memarlıq və dizayn sənətinə milli kimliyi, insan mərkəzliliyi və texniki dəqiqliyi birləşdirən yeni vizyon təqdim edir. Bu fəaliyyət milli memarlıq düşüncəmizin inkişafı üçün özünəməxsus və strateji müəllif missiyasıdır." },
