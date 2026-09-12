@@ -108,8 +108,12 @@ export const sideNav: SideNavContent = {
       id: "panel-7",
       label: "MÜASİR AZƏRBAYCAN — DÜNYA MODELI",
       body: [
-        { kind: "p", text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Nullam quis risus eget urna mollis ornare vel eu leo." },
-        { kind: "p", text: "Curabitur blandit tempus porttitor. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper." },
+        { kind: "p", text: "Azərbaycan tarixi irslə müasir inkişafın, milli memarlıqla qlobal təcrübənin qovuşduğu güclü yaradıcılıq məkanıdır. Məqsəd dünyanı təkrarlamaq deyil, Azərbaycan təcrübəsini elmi əsaslarla dünyaya təqdim etməkdir." },
+        { kind: "p", text: "“VR Standartları 2026” ölkəmizdə yaradılmış və beynəlxalq peşəkar dialoqa açıq müəllif modelidir. Sistem ISO, EN, BS, DIN, ADA və digər mötəbər mənbələrin ergonomika, təhlükəsizlik və əlçatanlıq prinsiplərini yerli qanunvericilik, iqlim, tikinti təcrübəsi və insan ehtiyacları ilə əlaqələndirir." },
+        { kind: "p", text: "Bakıda keçirilən WUF13 təhlükəsiz, inklüziv və dayanıqlı şəhərlərin əhəmiyyətini dünya gündəliyinə çıxardı. VR metodologiyasının insan mərkəzli fəlsəfəsi bu geniş inkişaf vizyonu ilə səsləşir." },
+        { kind: "p", text: "Muxtar Ərturanın Novator Memar yanaşması böyük yaşayış, ictimai, turizm və infrastruktur layihələrində ölçü, təhlükəsizlik və audit mədəniyyətinin inkişafı üçün yeni imkanlar açır." },
+        { kind: "flow", text: "Muxtar Ərturan:" },
+        { kind: "quote", text: "“Azərbaycan xarici modelləri təkrarlayan deyil, milli təcrübəsini elm və sübutla dünyaya təqdim edən memarlıq məktəbi yaratmalıdır.”" },
       ],
     },
     {
