@@ -34,7 +34,7 @@ export const services: ServicesContent = {
     "Evinizi almadan, tikintiyə və ya təmirə başlamadan əvvəl məqsədinizə uyğun pulsuz VR kalkulyatorunu seçin. Ailə üzvlərinizin sayı, yaşı, boy göstəriciləri, fiziki imkanları və yaşayış tərzi əsasında tövsiyə olunan otaq sayını, sahə diapazonunu və adaptiv erqonomik ölçüləri ödənişsiz hesablayın.",
   taglineBottom: "Pulsuz • Qeydiyyatsız • İnsan mərkəzli",
   ctaLabel: "Pulsuz hesablamağa başla",
-  ctaHref: "#",
+  ctaHref: "#kalkulyatorlar",
   linkLabel: "PULSUZ BAŞLA",
   items: [
     {

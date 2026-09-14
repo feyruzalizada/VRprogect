@@ -70,7 +70,7 @@ export default function Services() {
           </Link>
         </div>
 
-        <div className={styles.grid}>
+        <div id="kalkulyatorlar" className={styles.grid}>
           {services.items.map((item) => (
             <article key={item.title} className={styles.card}>
               <Image
