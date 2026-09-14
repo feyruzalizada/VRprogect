@@ -129,9 +129,8 @@ export default function HeroSlider({
             aria-selected={index === active}
             aria-label={`Slide ${index + 1}`}
             onClick={() => goTo(index)}
-            className={`${styles.bullet} ${
-              index === active ? styles.bulletActive : ""
-            }`}
+            className={`${styles.bullet} ${index === active ? styles.bulletActive : ""
+              }`}
           />
         ))}
       </div>
