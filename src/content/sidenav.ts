@@ -30,7 +30,7 @@ export const sideNav: SideNavContent = {
   links: [
     {
       id: "panel-1",
-      label: "ADAPTİV ERQONOMİK ÖLÇÜ SİSTEMİ VƏ ƏMSAL",
+      label: "ADAPTİV ERQONOMİK ÖLÇÜ SİSTEMİ VƏ ƏMSALI",
       body: [
         { kind: "p", text: "VR Adaptiv Erqonomik Ölçü Sistemi məkanı insanın boyuna, yaşına, fiziki imkanlarına, ailə tərkibinə və həyat tərzinə uyğunlaşdıran elmi-metodoloji müəllif modelidir." },
         { kind: "p", text: "VR Adaptiv Erqonomik Əmsalı və VR Adaptiv Erqonomik Ölçü Sisteminin müəllifi azərbaycanlı Novator Memar Muxtar Ərturandır. Metod onun müəllif kəşfi kimi ilk dəfə “VR Standartları 2026” əsərində sistemli şəkildə təqdim edilmişdir." },
@@ -55,7 +55,7 @@ export const sideNav: SideNavContent = {
     },
     {
       id: "panel-3",
-      label: "MÜASİR TƏMİR - TIKINTI EKOSİSTEMİ",
+      label: "MÜASİR TƏMİR - TİKİNTİ EKOSİSTEMİ",
       body: [
         { kind: "p", text: "Müasir təmir - tikinti yalnız dizayn və icra deyil. O, insan ehtiyacı, layihə, smeta, material, mühəndis sistemləri, audit, nəzarət və təhvil proseslərini birləşdirən bütöv ekosistemdir." },
         { kind: "p", text: "“VR Standartları 2026” sifarişçini prosesdən kənarda qalan müşahidəçidən məlumatlı qərar sahibinə çevirir. İstifadəçi hansı sənədləri tələb etməli, hansı işləri bağlanmazdan əvvəl yoxlatmalı və nəticəni hansı sübutlarla qəbul etməli olduğunu anlayır." },
@@ -106,7 +106,7 @@ export const sideNav: SideNavContent = {
     },
     {
       id: "panel-7",
-      label: "MÜASİR AZƏRBAYCAN — DÜNYA MODELI",
+      label: "MÜASİR AZƏRBAYCAN — DÜNYA MODELİ",
       body: [
         { kind: "p", text: "Azərbaycan tarixi irslə müasir inkişafın, milli memarlıqla qlobal təcrübənin qovuşduğu güclü yaradıcılıq məkanıdır. Məqsəd dünyanı təkrarlamaq deyil, Azərbaycan təcrübəsini elmi əsaslarla dünyaya təqdim etməkdir." },
         { kind: "p", text: "“VR Standartları 2026” ölkəmizdə yaradılmış və beynəlxalq peşəkar dialoqa açıq müəllif modelidir. Sistem ISO, EN, BS, DIN, ADA və digər mötəbər mənbələrin ergonomika, təhlükəsizlik və əlçatanlıq prinsiplərini yerli qanunvericilik, iqlim, tikinti təcrübəsi və insan ehtiyacları ilə əlaqələndirir." },
@@ -118,7 +118,7 @@ export const sideNav: SideNavContent = {
     },
     {
       id: "panel-8",
-      label: "DİZAYN VƏ MEMARLIQDA YENİ VİZYON",
+      label: "DİZAYN VƏ MƏKANDA YENİ VİZYON",
       body: [
         { kind: "p", text: "Yeni dövrün dizayn və memarlığı yalnız rəng və forma deyil. O, insan ehtiyacını, funksiyanı, mühəndisliyi, təhlükəsizliyi və bədii ideyanı vahid məkan həllində birləşdirən sənətdir." },
         { kind: "p", text: "“VR Standartları 2026” dizaynı subyektiv zövqdən ölçülə, əsaslandırıla və yoxlanıla bilən qərarlar sisteminə yüksəldir. Hər elementin harada yerləşməsi ilə yanaşı, nə üçün orada olduğu, kim tərəfindən istifadə ediləcəyi və nəticəsinin necə qəbul olunacağı müəyyənləşdirilir." },

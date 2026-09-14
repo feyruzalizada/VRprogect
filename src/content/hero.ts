@@ -12,7 +12,7 @@ export const heroSlides: HeroSlide[] = [
   {
     id: "slide-1",
     watermark: "design",
-    title: "VR Standartlari 2026",
+    title: "VR Standartları 2026",
     description:
       "Məkanı insan və ailə profilinə, istifadə ssenarisinə, funksiyaya və təhlükəsizlik tələblərinə uyğunlaşdıran müəllif metodologiyası və onun rəqəmsal tətbiq sistemi.",
     image: "/images/slider1-home1-1.jpg",

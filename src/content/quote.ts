@@ -10,7 +10,7 @@ export interface QuoteBannerContent {
 }
 
 export const quoteBanner: QuoteBannerContent = {
-  motto: "“Məkan insana uyğunlaşmalıdır, insan məkana deyil.”",
+  motto: "“Məkan insana uyğunlaşmalıdır; insan məkana məcbur edilməməlidir.”",
   quote:
     "Muxtar Ərturan",
   author: {
