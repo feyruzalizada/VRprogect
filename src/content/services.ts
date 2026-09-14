@@ -60,9 +60,9 @@ export const services: ServicesContent = {
     },
   ],
   counters: [
-    { value: 192, label: "Aktiv Proseslər" },
+    { value: 800, label: "Tamamlanmış iş" },
     { value: 66, suffix: " il", label: "Təcrübə" },
-    { value: 12, label: "Tərəfdaş" },
-    { value: 95, suffix: "%", label: "Məmnuniyyət" },
+    { value: 92, label: "Tərəfdaş" },
+    { value: 95, suffix: "%", label: "Müşdəri məmnuniyyəti" },
   ],
 };

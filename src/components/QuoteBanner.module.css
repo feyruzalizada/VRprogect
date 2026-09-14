@@ -39,10 +39,9 @@
 
 .motto {
   margin: 0;
-  font-family: var(--font-raleway), sans-serif;
-  font-size: 21px;
+  font-size: 24px;
   font-weight: 300;
-  line-height: 34px;
+  line-height: 38px;
 }
 
 .quoteName {

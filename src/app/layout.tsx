@@ -3,15 +3,15 @@ import { Titillium_Web, Raleway } from "next/font/google";
 import "./globals.css";
 
 const titillium = Titillium_Web({
-  variable: "--font-titillium",
-  subsets: ["latin"],
+  variable: "--font-titillium-base",
+  subsets: ["latin", "latin-ext"],
   weight: ["200", "400", "600", "900"],
   display: "swap",
 });
 
 const raleway = Raleway({
   variable: "--font-raleway",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   display: "swap",
 });
 
