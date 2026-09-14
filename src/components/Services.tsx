@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import CalculatorWizard from "./CalculatorWizard";
 import styles from "./Services.module.css";
 import { services, type ServiceCounter } from "@/content/services";
 
@@ -50,6 +50,8 @@ function Counter({ counter }: { counter: ServiceCounter }) {
 }
 
 export default function Services() {
+  const [openCard, setOpenCard] = useState<string | null>(null);
+
   return (
     <section className={styles.section}>
       <span className={`${styles.line} ${styles.lineLeft}`} aria-hidden />
@@ -68,7 +70,12 @@ export default function Services() {
 
         <div className={styles.grid}>
           {services.items.map((item) => (
-            <article key={item.title} className={styles.card}>
+            <button
+              key={item.title}
+              type="button"
+              className={styles.card}
+              onClick={() => setOpenCard(item.title)}
+            >
               <Image
                 src={item.icon}
                 alt=""
@@ -78,16 +85,12 @@ export default function Services() {
                 className={styles.icon}
               />
 
-              <h5 className={styles.cardTitle}>
-                <Link href={item.href}>{item.title}</Link>
-              </h5>
+              <h5 className={styles.cardTitle}>{item.title}</h5>
 
               <p className={styles.cardText}>{item.description}</p>
 
-              <Link href={item.href} className={styles.cardLink}>
-                {services.linkLabel}
-              </Link>
-            </article>
+              <span className={styles.cardLink}>{services.linkLabel}</span>
+            </button>
           ))}
         </div>
 
@@ -97,6 +100,10 @@ export default function Services() {
           ))}
         </div>
       </div>
+
+      {openCard && (
+        <CalculatorWizard title={openCard} onClose={() => setOpenCard(null)} />
+      )}
     </section>
   );
 }
