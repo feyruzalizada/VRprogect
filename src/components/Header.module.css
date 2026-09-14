@@ -70,7 +70,7 @@
 .brand {
   display: flex;
   flex-direction: column;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 18px;
@@ -91,7 +91,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 14px;
   line-height: 26.25px;
 }
@@ -113,7 +113,7 @@
   align-items: center;
   height: 91px;
   padding-right: 17px;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 14px;
   text-transform: uppercase;
   color: #fff;
@@ -172,7 +172,7 @@
 .dropdownLink {
   display: block;
   padding: 5px 40px;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 16px;
   line-height: 30px;
   color: #fff;
@@ -261,7 +261,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 14px;
   line-height: 26.25px;
   letter-spacing: 0.75px;
@@ -313,7 +313,7 @@
   background: none;
   border: none;
   outline: none;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 14px;
   letter-spacing: 0.75px;
   text-transform: uppercase;
@@ -432,7 +432,7 @@
 
 .panelHeading {
   margin: 40px 0 20px;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 14px;
@@ -460,7 +460,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 15px;
   line-height: 28px;
   color: #b6b6b6;
@@ -476,7 +476,7 @@
   margin: 30px 0 0;
   padding: 0;
   list-style: none;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 13px;
   letter-spacing: 0.75px;
   text-transform: uppercase;
@@ -562,7 +562,7 @@
   flex: 1;
   display: block;
   padding: 14px 0;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 15px;
   text-transform: uppercase;
   color: #fff;
@@ -596,7 +596,7 @@
 .mobileSubLink {
   display: block;
   padding: 8px 0;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 14px;
   color: #b6b6b6;
 }

@@ -37,7 +37,7 @@
 .eyebrow {
   display: block;
   margin-bottom: 6px;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 26.25px;
@@ -48,7 +48,7 @@
 
 .title {
   margin: 0;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 42px;
   font-weight: 400;
   line-height: 48px;
@@ -145,7 +145,7 @@
 .cardTitle {
   margin: 0 0 15px;
   transition: color 300ms linear;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 33.6px;
@@ -166,7 +166,7 @@
   position: relative;
   z-index: 0;
   display: inline-block;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 13px;
   font-weight: 600;
   line-height: 24px;
@@ -206,7 +206,7 @@
 
 .counterValue {
   margin: 0;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 42px;
   font-weight: 300;
   line-height: 42px;
@@ -215,7 +215,7 @@
 
 .counterLabel {
   margin: 8px 0 0;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 18px;
   font-weight: 600;
   line-height: 25.2px;

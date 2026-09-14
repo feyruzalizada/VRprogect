@@ -101,7 +101,7 @@
   transform: translate(-50%, -50%) translateY(-63px);
   display: flex;
   justify-content: center;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-weight: 900;
   font-size: 200px;
   line-height: 200px;
@@ -142,7 +142,7 @@
   position: relative;
   z-index: 5;
   margin: 0;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-weight: 200;
   font-size: 90px;
   line-height: 80px;
@@ -174,7 +174,7 @@
   padding: 15px 39px;
   border: 1px solid transparent;
   background-color: #1a1a1a;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-weight: 600;
   font-size: 13px;
   line-height: 25px;
@@ -226,7 +226,7 @@
 }
 
 .socialLink {
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-weight: 400;
   font-size: 13px;
   letter-spacing: 0.75px;

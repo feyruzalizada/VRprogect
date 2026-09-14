@@ -21,7 +21,7 @@
 .asideTitle {
   margin: 0 0 40px;
   padding: 0 24px;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 22px;
   font-weight: 400;
   line-height: 38px;
@@ -56,7 +56,7 @@
   border: 0;
   background: none;
   cursor: pointer;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 13px;
   font-weight: 400;
   line-height: 22px;
@@ -103,7 +103,7 @@
 
 .panelTitle {
   margin: 0 0 22px;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 22px;
   font-weight: 400;
   line-height: 30px;
@@ -196,7 +196,7 @@
 
 .heading {
   margin: 0;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 72px;
   font-weight: 200;
   line-height: 80px;
@@ -205,7 +205,7 @@
 
 .subtitle {
   margin: 14px 0 0;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 34px;
@@ -226,7 +226,7 @@
 
 .author {
   margin: 60px 0 0;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 16px;
   font-weight: 600;
   line-height: 24px;
@@ -248,7 +248,7 @@
   padding: 18px 41px;
   border: 1px solid #fff;
   background-color: #fff;
-  font-family: var(--font-titillium), sans-serif;
+  font-family: var(--font-display), sans-serif;
   font-size: 13px;
   font-weight: 600;
   line-height: 18.5px;

@@ -1,17 +1,3 @@
-/* Titillium has no schwa in its light weights, so this face supplies just that glyph */
-@font-face {
-  font-family: "Schwa";
-  src: url("/fonts/raleway-latin-ext.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-  unicode-range: U+0259;
-}
-
-html {
-  --font-titillium: "Schwa", var(--font-titillium-base);
-}
-
 *,
 *::before,
 *::after {

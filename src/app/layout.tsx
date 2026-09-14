@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Titillium_Web, Raleway } from "next/font/google";
+import { Exo_2, Raleway } from "next/font/google";
 import "./globals.css";
 
-const titillium = Titillium_Web({
-  variable: "--font-titillium-base",
+const display = Exo_2({
+  variable: "--font-display",
   subsets: ["latin", "latin-ext"],
-  weight: ["200", "400", "600", "900"],
   display: "swap",
 });
 
@@ -23,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${titillium.variable} ${raleway.variable}`}>
+    <html lang="en" className={`${display.variable} ${raleway.variable}`}>
       <body>{children}</body>
     </html>
   );
