@@ -10,6 +10,7 @@ export interface ServiceItem {
 export interface ServiceCounter {
   value: number;
   label: string;
+  suffix?: string;
 }
 
 export interface ServicesContent {
@@ -59,9 +60,9 @@ export const services: ServicesContent = {
     },
   ],
   counters: [
-    { value: 180, label: "Current Clients" },
-    { value: 10, label: "years of experience" },
-    { value: 35, label: "awards winning" },
-    { value: 5, label: "Offices Worldwide" },
+    { value: 192, label: "Aktiv Proseslər" },
+    { value: 86, suffix: " il", label: "Təcrübə" },
+    { value: 12, label: "Mükafatlar" },
+    { value: 95, suffix: "%", label: "Məmnuniyyət" },
   ],
 };

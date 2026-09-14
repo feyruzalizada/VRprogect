@@ -41,6 +41,7 @@ function Counter({ counter }: { counter: ServiceCounter }) {
       <p className={styles.counterValue}>
         <span>[</span>
         {value}
+        {counter.suffix ?? ""}
         <span>+]</span>
       </p>
       <h6 className={styles.counterLabel}>{counter.label}</h6>
