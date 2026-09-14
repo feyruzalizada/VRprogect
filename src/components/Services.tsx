@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Services.module.css";
 import { services, type ServiceCounter } from "@/content/services";
 
@@ -50,15 +50,6 @@ function Counter({ counter }: { counter: ServiceCounter }) {
 }
 
 export default function Services() {
-  // a plain hash link only jumps once, so move the page ourselves
-  const scrollToTarget = (event: MouseEvent<HTMLAnchorElement>) => {
-    if (!services.ctaHref.startsWith("#")) return;
-    const target = document.getElementById(services.ctaHref.slice(1));
-    if (!target) return;
-    event.preventDefault();
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   return (
     <section className={styles.section}>
       <span className={`${styles.line} ${styles.lineLeft}`} aria-hidden />
@@ -73,17 +64,9 @@ export default function Services() {
           <p className={styles.tagline}>{services.taglineTop}</p>
           <p className={styles.intro}>{services.intro}</p>
           <p className={styles.tagline}>{services.taglineBottom}</p>
-
-          <Link
-            href={services.ctaHref}
-            className={styles.cta}
-            onClick={scrollToTarget}
-          >
-            {services.ctaLabel}
-          </Link>
         </div>
 
-        <div id="kalkulyatorlar" className={styles.grid}>
+        <div className={styles.grid}>
           {services.items.map((item) => (
             <article key={item.title} className={styles.card}>
               <Image

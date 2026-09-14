@@ -19,8 +19,6 @@ export interface ServicesContent {
   taglineTop: string;
   intro: string;
   taglineBottom: string;
-  ctaLabel: string;
-  ctaHref: string;
   linkLabel: string;
   items: ServiceItem[];
   counters: ServiceCounter[];
@@ -33,8 +31,6 @@ export const services: ServicesContent = {
   intro:
     "Evinizi almadan, tikintiyə və ya təmirə başlamadan əvvəl məqsədinizə uyğun pulsuz VR kalkulyatorunu seçin. Ailə üzvlərinizin sayı, yaşı, boy göstəriciləri, fiziki imkanları və yaşayış tərzi əsasında tövsiyə olunan otaq sayını, sahə diapazonunu və adaptiv erqonomik ölçüləri ödənişsiz hesablayın.",
   taglineBottom: "Pulsuz • Qeydiyyatsız • İnsan mərkəzli",
-  ctaLabel: "Pulsuz hesablamağa başla",
-  ctaHref: "#kalkulyatorlar",
   linkLabel: "PULSUZ BAŞLA",
   items: [
     {
@@ -72,8 +68,8 @@ export const services: ServicesContent = {
   ],
   counters: [
     { value: 800, label: "Tamamlanmış İş" },
-    { value: 66, suffix: " il", label: "Təcrübə" },
-    { value: 92, label: "Tərəfdaş" },
+    { value: 24, suffix: " il", label: "Təcrübə" },
+    { value: 32, label: "Tərəfdaş" },
     { value: 95, suffix: "%", label: "Müşdərİ məmnuniyyətİ" },
   ],
 };
