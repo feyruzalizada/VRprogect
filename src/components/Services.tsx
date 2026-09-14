@@ -60,6 +60,14 @@ export default function Services() {
           <span className={styles.eyebrow}>{services.eyebrow}</span>
           <h2 className={styles.title}>{services.heading}</h2>
           <span className={styles.dots} aria-hidden />
+
+          <p className={styles.tagline}>{services.taglineTop}</p>
+          <p className={styles.intro}>{services.intro}</p>
+          <p className={styles.tagline}>{services.taglineBottom}</p>
+
+          <Link href={services.ctaHref} className={styles.cta}>
+            {services.ctaLabel}
+          </Link>
         </div>
 
         <div className={styles.grid}>

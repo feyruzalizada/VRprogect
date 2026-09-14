@@ -16,14 +16,25 @@ export interface ServiceCounter {
 export interface ServicesContent {
   eyebrow: string;
   heading: string;
+  taglineTop: string;
+  intro: string;
+  taglineBottom: string;
+  ctaLabel: string;
+  ctaHref: string;
   linkLabel: string;
   items: ServiceItem[];
   counters: ServiceCounter[];
 }
 
 export const services: ServicesContent = {
-  eyebrow: "[ our services ]",
-  heading: "What Can We Offer",
+  eyebrow: "[ VR Adaptiv Hesablama Sistemi ]",
+  heading: "Sizə uyğun məkanı hesablayın",
+  taglineTop: "4 məqsəd • 4 pulsuz kalkulyator • fərdi ilkin nəticə",
+  intro:
+    "Evinizi almadan, tikintiyə və ya təmirə başlamadan əvvəl məqsədinizə uyğun pulsuz VR kalkulyatorunu seçin. Ailə üzvlərinizin sayı, yaşı, boy göstəriciləri, fiziki imkanları və yaşayış tərzi əsasında tövsiyə olunan otaq sayını, sahə diapazonunu və adaptiv erqonomik ölçüləri ödənişsiz hesablayın.",
+  taglineBottom: "Pulsuz • Qeydiyyatsız • İnsan mərkəzli",
+  ctaLabel: "Pulsuz hesablamağa başla",
+  ctaHref: "#",
   linkLabel: "PULSUZ BAŞLA",
   items: [
     {
