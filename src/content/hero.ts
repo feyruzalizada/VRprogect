@@ -16,7 +16,7 @@ export const heroSlides: HeroSlide[] = [
     description:
       "Məkanı insan və ailə profilinə, istifadə ssenarisinə, funksiyaya və təhlükəsizlik tələblərinə uyğunlaşdıran müəllif metodologiyası və onun rəqəmsal tətbiq sistemi.",
     image: "/images/slider1-home1-1.jpg",
-    ctaLabel: "View Projects",
+    ctaLabel: "Xidmətlərə keç",
     ctaHref: "#projects",
   },
   {
@@ -26,7 +26,7 @@ export const heroSlides: HeroSlide[] = [
     description:
       "We pride ourselves on being builders — creating architectural and creative solutions to help people realize their vision and make them a reality. Wanna work with us?",
     image: "/images/slider2-home1-1.jpg",
-    ctaLabel: "View Projects",
+    ctaLabel: "Xidmətlərə keç",
     ctaHref: "#projects",
   },
   {
@@ -36,7 +36,7 @@ export const heroSlides: HeroSlide[] = [
     description:
       "We pride ourselves on being builders — creating architectural and creative solutions to help people realize their vision and make them a reality. Wanna work with us?",
     image: "/images/slider3-home1-1.jpg",
-    ctaLabel: "View Projects",
+    ctaLabel: "Xidmətlərə keç",
     ctaHref: "#projects",
   },
 ];
