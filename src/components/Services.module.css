@@ -70,14 +70,67 @@
 }
 
 .card {
+  position: relative;
   padding: 37px 40px;
   text-align: center;
   background-color: #fff;
-  transition: box-shadow 300ms ease;
+  transition: background-color 300ms linear;
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  background-color: #1a1a1a;
+  transition: all 300ms linear;
+}
+
+.card::before {
+  left: 10px;
+  bottom: -10px;
+  width: 0;
+  height: 1px;
+}
+
+.card::after {
+  top: 10px;
+  right: -11px;
+  width: 1px;
+  height: 0;
 }
 
 .card:hover {
-  box-shadow: 0 10px 40px rgba(26, 26, 26, 0.08);
+  background-color: #1a1a1a;
+}
+
+.card:hover::before {
+  width: calc(100% + 5px);
+}
+
+.card:hover::after {
+  height: calc(100% + 5px);
+}
+
+.card:hover .icon {
+  filter: invert(1);
+}
+
+.card:hover .cardTitle,
+.card:hover .cardTitle a {
+  color: #fff;
+}
+
+.card:hover .cardText {
+  color: #a3a3a3;
+}
+
+.card:hover .cardLink {
+  color: #fff;
+  opacity: 0.9;
+}
+
+.card:hover .cardLink::before {
+  background-color: #505050;
 }
 
 .icon {
@@ -85,10 +138,12 @@
   height: 84px;
   margin-bottom: 17px;
   object-fit: contain;
+  transition: filter 300ms linear;
 }
 
 .cardTitle {
   margin: 0 0 15px;
+  transition: color 300ms linear;
   font-family: var(--font-titillium), sans-serif;
   font-size: 24px;
   font-weight: 400;
@@ -98,6 +153,7 @@
 
 .cardText {
   margin: 0 0 13px;
+  transition: color 300ms linear;
   font-family: var(--font-raleway), sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -106,6 +162,8 @@
 }
 
 .cardLink {
+  position: relative;
+  z-index: 0;
   display: inline-block;
   font-family: var(--font-titillium), sans-serif;
   font-size: 13px;
@@ -114,12 +172,24 @@
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: #1a1a1a;
-  border-bottom: 1px solid rgba(26, 26, 26, 0.3);
-  transition: border-color 200ms ease;
+  transition: color 300ms linear, opacity 300ms linear;
 }
 
-.cardLink:hover {
-  border-bottom-color: #1a1a1a;
+.cardLink::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: -7px;
+  bottom: -3px;
+  width: 20px;
+  height: 12px;
+  background-color: #ddd;
+  transition: all 300ms linear;
+}
+
+.cardLink:hover::before {
+  width: calc(100% + 14px);
+  transition: width 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .counters {
