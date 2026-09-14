@@ -7,7 +7,7 @@ import styles from "./SideNavShowcase.module.css";
 import { sideNav } from "@/content/sidenav";
 
 const SLIDE_MS = 7000;
-const PANEL_MS = 20000;
+const PANEL_MS = 50000;
 
 const blockStyle: Record<string, string> = {
   flow: styles.panelFlow,
