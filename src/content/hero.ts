@@ -42,8 +42,8 @@ export const heroSlides: HeroSlide[] = [
 ];
 
 export const heroSocial = [
-  { label: "Youtube", href: "#" },
-  { label: "Tik Tok", href: "#" },
-  { label: "Facebook", href: "#" },
-  { label: "Instagram", href: "#" },
+  { label: "Youtube", href: "https://youtube.com/@vrprojectaz?si=MyBR-4mzQdGecUab" },
+  { label: "Tik Tok", href: "https://www.tiktok.com/@vrproject.az?_r=1&_t=ZS-99iislsgC0d" },
+  { label: "Facebook", href: "https://www.facebook.com/share/1dPk5xoG5L/?mibextid=wwXIfr" },
+  { label: "Instagram", href: "https://www.instagram.com/vrproject.az?stkn=MXVqM3Jrc2xlajJrZg%3D%3D&utm_source=qr" },
 ];
