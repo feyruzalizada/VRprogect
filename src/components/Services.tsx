@@ -65,7 +65,6 @@ export default function Services() {
 
           <p className={styles.tagline}>{services.taglineTop}</p>
           <p className={styles.intro}>{services.intro}</p>
-          <p className={styles.tagline}>{services.taglineBottom}</p>
         </div>
 
         <div className={styles.grid}>
