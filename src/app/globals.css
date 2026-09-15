@@ -1,3 +1,23 @@
+html {
+  --cursor-glove: url("/cursors/glove-32.png") 8 5;
+  --cursor-glove-2x: image-set(
+      url("/cursors/glove-32.png") 1x,
+      url("/cursors/glove-64.png") 2x
+    )
+    8 5;
+}
+
+body {
+  cursor: var(--cursor-glove), auto;
+  cursor: var(--cursor-glove-2x), auto;
+}
+
+input,
+textarea,
+select {
+  cursor: auto;
+}
+
 *,
 *::before,
 *::after {
