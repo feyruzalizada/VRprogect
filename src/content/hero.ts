@@ -1,41 +1,53 @@
-export interface HeroSlide {
+export interface HeroCue {
   id: string;
+  /** seconds — the cue shows while the video is between `from` and `to` */
+  from: number;
+  to: number;
   watermark: string;
   title: string;
   description: string;
-  image: string;
   ctaLabel: string;
   ctaHref: string;
 }
 
-export const heroSlides: HeroSlide[] = [
+export const heroVideo = {
+  /** replace public/video/hero.mp4 with the real clip (webm optional) */
+  mp4: "/video/hero.mp4",
+  webm: "",
+  poster: "/images/slider1-home1-1.jpg",
+};
+
+export const heroCues: HeroCue[] = [
   {
     id: "slide-1",
+    from: 0,
+    to: 10,
     watermark: "design",
     title: "VR Standartları 2026",
     description:
       "Məkanı insan və ailə profilinə, istifadə ssenarisinə, funksiyaya və təhlükəsizlik tələblərinə uyğunlaşdıran müəllif metodologiyası və onun rəqəmsal tətbiq sistemi.",
-    image: "/images/slider1-home1-1.jpg",
     ctaLabel: "Xidmətlərə keç",
     ctaHref: "#projects",
   },
   {
     id: "slide-2",
+    from: 10,
+    to: 50,
     watermark: "quality",
     title: "Temir",
     description:
       "We pride ourselves on being builders — creating architectural and creative solutions to help people realize their vision and make them a reality. Wanna work with us?",
-    image: "/images/slider2-home1-1.jpg",
     ctaLabel: "Xidmətlərə keç",
     ctaHref: "#projects",
   },
   {
     id: "slide-3",
+    from: 50,
+    to: 999,
     watermark: "studio",
     title: "Best Furniture and Decor",
     description:
       "We pride ourselves on being builders — creating architectural and creative solutions to help people realize their vision and make them a reality. Wanna work with us?",
-    image: "/images/slider3-home1-1.jpg",
     ctaLabel: "Xidmətlərə keç",
     ctaHref: "#projects",
   },

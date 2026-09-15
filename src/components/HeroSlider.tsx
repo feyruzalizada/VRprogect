@@ -1,13 +1,16 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./HeroSlider.module.css";
-import { heroSlides, heroSocial, type HeroSlide } from "@/content/hero";
+import { heroCues, heroSocial, heroVideo, type HeroCue } from "@/content/hero";
 
-const AUTOPLAY_MS = 8000;
 const CHAR_STAGGER = 60;
+
+function cueAt(cues: HeroCue[], time: number) {
+  const index = cues.findIndex((cue) => time >= cue.from && time < cue.to);
+  return index === -1 ? 0 : index;
+}
 
 function Watermark({ word }: { word: string }) {
   return (
@@ -42,29 +45,32 @@ function ArrowIcon({ direction }: { direction: "left" | "right" }) {
   );
 }
 
-export default function HeroSlider({
-  slides = heroSlides,
-}: {
-  slides?: HeroSlide[];
-}) {
+export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [active, setActive] = useState(0);
-  const current = slides[active];
-
-  const goTo = useCallback(
-    (index: number) => setActive((index + slides.length) % slides.length),
-    [slides.length]
-  );
+  const current = cues[active];
 
   useEffect(() => {
-    if (slides.length < 2) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // iOS only autoplays muted inline video, and even then the promise can reject
+    videoRef.current?.play().catch(() => {});
+  }, []);
 
-    const timer = setInterval(
-      () => setActive((prev) => (prev + 1) % slides.length),
-      AUTOPLAY_MS
-    );
-    return () => clearInterval(timer);
-  }, [active, slides.length]);
+  const onTime = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const next = cueAt(cues, video.currentTime);
+    setActive((prev) => (prev === next ? prev : next));
+  }, [cues]);
+
+  const goTo = useCallback(
+    (index: number) => {
+      const target = (index + cues.length) % cues.length;
+      const video = videoRef.current;
+      if (video) video.currentTime = cues[target].from;
+      setActive(target);
+    },
+    [cues],
+  );
 
   return (
     <section
@@ -72,22 +78,22 @@ export default function HeroSlider({
       aria-roledescription="carousel"
       aria-label="Studio highlights"
     >
-      {slides.map((slide, index) => (
-        <div
-          key={slide.id}
-          className={`${styles.slide} ${index === active ? styles.slideActive : ""}`}
-          aria-hidden={index !== active}
-        >
-          <Image
-            src={slide.image}
-            alt=""
-            fill
-            priority={index === 0}
-            sizes="100vw"
-            className={styles.image}
-          />
-        </div>
-      ))}
+      <video
+        ref={videoRef}
+        className={styles.video}
+        poster={heroVideo.poster}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        onTimeUpdate={onTime}
+      >
+        {heroVideo.webm && <source src={heroVideo.webm} type="video/webm" />}
+        <source src={heroVideo.mp4} type="video/mp4" />
+      </video>
+
+      <span className={styles.scrim} aria-hidden />
 
       <div className={styles.gridLines} aria-hidden>
         <span className={`${styles.lineVertical} ${styles.lineLeft}`} />
@@ -121,16 +127,15 @@ export default function HeroSlider({
       </ul>
 
       <div className={styles.bullets} role="tablist" aria-label="Slides">
-        {slides.map((slide, index) => (
+        {cues.map((cue, index) => (
           <button
-            key={slide.id}
+            key={cue.id}
             type="button"
             role="tab"
             aria-selected={index === active}
-            aria-label={`Slide ${index + 1}`}
+            aria-label={`${cue.title}`}
             onClick={() => goTo(index)}
-            className={`${styles.bullet} ${index === active ? styles.bulletActive : ""
-              }`}
+            className={`${styles.bullet} ${index === active ? styles.bulletActive : ""}`}
           />
         ))}
       </div>
