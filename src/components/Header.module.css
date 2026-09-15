@@ -61,12 +61,6 @@
   gap: 14px;
 }
 
-.logo img {
-  height: 72px;
-  margin-left: 10px;
-  width: auto;
-}
-
 .brand {
   display: flex;
   flex-direction: column;
@@ -507,11 +501,6 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-}
-
-.mobileLogo img {
-  height: 58px;
-  width: auto;
 }
 
 .mobileLogo .brand {
