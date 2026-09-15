@@ -13,8 +13,8 @@ export interface HeroCue {
 export const heroVideo = {
   /** replace public/video/hero.mp4 with the real clip (webm optional) */
   mp4: "/video/hero.mp4",
-  webm: "",
-  poster: "/images/slider1-home1-1.jpg",
+  webm: "/video/hero.webm",
+  poster: "/images/hero-poster.jpg",
 };
 
 export const heroCues: HeroCue[] = [
@@ -43,7 +43,7 @@ export const heroCues: HeroCue[] = [
   {
     id: "slide-3",
     from: 50,
-    to: 999,
+    to: 198,
     watermark: "studio",
     title: "Best Furniture and Decor",
     description:
