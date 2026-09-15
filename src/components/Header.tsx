@@ -144,14 +144,6 @@ export default function Header() {
                 <span>Global</span>
                 <span>Group</span>
               </span>
-              <Image
-                src="/images/vr_logo.png"
-                alt=""
-                width={216}
-                height={217}
-                priority
-                unoptimized
-              />
             </Link>
           </div>
 
@@ -232,7 +224,6 @@ export default function Header() {
               <span>Global</span>
               <span>Group</span>
             </span>
-            <Image src="/images/vr_logo.png" alt="" width={216} height={217} unoptimized />
           </Link>
           <div className={styles.mobileActions}>
             <button
