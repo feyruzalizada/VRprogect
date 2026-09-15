@@ -1,10 +1,10 @@
 html {
-  --cursor-glove: url("/cursors/glove-32.png") 8 5;
+  --cursor-glove: url("/cursors/glove-32.png") 31 15;
   --cursor-glove-2x: image-set(
       url("/cursors/glove-32.png") 1x,
       url("/cursors/glove-64.png") 2x
     )
-    8 5;
+    31 15;
 }
 
 body {
@@ -21,6 +21,8 @@ select {
 *,
 *::before,
 *::after {
+  /* keeps the glove on links and buttons, which browsers cursor themselves */
+  cursor: inherit;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
