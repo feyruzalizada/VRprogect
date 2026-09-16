@@ -26,7 +26,7 @@ export const heroCues: HeroCue[] = [
     watermark: "STANDART",
     title: "VR GLOBAL GROUP",
     description:
-      "Standartlarla qururuq. Ekspertiza ilə qoruyuruq.",
+      "Standartlarla qururuq. Audit ilə yoxlayırıq.",
     trust: "TİKİNTİ • TƏMİR • AUDİT • TEXNİKİ NƏZARƏT",
   },
   {
@@ -36,7 +36,7 @@ export const heroCues: HeroCue[] = [
     watermark: "TİKİNTİ",
     title: "VR TİKİNTİ XİDMƏTİ",
     description:
-      "Layihədən təhvila — hər mərhələ vahid standartla idarə olunur.",
+      "Layihədən təhvilə — hər mərhələ vahid standartla idarə olunur.",
     trust: "PLANLAŞDIRMA • İCRA • NƏZARƏT",
   },
   {
@@ -44,9 +44,9 @@ export const heroCues: HeroCue[] = [
     from: 22,
     to: 38,
     watermark: "AUDİT",
-    title: "VR MÜSTƏQİL AUDİT",
+    title: "VR EKSPERT AUDİT",
     description:
-      "Riskləri əvvəlcədən görün. Daha əmin qərarı ekspert rəyi ilə verin.",
+      "Riskləri əvvəlcədən görün. Qərar ekspert, rəyi, akt.",
     trust: "OBYEKTİV BAXIŞ • SƏNƏDLƏŞDİRİLMİŞ NƏTİCƏ",
   },
   {
@@ -96,7 +96,7 @@ export const heroCues: HeroCue[] = [
     watermark: "SİSTEM",
     title: "MÜHƏNDİS SİSTEMLƏRİNİN AUDİTİ",
     description:
-      "Su, elektrik, isitmə və ventilyasiya sistemlərini kompleks yoxlayırıq.",
+      "Su, elektrik, isitmə və ventilyasiya sistemlərinin kompleks auditi.",
     trust: "TƏHLÜKƏSİZLİK • SƏMƏRƏLİLİK • UYĞUNLUQ",
   },
   {
@@ -106,8 +106,8 @@ export const heroCues: HeroCue[] = [
     watermark: "TƏMİR",
     title: "VR TƏMİR XİDMƏTİ",
     description:
-      "Layihədən son detala qədər — nəzarət olunan tam icra.",
-    trust: "PLAN • İCRA • TƏHVİL",
+      "Layihədən icraya, nəzarətdən auditə tam təhvil.",
+    trust: "DİZAYN • İCRA • NƏZARƏT • TƏHVİL",
   },
   {
     id: "cue-10",
@@ -116,7 +116,7 @@ export const heroCues: HeroCue[] = [
     watermark: "NƏZARƏT",
     title: "MƏNZİLLƏRDƏ TƏMİRƏ NƏZARƏT",
     description:
-      "Qüsuru təhvil zamanı deyil, yarandığı mərhələdə aşkar edirik.",
+      "Qüsurların aşkarlanması, yerində həlli, ustaya nəzarət.",
     trust: "MƏRHƏLƏLİ YOXLAMA • QÜSUR QEYDİ • TƏHVİL AUDİTİ",
   },
   {
@@ -126,7 +126,7 @@ export const heroCues: HeroCue[] = [
     watermark: "DİZAYN",
     title: "VR ADAPTİV DİZAYN",
     description:
-      "Məkan insana uyğunlaşmalıdır — insan məkana deyil.",
+      "VR standartları ilə, muasirlik və zövq.",
     trust: "VR STANDARTLARI 2026",
   },
   {
@@ -136,7 +136,7 @@ export const heroCues: HeroCue[] = [
     watermark: "EKSPERTİZA",
     title: "FƏRDİ EVLƏRDƏ VR AUDİTİ",
     description:
-      "Konstruksiya, mühəndis sistemləri və icra keyfiyyəti müstəqil qiymətləndirilir.",
+      "Konstruksiya, havalandırma, isitmə və soyutma, izolyasiya, təhlükəsizlik və zəmanət.",
     trust: "ALIŞDAN ƏVVƏL • TƏMİRDƏN ƏVVƏL • TƏHVİL ZAMANI",
   },
   {
@@ -146,7 +146,7 @@ export const heroCues: HeroCue[] = [
     watermark: "İZOLYASİYA",
     title: "İZOLYASİYA SİSTEMLƏRİ",
     description:
-      "İzolyasiya görünmür. Nəticəsi illərlə hiss olunur.",
+      "Səs, rütubət, termal, yanğın, isti və soyuq.",
     trust: "İSTİLİK • SU • SƏS",
   },
   {
@@ -154,10 +154,10 @@ export const heroCues: HeroCue[] = [
     from: 185,
     to: 193,
     watermark: "EKSPERT",
-    title: "SİZİN TƏRƏFİNİZDƏ MÜSTƏQİL EKSPERT",
+    title: "VR EKSPERT GRUP",
     description:
       "Şəffaf rəy, sənədləşdirilmiş nəticə və əsaslandırılmış qərar.",
-    trust: "MÜŞTƏRİNİN MARAQLARI QORUNUR",
+    trust: "OBYEKTİV, QƏRƏZSİZ, KOMPLEKS EKSPERTIZA",
   },
   {
     id: "cue-15",
