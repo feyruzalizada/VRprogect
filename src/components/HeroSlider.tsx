@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import styles from "./HeroSlider.module.css";
 import { heroCues, heroSocial, heroVideo, type HeroCue } from "@/content/hero";
@@ -26,22 +25,6 @@ function Watermark({ word }: { word: string }) {
         </span>
       ))}
     </span>
-  );
-}
-
-function ArrowIcon({ direction }: { direction: "left" | "right" }) {
-  return (
-    <svg viewBox="0 0 26 12" fill="none" aria-hidden>
-      <path
-        d={
-          direction === "left"
-            ? "M25 6H1m0 0 5-5M1 6l5 5"
-            : "M1 6h24m0 0-5-5m5 5-5 5"
-        }
-        stroke="currentColor"
-        strokeWidth="1"
-      />
-    </svg>
   );
 }
 
@@ -93,21 +76,10 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
     setActive((prev) => (prev === next ? prev : next));
   }, [cues]);
 
-  const goTo = useCallback(
-    (index: number) => {
-      const target = (index + cues.length) % cues.length;
-      const video = videoRef.current;
-      if (video) video.currentTime = cues[target].from;
-      setActive(target);
-    },
-    [cues],
-  );
-
   return (
     <section
       className={styles.hero}
-      aria-roledescription="carousel"
-      aria-label="Studio highlights"
+      aria-label="VR Global Group"
     >
       <video
         ref={videoRef}
@@ -134,9 +106,7 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
         <Watermark word={current.watermark} />
         <h1 className={styles.title}>{current.title}</h1>
         <p className={styles.description}>{current.description}</p>
-        <Link href={current.ctaHref} className={styles.button}>
-          {current.ctaLabel}
-        </Link>
+        <p className={styles.trust}>{current.trust}</p>
       </div>
 
       <ul className={styles.social}>
@@ -154,38 +124,6 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
         ))}
       </ul>
 
-      <div className={styles.bullets} role="tablist" aria-label="Slides">
-        {cues.map((cue, index) => (
-          <button
-            key={cue.id}
-            type="button"
-            role="tab"
-            aria-selected={index === active}
-            aria-label={`${cue.title}`}
-            onClick={() => goTo(index)}
-            className={`${styles.bullet} ${index === active ? styles.bulletActive : ""}`}
-          />
-        ))}
-      </div>
-
-      <div className={styles.arrows}>
-        <button
-          type="button"
-          className={styles.arrow}
-          aria-label="Previous slide"
-          onClick={() => goTo(active - 1)}
-        >
-          <ArrowIcon direction="left" />
-        </button>
-        <button
-          type="button"
-          className={styles.arrow}
-          aria-label="Next slide"
-          onClick={() => goTo(active + 1)}
-        >
-          <ArrowIcon direction="right" />
-        </button>
-      </div>
     </section>
   );
 }

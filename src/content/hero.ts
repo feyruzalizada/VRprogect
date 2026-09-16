@@ -6,8 +6,8 @@ export interface HeroCue {
   watermark: string;
   title: string;
   description: string;
-  ctaLabel: string;
-  ctaHref: string;
+  /** small line under the description */
+  trust: string;
 }
 
 export const heroVideo = {
@@ -20,37 +20,154 @@ export const heroVideo = {
 
 export const heroCues: HeroCue[] = [
   {
-    id: "slide-1",
+    id: "cue-01",
     from: 0,
-    to: 10,
-    watermark: "design",
-    title: "VR Standartları 2026",
+    to: 8,
+    watermark: "STANDART",
+    title: "VR GLOBAL GROUP",
     description:
-      "Məkanı insan və ailə profilinə, istifadə ssenarisinə, funksiyaya və təhlükəsizlik tələblərinə uyğunlaşdıran müəllif metodologiyası və onun rəqəmsal tətbiq sistemi.",
-    ctaLabel: "Xidmətlərə keç",
-    ctaHref: "#projects",
+      "Standartlarla qururuq. Ekspertiza ilə qoruyuruq.",
+    trust: "TİKİNTİ • TƏMİR • AUDİT • TEXNİKİ NƏZARƏT",
   },
   {
-    id: "slide-2",
-    from: 10,
-    to: 50,
-    watermark: "quality",
-    title: "Temir",
+    id: "cue-02",
+    from: 8,
+    to: 22,
+    watermark: "TİKİNTİ",
+    title: "VR TİKİNTİ XİDMƏTİ",
     description:
-      "We pride ourselves on being builders — creating architectural and creative solutions to help people realize their vision and make them a reality. Wanna work with us?",
-    ctaLabel: "Xidmətlərə keç",
-    ctaHref: "#projects",
+      "Layihədən təhvila — hər mərhələ vahid standartla idarə olunur.",
+    trust: "PLANLAŞDIRMA • İCRA • NƏZARƏT",
   },
   {
-    id: "slide-3",
-    from: 50,
-    to: 198,
-    watermark: "studio",
-    title: "Best Furniture and Decor",
+    id: "cue-03",
+    from: 22,
+    to: 38,
+    watermark: "AUDİT",
+    title: "VR MÜSTƏQİL AUDİT",
     description:
-      "We pride ourselves on being builders — creating architectural and creative solutions to help people realize their vision and make them a reality. Wanna work with us?",
-    ctaLabel: "Xidmətlərə keç",
-    ctaHref: "#projects",
+      "Riskləri əvvəlcədən görün. Daha əmin qərarı ekspert rəyi ilə verin.",
+    trust: "OBYEKTİV BAXIŞ • SƏNƏDLƏŞDİRİLMİŞ NƏTİCƏ",
+  },
+  {
+    id: "cue-04",
+    from: 38,
+    to: 55,
+    watermark: "YOXLAMA",
+    title: "VR YOXLAMA XİDMƏTLƏRİ",
+    description:
+      "Ölçürük. Yoxlayırıq. Sənədləşdiririk.",
+    trust: "KONSTRUKSİYA • İCRA • ÖLÇÜ UYĞUNLUĞU",
+  },
+  {
+    id: "cue-05",
+    from: 55,
+    to: 70,
+    watermark: "MATERİAL",
+    title: "MATERİAL VƏ İCRA KEYFİYYƏTİ",
+    description:
+      "Düzgün material. Düzgün texnologiya. Uzunömürlü nəticə.",
+    trust: "QƏBUL YOXLAMASI • İCRA NƏZARƏTİ",
+  },
+  {
+    id: "cue-06",
+    from: 70,
+    to: 84,
+    watermark: "LAYİHƏ",
+    title: "LAYİHƏLƏNDİRMƏ VƏ MÜHƏNDİSLİK",
+    description:
+      "Hər detal hesablanır, hər qərar layihə ilə əsaslandırılır.",
+    trust: "MEMARLIQ • KONSTRUKSİYA • MÜHƏNDİS HƏLLƏRİ",
+  },
+  {
+    id: "cue-07",
+    from: 84,
+    to: 95,
+    watermark: "AKADEMİYA",
+    title: "VR AKADEMİYA",
+    description:
+      "Biliyi praktikaya, təcrübəni peşəkar standarta çeviririk.",
+    trust: "TƏLİM • DİZAYN DƏRSLƏRİ • PEŞƏKAR İNKİŞAF",
+  },
+  {
+    id: "cue-08",
+    from: 95,
+    to: 111,
+    watermark: "SİSTEM",
+    title: "MÜHƏNDİS SİSTEMLƏRİNİN AUDİTİ",
+    description:
+      "Su, elektrik, isitmə və ventilyasiya sistemlərini kompleks yoxlayırıq.",
+    trust: "TƏHLÜKƏSİZLİK • SƏMƏRƏLİLİK • UYĞUNLUQ",
+  },
+  {
+    id: "cue-09",
+    from: 111,
+    to: 127,
+    watermark: "TƏMİR",
+    title: "VR TƏMİR XİDMƏTİ",
+    description:
+      "Layihədən son detala qədər — nəzarət olunan tam icra.",
+    trust: "PLAN • İCRA • TƏHVİL",
+  },
+  {
+    id: "cue-10",
+    from: 127,
+    to: 142,
+    watermark: "NƏZARƏT",
+    title: "MƏNZİLLƏRDƏ TƏMİRƏ NƏZARƏT",
+    description:
+      "Qüsuru təhvil zamanı deyil, yarandığı mərhələdə aşkar edirik.",
+    trust: "MƏRHƏLƏLİ YOXLAMA • QÜSUR QEYDİ • TƏHVİL AUDİTİ",
+  },
+  {
+    id: "cue-11",
+    from: 142,
+    to: 158,
+    watermark: "DİZAYN",
+    title: "VR ADAPTİV DİZAYN",
+    description:
+      "Məkan insana uyğunlaşmalıdır — insan məkana deyil.",
+    trust: "VR STANDARTLARI 2026",
+  },
+  {
+    id: "cue-12",
+    from: 158,
+    to: 174,
+    watermark: "EKSPERTİZA",
+    title: "FƏRDİ EVLƏRDƏ VR AUDİTİ",
+    description:
+      "Konstruksiya, mühəndis sistemləri və icra keyfiyyəti müstəqil qiymətləndirilir.",
+    trust: "ALIŞDAN ƏVVƏL • TƏMİRDƏN ƏVVƏL • TƏHVİL ZAMANI",
+  },
+  {
+    id: "cue-13",
+    from: 174,
+    to: 185,
+    watermark: "İZOLYASİYA",
+    title: "İZOLYASİYA SİSTEMLƏRİ",
+    description:
+      "İzolyasiya görünmür. Nəticəsi illərlə hiss olunur.",
+    trust: "İSTİLİK • SU • SƏS",
+  },
+  {
+    id: "cue-14",
+    from: 185,
+    to: 193,
+    watermark: "EKSPERT",
+    title: "SİZİN TƏRƏFİNİZDƏ MÜSTƏQİL EKSPERT",
+    description:
+      "Şəffaf rəy, sənədləşdirilmiş nəticə və əsaslandırılmış qərar.",
+    trust: "MÜŞTƏRİNİN MARAQLARI QORUNUR",
+  },
+  {
+    id: "cue-15",
+    from: 193,
+    to: 199,
+    watermark: "ETİBAR",
+    title: "VR GLOBAL GROUP",
+    description:
+      "Standart. Nəzarət. Etibar.",
+    trust: "PEŞƏKAR KONSULTASİYA AL",
   },
 ];
 

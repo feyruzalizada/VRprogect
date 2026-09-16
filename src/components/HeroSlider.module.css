@@ -173,6 +173,20 @@
   animation-delay: 1400ms;
 }
 
+.trust {
+  position: relative;
+  z-index: 5;
+  margin: 26px 0 0;
+  font-family: var(--font-display), sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 1.6px;
+  color: rgba(255, 255, 255, 0.75);
+  animation: layerIn 1000ms ease both;
+  animation-delay: 1800ms;
+}
+
 .button {
   position: relative;
   z-index: 6;
@@ -248,71 +262,6 @@
   opacity: 0.6;
 }
 
-.bullets {
-  position: absolute;
-  left: 50%;
-  bottom: 30px;
-  z-index: 6;
-  display: flex;
-  transform: translateX(-50%);
-}
-
-.bullet {
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid transparent;
-  border-radius: 50%;
-  background: none;
-  cursor: pointer;
-  transition: border-color 300ms linear;
-}
-
-.bullet::before {
-  content: "";
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background-color: #fff;
-}
-
-.bulletActive {
-  border-color: #fff;
-}
-
-.arrows {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  z-index: 6;
-  display: flex;
-}
-
-.arrow {
-  width: 90px;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: none;
-  background: none;
-  color: #fff;
-  cursor: pointer;
-  transition: opacity 200ms ease;
-}
-
-.arrow:hover {
-  opacity: 0.6;
-}
-
-.arrow svg {
-  width: 26px;
-  height: 12px;
-}
-
 @media (max-width: 1240px) {
   .watermark {
     font-size: 150px;
@@ -378,19 +327,18 @@
     margin-top: 20px;
   }
 
+  .trust {
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    margin-top: 18px;
+  }
+
   .button {
     margin-top: 30px;
     padding: 13px 22px;
   }
 
-  .arrow {
-    width: 60px;
-    height: 60px;
-  }
 
-  .bullets {
-    bottom: 24px;
-  }
 }
 
 @media (max-width: 575px) {
@@ -405,15 +353,17 @@
     margin-top: 16px;
   }
 
+  .trust {
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-top: 14px;
+  }
+
   .button {
     margin-top: 24px;
     padding: 12px 20px;
   }
 
-  .arrow {
-    width: 46px;
-    height: 46px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
