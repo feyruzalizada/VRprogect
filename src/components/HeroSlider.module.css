@@ -110,11 +110,11 @@
   justify-content: center;
   font-family: var(--font-display), sans-serif;
   font-weight: 900;
-  font-size: 200px;
-  line-height: 200px;
-  letter-spacing: 100px;
+  font-size: clamp(56px, 11vw, 200px);
+  line-height: 1;
+  letter-spacing: clamp(16px, 5.5vw, 100px);
   /* offsets the trailing letter-spacing */
-  margin-left: 50px;
+  margin-left: clamp(8px, 2.75vw, 50px);
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
@@ -151,10 +151,12 @@
   margin: 0;
   font-family: var(--font-display), sans-serif;
   font-weight: 200;
-  font-size: 90px;
-  line-height: 80px;
+  /* scales with the window so long titles never reach the edges */
+  font-size: clamp(26px, 4.2vw, 72px);
+  line-height: 1.12;
+  max-width: 1150px;
+  text-wrap: balance;
   color: #fff;
-  white-space: nowrap;
   animation: layerIn 1000ms ease both;
   animation-delay: 1000ms;
 }
@@ -166,8 +168,8 @@
   margin: 55px 0 0;
   font-family: var(--font-raleway), sans-serif;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 32px;
+  font-size: clamp(15px, 1.15vw, 18px);
+  line-height: 1.7;
   color: #fff;
   animation: layerIn 1000ms ease both;
   animation-delay: 1400ms;
@@ -263,24 +265,6 @@
 }
 
 @media (max-width: 1240px) {
-  .watermark {
-    font-size: 150px;
-    line-height: 170px;
-    letter-spacing: 85px;
-    margin-left: 42px;
-  }
-
-  .title {
-    font-size: 72px;
-    line-height: 70px;
-    white-space: normal;
-  }
-
-  .description {
-    max-width: 630px;
-    line-height: 27px;
-  }
-
   .button {
     padding: 12px 30px;
   }
@@ -289,12 +273,6 @@
 @media (max-width: 1024px) {
   .watermark {
     display: none;
-  }
-
-  .title {
-    font-size: 55px;
-    line-height: 51px;
-    white-space: normal;
   }
 
   .description {
@@ -313,11 +291,6 @@
 @media (max-width: 767px) {
   .social {
     display: none;
-  }
-
-  .title {
-    font-size: 44px;
-    line-height: 48px;
   }
 
   .description {
@@ -342,11 +315,6 @@
 }
 
 @media (max-width: 575px) {
-  .title {
-    font-size: 34px;
-    line-height: 38px;
-  }
-
   .description {
     font-size: 15px;
     line-height: 24px;
