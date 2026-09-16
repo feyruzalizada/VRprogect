@@ -1,7 +1,8 @@
 .section {
   display: flex;
-  height: 100vh;
-  min-height: 600px;
+  /* min-height, not height: a short window must grow, not clip the content */
+  min-height: 100vh;
+  min-height: 100svh;
   background-color: #1a1a1a;
 }
 
@@ -81,7 +82,7 @@
   top: 0;
   z-index: 6;
   width: 640px;
-  max-height: calc(50vh + 80px);
+  max-height: min(calc(50vh + 80px), 620px);
   padding: 38px 40px;
   overflow-y: auto;
   background-color: rgba(0, 0, 0, 0.82);
@@ -151,6 +152,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 110px 24px 60px;
   overflow: hidden;
 }
 
@@ -261,6 +263,16 @@
 .button:hover {
   background-color: transparent;
   color: #fff;
+}
+
+@media (max-width: 1200px) {
+  .aside {
+    width: 290px;
+  }
+
+  .panel {
+    width: min(560px, calc(100vw - 320px));
+  }
 }
 
 @media (max-width: 1240px) {
