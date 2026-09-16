@@ -113,8 +113,7 @@
   color: #fff;
   background: none;
   border: none;
-  cursor: var(--cursor-glove), pointer;
-  cursor: var(--cursor-glove-2x), pointer;
+  cursor: pointer;
   transition: opacity 200ms ease;
 }
 
@@ -224,8 +223,7 @@
   color: #fff;
   background: none;
   border: none;
-  cursor: var(--cursor-glove), pointer;
-  cursor: var(--cursor-glove-2x), pointer;
+  cursor: pointer;
   transition: opacity 200ms ease;
 }
 
@@ -256,8 +254,7 @@
   padding: 0;
   background: none;
   border: none;
-  cursor: var(--cursor-glove), pointer;
-  cursor: var(--cursor-glove-2x), pointer;
+  cursor: pointer;
   font-family: var(--font-display), sans-serif;
   font-size: 14px;
   line-height: 26.25px;
@@ -327,8 +324,7 @@
   background: none;
   border: none;
   color: #fff;
-  cursor: var(--cursor-glove), pointer;
-  cursor: var(--cursor-glove-2x), pointer;
+  cursor: pointer;
 }
 
 .overlay {
@@ -337,8 +333,7 @@
   z-index: 1000;
   background-color: rgba(0, 0, 0, 0.6);
   border: none;
-  cursor: var(--cursor-glove), pointer;
-  cursor: var(--cursor-glove-2x), pointer;
+  cursor: pointer;
 }
 
 .sidePanel {
@@ -369,8 +364,7 @@
   background: none;
   border: none;
   color: #fff;
-  cursor: var(--cursor-glove), pointer;
-  cursor: var(--cursor-glove-2x), pointer;
+  cursor: pointer;
 }
 
 .panelBrand {
@@ -569,8 +563,7 @@
   background: none;
   border: none;
   color: #fff;
-  cursor: var(--cursor-glove), pointer;
-  cursor: var(--cursor-glove-2x), pointer;
+  cursor: pointer;
   transition: transform 250ms ease;
 }
 

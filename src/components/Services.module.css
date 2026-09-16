@@ -96,8 +96,7 @@
   display: block;
   width: 100%;
   border: 0;
-  cursor: var(--cursor-glove), pointer;
-  cursor: var(--cursor-glove-2x), pointer;
+  cursor: pointer;
   padding: 37px 40px;
   text-align: center;
   background-color: #fff;

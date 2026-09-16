@@ -267,8 +267,7 @@
   border: 1px solid transparent;
   border-radius: 50%;
   background: none;
-  cursor: var(--cursor-glove), pointer;
-  cursor: var(--cursor-glove-2x), pointer;
+  cursor: pointer;
   transition: border-color 300ms linear;
 }
 
@@ -301,8 +300,7 @@
   border: none;
   background: none;
   color: #fff;
-  cursor: var(--cursor-glove), pointer;
-  cursor: var(--cursor-glove-2x), pointer;
+  cursor: pointer;
   transition: opacity 200ms ease;
 }
 

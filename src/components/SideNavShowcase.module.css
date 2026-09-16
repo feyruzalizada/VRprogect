@@ -55,8 +55,7 @@
   padding: 0;
   border: 0;
   background: none;
-  cursor: var(--cursor-glove), pointer;
-  cursor: var(--cursor-glove-2x), pointer;
+  cursor: pointer;
   font-family: var(--font-display), sans-serif;
   font-size: 13px;
   font-weight: 400;
