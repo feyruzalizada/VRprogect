@@ -46,7 +46,7 @@ export const heroCues: HeroCue[] = [
     watermark: "AUDİT",
     title: "VR EKSPERT AUDİT",
     description:
-      "Riskləri əvvəlcədən görün. Qərar ekspert, rəyi, akt.",
+      "Riskləri əvvəlcədən görün. Qərar ekspert, rəyi akt.",
     trust: "OBYEKTİV BAXIŞ • SƏNƏDLƏŞDİRİLMİŞ NƏTİCƏ",
   },
   {
