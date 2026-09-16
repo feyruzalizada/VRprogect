@@ -11,9 +11,10 @@ export interface HeroCue {
 }
 
 export const heroVideo = {
-  /** replace public/video/hero.mp4 with the real clip (webm optional) */
-  mp4: "/video/hero.mp4",
-  webm: "",
+  /** HLS playlist — the clip is served as segments, not as one downloadable file */
+  hls: "/stream/hero.m3u8",
+  /** used only by browsers without HLS support */
+  mp4: "",
   poster: "/images/hero-poster.jpg",
 };
 

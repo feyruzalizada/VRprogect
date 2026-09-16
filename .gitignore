@@ -43,3 +43,6 @@ next-env.d.ts
 # ai assistant files
 CLAUDE.md
 AGENTS.md
+
+# source video lives outside the repo
+public/video/

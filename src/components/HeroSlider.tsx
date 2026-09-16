@@ -51,8 +51,39 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
   const current = cues[active];
 
   useEffect(() => {
-    // iOS only autoplays muted inline video, and even then the promise can reject
-    videoRef.current?.play().catch(() => {});
+    const video = videoRef.current;
+    if (!video) return;
+
+    const start = () => video.play().catch(() => {});
+
+    // Safari plays HLS natively, everything else needs hls.js
+    if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      video.src = heroVideo.hls;
+      start();
+      return;
+    }
+
+    let hls: { destroy: () => void } | undefined;
+    let cancelled = false;
+
+    import("hls.js").then(({ default: Hls }) => {
+      if (cancelled) return;
+      if (Hls.isSupported()) {
+        const instance = new Hls({ capLevelToPlayerSize: true });
+        instance.loadSource(heroVideo.hls);
+        instance.attachMedia(video);
+        instance.on(Hls.Events.MANIFEST_PARSED, start);
+        hls = instance;
+      } else if (heroVideo.mp4) {
+        video.src = heroVideo.mp4;
+        start();
+      }
+    });
+
+    return () => {
+      cancelled = true;
+      hls?.destroy();
+    };
   }, []);
 
   const onTime = useCallback(() => {
@@ -88,10 +119,7 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
         playsInline
         preload="metadata"
         onTimeUpdate={onTime}
-      >
-        {heroVideo.webm && <source src={heroVideo.webm} type="video/webm" />}
-        <source src={heroVideo.mp4} type="video/mp4" />
-      </video>
+      />
 
       <span className={styles.scrim} aria-hidden />
 
