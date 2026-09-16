@@ -86,7 +86,7 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         onTimeUpdate={onTime}
       >
         {heroVideo.webm && <source src={heroVideo.webm} type="video/webm" />}

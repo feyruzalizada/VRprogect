@@ -13,7 +13,7 @@ export interface HeroCue {
 export const heroVideo = {
   /** replace public/video/hero.mp4 with the real clip (webm optional) */
   mp4: "/video/hero.mp4",
-  webm: "/video/hero.webm",
+  webm: "",
   poster: "/images/hero-poster.jpg",
 };
 

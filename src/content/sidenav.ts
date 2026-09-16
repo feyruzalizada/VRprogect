@@ -30,7 +30,7 @@ export const sideNav: SideNavContent = {
   links: [
     {
       id: "panel-1",
-      label: "ADAPTİV ERQONOMİK ÖLÇÜ SİSTEMİ VƏ ƏMSALI",
+      label: "ADAPTİV ERQONOMİK ÖLÇÜ SİSTEMİ",
       body: [
         { kind: "p", text: "VR Adaptiv Erqonomik Ölçü Sistemi məkanı insanın boyuna, yaşına, fiziki imkanlarına, ailə tərkibinə və həyat tərzinə uyğunlaşdıran elmi-metodoloji müəllif modelidir." },
         { kind: "p", text: "VR Adaptiv Erqonomik Əmsalı və VR Adaptiv Erqonomik Ölçü Sisteminin müəllifi azərbaycanlı Novator Memar Muxtar Ərturandır. Metod onun müəllif kəşfi kimi ilk dəfə “VR Standartları 2026” əsərində sistemli şəkildə təqdim edilmişdir." },
