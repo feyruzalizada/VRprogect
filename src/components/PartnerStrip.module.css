@@ -1,0 +1,63 @@
+.section {
+  background-color: #0a0a0a;
+}
+
+.viewport {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 15px;
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.track:hover {
+  animation-play-state: paused;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 104px;
+  height: 150px;
+  margin-right: 140px;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+}
+
+@keyframes marquee {
+  to {
+    /* one full copy of the list */
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 991px) {
+  .item {
+    flex-basis: 90px;
+    height: 130px;
+    margin-right: 90px;
+  }
+}
+
+@media (max-width: 575px) {
+  .item {
+    flex-basis: 62px;
+    height: 110px;
+    margin-right: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+  }
+}

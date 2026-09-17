@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HeroSlider from "@/components/HeroSlider";
+import PartnerStrip from "@/components/PartnerStrip";
 import ProgressStats from "@/components/ProgressStats";
 import QuoteBanner from "@/components/QuoteBanner";
 import Services from "@/components/Services";
@@ -15,6 +16,7 @@ export default function Home() {
         <SideNavShowcase />
         <Services />
         <ProgressStats />
+        <PartnerStrip />
       </main>
     </>
   );
