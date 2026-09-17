@@ -15,8 +15,8 @@ export default function Home() {
         <QuoteBanner />
         <SideNavShowcase />
         <Services />
-        <ProgressStats />
         <PartnerStrip />
+        <ProgressStats />
       </main>
     </>
   );
