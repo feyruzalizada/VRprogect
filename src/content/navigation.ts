@@ -1,36 +1,12 @@
 export interface NavItem {
   label: string;
   href: string;
-  children?: NavItem[];
 }
 
 export const mainNav: NavItem[] = [
   { label: "Ana səhifə", href: "/" },
-  {
-    label: "Lorem",
-    href: "#",
-    children: [
-      { label: "Lorem ipsum", href: "#" },
-      { label: "Dolor sit amet", href: "#" },
-      {
-        label: "Consectetur",
-        href: "#",
-        children: [
-          { label: "Adipiscing elit", href: "#" },
-          { label: "Sed do eiusmod", href: "#" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Ipsum",
-    href: "#",
-    children: [
-      { label: "Tempor incididunt", href: "#" },
-      { label: "Labore et dolore", href: "#" },
-      { label: "Magna aliqua", href: "#" },
-    ],
-  },
+  { label: "Kitab haqqında", href: "#kitab" },
+  { label: "Ipsum", href: "#" },
   { label: "Dolor", href: "#" },
   { label: "Contacts", href: "#" },
 ];

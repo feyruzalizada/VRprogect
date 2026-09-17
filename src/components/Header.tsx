@@ -4,23 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
-import { mainNav, sidePanel, type NavItem } from "@/content/navigation";
-
-function CaretDown({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 10 6" fill="none" className={className} aria-hidden>
-      <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.2" />
-    </svg>
-  );
-}
-
-function CaretRight({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 6 10" fill="none" className={className} aria-hidden>
-      <path d="M1 1l4 4-4 4" stroke="currentColor" strokeWidth="1.2" />
-    </svg>
-  );
-}
+import { mainNav, sidePanel } from "@/content/navigation";
 
 function SearchIcon() {
   return (
@@ -44,75 +28,6 @@ function CloseIcon() {
     <svg viewBox="0 0 22 22" fill="none" width="20" height="20" aria-hidden>
       <path d="M4 4l14 14M18 4L4 18" stroke="currentColor" strokeWidth="1.3" />
     </svg>
-  );
-}
-
-function DesktopDropdown({ items }: { items: NavItem[] }) {
-  return (
-    <ul className={styles.dropdown}>
-      {items.map((item) => (
-        <li key={item.label} className={styles.dropdownItem}>
-          <Link href={item.href} className={styles.dropdownLink}>
-            {item.label}
-          </Link>
-          {item.children && (
-            <>
-              <CaretRight className={styles.subCaret} />
-              <ul className={styles.subDropdown}>
-                {item.children.map((child) => (
-                  <li key={child.label}>
-                    <Link href={child.href} className={styles.dropdownLink}>
-                      {child.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </>
-          )}
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-function MobileNavItem({ item }: { item: NavItem }) {
-  const [open, setOpen] = useState(false);
-  const hasChildren = Boolean(item.children?.length);
-
-  return (
-    <li className={styles.mobileItem}>
-      <div className={styles.mobileRow}>
-        <Link href={item.href} className={styles.mobileLink}>
-          {item.label}
-        </Link>
-        {hasChildren && (
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            aria-label={`Toggle ${item.label} submenu`}
-            className={`${styles.mobileToggle} ${open ? styles.mobileToggleOpen : ""}`}
-          >
-            <CaretRight />
-          </button>
-        )}
-      </div>
-      {hasChildren && open && (
-        <ul className={styles.mobileSub}>
-          {item.children!.map((child) =>
-            child.children?.length ? (
-              <MobileNavItem key={child.label} item={child} />
-            ) : (
-              <li key={child.label}>
-                <Link href={child.href} className={styles.mobileSubLink}>
-                  {child.label}
-                </Link>
-              </li>
-            )
-          )}
-        </ul>
-      )}
-    </li>
   );
 }
 
@@ -150,22 +65,16 @@ export default function Header() {
           <div className={styles.colMenu}>
             <nav className={styles.nav} aria-label="Main">
               <ul className={styles.navList}>
-                {mainNav.map((item) => {
-                  const hasDropdown = Boolean(item.children?.length);
-                  return (
-                    <li
-                      key={item.label}
-                      className={`${styles.navItem} ${!hasDropdown ? styles.navItemPlain : ""}`}
-                    >
-                      <Link href={item.href} className={styles.navLink}>
-                        {item.label}
-                        {hasDropdown && <CaretDown className={styles.caret} />}
-                      </Link>
-
-                      {item.children && <DesktopDropdown items={item.children} />}
-                    </li>
-                  );
-                })}
+                {mainNav.map((item) => (
+                  <li
+                    key={item.label}
+                    className={`${styles.navItem} ${styles.navItemPlain}`}
+                  >
+                    <Link href={item.href} className={styles.navLink}>
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </nav>
           </div>
@@ -362,7 +271,17 @@ export default function Header() {
         </button>
         <ul className={styles.mobileList}>
           {mainNav.map((item) => (
-            <MobileNavItem key={item.label} item={item} />
+            <li key={item.label} className={styles.mobileItem}>
+              <div className={styles.mobileRow}>
+                <Link
+                  href={item.href}
+                  className={styles.mobileLink}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              </div>
+            </li>
           ))}
         </ul>
       </nav>

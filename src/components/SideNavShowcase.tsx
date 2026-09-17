@@ -34,7 +34,7 @@ export default function SideNavShowcase() {
   }, [openId]);
 
   return (
-    <section className={styles.section}>
+    <section id="kitab" className={styles.section}>
       <aside className={styles.aside}>
         <h2 className={styles.asideTitle}>{sideNav.asideTitle}</h2>
 
