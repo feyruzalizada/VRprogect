@@ -19,8 +19,8 @@ export default function PartnerStrip() {
               <Image
                 src={partner.logo}
                 alt={index < partners.length ? partner.name : ""}
-                width={104}
-                height={60}
+                width={240}
+                height={120}
                 className={styles.logo}
                 unoptimized
               />

@@ -4,10 +4,12 @@ export interface Partner {
 }
 
 export const partners: Partner[] = [
-  { logo: "/images/client1.svg", name: "Partner 1" },
-  { logo: "/images/client2.svg", name: "Partner 2" },
-  { logo: "/images/client3.svg", name: "Partner 3" },
-  { logo: "/images/client4.svg", name: "Partner 4" },
-  { logo: "/images/client5.svg", name: "Partner 5" },
-  { logo: "/images/client6.svg", name: "Partner 6" },
+  { logo: "/images/partners/kafkas.png", name: "Kafkas" },
+  { logo: "/images/partners/hansgrohe.png", name: "hansgrohe" },
+  { logo: "/images/partners/geberit.png", name: "Geberit" },
+  { logo: "/images/partners/duravit.png", name: "Duravit" },
+  { logo: "/images/partners/huppe.png", name: "Hüppe" },
+  { logo: "/images/partners/vitra.png", name: "VitrA" },
+  { logo: "/images/partners/proglass.png", name: "Pro Glass" },
+  { logo: "/images/partners/azessco.png", name: "Azessco" },
 ];
