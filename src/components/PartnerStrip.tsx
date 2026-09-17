@@ -7,7 +7,7 @@ export default function PartnerStrip() {
   const loop = [...partners, ...partners];
 
   return (
-    <section className={styles.section} aria-label="Partners">
+    <section id="partnyorlar" className={styles.section} aria-label="Partners">
       <div className={styles.viewport}>
         <div className={styles.track}>
           {loop.map((partner, index) => (

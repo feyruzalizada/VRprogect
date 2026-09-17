@@ -7,7 +7,7 @@ export const mainNav: NavItem[] = [
   { label: "Ana səhifə", href: "/" },
   { label: "Kitab haqqında", href: "#kitab" },
   { label: "VR kalkulyator", href: "#kalkulyator" },
-  { label: "Dolor", href: "#" },
+  { label: "Partnyorlar", href: "#partnyorlar" },
   { label: "Contacts", href: "#" },
 ];
 
