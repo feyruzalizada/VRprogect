@@ -124,8 +124,8 @@
 
 .charMask {
   display: inline-block;
-  overflow: hidden;
-  vertical-align: bottom;
+  /* clips only below, so the dot over the capital I stays whole */
+  clip-path: inset(-0.4em 0 0 0);
 }
 
 .char {
