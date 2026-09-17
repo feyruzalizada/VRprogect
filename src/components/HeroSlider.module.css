@@ -157,8 +157,8 @@
   max-width: 1150px;
   text-wrap: balance;
   color: #fff;
-  animation: layerIn 1000ms ease both;
-  animation-delay: 1000ms;
+  animation: layerIn 900ms ease both;
+  animation-delay: 300ms;
 }
 
 .description {
@@ -171,8 +171,8 @@
   font-size: clamp(15px, 1.15vw, 18px);
   line-height: 1.7;
   color: #fff;
-  animation: layerIn 1000ms ease both;
-  animation-delay: 1400ms;
+  animation: layerIn 900ms ease both;
+  animation-delay: 550ms;
 }
 
 .trust {
@@ -185,8 +185,8 @@
   line-height: 22px;
   letter-spacing: 1.6px;
   color: rgba(255, 255, 255, 0.75);
-  animation: layerIn 1000ms ease both;
-  animation-delay: 1800ms;
+  animation: layerIn 900ms ease both;
+  animation-delay: 800ms;
 }
 
 .button {
@@ -205,13 +205,54 @@
   color: #fff;
   transition: color 200ms ease, background-color 200ms ease;
   animation: layerIn 500ms ease both;
-  animation-delay: 1800ms;
+  animation-delay: 800ms;
 }
 
 .button:hover,
 .button:focus-visible {
   background-color: #fff;
   color: #1a1a1a;
+}
+
+/* the text leaves the way it arrived, in reverse order */
+.leaving .trust {
+  animation: layerOut 420ms ease both;
+}
+
+.leaving .description {
+  animation: layerOut 420ms ease both;
+  animation-delay: 60ms;
+}
+
+.leaving .title {
+  animation: layerOut 420ms ease both;
+  animation-delay: 120ms;
+}
+
+.leaving .char {
+  animation: charOut 480ms cubic-bezier(0.77, 0, 0.175, 1) both;
+}
+
+@keyframes layerOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+
+@keyframes charOut {
+  from {
+    opacity: 1;
+    transform: translateY(0) rotateZ(0deg);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100%) rotateZ(-35deg);
+  }
 }
 
 @keyframes layerIn {
@@ -339,7 +380,11 @@
   .char,
   .title,
   .description,
-  .button {
+  .trust,
+  .leaving .char,
+  .leaving .title,
+  .leaving .description,
+  .leaving .trust {
     transition: none;
     animation: none;
   }

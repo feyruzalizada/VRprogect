@@ -5,6 +5,8 @@ import styles from "./HeroSlider.module.css";
 import { heroCues, heroSocial, heroVideo, type HeroCue } from "@/content/hero";
 
 const CHAR_STAGGER = 60;
+/** how long the outgoing text takes to leave before the next one enters */
+const EXIT_MS = 520;
 
 function cueAt(cues: HeroCue[], time: number) {
   const index = cues.findIndex((cue) => time >= cue.from && time < cue.to);
@@ -31,7 +33,20 @@ function Watermark({ word }: { word: string }) {
 export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [active, setActive] = useState(0);
-  const current = cues[active];
+  const [shown, setShown] = useState(0);
+  const [leaving, setLeaving] = useState(false);
+  const current = cues[shown];
+
+  // hold the old cue on screen while it animates out, then swap
+  useEffect(() => {
+    if (active === shown) return;
+    setLeaving(true);
+    const timer = setTimeout(() => {
+      setShown(active);
+      setLeaving(false);
+    }, EXIT_MS);
+    return () => clearTimeout(timer);
+  }, [active, shown]);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -102,7 +117,10 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
       </div>
 
       {/* key remount replays the entrance animations */}
-      <div className={styles.layers} key={current.id}>
+      <div
+        className={`${styles.layers} ${leaving ? styles.leaving : ""}`}
+        key={current.id}
+      >
         <Watermark word={current.watermark} />
         <h1 className={styles.title}>{current.title}</h1>
         <p className={styles.description}>{current.description}</p>
