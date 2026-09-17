@@ -33,6 +33,25 @@ function CloseIcon() {
 
 const LANGUAGES = ["AZ", "EN", "RU"] as const;
 
+// the navbar only moves inside one page, so every item scrolls by hand and
+// leaves the address bar on "/" — a leftover #hash pulled the page back down
+function handleNavClick(event: React.MouseEvent, href: string) {
+  if (href !== "/" && !href.startsWith("#")) return;
+  event.preventDefault();
+
+  if (href === "/") {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  } else if (href.length > 1) {
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+  } else {
+    return;
+  }
+
+  if (window.location.hash) {
+    window.history.replaceState(null, "", window.location.pathname);
+  }
+}
+
 export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [panelOpen, setPanelOpen] = useState(false);
@@ -70,7 +89,11 @@ export default function Header() {
                     key={item.label}
                     className={`${styles.navItem} ${styles.navItemPlain}`}
                   >
-                    <Link href={item.href} className={styles.navLink}>
+                    <Link
+                      href={item.href}
+                      className={styles.navLink}
+                      onClick={(e) => handleNavClick(e, item.href)}
+                    >
                       {item.label}
                     </Link>
                   </li>
@@ -276,7 +299,10 @@ export default function Header() {
                 <Link
                   href={item.href}
                   className={styles.mobileLink}
-                  onClick={() => setMobileOpen(false)}
+                  onClick={(e) => {
+                    setMobileOpen(false);
+                    handleNavClick(e, item.href);
+                  }}
                 >
                   {item.label}
                 </Link>
