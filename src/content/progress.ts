@@ -9,25 +9,25 @@ export const progressItems: ProgressItem[] = [
   {
     id: "sketch",
     percent: 92,
-    label: "interior sketch",
-    description: "All kinds of buildings in chematic or working design",
+    label: "Lorem ipsum",
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   },
   {
     id: "modeling",
     percent: 84,
-    label: "3D modeling",
-    description: "Studio provides a full range of 3D interior modeling",
+    label: "Dolor sit amet",
+    description: "Integer posuere erat a ante venenatis dapibus posuere velit.",
   },
   {
     id: "measurement",
     percent: 96,
-    label: "room measurement",
-    description: "Development of iperfect design of the project",
+    label: "Consectetur elit",
+    description: "Nullam quis risus eget urna mollis ornare vel eu leo.",
   },
   {
     id: "planning",
     percent: 88,
-    label: "2d planning",
-    description: "We provide 2D planning for great visualization",
+    label: "Adipiscing sed",
+    description: "Curabitur blandit tempus porttitor maecenas faucibus mollis.",
   },
 ];
