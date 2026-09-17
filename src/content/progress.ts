@@ -7,27 +7,27 @@ export interface ProgressItem {
 
 export const progressItems: ProgressItem[] = [
   {
-    id: "sketch",
-    percent: 92,
-    label: "Lorem ipsum",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  {
-    id: "modeling",
-    percent: 84,
-    label: "Dolor sit amet",
-    description: "Integer posuere erat a ante venenatis dapibus posuere velit.",
-  },
-  {
-    id: "measurement",
+    id: "modern",
     percent: 96,
-    label: "Consectetur elit",
-    description: "Nullam quis risus eget urna mollis ornare vel eu leo.",
+    label: "Modern",
+    description: "Sadə həndəsə, geniş işıq, artıq detalsız. Ən çox seçilən üslub.",
   },
   {
-    id: "planning",
+    id: "klassik",
     percent: 88,
-    label: "Adipiscing sed",
-    description: "Curabitur blandit tempus porttitor maecenas faucibus mollis.",
+    label: "Klassik",
+    description: "Simmetriya və mütənasiblik — dəbdən asılı olmayan qərar.",
+  },
+  {
+    id: "minimalist",
+    percent: 92,
+    label: "Minimalist",
+    description: "Az element, çox hava. Hər əşya yerini qazanmalıdır.",
+  },
+  {
+    id: "loft",
+    percent: 84,
+    label: "Loft",
+    description: "Beton, metal, açıq kommunikasiya — xarakteri gizlətmədən.",
   },
 ];
