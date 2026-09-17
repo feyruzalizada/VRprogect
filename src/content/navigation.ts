@@ -6,7 +6,7 @@ export interface NavItem {
 export const mainNav: NavItem[] = [
   { label: "Ana səhifə", href: "/" },
   { label: "Kitab haqqında", href: "#kitab" },
-  { label: "Ipsum", href: "#" },
+  { label: "VR kalkulyator", href: "#kalkulyator" },
   { label: "Dolor", href: "#" },
   { label: "Contacts", href: "#" },
 ];

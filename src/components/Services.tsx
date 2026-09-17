@@ -53,7 +53,7 @@ export default function Services() {
   const [openCard, setOpenCard] = useState<string | null>(null);
 
   return (
-    <section className={styles.section}>
+    <section id="kalkulyator" className={styles.section}>
       <span className={`${styles.line} ${styles.lineLeft}`} aria-hidden />
       <span className={`${styles.line} ${styles.lineRight}`} aria-hidden />
 
