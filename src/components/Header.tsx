@@ -42,7 +42,16 @@ function handleNavClick(event: React.MouseEvent, href: string) {
   if (href === "/") {
     window.scrollTo({ top: 0, behavior: "smooth" });
   } else if (href.length > 1) {
-    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    const target = document.querySelector(href);
+    if (!target) return;
+    // the bar turns fixed once the page moves, so stop that much short of the
+    // section or its first rows sit under it
+    const bar = document.querySelector("header");
+    const top =
+      target.getBoundingClientRect().top +
+      window.scrollY -
+      (bar?.offsetHeight ?? 0);
+    window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
   } else {
     return;
   }
