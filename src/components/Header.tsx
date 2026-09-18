@@ -2,9 +2,17 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./Header.module.css";
 import { mainNav, sidePanel } from "@/content/navigation";
+
+function CaretDown({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 10 6" fill="none" className={className} aria-hidden>
+      <path d="M1 1l4 4 4-4" stroke="currentColor" strokeWidth="1.2" />
+    </svg>
+  );
+}
 
 function SearchIcon() {
   return (
@@ -93,6 +101,66 @@ function handleNavClick(event: React.MouseEvent, href: string) {
   }
 }
 
+function LangDropdown({ lang, onPick }: { lang: Lang; onPick: (code: Lang) => void }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!open) return;
+
+    const onDown = (event: MouseEvent) => {
+      if (!ref.current?.contains(event.target as Node)) setOpen(false);
+    };
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+
+    document.addEventListener("mousedown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  return (
+    <div ref={ref} className={styles.langDrop}>
+      <button
+        type="button"
+        className={`${styles.langTrigger} ${open ? styles.langTriggerOpen : ""}`}
+        aria-expanded={open}
+        aria-haspopup="true"
+        aria-label="Language"
+        onClick={() => setOpen((v) => !v)}
+      >
+        {lang}
+        <CaretDown className={styles.langCaret} />
+      </button>
+
+      <ul className={`${styles.langMenu} ${open ? styles.langMenuOpen : ""}`}>
+        {LANGUAGES.map((code) => (
+          <li key={code}>
+            <button
+              type="button"
+              className={`${styles.langMenuItem} ${
+                lang === code ? styles.langMenuItemActive : ""
+              }`}
+              aria-pressed={lang === code}
+              tabIndex={open ? 0 : -1}
+              onClick={() => {
+                onPick(code);
+                setOpen(false);
+              }}
+            >
+              {code}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [panelOpen, setPanelOpen] = useState(false);
@@ -144,11 +212,7 @@ export default function Header() {
           </div>
 
           <div className={styles.colActions}>
-            <LangSwitch
-              lang={lang}
-              onPick={setLang}
-              className={styles.langSwitch}
-            />
+            <LangDropdown lang={lang} onPick={setLang} />
 
             <button
               type="button"
