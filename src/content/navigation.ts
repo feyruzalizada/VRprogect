@@ -9,6 +9,7 @@ export const mainNav: NavItem[] = [
   { label: "VR adaptiv hesablama", href: "#kalkulyator" },
   { label: "Üslub statistikası", href: "#uslub-statistikasi" },
   { label: "Xidmətlərimiz", href: "#" },
+  { label: "Tərəfdaşlarımız", href: "#partnyorlar" },
 ];
 
 export const sidePanel = {

@@ -21,7 +21,7 @@ html {
   scroll-margin-top: 92px;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   :target {
     scroll-margin-top: 76px;
   }

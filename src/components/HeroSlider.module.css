@@ -344,7 +344,7 @@
   color: transparent;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1280px) {
   .social {
     top: calc(50% + 38px);
   }
