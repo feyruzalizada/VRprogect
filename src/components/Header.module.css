@@ -474,13 +474,13 @@
 }
 
 @media (max-width: 1500px) {
-  /* seven long labels, so the row tightens before the mobile bar takes over */
+  /* eight long labels, so the row tightens before the mobile bar takes over */
   .navItem {
-    margin-right: 10px;
+    margin-right: 8px;
   }
 
   .navLink {
-    font-size: 12.5px;
+    font-size: 12px;
   }
 }
 

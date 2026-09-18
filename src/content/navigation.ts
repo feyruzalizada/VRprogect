@@ -11,6 +11,7 @@ export const mainNav: NavItem[] = [
   { label: "Xidmətlərimiz", href: "#" },
   { label: "Tərəfdaşlarımız", href: "#partnyorlar" },
   { label: "Faiz göstəricilərimiz", href: "#" },
+  { label: "Kontaktlar", href: "#" },
 ];
 
 export const sidePanel = {
