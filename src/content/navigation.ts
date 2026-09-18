@@ -5,12 +5,12 @@ export interface NavItem {
 
 export const mainNav: NavItem[] = [
   { label: "Ana səhifə", href: "/" },
-  { label: "VR standartları", href: "#kitab" },
+  { label: "VR standartlar", href: "#kitab" },
   { label: "VR adaptiv hesablama", href: "#kalkulyator" },
   { label: "Üslub statistikası", href: "#uslub-statistikasi" },
-  { label: "Xidmətlərimiz", href: "#xidmetler" },
-  { label: "Tərəfdaşlarımız", href: "#partnyorlar" },
-  { label: "Faiz göstəricilərimiz", href: "#faiz-gostericileri" },
+  { label: "Xidmətlər", href: "#xidmetler" },
+  { label: "Tərəfdaşlar", href: "#partnyorlar" },
+  { label: "Faiz göstəriciləri", href: "#faiz-gostericileri" },
   { label: "Kontaktlar", href: "#kontaktlar" },
 ];
 

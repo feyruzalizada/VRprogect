@@ -194,10 +194,7 @@ export default function Header() {
             <nav className={styles.nav} aria-label="Main">
               <ul className={styles.navList}>
                 {mainNav.map((item) => (
-                  <li
-                    key={item.label}
-                    className={`${styles.navItem} ${styles.navItemPlain}`}
-                  >
+                  <li key={item.label} className={styles.navItem}>
                     <Link
                       href={item.href}
                       className={styles.navLink}

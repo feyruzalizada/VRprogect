@@ -85,6 +85,8 @@
 
 .navList {
   display: flex;
+  /* grows with the window instead of stepping at breakpoints */
+  gap: clamp(14px, 2.4vw, 46px);
   height: 91px;
   margin: 0;
   padding: 0;
@@ -99,30 +101,20 @@
   display: flex;
   align-items: center;
   height: 91px;
-  margin-right: 18px;
-}
-
-.navItem:last-child {
-  margin-right: 0;
 }
 
 .navLink {
   display: flex;
   align-items: center;
   height: 91px;
-  padding-right: 17px;
   font-family: var(--font-display), sans-serif;
-  font-size: 14px;
+  font-size: clamp(12px, 0.88vw, 14px);
   text-transform: uppercase;
   color: #fff;
   background: none;
   border: none;
   cursor: pointer;
   transition: opacity 200ms ease;
-}
-
-.navItemPlain > .navLink {
-  padding-right: 0;
 }
 
 .navLink:hover,
@@ -566,17 +558,6 @@
   font-size: 15px;
   text-transform: uppercase;
   color: #fff;
-}
-
-@media (max-width: 1500px) {
-  /* eight long labels, so the row tightens before the mobile bar takes over */
-  .navItem {
-    margin-right: 8px;
-  }
-
-  .navLink {
-    font-size: 12px;
-  }
 }
 
 @media (max-width: 1360px) {
