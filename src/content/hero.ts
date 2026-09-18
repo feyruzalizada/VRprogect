@@ -171,9 +171,32 @@ export const heroCues: HeroCue[] = [
   },
 ];
 
-export const heroSocial = [
-  { label: "Youtube", href: "https://youtube.com/@vrprojectaz?si=MyBR-4mzQdGecUab" },
-  { label: "Tik Tok", href: "https://www.tiktok.com/@vrproject.az?_r=1&_t=ZS-99iislsgC0d" },
-  { label: "Facebook", href: "https://www.facebook.com/share/1dPk5xoG5L/?mibextid=wwXIfr" },
-  { label: "Instagram", href: "https://www.instagram.com/vrproject.az?stkn=MXVqM3Jrc2xlajJrZg%3D%3D&utm_source=qr" },
+export interface HeroSocialLink {
+  id: "youtube" | "tiktok" | "facebook" | "instagram";
+  href: string;
+  /** Tik Tok is written in two tones, the rest are one piece */
+  parts: string[];
+}
+
+export const heroSocial: HeroSocialLink[] = [
+  {
+    id: "youtube",
+    href: "https://youtube.com/@vrprojectaz?si=MyBR-4mzQdGecUab",
+    parts: ["Youtube"],
+  },
+  {
+    id: "tiktok",
+    href: "https://www.tiktok.com/@vrproject.az?_r=1&_t=ZS-99iislsgC0d",
+    parts: ["Tik", "Tok"],
+  },
+  {
+    id: "facebook",
+    href: "https://www.facebook.com/share/1dPk5xoG5L/?mibextid=wwXIfr",
+    parts: ["Facebook"],
+  },
+  {
+    id: "instagram",
+    href: "https://www.instagram.com/vrproject.az?stkn=MXVqM3Jrc2xlajJrZg%3D%3D&utm_source=qr",
+    parts: ["Instagram"],
+  },
 ];

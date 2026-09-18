@@ -290,6 +290,9 @@
 }
 
 .socialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   font-family: var(--font-display), sans-serif;
   font-weight: 400;
   font-size: 13px;
@@ -303,6 +306,41 @@
 
 .socialLink:hover {
   opacity: 0.6;
+}
+
+.socialIcon {
+  width: 18px;
+  height: 18px;
+  /* the column is turned on its side, the mark has to stand up again */
+  transform: rotate(180deg);
+  flex-shrink: 0;
+}
+
+.youtube span {
+  color: #ff0000;
+}
+
+.facebook span {
+  /* the blue of the supplied icon */
+  color: #3a559f;
+}
+
+.tiktok span:first-of-type {
+  color: #000;
+}
+
+.instagram span {
+  background: linear-gradient(
+    to bottom,
+    #ffd521,
+    #f50000,
+    #b900b4,
+    #7300c0,
+    #4c5fd7
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @media (max-width: 1240px) {
