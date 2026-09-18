@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import CalculatorWizard from "./CalculatorWizard";
-import Counters from "./Counters";
 import styles from "./Services.module.css";
 import { services } from "@/content/services";
 
@@ -49,10 +48,6 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
               <span className={styles.cardLink}>{services.linkLabel}</span>
             </button>
           ))}
-        </div>
-
-        <div className={styles.countersWrap}>
-          <Counters />
         </div>
       </div>
 
