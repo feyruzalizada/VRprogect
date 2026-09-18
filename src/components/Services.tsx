@@ -1,14 +1,8 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
-import CalculatorWizard from "./CalculatorWizard";
 import styles from "./Services.module.css";
 import { services } from "@/content/services";
 
 export default function Services({ id = "kalkulyator" }: { id?: string }) {
-  const [openCard, setOpenCard] = useState<string | null>(null);
-
   return (
     <section id={id} className={styles.section}>
       <span className={`${styles.line} ${styles.lineLeft}`} aria-hidden />
@@ -26,12 +20,7 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
 
         <div className={styles.grid}>
           {services.items.map((item) => (
-            <button
-              key={item.title}
-              type="button"
-              className={styles.card}
-              onClick={() => setOpenCard(item.title)}
-            >
+            <div key={item.title} className={styles.card}>
               <Image
                 src={item.icon}
                 alt=""
@@ -44,14 +33,10 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
               <h5 className={styles.cardTitle}>{item.title}</h5>
 
               <p className={styles.cardText}>{item.description}</p>
-            </button>
+            </div>
           ))}
         </div>
       </div>
-
-      {openCard && (
-        <CalculatorWizard title={openCard} onClose={() => setOpenCard(null)} />
-      )}
     </section>
   );
 }

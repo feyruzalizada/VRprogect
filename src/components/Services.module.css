@@ -95,8 +95,6 @@
   position: relative;
   display: block;
   width: 100%;
-  border: 0;
-  cursor: pointer;
   padding: 37px 40px;
   text-align: center;
   background-color: #fff;
@@ -208,9 +206,6 @@
   .card {
     padding: 30px 24px;
   }
-}
-
-@media (max-width: 767px) {
 }
 
 @media (max-width: 575px) {
