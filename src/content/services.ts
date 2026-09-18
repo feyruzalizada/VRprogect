@@ -22,11 +22,11 @@ export interface ServicesContent {
 }
 
 export const services: ServicesContent = {
-  eyebrow: "[ VR Adaptiv Hesablama Sistemi ]",
-  heading: "Sizə uyğun məkanı hesablayın",
-  taglineTop: "4 məqsəd • 4 pulsuz kalkulyator • fərdi ilkin nəticə",
+  eyebrow: "[ VR Global Group Xidmətləri ]",
+  heading: "Xidmətlərimiz",
+  taglineTop: "Layihə • icra • nəzarət — bir məsuliyyət altında",
   intro:
-    "Evinizi almadan, tikintiyə və ya təmirə başlamadan əvvəl məqsədinizə uyğun pulsuz VR kalkulyatorunu seçin. Ailə üzvlərinizin sayı, yaşı, boy göstəriciləri, fiziki imkanları və yaşayış tərzi əsasında tövsiyə olunan otaq sayını, sahə diapazonunu və adaptiv erqonomik ölçüləri ödənişsiz hesablayın.",
+    "Layihələndirmədən icraya, icradan audite qədər hər mərhələni VR standartları üzrə aparırıq. Ölçü otağa yox, insana görə seçilir; iş sənədlə təsdiqlənir; nəticə isə gözlə yox, rəqəmlə yoxlanılır.",
   items: [
     {
       icon: "/images/iconbox1.2.png",
