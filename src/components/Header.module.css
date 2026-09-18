@@ -480,6 +480,17 @@
   }
 }
 
+@media (max-width: 1320px) {
+  .navItem {
+    margin-right: 8px;
+  }
+
+  .navLink {
+    font-size: 12px;
+    letter-spacing: 0.2px;
+  }
+}
+
 @media (max-width: 1200px) {
   .header,
   .bar {
