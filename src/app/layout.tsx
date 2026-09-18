@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={`${display.variable} ${raleway.variable}`}>
+    <html lang="az" className={`${display.variable} ${raleway.variable}`}>
       <body>{children}</body>
     </html>
   );

@@ -279,7 +279,7 @@ export default function Header() {
         <ul className={styles.panelSocial}>
           {sidePanel.social.map((item) => (
             <li key={item.label}>
-              <a href={item.href} target="_blank" rel="noopener noreferrer">
+              <a href={item.href} target="_blank" rel="noopener noreferrer" lang="en">
                 {item.label}
               </a>
             </li>

@@ -206,6 +206,7 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
               className={`${styles.socialLink} ${styles[item.id]}`}
               target="_blank"
               rel="noopener noreferrer"
+              lang="en"
             >
               <SocialIcon id={item.id} />
               {item.parts.map((part) => (
