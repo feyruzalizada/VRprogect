@@ -42,4 +42,10 @@ export const progressItems: ProgressItem[] = [
     label: "Loft",
     description: "Açıq həcm, sərbəst plan. Şablondan uzaq, xarakterli.",
   },
+  {
+    id: "vrstayl",
+    percent: 10,
+    label: "VR Stayl",
+    description: "Ölçü standartdan çıxır, zövqdən yox. Erqonomika əvvəl, estetika sonra.",
+  },
 ];
