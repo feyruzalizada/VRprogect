@@ -56,6 +56,14 @@ export const services: ServicesContent = {
       title: "Təmir",
       description: "Təsdiqlənmiş layihə və mərhələ ardıcıllığı üzrə icra.",
     },
+    {
+      icon: "/images/iconbox4.png",
+      width: 64,
+      height: 70,
+      title: "Audit",
+      description:
+        "Layihə, smeta, material, proses və obyektin qiymətləndirilməsi.",
+    },
   ],
   counters: [
     { value: 800, label: "Tamamlanmış İş" },
