@@ -4,7 +4,6 @@ export interface ServiceItem {
   height: number;
   title: string;
   description: string;
-  href: string;
 }
 
 export interface ServiceCounter {
@@ -18,7 +17,6 @@ export interface ServicesContent {
   heading: string;
   taglineTop: string;
   intro: string;
-  linkLabel: string;
   items: ServiceItem[];
   counters: ServiceCounter[];
 }
@@ -29,15 +27,13 @@ export const services: ServicesContent = {
   taglineTop: "4 məqsəd • 4 pulsuz kalkulyator • fərdi ilkin nəticə",
   intro:
     "Evinizi almadan, tikintiyə və ya təmirə başlamadan əvvəl məqsədinizə uyğun pulsuz VR kalkulyatorunu seçin. Ailə üzvlərinizin sayı, yaşı, boy göstəriciləri, fiziki imkanları və yaşayış tərzi əsasında tövsiyə olunan otaq sayını, sahə diapazonunu və adaptiv erqonomik ölçüləri ödənişsiz hesablayın.",
-  linkLabel: "PULSUZ BAŞLA",
   items: [
     {
       icon: "/images/iconbox1.2.png",
       width: 74,
       height: 84,
-      title: "FƏRDİ EV TİKİRƏM",
+      title: "Dizayn",
       description: "Ailə profili, sahə bölgüsü və funksional planlaşdırma.",
-      href: "#",
     },
     {
       icon: "/images/iconbox2.png",
@@ -45,7 +41,6 @@ export const services: ServicesContent = {
       height: 70,
       title: "MƏNZİL ALIRAM",
       description: "Plan, işıqlanma, rahatlıq və ailəyə uyğunluq təhlili.",
-      href: "#",
     },
     {
       icon: "/images/iconbox4.png",
@@ -53,7 +48,6 @@ export const services: ServicesContent = {
       height: 70,
       title: "FƏRDİ EVİMİ TƏMİR EDİRƏM",
       description: "Mövcud vəziyyət, risklər və mərhələli fəaliyyət planı.",
-      href: "#",
     },
     {
       icon: "/images/iconbox5.png",
@@ -61,7 +55,6 @@ export const services: ServicesContent = {
       height: 70,
       title: "MƏNZİLİMİ TƏMİR EDİRƏM",
       description: "Təmir ardıcıllığı, təhlükəsizlik və ilkin yol xəritəsi.",
-      href: "#",
     },
   ],
   counters: [

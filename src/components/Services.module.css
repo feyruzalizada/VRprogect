@@ -149,15 +149,6 @@
   color: #a3a3a3;
 }
 
-.card:hover .cardLink {
-  color: #fff;
-  opacity: 0.9;
-}
-
-.card:hover .cardLink::before {
-  background-color: #505050;
-}
-
 .icon {
   width: auto;
   height: 84px;
@@ -184,37 +175,6 @@
   font-weight: 400;
   line-height: 30px;
   color: #1a1a1a;
-}
-
-.cardLink {
-  position: relative;
-  z-index: 0;
-  display: inline-block;
-  font-family: var(--font-display), sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: #1a1a1a;
-  transition: color 300ms linear, opacity 300ms linear;
-}
-
-.cardLink::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  left: -7px;
-  bottom: -3px;
-  width: 20px;
-  height: 12px;
-  background-color: #ddd;
-  transition: all 300ms linear;
-}
-
-.cardLink:hover::before {
-  width: calc(100% + 14px);
-  transition: width 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 @media (max-width: 1024px) {

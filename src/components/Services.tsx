@@ -44,8 +44,6 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
               <h5 className={styles.cardTitle}>{item.title}</h5>
 
               <p className={styles.cardText}>{item.description}</p>
-
-              <span className={styles.cardLink}>{services.linkLabel}</span>
             </button>
           ))}
         </div>
