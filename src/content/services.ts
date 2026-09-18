@@ -53,8 +53,8 @@ export const services: ServicesContent = {
       icon: "/images/iconbox5.png",
       width: 80,
       height: 70,
-      title: "MƏNZİLİMİ TƏMİR EDİRƏM",
-      description: "Təmir ardıcıllığı, təhlükəsizlik və ilkin yol xəritəsi.",
+      title: "Təmir",
+      description: "Təsdiqlənmiş layihə və mərhələ ardıcıllığı üzrə icra.",
     },
   ],
   counters: [
