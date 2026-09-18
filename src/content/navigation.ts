@@ -8,10 +8,10 @@ export const mainNav: NavItem[] = [
   { label: "VR standartları", href: "#kitab" },
   { label: "VR adaptiv hesablama", href: "#kalkulyator" },
   { label: "Üslub statistikası", href: "#uslub-statistikasi" },
-  { label: "Xidmətlərimiz", href: "#" },
+  { label: "Xidmətlərimiz", href: "#xidmetler" },
   { label: "Tərəfdaşlarımız", href: "#partnyorlar" },
-  { label: "Faiz göstəricilərimiz", href: "#" },
-  { label: "Kontaktlar", href: "#" },
+  { label: "Faiz göstəricilərimiz", href: "#faiz-gostericileri" },
+  { label: "Kontaktlar", href: "#kontaktlar" },
 ];
 
 export const sidePanel = {
