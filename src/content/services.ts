@@ -46,8 +46,8 @@ export const services: ServicesContent = {
       icon: "/images/iconbox4.png",
       width: 64,
       height: 70,
-      title: "FƏRDİ EVİMİ TƏMİR EDİRƏM",
-      description: "Mövcud vəziyyət, risklər və mərhələli fəaliyyət planı.",
+      title: "Tikinti",
+      description: "Fərdi, yaşayış və kommersiya obyektlərinin inşası.",
     },
     {
       icon: "/images/iconbox5.png",
