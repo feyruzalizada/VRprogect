@@ -44,8 +44,14 @@ export const progressItems: ProgressItem[] = [
   },
   {
     id: "vrstayl",
-    percent: 10,
+    percent: 5,
     label: "VR Stayl",
     description: "Ölçü standartdan çıxır, zövqdən yox. Erqonomika əvvəl, estetika sonra.",
+  },
+  {
+    id: "japandi",
+    percent: 5,
+    label: "Japandi",
+    description: "Yapon sadəliyi, Skandinav istiliyi. Təbii material, sakit rəng.",
   },
 ];
