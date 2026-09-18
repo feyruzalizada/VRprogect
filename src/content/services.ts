@@ -64,6 +64,13 @@ export const services: ServicesContent = {
       description:
         "Layihə, smeta, material, proses və obyektin qiymətləndirilməsi.",
     },
+    {
+      icon: "/images/iconbox2.png",
+      width: 81,
+      height: 70,
+      title: "Nəzarət",
+      description: "İcra, gizli iş, mərhələ qəbulu və düzəlişlərin idarəsi.",
+    },
   ],
   counters: [
     { value: 800, label: "Tamamlanmış İş" },
