@@ -86,7 +86,7 @@
   padding: 0;
   list-style: none;
   font-family: var(--font-display), sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 26.25px;
 }
 
@@ -95,7 +95,7 @@
   display: flex;
   align-items: center;
   height: 91px;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .navItem:last-child {
@@ -108,7 +108,7 @@
   height: 91px;
   padding-right: 17px;
   font-family: var(--font-display), sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   text-transform: uppercase;
   color: #fff;
   background: none;
@@ -469,18 +469,8 @@
   color: #fff;
 }
 
-@media (max-width: 1500px) {
-  /* six long labels, so the row tightens before the mobile bar takes over */
-  .navItem {
-    margin-right: 10px;
-  }
-
-  .navLink {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 1320px) {
+@media (max-width: 1440px) {
+  /* seven long labels, so the row tightens before the mobile bar takes over */
   .navItem {
     margin-right: 6px;
   }
@@ -491,7 +481,7 @@
   }
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1360px) {
   .header,
   .bar {
     height: 76px;

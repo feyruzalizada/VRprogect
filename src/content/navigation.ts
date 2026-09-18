@@ -10,6 +10,7 @@ export const mainNav: NavItem[] = [
   { label: "Üslub statistikası", href: "#uslub-statistikasi" },
   { label: "Xidmətlərimiz", href: "#" },
   { label: "Tərəfdaşlarımız", href: "#partnyorlar" },
+  { label: "Faiz göstəricilərimiz", href: "#" },
 ];
 
 export const sidePanel = {
