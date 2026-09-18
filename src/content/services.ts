@@ -71,6 +71,14 @@ export const services: ServicesContent = {
       title: "Nəzarət",
       description: "İcra, gizli iş, mərhələ qəbulu və düzəlişlərin idarəsi.",
     },
+    {
+      icon: "/images/iconbox5.png",
+      width: 80,
+      height: 70,
+      title: "Hüquqi-texniki müdafiə",
+      description:
+        "Qüsur və zərərin texniki sübuta, mediasiyaya və hüquqi müdafiəyə çevrilməsi.",
+    },
   ],
   counters: [
     { value: 800, label: "Tamamlanmış İş" },
