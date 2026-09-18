@@ -1,7 +1,5 @@
 export interface ServiceItem {
   icon: string;
-  width: number;
-  height: number;
   title: string;
   description: string;
 }
@@ -29,52 +27,38 @@ export const services: ServicesContent = {
     "Layihələndirmədən icraya, icradan audite qədər hər mərhələni VR standartları üzrə aparırıq. Ölçü otağa yox, insana görə seçilir; iş sənədlə təsdiqlənir; nəticə isə gözlə yox, rəqəmlə yoxlanılır.",
   items: [
     {
-      icon: "/images/iconbox1.2.png",
-      width: 74,
-      height: 84,
+      icon: "dizayn",
       title: "Dizayn",
       description: "İnsan mərkəzli, funksional və estetik məkan həlli.",
     },
     {
-      icon: "/images/iconbox2.png",
-      width: 81,
-      height: 70,
+      icon: "layihe",
       title: "Layihə",
       description: "Memarlıq, işçi, konstruktiv və mühəndislik sənədləri.",
     },
     {
-      icon: "/images/iconbox4.png",
-      width: 64,
-      height: 70,
+      icon: "tikinti",
       title: "Tikinti",
       description: "Fərdi, yaşayış və kommersiya obyektlərinin inşası.",
     },
     {
-      icon: "/images/iconbox5.png",
-      width: 80,
-      height: 70,
+      icon: "temir",
       title: "Təmir",
       description: "Təsdiqlənmiş layihə və mərhələ ardıcıllığı üzrə icra.",
     },
     {
-      icon: "/images/iconbox4.png",
-      width: 64,
-      height: 70,
+      icon: "audit",
       title: "Audit",
       description:
         "Layihə, smeta, material, proses və obyektin qiymətləndirilməsi.",
     },
     {
-      icon: "/images/iconbox2.png",
-      width: 81,
-      height: 70,
+      icon: "nezaret",
       title: "Nəzarət",
       description: "İcra, gizli iş, mərhələ qəbulu və düzəlişlərin idarəsi.",
     },
     {
-      icon: "/images/iconbox5.png",
-      width: 80,
-      height: 70,
+      icon: "mudafie",
       title: "Hüquqi-texniki müdafiə",
       description:
         "Qüsur və zərərin texniki sübuta, mediasiyaya və hüquqi müdafiəyə çevrilməsi.",

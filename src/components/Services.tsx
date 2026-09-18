@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ServiceIcon from "./ServiceIcons";
 import styles from "./Services.module.css";
 import { services } from "@/content/services";
 
@@ -21,14 +21,7 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
         <div className={styles.grid}>
           {services.items.map((item) => (
             <div key={item.title} className={styles.card}>
-              <Image
-                src={item.icon}
-                alt=""
-                width={item.width}
-                height={item.height}
-                loading="lazy"
-                className={styles.icon}
-              />
+              <ServiceIcon name={item.icon} />
 
               <h5 className={styles.cardTitle}>{item.title}</h5>
 

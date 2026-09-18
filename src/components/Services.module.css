@@ -136,7 +136,7 @@
 }
 
 .card:hover .icon {
-  filter: invert(1);
+  color: #fff;
 }
 
 .card:hover .cardTitle {
@@ -148,11 +148,11 @@
 }
 
 .icon {
-  width: auto;
-  height: 84px;
+  width: 72px;
+  height: 72px;
   margin-bottom: 17px;
-  object-fit: contain;
-  transition: filter 300ms linear;
+  color: #1a1a1a;
+  transition: color 300ms linear;
 }
 
 .cardTitle {
