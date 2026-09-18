@@ -326,23 +326,8 @@
   color: #3a559f;
 }
 
-.tiktok span:first-of-type {
-  color: #000;
-  /* a hairline of white so the black word survives a dark frame */
-  text-shadow:
-    0.5px 0 0 #fff,
-    -0.5px 0 0 #fff,
-    0 0.5px 0 #fff,
-    0 -0.5px 0 #fff,
-    0.5px 0.5px 0 #fff,
-    -0.5px 0.5px 0 #fff,
-    0.5px -0.5px 0 #fff,
-    -0.5px -0.5px 0 #fff;
-}
-
-.tiktok span:last-of-type {
-  /* the mirror of Tik: a hairline of black so the white word holds up on a
-     bright frame */
+.tiktok span {
+  /* a hairline of black so the white words hold up on a bright frame */
   text-shadow:
     0.5px 0 0 #000,
     -0.5px 0 0 #000,
