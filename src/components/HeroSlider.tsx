@@ -30,7 +30,7 @@ function TiktokIcon() {
       {/* the mark is one note printed three times: cyan behind, red in front */}
       <path fill="#25f4ee" d={TIKTOK_GLYPH} transform="translate(-1.1 1.1)" />
       <path fill="#fe2c55" d={TIKTOK_GLYPH} transform="translate(1.1 -1.1)" />
-      <path fill="#fff" d={TIKTOK_GLYPH} />
+      <path fill="#000" d={TIKTOK_GLYPH} />
     </svg>
   );
 }
