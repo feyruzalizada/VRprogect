@@ -1,7 +1,7 @@
+import AdaptiveCalc from "@/components/AdaptiveCalc";
 import Contacts from "@/components/Contacts";
 import Header from "@/components/Header";
 import HeroSlider from "@/components/HeroSlider";
-import OurServices from "@/components/OurServices";
 import PartnerStrip from "@/components/PartnerStrip";
 import PercentBand from "@/components/PercentBand";
 import ProgressStats from "@/components/ProgressStats";
@@ -17,9 +17,9 @@ export default function Home() {
         <HeroSlider />
         <QuoteBanner />
         <SideNavShowcase />
-        <Services />
+        <AdaptiveCalc />
         <ProgressStats />
-        <OurServices />
+        <Services id="xidmetler" />
         <PartnerStrip />
         <PercentBand />
         <Contacts />

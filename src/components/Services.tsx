@@ -49,11 +49,11 @@ function Counter({ counter }: { counter: ServiceCounter }) {
   );
 }
 
-export default function Services() {
+export default function Services({ id = "kalkulyator" }: { id?: string }) {
   const [openCard, setOpenCard] = useState<string | null>(null);
 
   return (
-    <section id="kalkulyator" className={styles.section}>
+    <section id={id} className={styles.section}>
       <span className={`${styles.line} ${styles.lineLeft}`} aria-hidden />
       <span className={`${styles.line} ${styles.lineRight}`} aria-hidden />
 

@@ -1,0 +1,29 @@
+/* empty for now, but holding the room the calculator block used to take */
+.section {
+  min-height: 1408px;
+  background-color: #fff;
+}
+
+@media (max-width: 991px) {
+  .section {
+    min-height: 1272px;
+  }
+}
+
+@media (max-width: 767px) {
+  .section {
+    min-height: 1362px;
+  }
+}
+
+@media (max-width: 575px) {
+  .section {
+    min-height: 1915px;
+  }
+}
+
+@media (max-width: 400px) {
+  .section {
+    min-height: 2229px;
+  }
+}
