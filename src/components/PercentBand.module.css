@@ -1,5 +1,8 @@
 .section {
+  display: flex;
+  align-items: center;
   min-height: 20vh;
   min-height: 20svh;
+  padding: 60px 0;
   background-color: #ececec;
 }
