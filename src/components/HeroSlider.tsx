@@ -203,15 +203,13 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
           <li key={item.id} className={styles.socialItem}>
             <a
               href={item.href}
-              className={`${styles.socialLink} ${styles[item.id]}`}
+              className={styles.socialLink}
               target="_blank"
               rel="noopener noreferrer"
               lang="en"
             >
               <SocialIcon id={item.id} />
-              {item.parts.map((part) => (
-                <span key={part}>{part}</span>
-              ))}
+              {item.label}
             </a>
           </li>
         ))}

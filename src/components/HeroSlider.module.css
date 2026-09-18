@@ -317,42 +317,6 @@
   flex-shrink: 0;
 }
 
-.youtube span {
-  color: #ff0000;
-}
-
-.facebook span {
-  /* the blue of the supplied icon */
-  color: #3a559f;
-}
-
-.tiktok span {
-  /* a hairline of black so the white words hold up on a bright frame */
-  text-shadow:
-    0.5px 0 0 #000,
-    -0.5px 0 0 #000,
-    0 0.5px 0 #000,
-    0 -0.5px 0 #000,
-    0.5px 0.5px 0 #000,
-    -0.5px 0.5px 0 #000,
-    0.5px -0.5px 0 #000,
-    -0.5px -0.5px 0 #000;
-}
-
-.instagram span {
-  background: linear-gradient(
-    to bottom,
-    #ffd521,
-    #f50000,
-    #b900b4,
-    #7300c0,
-    #4c5fd7
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
 @media (max-width: 1360px) {
   .social {
     top: calc(50% + 38px);

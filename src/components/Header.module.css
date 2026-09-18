@@ -222,13 +222,6 @@
   color: #fff;
 }
 
-.langSwitch {
-  display: flex;
-  align-items: center;
-  height: 41px;
-  margin-right: 30px;
-}
-
 .langOption {
   display: flex;
   align-items: center;
