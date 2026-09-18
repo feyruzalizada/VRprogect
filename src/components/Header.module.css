@@ -419,6 +419,19 @@
   letter-spacing: 1.2px;
 }
 
+.mobileLangSwitch {
+  display: flex;
+  align-items: center;
+}
+
+.mobileLangSwitch .langButton {
+  font-size: 13px;
+}
+
+.mobileLangSwitch .langDivider {
+  margin: 0 7px;
+}
+
 .mobileActions {
   display: flex;
   align-items: center;

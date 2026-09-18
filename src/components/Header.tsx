@@ -33,6 +33,38 @@ function CloseIcon() {
 
 const LANGUAGES = ["AZ", "EN", "RU"] as const;
 
+type Lang = (typeof LANGUAGES)[number];
+
+function LangSwitch({
+  lang,
+  onPick,
+  className,
+}: {
+  lang: Lang;
+  onPick: (code: Lang) => void;
+  className: string;
+}) {
+  return (
+    <div className={className} role="group" aria-label="Language">
+      {LANGUAGES.map((code, index) => (
+        <span key={code} className={styles.langOption}>
+          {index > 0 && <span className={styles.langDivider} aria-hidden />}
+          <button
+            type="button"
+            onClick={() => onPick(code)}
+            aria-pressed={lang === code}
+            className={`${styles.langButton} ${
+              lang === code ? styles.langButtonActive : ""
+            }`}
+          >
+            {code}
+          </button>
+        </span>
+      ))}
+    </div>
+  );
+}
+
 // the navbar only moves inside one page, so every item scrolls by hand and
 // leaves the address bar on "/" — a leftover #hash pulled the page back down
 function handleNavClick(event: React.MouseEvent, href: string) {
@@ -66,7 +98,7 @@ export default function Header() {
   const [panelOpen, setPanelOpen] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   // visual only — no locale routing yet
-  const [lang, setLang] = useState<(typeof LANGUAGES)[number]>("AZ");
+  const [lang, setLang] = useState<Lang>("AZ");
   const [stuck, setStuck] = useState(false);
 
   useEffect(() => {
@@ -112,27 +144,11 @@ export default function Header() {
           </div>
 
           <div className={styles.colActions}>
-            <div
+            <LangSwitch
+              lang={lang}
+              onPick={setLang}
               className={styles.langSwitch}
-              role="group"
-              aria-label="Language"
-            >
-              {LANGUAGES.map((code, index) => (
-                <span key={code} className={styles.langOption}>
-                  {index > 0 && <span className={styles.langDivider} aria-hidden />}
-                  <button
-                    type="button"
-                    onClick={() => setLang(code)}
-                    aria-pressed={lang === code}
-                    className={`${styles.langButton} ${
-                      lang === code ? styles.langButtonActive : ""
-                    }`}
-                  >
-                    {code}
-                  </button>
-                </span>
-              ))}
-            </div>
+            />
 
             <button
               type="button"
@@ -166,6 +182,12 @@ export default function Header() {
               <span>Group</span>
             </span>
           </Link>
+          <LangSwitch
+            lang={lang}
+            onPick={setLang}
+            className={styles.mobileLangSwitch}
+          />
+
           <div className={styles.mobileActions}>
             <button
               type="button"
