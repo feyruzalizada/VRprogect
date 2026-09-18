@@ -70,7 +70,7 @@ function Dial({ item }: { item: ProgressItem }) {
 
 export default function ProgressStats() {
   return (
-    <section className={styles.section}>
+    <section id="uslub-statistikasi" className={styles.section}>
       <div className={styles.container}>
         {progressItems.map((item) => (
           <Dial key={item.id} item={item} />
