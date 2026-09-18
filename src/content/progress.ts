@@ -31,6 +31,12 @@ export const progressItems: ProgressItem[] = [
     description: "Gözün dincəldiyi məkan. Yalnız lazım olan qalır.",
   },
   {
+    id: "postmodern",
+    percent: 5,
+    label: "Post modern",
+    description: "Qayda pozulur, amma bilərəkdən. Cəsur forma, gözlənilməz rəng.",
+  },
+  {
     id: "loft",
     percent: 10,
     label: "Loft",

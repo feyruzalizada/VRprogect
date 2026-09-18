@@ -9,13 +9,13 @@
   /* a row that does not fill up stays centred instead of hanging left */
   justify-content: center;
   gap: 40px 0;
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
 .item {
-  flex: 0 0 20%;
+  flex: 0 0 16.666%;
   padding: 0 15px;
   text-align: center;
 }
