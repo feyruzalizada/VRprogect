@@ -282,7 +282,7 @@
   list-style: none;
   /* opens up on a tall window, closes on a short one so the column always fits */
   gap: clamp(14px, 4vh, 44px);
-  transform: translateY(-50%);
+  transform: translateY(-60%);
 }
 
 .socialItem {
@@ -312,8 +312,8 @@
 .socialIcon {
   width: 18px;
   height: 18px;
-  /* the column is turned on its side, the mark has to stand up again */
-  transform: rotate(180deg);
+  /* lies on its side with the words, reading bottom to top */
+  transform: rotate(90deg);
   flex-shrink: 0;
 }
 
