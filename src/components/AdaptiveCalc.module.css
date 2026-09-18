@@ -1,29 +1,6 @@
-/* empty for now, but holding the room the calculator block takes */
+/* empty for now, holding the room until the block is built */
 .section {
-  min-height: 1253px;
+  min-height: 60vh;
+  min-height: 60svh;
   background-color: #fff;
-}
-
-@media (max-width: 991px) {
-  .section {
-    min-height: 1091px;
-  }
-}
-
-@media (max-width: 767px) {
-  .section {
-    min-height: 1181px;
-  }
-}
-
-@media (max-width: 575px) {
-  .section {
-    min-height: 1667px;
-  }
-}
-
-@media (max-width: 400px) {
-  .section {
-    min-height: 1959px;
-  }
 }
