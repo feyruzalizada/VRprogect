@@ -85,8 +85,6 @@
 
 .navList {
   display: flex;
-  /* grows with the window instead of stepping at breakpoints */
-  gap: clamp(14px, 2.4vw, 46px);
   height: 91px;
   margin: 0;
   padding: 0;
@@ -101,6 +99,11 @@
   display: flex;
   align-items: center;
   height: 91px;
+  margin-right: 22px;
+}
+
+.navItem:last-child {
+  margin-right: 0;
 }
 
 .navLink {
@@ -108,7 +111,7 @@
   align-items: center;
   height: 91px;
   font-family: var(--font-display), sans-serif;
-  font-size: clamp(12px, 0.88vw, 14px);
+  font-size: 14px;
   text-transform: uppercase;
   color: #fff;
   background: none;
@@ -558,6 +561,17 @@
   font-size: 15px;
   text-transform: uppercase;
   color: #fff;
+}
+
+@media (max-width: 1500px) {
+  /* eight labels, so the row tightens before the mobile bar takes over */
+  .navItem {
+    margin-right: 14px;
+  }
+
+  .navLink {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 1360px) {
