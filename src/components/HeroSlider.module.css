@@ -340,6 +340,20 @@
     -0.5px -0.5px 0 #fff;
 }
 
+.tiktok span:last-of-type {
+  /* the mirror of Tik: a hairline of black so the white word holds up on a
+     bright frame */
+  text-shadow:
+    0.5px 0 0 #000,
+    -0.5px 0 0 #000,
+    0 0.5px 0 #000,
+    0 -0.5px 0 #000,
+    0.5px 0.5px 0 #000,
+    -0.5px 0.5px 0 #000,
+    0.5px -0.5px 0 #000,
+    -0.5px -0.5px 0 #000;
+}
+
 .instagram span {
   background: linear-gradient(
     to bottom,
