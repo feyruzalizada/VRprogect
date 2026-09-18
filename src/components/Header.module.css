@@ -37,19 +37,23 @@
   height: 91px;
 }
 
+/* the side columns hug their contents and the menu takes whatever is left,
+   so the bar keeps its full width whatever the wordmark measures */
 .colLogo {
-  width: 19.962%;
+  flex: 0 0 auto;
   padding-left: 16px;
+  padding-right: 24px;
 }
 
 .colMenu {
-  width: 60.013%;
+  flex: 1 1 auto;
+  min-width: 0;
   display: flex;
   justify-content: center;
 }
 
 .colActions {
-  width: 20.013%;
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -86,7 +90,7 @@
   padding: 0;
   list-style: none;
   font-family: var(--font-display), sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   line-height: 26.25px;
 }
 
@@ -95,7 +99,7 @@
   display: flex;
   align-items: center;
   height: 91px;
-  margin-right: 10px;
+  margin-right: 18px;
 }
 
 .navItem:last-child {
@@ -108,7 +112,7 @@
   height: 91px;
   padding-right: 17px;
   font-family: var(--font-display), sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
   color: #fff;
   background: none;
@@ -469,15 +473,14 @@
   color: #fff;
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1500px) {
   /* seven long labels, so the row tightens before the mobile bar takes over */
   .navItem {
-    margin-right: 6px;
+    margin-right: 10px;
   }
 
   .navLink {
-    font-size: 11px;
-    letter-spacing: 0;
+    font-size: 12.5px;
   }
 }
 
