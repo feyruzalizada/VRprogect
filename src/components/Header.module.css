@@ -422,6 +422,8 @@
 .mobileLangSwitch {
   display: flex;
   align-items: center;
+  /* sits with the icons on the right, not stranded in the middle */
+  margin-right: 22px;
 }
 
 .mobileLangSwitch .langButton {

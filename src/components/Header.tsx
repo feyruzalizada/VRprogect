@@ -182,13 +182,12 @@ export default function Header() {
               <span>Group</span>
             </span>
           </Link>
-          <LangSwitch
-            lang={lang}
-            onPick={setLang}
-            className={styles.mobileLangSwitch}
-          />
-
           <div className={styles.mobileActions}>
+            <LangSwitch
+              lang={lang}
+              onPick={setLang}
+              className={styles.mobileLangSwitch}
+            />
             <button
               type="button"
               className={`${styles.action} ${styles.search}`}
