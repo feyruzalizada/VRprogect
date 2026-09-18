@@ -270,23 +270,24 @@
 .social {
   position: absolute;
   left: 0;
-  top: 50%;
+  /* the bar covers the top of the hero, so centre in what is left under it */
+  top: calc(50% + 46px);
   z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 90px;
   margin: 0;
   padding: 0;
   list-style: none;
+  /* opens up on a tall window, closes on a short one so the column always fits */
+  gap: clamp(14px, 4vh, 44px);
   transform: translateY(-50%);
 }
 
 .socialItem {
-  margin-bottom: 40px;
   writing-mode: vertical-rl;
   transform: rotate(-180deg);
-}
-
-.socialItem:last-child {
-  margin-bottom: 0;
 }
 
 .socialLink {
@@ -341,6 +342,24 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+@media (max-width: 1200px) {
+  .social {
+    top: calc(50% + 38px);
+  }
+}
+
+@media (max-height: 620px) {
+  .socialLink {
+    font-size: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .socialIcon {
+    width: 16px;
+    height: 16px;
+  }
 }
 
 @media (max-width: 1240px) {
