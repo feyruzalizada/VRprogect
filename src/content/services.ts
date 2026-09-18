@@ -33,14 +33,14 @@ export const services: ServicesContent = {
       width: 74,
       height: 84,
       title: "Dizayn",
-      description: "Ailə profili, sahə bölgüsü və funksional planlaşdırma.",
+      description: "İnsan mərkəzli, funksional və estetik məkan həlli.",
     },
     {
       icon: "/images/iconbox2.png",
       width: 81,
       height: 70,
-      title: "MƏNZİL ALIRAM",
-      description: "Plan, işıqlanma, rahatlıq və ailəyə uyğunluq təhlili.",
+      title: "Layihə",
+      description: "Memarlıq, işçi, konstruktiv və mühəndislik sənədləri.",
     },
     {
       icon: "/images/iconbox4.png",
