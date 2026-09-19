@@ -548,3 +548,60 @@
     top: 76px;
   }
 }
+
+@media (max-height: 760px) {
+  /* a short window made the panel scroll on its own, so it tightens instead */
+  .sidePanel {
+    padding: 34px 40px;
+  }
+
+  .panelBrand .brand {
+    font-size: 21px;
+    line-height: 18px;
+  }
+
+  .panelNav {
+    margin-top: 26px;
+  }
+
+  .panelNavList {
+    gap: 0;
+  }
+
+  .panelNavLink {
+    padding: 7px 0;
+    font-size: 15px;
+  }
+
+  .mobileMenu {
+    padding: 56px 30px 30px;
+  }
+
+  .mobileLink {
+    padding: 10px 0;
+  }
+}
+
+@media (max-height: 560px) {
+  .sidePanel {
+    padding: 24px 40px;
+  }
+
+  .panelNav {
+    margin-top: 18px;
+  }
+
+  .panelNavLink {
+    padding: 4px 0;
+    font-size: 14px;
+  }
+
+  .mobileMenu {
+    padding: 44px 30px 20px;
+  }
+
+  .mobileLink {
+    padding: 6px 0;
+    font-size: 14px;
+  }
+}
