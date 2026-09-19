@@ -19,6 +19,8 @@ export interface ServicesContent {
   counters: ServiceCounter[];
 }
 
+export const countersHeading = "Uğurlar";
+
 export const services: ServicesContent = {
   eyebrow: "[ VR Global Group Xidmətləri ]",
   heading: "Xidmətlərimiz",

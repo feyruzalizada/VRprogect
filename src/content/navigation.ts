@@ -10,6 +10,6 @@ export const mainNav: NavItem[] = [
   { label: "Üslub statistikası", href: "#uslub-statistikasi" },
   { label: "Xidmətlər", href: "#xidmetler" },
   { label: "Rəsmi tərəfdaşlar", href: "#partnyorlar" },
-  { label: "Faiz göstəriciləri", href: "#faiz-gostericileri" },
+  { label: "Uğurlar", href: "#ugurlar" },
   { label: "Kontaktlar", href: "#kontaktlar" },
 ];
