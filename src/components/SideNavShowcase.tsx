@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./SideNavShowcase.module.css";
-import { sideNav } from "@/content/sidenav";
+import { sideNav, type SideNavLink } from "@/content/sidenav";
 
 const SLIDE_MS = 7000;
 const PANEL_MS = 50000;
@@ -15,9 +15,30 @@ const blockStyle: Record<string, string> = {
   author: styles.panelAuthor,
 };
 
+function Panel({ link, open }: { link: SideNavLink; open: boolean }) {
+  return (
+    <div
+      id={link.id}
+      className={`${styles.panel} ${open ? styles.panelOpen : ""}`}
+      aria-hidden={!open}
+    >
+      <h3 className={styles.panelTitle}>{link.label}</h3>
+      {link.body.map((block) => (
+        <p
+          key={block.text}
+          className={`${styles.panelText} ${blockStyle[block.kind] ?? ""}`}
+        >
+          {block.text}
+        </p>
+      ))}
+    </div>
+  );
+}
+
 export default function SideNavShowcase() {
   const [active, setActive] = useState(0);
   const [openId, setOpenId] = useState<string | null>(null);
+  const introOpen = openId === sideNav.intro.id;
 
   useEffect(() => {
     const id = setInterval(
@@ -36,7 +57,21 @@ export default function SideNavShowcase() {
   return (
     <section id="kitab" className={styles.section}>
       <aside className={styles.aside}>
-        <h2 className={styles.asideTitle}>{sideNav.asideTitle}</h2>
+        <div className={styles.intro}>
+          <h2 className={styles.asideTitle}>
+            <button
+              type="button"
+              className={`${styles.asideTitleButton} ${introOpen ? styles.navCurrent : ""}`}
+              aria-expanded={introOpen}
+              aria-controls={sideNav.intro.id}
+              onClick={() => setOpenId(introOpen ? null : sideNav.intro.id)}
+            >
+              {sideNav.intro.label}
+            </button>
+          </h2>
+
+          <Panel link={sideNav.intro} open={introOpen} />
+        </div>
 
         <nav className={styles.nav} aria-label="Showcase">
           <ul className={styles.navList}>
@@ -55,21 +90,7 @@ export default function SideNavShowcase() {
                     {link.label}
                   </button>
 
-                  <div
-                    id={link.id}
-                    className={`${styles.panel} ${isOpen ? styles.panelOpen : ""}`}
-                    aria-hidden={!isOpen}
-                  >
-                    <h3 className={styles.panelTitle}>{link.label}</h3>
-                    {link.body.map((block) => (
-                      <p
-                        key={block.text}
-                        className={`${styles.panelText} ${blockStyle[block.kind] ?? ""}`}
-                      >
-                        {block.text}
-                      </p>
-                    ))}
-                  </div>
+                  <Panel link={link} open={isOpen} />
                 </li>
               );
             })}
