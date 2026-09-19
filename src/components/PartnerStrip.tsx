@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./PartnerStrip.module.css";
-import { partners } from "@/content/partners";
+import { partners, partnersHeading } from "@/content/partners";
 
 export default function PartnerStrip() {
   // the list is rendered twice so the track can loop without a jump
@@ -8,6 +8,8 @@ export default function PartnerStrip() {
 
   return (
     <section id="partnyorlar" className={styles.section} aria-label="Partners">
+      <h2 className={styles.heading}>{partnersHeading}</h2>
+
       <div className={styles.viewport}>
         <div className={styles.track}>
           {loop.map((partner, index) => (

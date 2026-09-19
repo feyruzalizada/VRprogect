@@ -3,6 +3,8 @@ export interface Partner {
   name: string;
 }
 
+export const partnersHeading = "Rəsmi tərəfdaşlar";
+
 export const partners: Partner[] = [
   { logo: "/images/partners/kafkas.png", name: "Kafkas" },
   { logo: "/images/partners/hansgrohe.png", name: "hansgrohe" },

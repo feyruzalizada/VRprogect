@@ -83,13 +83,18 @@ function handleNavClick(event: React.MouseEvent, href: string) {
   } else if (href.length > 1) {
     const target = document.querySelector(href);
     if (!target) return;
-    // the bar turns fixed once the page moves, so stop that much short of the
-    // section or its first rows sit under it
+
+    const box = target.getBoundingClientRect();
+    const docTop = box.top + window.scrollY;
+    // the bar turns fixed once the page moves, so a tall section stops that
+    // much short of it; a short one is parked in the middle of the screen
     const bar = document.querySelector("header");
-    const top =
-      target.getBoundingClientRect().top +
-      window.scrollY -
-      (bar?.offsetHeight ?? 0);
+    const barHeight = bar?.offsetHeight ?? 0;
+    const short = box.height < window.innerHeight * 0.6;
+    const top = short
+      ? docTop - (window.innerHeight - box.height) / 2
+      : docTop - barHeight;
+
     window.scrollTo({ top: Math.max(top, 0), behavior: "smooth" });
   } else {
     return;

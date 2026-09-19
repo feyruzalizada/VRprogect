@@ -1,5 +1,18 @@
 .section {
+  padding-top: 54px;
   background-color: #0a0a0a;
+}
+
+.heading {
+  margin: 0 0 6px;
+  font-family: var(--font-display), sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 1.4px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #a3a3a3;
 }
 
 .viewport {
@@ -63,6 +76,15 @@
 }
 
 @media (max-width: 575px) {
+  .section {
+    padding-top: 40px;
+  }
+
+  .heading {
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
   .item {
     flex-basis: 80px;
     height: 110px;
