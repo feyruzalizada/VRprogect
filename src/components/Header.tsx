@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import styles from "./Header.module.css";
-import { mainNav, sidePanel } from "@/content/navigation";
+import { mainNav } from "@/content/navigation";
 
 function CaretDown({ className }: { className?: string }) {
   return (
@@ -321,14 +320,6 @@ export default function Header() {
         </button>
 
         <div className={styles.panelBrand}>
-          <Image
-            src={sidePanel.logo}
-            alt=""
-            width={216}
-            height={217}
-            className={styles.panelLogo}
-            unoptimized
-          />
           <span className={styles.brand}>
             <span>VR</span>
             <span>Global</span>
@@ -336,37 +327,26 @@ export default function Header() {
           </span>
         </div>
 
-        <h2 className={styles.panelHeading}>{sidePanel.galleryTitle}</h2>
-        <ul className={styles.panelGallery}>
-          {sidePanel.gallery.map((src) => (
-            <li key={src}>
-              <Image src={src} alt="" width={150} height={150} />
-            </li>
-          ))}
-        </ul>
+        <nav className={styles.panelNav} aria-label="Panel">
+          <ul className={styles.panelNavList}>
+            {mainNav.map((item) => (
+              <li key={item.label}>
+                <a
+                  href={item.href}
+                  className={styles.panelNavLink}
+                  tabIndex={panelOpen ? 0 : -1}
+                  onClick={(e) => {
+                    setPanelOpen(false);
+                    handleNavClick(e, item.href);
+                  }}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-        <h2 className={styles.panelHeading}>{sidePanel.contactTitle}</h2>
-        <ul className={styles.panelInfo}>
-          <li>{sidePanel.address}</li>
-          <li>
-            <a href={`mailto:${sidePanel.email}`}>{sidePanel.email}</a>
-          </li>
-          <li>
-            <a href={`tel:${sidePanel.phone.replace(/\s/g, "")}`}>
-              {sidePanel.phone}
-            </a>
-          </li>
-        </ul>
-
-        <ul className={styles.panelSocial}>
-          {sidePanel.social.map((item) => (
-            <li key={item.label}>
-              <a href={item.href} target="_blank" rel="noopener noreferrer" lang="en">
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
       </aside>
 
       <nav
