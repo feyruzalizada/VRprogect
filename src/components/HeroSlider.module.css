@@ -97,18 +97,14 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* the bottom padding is the room the watermark needs underneath */
-  padding: 0 24px clamp(140px, 22vh, 300px);
+  padding: 0 24px;
   text-align: center;
 }
 
 .watermark {
-  position: absolute;
-  left: 50%;
-  /* parked below the text block instead of behind it */
-  bottom: clamp(20px, 5vh, 70px);
-  transform: translateX(-50%);
+  /* sits in the column between the heading and the description */
   display: flex;
+  margin-top: clamp(16px, 3vh, 44px);
   justify-content: center;
   font-family: var(--font-display), sans-serif;
   font-weight: 900;
@@ -116,7 +112,7 @@
   line-height: 1;
   letter-spacing: clamp(16px, 5.5vw, 100px);
   /* offsets the trailing letter-spacing */
-  margin-left: clamp(8px, 2.75vw, 50px);
+  padding-left: clamp(16px, 5.5vw, 100px);
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
@@ -167,7 +163,7 @@
   position: relative;
   z-index: 5;
   max-width: 818px;
-  margin: 55px 0 0;
+  margin: clamp(20px, 3.4vh, 48px) 0 0;
   font-family: var(--font-raleway), sans-serif;
   font-weight: 400;
   font-size: clamp(15px, 1.15vw, 18px);
@@ -340,12 +336,6 @@
 @media (max-width: 1240px) {
   .button {
     padding: 12px 30px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .layers {
-    padding-bottom: 0;
   }
 }
 

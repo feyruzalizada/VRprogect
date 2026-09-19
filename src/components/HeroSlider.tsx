@@ -189,8 +189,8 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
         className={`${styles.layers} ${leaving ? styles.leaving : ""}`}
         key={current.id}
       >
-        <Watermark word={current.watermark} />
         <h1 className={styles.title}>{current.title}</h1>
+        <Watermark word={current.watermark} />
         <p className={styles.description}>{current.description}</p>
         <p className={styles.trust}>{current.trust}</p>
       </div>
