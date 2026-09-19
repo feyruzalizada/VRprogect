@@ -75,6 +75,24 @@
   }
 }
 
+@media (min-width: 1600px) {
+  .item {
+    flex-basis: 160px;
+    height: 190px;
+    margin-right: 150px;
+  }
+
+  .logo {
+    max-height: 72px;
+  }
+
+  /* the track got longer, so the duration grows with it and the strip keeps
+     travelling at the same 140px a second */
+  .track {
+    animation-duration: 31s;
+  }
+}
+
 @media (max-width: 991px) {
   .item {
     flex-basis: 100px;
