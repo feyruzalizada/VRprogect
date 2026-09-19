@@ -5,6 +5,11 @@ export interface ProgressItem {
   description: string;
 }
 
+export const progressHeading = {
+  eyebrow: "[ VR Üslub Təsnifatı ]",
+  title: "Üslub statistikası",
+};
+
 export const progressItems: ProgressItem[] = [
   {
     id: "modern",

@@ -2,7 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import styles from "./ProgressStats.module.css";
-import { progressItems, type ProgressItem } from "@/content/progress";
+import {
+  progressHeading,
+  progressItems,
+  type ProgressItem,
+} from "@/content/progress";
 
 const SIZE = 165;
 const STROKE = 2;
@@ -71,6 +75,12 @@ function Dial({ item }: { item: ProgressItem }) {
 export default function ProgressStats() {
   return (
     <section id="uslub-statistikasi" className={styles.section}>
+      <div className={styles.heading}>
+        <span className={styles.eyebrow}>{progressHeading.eyebrow}</span>
+        <h2 className={styles.title}>{progressHeading.title}</h2>
+        <span className={styles.dots} aria-hidden />
+      </div>
+
       <div className={styles.container}>
         {progressItems.map((item) => (
           <Dial key={item.id} item={item} />
