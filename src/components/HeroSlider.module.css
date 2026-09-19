@@ -70,22 +70,18 @@
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(
-    180deg,
-    rgba(26, 26, 26, 0.45) 0%,
-    rgba(26, 26, 26, 0.25) 45%,
-    rgba(26, 26, 26, 0.55) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(26, 26, 26, 0.45) 0%,
+      rgba(26, 26, 26, 0.25) 45%,
+      rgba(26, 26, 26, 0.55) 100%);
 }
 
 @media (max-width: 1024px) {
   .scrim {
-    background: linear-gradient(
-      180deg,
-      rgba(26, 26, 26, 0.55) 0%,
-      rgba(26, 26, 26, 0.4) 45%,
-      rgba(26, 26, 26, 0.65) 100%
-    );
+    background: linear-gradient(180deg,
+        rgba(26, 26, 26, 0.55) 0%,
+        rgba(26, 26, 26, 0.4) 45%,
+        rgba(26, 26, 26, 0.65) 100%);
   }
 }
 
@@ -238,6 +234,7 @@
     opacity: 1;
     transform: translateY(0);
   }
+
   to {
     opacity: 0;
     transform: translateY(50px);
@@ -249,6 +246,7 @@
     opacity: 1;
     transform: translateY(0) rotateZ(0deg);
   }
+
   to {
     opacity: 0;
     transform: translateY(100%) rotateZ(-35deg);
@@ -354,8 +352,40 @@
 }
 
 @media (max-width: 767px) {
+
+  .hero {
+    min-height: 480px;
+  }
+
+
   .social {
-    display: none;
+    left: 0;
+    right: 0;
+    top: auto;
+    bottom: 26px;
+    flex-direction: row;
+    justify-content: center;
+    width: auto;
+    gap: 20px;
+    transform: none;
+  }
+
+  .socialItem {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+
+  .socialLink {
+    gap: 7px;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+  }
+
+  .socialIcon {
+    width: 16px;
+    height: 16px;
+    transform: none;
   }
 
   .description {
@@ -380,6 +410,31 @@
 }
 
 @media (max-width: 575px) {
+
+  /* four words never fit on one line here, so only the marks stay —
+     clipped rather than removed, so the link keeps its name */
+  .socialLabel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .social {
+    gap: 26px;
+  }
+
+  .socialLink {
+    gap: 0;
+  }
+
+  .socialIcon {
+    width: 20px;
+    height: 20px;
+  }
+
   .description {
     font-size: 15px;
     line-height: 24px;

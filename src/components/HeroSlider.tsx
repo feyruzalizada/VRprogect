@@ -132,7 +132,7 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
     const video = videoRef.current;
     if (!video) return;
 
-    const start = () => video.play().catch(() => {});
+    const start = () => video.play().catch(() => { });
 
     // Safari plays HLS natively, everything else needs hls.js
     if (video.canPlayType("application/vnd.apple.mpegurl")) {
@@ -172,7 +172,7 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) video.play().catch(() => {});
+        if (entry.isIntersecting) video.play().catch(() => { });
         else video.pause();
       },
       { threshold: 0.1 },
@@ -236,7 +236,7 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
               lang="en"
             >
               <SocialIcon id={item.id} />
-              {item.label}
+              <span className={styles.socialLabel}>{item.label}</span>
             </a>
           </li>
         ))}
