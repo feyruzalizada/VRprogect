@@ -16,15 +16,21 @@ html {
   scroll-behavior: smooth;
 }
 
-/* only for /#section links opened from outside — in-page clicks offset in JS */
-:target {
-  scroll-margin-top: 92px;
+/* the bar's own height, shared with everything that has to clear it; the width
+   it changes at lives in Header.module.css, where the bar actually collapses */
+:root {
+  --bar-height: 92px;
 }
 
 @media (max-width: 1360px) {
-  :target {
-    scroll-margin-top: 76px;
+  :root {
+    --bar-height: 76px;
   }
+}
+
+/* only for /#section links opened from outside — in-page clicks offset in JS */
+:target {
+  scroll-margin-top: var(--bar-height);
 }
 
 body {

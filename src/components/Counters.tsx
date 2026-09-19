@@ -19,6 +19,12 @@ function Counter({ counter }: { counter: ServiceCounter }) {
         if (!entry.isIntersecting) return;
         observer.disconnect();
 
+        // someone who asked for less motion gets the final number straight away
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          setValue(counter.value);
+          return;
+        }
+
         const start = performance.now();
         const step = (now: number) => {
           const progress = Math.min((now - start) / COUNT_MS, 1);

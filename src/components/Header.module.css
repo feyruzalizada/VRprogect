@@ -2,7 +2,7 @@
   position: absolute;
   inset: 0 0 auto;
   z-index: 999;
-  height: 92px;
+  height: var(--bar-height);
   /* the bar is laid out against the viewport, so it takes the same amount back
      when the scrollbar is hidden */
   padding-right: var(--scroll-lock, 0px);
@@ -30,7 +30,7 @@
 }
 
 .bar {
-  height: 92px;
+  height: var(--bar-height);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -530,12 +530,8 @@
   }
 }
 
+/* the one place the bar collapses; globals.css reads the height from here */
 @media (max-width: 1360px) {
-  .header,
-  .bar {
-    height: 76px;
-  }
-
   .desktopBar {
     display: none;
   }

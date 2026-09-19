@@ -81,7 +81,15 @@ function SocialIcon({ id }: { id: string }) {
 
 function cueAt(cues: HeroCue[], time: number) {
   const index = cues.findIndex((cue) => time >= cue.from && time < cue.to);
-  return index === -1 ? 0 : index;
+  if (index !== -1) return index;
+
+  // a re-cut clip can run past the last cue; hold the nearest one behind the
+  // playhead instead of snapping back to the first
+  let fallback = 0;
+  cues.forEach((cue, i) => {
+    if (time >= cue.from) fallback = i;
+  });
+  return fallback;
 }
 
 function Watermark({ word }: { word: string }) {
@@ -154,6 +162,24 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
       cancelled = true;
       hls?.destroy();
     };
+  }, []);
+
+  // no reason to keep streaming a clip nobody can see
+  useEffect(() => {
+    const video = videoRef.current;
+    const section = video?.closest("section");
+    if (!video || !section) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      },
+      { threshold: 0.1 },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
   }, []);
 
   const onTime = useCallback(() => {

@@ -14,10 +14,33 @@ const raleway = Raleway({
   display: "swap",
 });
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://vr-project-umber.vercel.app";
+
+const title = "VR Global Group";
+const description =
+  "We create architectural and creative solutions to help people realize their vision and make them a reality.";
+
 export const metadata: Metadata = {
-  title: "VR Global Group",
-  description:
-    "We create architectural and creative solutions to help people realize their vision and make them a reality.",
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    locale: "az_AZ",
+    url: "/",
+    siteName: title,
+    title,
+    description,
+    images: [{ url: "/images/hero-poster.jpg", width: 1920, height: 1080 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/images/hero-poster.jpg"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

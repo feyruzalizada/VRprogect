@@ -27,6 +27,12 @@ function Dial({ item }: { item: ProgressItem }) {
         if (!entry.isIntersecting) return;
         observer.disconnect();
 
+        // someone who asked for less motion gets the finished dial, not the fill
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          setValue(item.percent);
+          return;
+        }
+
         const start = performance.now();
         const step = (now: number) => {
           const progress = Math.min((now - start) / FILL_MS, 1);

@@ -199,3 +199,22 @@ export const heroSocial: HeroSocialLink[] = [
     label: "Instagram",
   },
 ];
+
+/**
+ * The cues are timed against the cut in `public/stream`. Re-cutting the clip
+ * moves every boundary, so this catches gaps, overlaps and a wrong order while
+ * developing rather than on the live page.
+ */
+if (process.env.NODE_ENV !== "production") {
+  heroCues.forEach((cue, i) => {
+    const previous = heroCues[i - 1];
+    if (cue.to <= cue.from) {
+      console.warn(`hero cue ${cue.id}: "to" is not after "from"`);
+    }
+    if (previous && cue.from !== previous.to) {
+      console.warn(
+        `hero cue ${cue.id}: starts at ${cue.from}s but ${previous.id} ends at ${previous.to}s`,
+      );
+    }
+  });
+}
