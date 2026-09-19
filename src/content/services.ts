@@ -22,7 +22,7 @@ export interface ServicesContent {
 export const countersHeading = "Uğurlar";
 
 export const services: ServicesContent = {
-  eyebrow: "[ VR Global Group Xidmətləri ]",
+  eyebrow: "[ VRPROJECT ]",
   heading: "Xidmətlərimiz",
   taglineTop: "Layihə • icra • nəzarət — bir məsuliyyət altında",
   intro:
@@ -31,39 +31,39 @@ export const services: ServicesContent = {
     {
       icon: "dizayn",
       title: "Dizayn",
-      description: "İnsan mərkəzli, funksional və estetik məkan həlli.",
+      description: "VR standartları ilə, muasirlik və zövq.",
     },
     {
       icon: "layihe",
       title: "Layihə",
-      description: "Memarlıq, işçi, konstruktiv və mühəndislik sənədləri.",
+      description: "Hər detal hesablanır, hər qərar layihə ilə əsaslandırılır.",
     },
     {
       icon: "tikinti",
       title: "Tikinti",
-      description: "Fərdi, yaşayış və kommersiya obyektlərinin inşası.",
+      description: "Layihədən təhvilə — hər mərhələ vahid standartla idarə olunur.",
     },
     {
       icon: "temir",
       title: "Təmir",
-      description: "Təsdiqlənmiş layihə və mərhələ ardıcıllığı üzrə icra.",
+      description: "Layihədən icraya, nəzarətdən auditə tam təhvil..",
     },
     {
       icon: "audit",
       title: "Audit",
       description:
-        "Layihə, smeta, material, proses və obyektin qiymətləndirilməsi.",
+        "Riskləri əvvəlcədən görün. Qərar ekspert, rəyi akt.",
     },
     {
       icon: "nezaret",
       title: "Nəzarət",
-      description: "İcra, gizli iş, mərhələ qəbulu və düzəlişlərin idarəsi.",
+      description: "Qüsurların aşkarlanması, yerində həlli, ustaya nəzarət.",
     },
     {
       icon: "mudafie",
       title: "Hüquqi-texniki müdafiə",
       description:
-        "Qüsur və zərərin texniki sübuta, mediasiyaya və hüquqi müdafiəyə çevrilməsi.",
+        "Şəffaf rəy, sənədləşdirilmiş nəticə və əsaslandırılmış qərar.",
     },
   ],
   counters: [

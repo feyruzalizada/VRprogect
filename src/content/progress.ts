@@ -6,7 +6,7 @@ export interface ProgressItem {
 }
 
 export const progressHeading = {
-  eyebrow: "[ VR Üslub Təsnifatı ]",
+  eyebrow: "[ Sifariş Üzrə Üslub Təsnifatı ]",
   title: "Üslub statistikası",
 };
 
