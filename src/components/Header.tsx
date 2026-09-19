@@ -168,6 +168,18 @@ export default function Header() {
   const [lang, setLang] = useState<Lang>("AZ");
   const [stuck, setStuck] = useState(false);
 
+  // an open panel used to leave the page scrolling behind it
+  useEffect(() => {
+    if (!panelOpen && !mobileOpen) return;
+
+    const root = document.documentElement;
+    const previous = root.style.overflow;
+    root.style.overflow = "hidden";
+    return () => {
+      root.style.overflow = previous;
+    };
+  }, [panelOpen, mobileOpen]);
+
   useEffect(() => {
     const onScroll = () => setStuck(window.scrollY > 120);
     onScroll();
