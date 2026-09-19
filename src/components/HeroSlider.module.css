@@ -97,15 +97,17 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 0 24px;
+  /* the bottom padding is the room the watermark needs underneath */
+  padding: 0 24px clamp(140px, 22vh, 300px);
   text-align: center;
 }
 
 .watermark {
   position: absolute;
   left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) translateY(-63px);
+  /* parked below the text block instead of behind it */
+  bottom: clamp(20px, 5vh, 70px);
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
   font-family: var(--font-display), sans-serif;
@@ -338,6 +340,12 @@
 @media (max-width: 1240px) {
   .button {
     padding: 12px 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .layers {
+    padding-bottom: 0;
   }
 }
 
