@@ -68,6 +68,6 @@ export const services: ServicesContent = {
     { value: 800, label: "Tamamlanmış İş" },
     { value: 24, suffix: " il", label: "Təcrübə" },
     { value: 32, label: "Tərəfdaş" },
-    { value: 95, suffix: "%", label: "Müşdərİ məmnunİyyətİ" },
+    { value: 95, suffix: "%", label: "Müştəri məmnuniyyəti" },
   ],
 };

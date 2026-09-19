@@ -129,7 +129,7 @@ export const sideNav: SideNavContent = {
       ],
     },
   ],
-  slides: ["/images/slideshow1-home6.jpg", "/images/slideshow2-home6.jpg"],
+  slides: ["/images/showcase-1.jpg", "/images/showcase-2.jpg"],
   mark: "/images/vr_logo.png",
   heading: ["VR STANDARTLARI 2026"],
   subtitle: "VR Adaptiv Erqonomik Ölçü Sistemi",

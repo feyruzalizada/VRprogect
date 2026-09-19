@@ -105,17 +105,14 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [active, setActive] = useState(0);
   const [shown, setShown] = useState(0);
-  const [leaving, setLeaving] = useState(false);
   const current = cues[shown];
+  // the old cue is on its way out for as long as the two indexes disagree
+  const leaving = active !== shown;
 
-  // hold the old cue on screen while it animates out, then swap
+  // hold it on screen while it animates out, then swap
   useEffect(() => {
     if (active === shown) return;
-    setLeaving(true);
-    const timer = setTimeout(() => {
-      setShown(active);
-      setLeaving(false);
-    }, EXIT_MS);
+    const timer = setTimeout(() => setShown(active), EXIT_MS);
     return () => clearTimeout(timer);
   }, [active, shown]);
 

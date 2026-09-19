@@ -3,19 +3,10 @@ import styles from "./QuoteBanner.module.css";
 import { quoteBanner } from "@/content/quote";
 
 export default function QuoteBanner() {
-  const { motto, quote, author, background } = quoteBanner;
+  const { motto, quote, author } = quoteBanner;
 
   return (
     <section className={styles.section}>
-      <Image
-        src={background}
-        alt=""
-        fill
-        sizes="100vw"
-        loading="lazy"
-        className={styles.background}
-      />
-
       <div className={styles.container}>
         <figure className={styles.figure}>
           <blockquote className={styles.quote}>

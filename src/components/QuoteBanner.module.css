@@ -2,13 +2,19 @@
   position: relative;
   padding: 90px 0;
   background-color: #1a1a1a;
+  /* the faint blueprint grid is drawn here instead of shipping a texture */
+  background-image:
+    repeating-linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.04) 0 1px,
+      transparent 1px 78px
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.04) 0 1px,
+      transparent 1px 78px
+    );
   overflow: hidden;
-}
-
-.background {
-  object-fit: cover;
-  object-position: center;
-  z-index: 0;
 }
 
 .container {
