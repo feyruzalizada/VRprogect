@@ -128,6 +128,17 @@ export const sideNav: SideNavContent = {
         { kind: "quote", text: "“Sübut yaradıcılığı məhdudlaşdırmır; onu real və davamlı keyfiyyətə çevirir.”" },
       ],
     },
+    {
+      id: "panel-9",
+      label: "KİTAB HAQQINDA",
+      body: [
+        { kind: "p", text: "VR Standartları 2026 — VR Adaptiv Erqonomik Ölçü Sistemi yaşayış və digər daxili məkanların insanın real ehtiyaclarına uyğun planlaşdırılması, layihələndirilməsi, icrası və yoxlanılması üçün hazırlanmış metodoloji dərslikdir. Kitab mənzil alan və ya şəxsi ev inşaa etmək istəyən vətəndaşa düzgün məkan seçimini anlamaqda, dizayner və memara istifadəçi ehtiyacını layihə qərarına çevirməkdə, mühəndis və icraçıya isə həmin qərarın təhlükəsiz, ölçülə bilən və icraolunan olmasını yoxlamaqda kömək edir." },
+        { kind: "p", text: "Metodologiyanın əsas xətti bir ölçünü bütün insanlara tətbiq etmək deyil. Baza göstəricisi istifadəçinin antropometrik və funksional xüsusiyyətləri, otağın təyinatı, istifadə tezliyi, təhlükəsizlik, əlçatanlıq, mühəndis sistemləri və real fəaliyyət sınağı ilə birlikdə qiymətləndirilir. Kitabda interyer ölçüləri, ailə və otaq proqramı, işıqlandırma, daxili hava keyfiyyəti, isitmə və soyutma, material sənədləri, risklərin idarə edilməsi, gizli işlərin auditi, təhvil-təslim və tədrisə inteqrasiya vahid metodoloji ardıcıllıqda təqdim olunur." },
+        { kind: "p", text: "Azərbaycanın qüvvədə olan tələbləri, beynəlxalq və xarici ölkə təcrübəsi, istehsalçı məlumatları və müəllifin VR göstəriciləri eyni hüquqi statusda göstərilmir. Kitab rəsmi dövlət və ya beynəlxalq standartı əvəz etmir; onun məqsədi mənbənin statusunu, layihə qərarını, ölçməni, real istifadəni və audit sübutunu birləşdirən aydın qərar sistemi yaratmaqdır. 2026 nəşri elmi yoxlama, pilot tətbiq və gələcək kalibrləmə üçün baza metodoloji versiya kimi təqdim edilir." },
+        { kind: "flow", text: "Açar sözlər:" },
+        { kind: "p", text: "VR Standartları; adaptiv erqonomika; antropometriya; insan mərkəzli dizayn; daxili məkan; mənzil planlaşdırılması; universal istifadə; əlçatanlıq; interyer layihəsi; tikinti və təmir auditi; gizli işlər; istifadəçi profili." },
+      ],
+    },
   ],
   slides: ["/images/showcase-1.jpg", "/images/showcase-2.jpg"],
   mark: "/images/vr_logo.png",
