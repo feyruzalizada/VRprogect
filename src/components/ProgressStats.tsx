@@ -78,7 +78,7 @@ export default function ProgressStats() {
       <div className={styles.heading}>
         <span className={styles.eyebrow}>{progressHeading.eyebrow}</span>
         <h2 className={styles.title}>{progressHeading.title}</h2>
-        <span className={styles.dots} aria-hidden />
+        <span className={styles.rule} aria-hidden />
       </div>
 
       <div className={styles.container}>

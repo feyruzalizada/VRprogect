@@ -12,7 +12,7 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
         <div className={styles.heading}>
           <span className={styles.eyebrow}>{services.eyebrow}</span>
           <h2 className={styles.title}>{services.heading}</h2>
-          <span className={styles.dots} aria-hidden />
+          <span className={styles.rule} aria-hidden />
 
           <p className={styles.tagline}>{services.taglineTop}</p>
           <p className={styles.intro}>{services.intro}</p>

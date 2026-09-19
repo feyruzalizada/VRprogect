@@ -4,15 +4,27 @@
 }
 
 .heading {
-  margin: 0 0 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 2vw, 26px);
+  margin: 0 0 30px;
   font-family: var(--font-display), sans-serif;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 1.4px;
-  text-align: center;
+  line-height: 18px;
+  letter-spacing: 2.6px;
   text-transform: uppercase;
   color: #a3a3a3;
+}
+
+/* a hairline on each side so the label sits on the band rather than floats */
+.heading::before,
+.heading::after {
+  content: "";
+  width: clamp(26px, 7vw, 76px);
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.22);
 }
 
 .viewport {

@@ -36,12 +36,12 @@
 
 .eyebrow {
   display: block;
-  margin-bottom: 6px;
+  margin-bottom: 14px;
   font-family: var(--font-display), sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
-  line-height: 26.25px;
-  letter-spacing: 0.5px;
+  line-height: 18px;
+  letter-spacing: 2.6px;
   text-transform: uppercase;
   color: #9f9e9e;
 }
@@ -49,17 +49,20 @@
 .title {
   margin: 0;
   font-family: var(--font-display), sans-serif;
-  font-size: 42px;
-  font-weight: 400;
-  line-height: 48px;
+  font-size: clamp(30px, 3.4vw, 48px);
+  font-weight: 300;
+  line-height: 1.14;
+  /* large type wants a touch less tracking to look set rather than typed */
+  letter-spacing: -0.015em;
   color: #1a1a1a;
 }
 
-.dots {
+.rule {
   display: block;
-  width: 66px;
-  margin: 24px auto 0;
-  border-top: 2px dotted rgba(26, 26, 26, 0.35);
+  width: 54px;
+  height: 1px;
+  margin: 26px auto 0;
+  background-color: rgba(26, 26, 26, 0.25);
 }
 
 .tagline {
