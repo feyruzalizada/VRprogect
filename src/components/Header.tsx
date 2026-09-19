@@ -168,7 +168,6 @@ function LangDropdown({ lang, onPick }: { lang: Lang; onPick: (code: Lang) => vo
 export default function Header() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [panelOpen, setPanelOpen] = useState(false);
-  const [mobileOpen, setMobileOpen] = useState(false);
   // visual only — no locale routing yet
   const [lang, setLang] = useState<Lang>("AZ");
   const [stuck, setStuck] = useState(false);
@@ -177,7 +176,7 @@ export default function Header() {
   // scrollbar frees its width, so that width is handed back as padding and
   // nothing on the page moves
   useEffect(() => {
-    if (!panelOpen && !mobileOpen) return;
+    if (!panelOpen) return;
 
     const root = document.documentElement;
     const gap = window.innerWidth - root.clientWidth;
@@ -192,7 +191,7 @@ export default function Header() {
       root.style.paddingRight = previous.padding;
       root.style.removeProperty("--scroll-lock");
     };
-  }, [panelOpen, mobileOpen]);
+  }, [panelOpen]);
 
   useEffect(() => {
     const onScroll = () => setStuck(window.scrollY > 120);
@@ -250,7 +249,7 @@ export default function Header() {
               <button
                 type="button"
                 className={styles.action}
-                aria-label="Open side panel"
+                aria-label="Open menu"
                 aria-expanded={panelOpen}
                 onClick={() => setPanelOpen(true)}
               >
@@ -286,8 +285,8 @@ export default function Header() {
               type="button"
               className={styles.action}
               aria-label="Open menu"
-              aria-expanded={mobileOpen}
-              onClick={() => setMobileOpen(true)}
+              aria-expanded={panelOpen}
+              onClick={() => setPanelOpen(true)}
             >
               <MenuIcon />
             </button>
@@ -319,15 +318,12 @@ export default function Header() {
         </div>
       )}
 
-      {(panelOpen || mobileOpen) && (
+      {panelOpen && (
         <button
           type="button"
           className={styles.overlay}
           aria-label="Close"
-          onClick={() => {
-            setPanelOpen(false);
-            setMobileOpen(false);
-          }}
+          onClick={() => setPanelOpen(false)}
         />
       )}
 
@@ -338,7 +334,7 @@ export default function Header() {
         <button
           type="button"
           className={styles.panelClose}
-          aria-label="Close side panel"
+          aria-label="Close menu"
           onClick={() => setPanelOpen(false)}
           tabIndex={panelOpen ? 0 : -1}
         >
@@ -353,7 +349,7 @@ export default function Header() {
           </span>
         </div>
 
-        <nav className={styles.panelNav} aria-label="Panel">
+        <nav className={styles.panelNav} aria-label="Menu">
           <ul className={styles.panelNavList}>
             {mainNav.map((item) => (
               <li key={item.label}>
@@ -374,40 +370,6 @@ export default function Header() {
         </nav>
 
       </aside>
-
-      <nav
-        className={`${styles.mobileMenu} ${mobileOpen ? styles.mobileMenuOpen : ""}`}
-        aria-hidden={!mobileOpen}
-        aria-label="Mobile"
-      >
-        <button
-          type="button"
-          className={styles.panelClose}
-          aria-label="Close menu"
-          onClick={() => setMobileOpen(false)}
-          tabIndex={mobileOpen ? 0 : -1}
-        >
-          <CloseIcon />
-        </button>
-        <ul className={styles.mobileList}>
-          {mainNav.map((item) => (
-            <li key={item.label} className={styles.mobileItem}>
-              <div className={styles.mobileRow}>
-                <Link
-                  href={item.href}
-                  className={styles.mobileLink}
-                  onClick={(e) => {
-                    setMobileOpen(false);
-                    handleNavClick(e, item.href);
-                  }}
-                >
-                  {item.label}
-                </Link>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </nav>
     </header>
   );
 }
