@@ -2,6 +2,8 @@ export interface ServiceItem {
   icon: string;
   title: string;
   description: string;
+  /** card photo; without one the card falls back to the icon on a dark panel */
+  image?: string;
 }
 
 export interface ServiceCounter {
