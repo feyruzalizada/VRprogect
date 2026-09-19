@@ -86,7 +86,11 @@ function cueAt(cues: HeroCue[], time: number) {
 
 function Watermark({ word }: { word: string }) {
   return (
-    <span className={styles.watermark} aria-hidden>
+    <span
+      className={styles.watermark}
+      style={{ "--letters": word.length } as React.CSSProperties}
+      aria-hidden
+    >
       {[...word].map((char, index) => (
         <span key={`${char}-${index}`} className={styles.charMask}>
           <span

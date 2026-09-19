@@ -108,11 +108,13 @@
   justify-content: center;
   font-family: var(--font-display), sans-serif;
   font-weight: 900;
-  font-size: clamp(56px, 11vw, 200px);
+  /* each letter takes about 1.1em with the tracking below, so a long word
+     shrinks itself rather than running off the sides */
+  font-size: min(200px, 11vw, calc(88vw / (var(--letters, 8) * 1.1)));
   line-height: 1;
-  letter-spacing: clamp(16px, 5.5vw, 100px);
+  letter-spacing: 0.5em;
   /* offsets the trailing letter-spacing */
-  padding-left: clamp(16px, 5.5vw, 100px);
+  padding-left: 0.5em;
   text-transform: uppercase;
   color: transparent;
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
