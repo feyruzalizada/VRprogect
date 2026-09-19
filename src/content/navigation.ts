@@ -5,7 +5,7 @@ export interface NavItem {
 
 export const mainNav: NavItem[] = [
   { label: "Ana səhifə", href: "/" },
-  { label: "VR standartlar", href: "#kitab" },
+  { label: "VR standartları 2026", href: "#kitab" },
   { label: "VR adaptiv hesablama", href: "#kalkulyator" },
   { label: "Üslub statistikası", href: "#uslub-statistikasi" },
   { label: "Xidmətlər", href: "#xidmetler" },
