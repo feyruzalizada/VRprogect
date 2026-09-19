@@ -168,15 +168,24 @@ export default function Header() {
   const [lang, setLang] = useState<Lang>("AZ");
   const [stuck, setStuck] = useState(false);
 
-  // an open panel used to leave the page scrolling behind it
+  // an open panel used to leave the page scrolling behind it; hiding the
+  // scrollbar frees its width, so that width is handed back as padding and
+  // nothing on the page moves
   useEffect(() => {
     if (!panelOpen && !mobileOpen) return;
 
     const root = document.documentElement;
-    const previous = root.style.overflow;
+    const gap = window.innerWidth - root.clientWidth;
+    const previous = { overflow: root.style.overflow, padding: root.style.paddingRight };
+
     root.style.overflow = "hidden";
+    root.style.paddingRight = `${gap}px`;
+    root.style.setProperty("--scroll-lock", `${gap}px`);
+
     return () => {
-      root.style.overflow = previous;
+      root.style.overflow = previous.overflow;
+      root.style.paddingRight = previous.padding;
+      root.style.removeProperty("--scroll-lock");
     };
   }, [panelOpen, mobileOpen]);
 

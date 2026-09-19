@@ -13,11 +13,6 @@ body {
 }
 
 html {
-  /* keep the scrollbar's width reserved so locking it does not shift the page */
-  scrollbar-gutter: stable;
-}
-
-html {
   scroll-behavior: smooth;
 }
 

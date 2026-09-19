@@ -3,6 +3,9 @@
   inset: 0 0 auto;
   z-index: 999;
   height: 92px;
+  /* the bar is laid out against the viewport, so it takes the same amount back
+     when the scrollbar is hidden */
+  padding-right: var(--scroll-lock, 0px);
 }
 
 .stuck {
