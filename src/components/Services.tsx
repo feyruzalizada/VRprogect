@@ -7,8 +7,8 @@ import styles from "./Services.module.css";
 import { services } from "@/content/services";
 
 const HOLD_MS = 3800;
-/** how many cards stay stacked behind the front one */
-const DEPTH = 3;
+/** how many cards stay visible on each side of the open one */
+const DEPTH = 1;
 
 export default function Services({ id = "xidmetler" }: { id?: string }) {
   const items = services.items;
@@ -72,16 +72,21 @@ export default function Services({ id = "xidmetler" }: { id?: string }) {
 
           <ul className={styles.stack}>
             {items.map((item, index) => {
-              // how far this card sits behind the front one, wrapping round
-              const depth = (index - front + items.length) % items.length;
-              const turned = depth > items.length - 1 - DEPTH;
+              // negative to the left of the open card, positive to its right
+              const half = Math.floor(items.length / 2);
+              let slot = index - front;
+              if (slot > half) slot -= items.length;
+              if (slot < -half) slot += items.length;
+              const distance = Math.abs(slot);
 
               return (
                 <li
                   key={item.title}
-                  className={`${styles.card} ${turned ? styles.cardTurned : ""}`}
-                  style={{ "--depth": Math.min(depth, DEPTH) } as React.CSSProperties}
-                  aria-current={depth === 0}
+                  className={`${styles.card} ${distance > DEPTH ? styles.cardGone : ""}`}
+                  style={
+                    { "--slot": slot, "--distance": distance } as React.CSSProperties
+                  }
+                  aria-current={slot === 0}
                 >
                   <div className={styles.cardFace}>
                     {item.image ? (

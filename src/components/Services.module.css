@@ -88,10 +88,9 @@
 
 .deck {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: clamp(22px, 4vw, 64px);
-  margin-top: 56px;
+  margin-top: 52px;
   /* the depth the cards turn in */
   perspective: 1800px;
 }
@@ -100,13 +99,14 @@
   display: flex;
   align-items: baseline;
   gap: 7px;
-  margin: 0;
+  width: 100%;
+  margin: 0 0 22px;
   font-family: var(--font-display), sans-serif;
   color: #1a1a1a;
 }
 
 .counterNow {
-  font-size: clamp(54px, 7vw, 104px);
+  font-size: clamp(46px, 5.4vw, 80px);
   font-weight: 200;
   line-height: 1;
   letter-spacing: -0.03em;
@@ -133,9 +133,12 @@
 }
 
 .stack {
+  --card: 420px;
+  /* how far apart the slots sit; less than a card wide, so the open one
+     rides slightly over the pile on either side */
+  --step: 344px;
   position: relative;
-  flex: 0 0 auto;
-  width: min(460px, 100%);
+  width: 100%;
   height: 340px;
   margin: 0;
   padding: 0;
@@ -145,17 +148,24 @@
 
 .card {
   position: absolute;
-  inset: 0;
-  /* the pack fans to the right, each card a step further back */
-  transform: translateX(calc(var(--depth) * 26px))
-    translateZ(calc(var(--depth) * -60px));
-  transform-origin: left center;
-  transition: transform 760ms cubic-bezier(0.4, 0, 0.2, 1), opacity 760ms ease;
+  top: 0;
+  left: 50%;
+  width: var(--card);
+  height: 100%;
+  margin-left: calc(var(--card) / -2);
+  /* slot 0 is the open card, dead centre; the pile it has already been
+     through sits to the left, the pile still to come to the right */
+  transform: translateX(calc(var(--slot) * var(--step)))
+    translateZ(calc(var(--distance) * -150px))
+    rotateY(calc(var(--slot) * -15deg));
+  /* the open card has to sit over both piles */
+  z-index: calc(10 - var(--distance));
+  opacity: 1;
+  transition: transform 720ms cubic-bezier(0.4, 0, 0.2, 1), opacity 720ms ease;
 }
 
-/* already been through the deck, folded away on its own left edge */
-.cardTurned {
-  transform: translateX(0) rotateY(-108deg);
+/* far enough round the deck that it should not be drawn at all */
+.cardGone {
   opacity: 0;
   pointer-events: none;
 }
@@ -170,9 +180,14 @@
   overflow: hidden;
   border-radius: 14px;
   background-color: #1a1a1a;
-  box-shadow: 0 26px 60px rgba(26, 26, 26, 0.3);
   /* past a quarter turn the card is edge-on; showing its back looked like a slab */
   backface-visibility: hidden;
+}
+
+/* only the open card is lifted — a shadow on every card merged into one grey
+   band right across the section */
+.card[aria-current="true"] .cardFace {
+  box-shadow: 0 22px 48px rgba(26, 26, 26, 0.26);
 }
 
 .cardPhoto {
@@ -286,14 +301,15 @@
   }
 
   .stack {
-    /* the fan leans right, so it is given its own room rather than the screen's */
-    width: min(420px, calc(100% - 78px));
-    margin-right: 78px;
-    height: 310px;
+    --card: 330px;
+    --step: 268px;
+    height: 306px;
   }
 
-  .counterNow {
-    font-size: 64px;
+  .card {
+    transform: translateX(calc(var(--slot) * var(--step)))
+      translateZ(calc(var(--distance) * -120px))
+      rotateY(calc(var(--slot) * -13deg));
   }
 }
 
@@ -320,28 +336,23 @@
 
 
   .deck {
-    flex-direction: column;
-    gap: 18px;
-    margin-top: 36px;
+    margin-top: 34px;
   }
 
   .counter {
-    align-self: flex-start;
-  }
-
-  .counterNow {
-    font-size: 52px;
+    margin-bottom: 16px;
   }
 
   .stack {
-    width: calc(100% - 36px);
-    margin-right: 36px;
-    height: 300px;
+    --card: min(270px, 74vw);
+    --step: min(214px, 59vw);
+    height: 290px;
   }
 
   .card {
-    transform: translateX(calc(var(--depth) * 12px))
-      translateZ(calc(var(--depth) * -28px));
+    transform: translateX(calc(var(--slot) * var(--step)))
+      translateZ(calc(var(--distance) * -90px))
+      rotateY(calc(var(--slot) * -11deg));
   }
 
   .cardText {
