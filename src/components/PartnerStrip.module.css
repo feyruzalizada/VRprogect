@@ -56,7 +56,9 @@
 .logo {
   width: auto;
   height: auto;
-  max-width: 100%;
+  /* a mark is held by whichever cap it meets first — a wordmark by the width,
+     a square one by the height — so the nudge has to scale both */
+  max-width: calc(100% * var(--logo-scale, 1));
   max-height: calc(54px * var(--logo-scale, 1));
   object-fit: contain;
   /* grey at rest, white under the cursor — like the original */
