@@ -57,7 +57,7 @@
   width: auto;
   height: auto;
   max-width: 100%;
-  max-height: 54px;
+  max-height: calc(54px * var(--logo-scale, 1));
   object-fit: contain;
   /* grey at rest, white under the cursor — like the original */
   opacity: 0.55;
@@ -83,7 +83,7 @@
   }
 
   .logo {
-    max-height: 72px;
+    max-height: calc(72px * var(--logo-scale, 1));
   }
 
   /* the track got longer, so the duration grows with it and the strip keeps
@@ -101,7 +101,7 @@
   }
 
   .logo {
-    max-height: 44px;
+    max-height: calc(44px * var(--logo-scale, 1));
   }
 }
 
@@ -122,7 +122,7 @@
   }
 
   .logo {
-    max-height: 38px;
+    max-height: calc(38px * var(--logo-scale, 1));
   }
 }
 

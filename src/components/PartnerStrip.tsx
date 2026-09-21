@@ -24,6 +24,7 @@ export default function PartnerStrip() {
                 width={240}
                 height={120}
                 className={styles.logo}
+                style={{ "--logo-scale": partner.scale } as React.CSSProperties}
                 unoptimized
               />
             </div>
