@@ -40,6 +40,8 @@ export const services: ServicesContent = {
       icon: "layihe",
       title: "Layihə",
       description: "Hər detal hesablanır, hər qərar layihə ilə əsaslandırılır.",
+      video: "/video/services/layihe.mp4",
+      poster: "/images/services/layihe.jpg",
     },
     {
       icon: "tikinti",
