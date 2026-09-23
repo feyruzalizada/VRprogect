@@ -1,0 +1,259 @@
+.footer {
+  position: relative;
+  padding: 90px 0 0;
+  background-color: #111;
+  overflow: hidden;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.lineLeft {
+  left: 90px;
+}
+
+.lineRight {
+  right: 90px;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.top {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 50px;
+  padding-bottom: 60px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.about {
+  max-width: 340px;
+  margin: 24px 0 0;
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 28px;
+  color: #9a9a9a;
+}
+
+.social {
+  margin-top: 30px;
+}
+
+.socialHeading {
+  display: block;
+  margin-bottom: 14px;
+  font-family: var(--font-display), sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+  color: #7c7c7c;
+}
+
+.socialList {
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: #cfcfcf;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  transition: color 250ms linear, border-color 250ms linear, background-color 250ms linear;
+}
+
+.socialLink:hover {
+  color: #111;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.socialIcon {
+  width: 18px;
+  height: 18px;
+}
+
+.col {
+  min-width: 0;
+}
+
+.colTitle {
+  margin: 0 0 22px;
+  font-family: var(--font-display), sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 2.6px;
+  text-transform: uppercase;
+  color: #7c7c7c;
+}
+
+.list,
+.contactList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 15px;
+  line-height: 26px;
+  color: #cfcfcf;
+  transition: color 250ms linear;
+}
+
+.link:hover {
+  color: #fff;
+}
+
+.contactList {
+  gap: 18px;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contactLabel {
+  font-family: var(--font-display), sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: #6f6f6f;
+}
+
+.contactValue {
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 15px;
+  line-height: 26px;
+  color: #e6e6e6;
+  transition: color 250ms linear;
+}
+
+a.contactValue:hover {
+  color: #fff;
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 26px 0 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.copyright {
+  margin: 0;
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: #8a8a8a;
+}
+
+.legal {
+  display: flex;
+  gap: 26px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.legalLink {
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: #8a8a8a;
+  transition: color 250ms linear;
+}
+
+.legalLink:hover {
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .lineLeft {
+    left: 0;
+  }
+
+  .lineRight {
+    right: 0;
+  }
+
+  .footer {
+    padding-top: 70px;
+  }
+
+  .top {
+    grid-template-columns: 1fr 1fr;
+    gap: 44px 36px;
+  }
+
+  .brandCol {
+    grid-column: 1 / -1;
+  }
+
+  .about {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 575px) {
+  .footer {
+    padding-top: 56px;
+  }
+
+  .top {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-bottom: 44px;
+  }
+
+  .bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .legal {
+    gap: 18px;
+  }
+}

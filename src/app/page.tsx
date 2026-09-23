@@ -1,5 +1,6 @@
 import AdaptiveCalc from "@/components/AdaptiveCalc";
 import Contacts from "@/components/Contacts";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import HeroSlider from "@/components/HeroSlider";
 import PartnerStrip from "@/components/PartnerStrip";
@@ -24,6 +25,7 @@ export default function Home() {
         <PercentBand />
         <Contacts />
       </main>
+      <Footer />
     </>
   );
 }
