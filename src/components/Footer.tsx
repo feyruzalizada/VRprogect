@@ -97,19 +97,6 @@ export default function Footer() {
             </ul>
           </nav>
 
-          <nav className={styles.col} aria-label={footer.servicesHeading}>
-            <h2 className={styles.colTitle}>{footer.servicesHeading}</h2>
-            <ul className={styles.list}>
-              {footer.services.map((item) => (
-                <li key={item.label}>
-                  <SmoothLink href={item.href} className={styles.link}>
-                    {item.label}
-                  </SmoothLink>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
           <div className={styles.col}>
             <h2 className={styles.colTitle}>{footer.contactHeading}</h2>
             <ul className={styles.contactList}>

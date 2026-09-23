@@ -13,8 +13,6 @@ export interface FooterContent {
   about: string;
   navHeading: string;
   nav: FooterLink[];
-  servicesHeading: string;
-  services: FooterLink[];
   contactHeading: string;
   contacts: FooterContact[];
   socialHeading: string;
@@ -30,18 +28,9 @@ export const footer: FooterContent = {
     { label: "VR standartları 2026", href: "#kitab" },
     { label: "VR adaptiv hesablama", href: "#kalkulyator" },
     { label: "Üslub statistikası", href: "#uslub-statistikasi" },
+    { label: "Xidmətlər", href: "#xidmetler" },
     { label: "Rəsmi tərəfdaşlar", href: "#partnyorlar" },
     { label: "Uğurlar", href: "#ugurlar" },
-  ],
-  servicesHeading: "Xidmətlər",
-  services: [
-    { label: "Dizayn", href: "#xidmetler" },
-    { label: "Layihə", href: "#xidmetler" },
-    { label: "Tikinti", href: "#xidmetler" },
-    { label: "Təmir", href: "#xidmetler" },
-    { label: "Audit", href: "#xidmetler" },
-    { label: "Nəzarət", href: "#xidmetler" },
-    { label: "Hüquqi-texniki müdafiə", href: "#xidmetler" },
   ],
   contactHeading: "Əlaqə",
   // TODO: real address, phone and mail from the client
