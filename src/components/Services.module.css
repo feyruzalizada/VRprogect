@@ -127,15 +127,6 @@
   display: block;
 }
 
-.mediaFallback {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  color: #fff;
-}
-
 .icon {
   width: 72px;
   height: 72px;

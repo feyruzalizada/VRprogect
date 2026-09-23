@@ -1,4 +1,3 @@
-import ServiceIcon from "./ServiceIcons";
 import ServiceVideo from "./ServiceVideo";
 import styles from "./Services.module.css";
 import { services } from "@/content/services";
@@ -23,13 +22,7 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
           {services.items.map((item) => (
             <article key={item.title} className={styles.card}>
               <div className={styles.media}>
-                {item.video ? (
-                  <ServiceVideo src={item.video} poster={item.poster} />
-                ) : (
-                  <div className={styles.mediaFallback}>
-                    <ServiceIcon name={item.icon} />
-                  </div>
-                )}
+                {item.video ? <ServiceVideo src={item.video} poster={item.poster} /> : null}
               </div>
 
               <div className={styles.body}>
