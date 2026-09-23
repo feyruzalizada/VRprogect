@@ -45,4 +45,6 @@ CLAUDE.md
 AGENTS.md
 
 # source video lives outside the repo
-public/video/
+public/video/*
+# except the short service loops, which must ship with the site
+!public/video/services/
