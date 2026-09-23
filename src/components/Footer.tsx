@@ -50,7 +50,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className={styles.footer}>
+    <footer id="kontaktlar" className={styles.footer}>
       <span className={`${styles.line} ${styles.lineLeft}`} aria-hidden />
       <span className={`${styles.line} ${styles.lineRight}`} aria-hidden />
 
