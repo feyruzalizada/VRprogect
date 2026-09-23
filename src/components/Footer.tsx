@@ -1,7 +1,6 @@
-import Link from "next/link";
-
 import styles from "./Footer.module.css";
 import { footer } from "@/content/footer";
+import SmoothLink from "./SmoothLink";
 import { heroSocial } from "@/content/hero";
 
 function SocialGlyph({ id }: { id: string }) {
@@ -57,11 +56,11 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.top}>
           <div className={styles.brandCol}>
-            <Link href="/" className={styles.logo} aria-label="VR Global Group">
+            <SmoothLink href="/" className={styles.logo} aria-label="VR Global Group">
               <span>VR</span>
               <span>Global</span>
               <span>Group</span>
-            </Link>
+            </SmoothLink>
 
             <p className={styles.about}>{footer.about}</p>
 
@@ -90,9 +89,9 @@ export default function Footer() {
             <ul className={styles.list}>
               {footer.nav.map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className={styles.link}>
+                  <SmoothLink href={item.href} className={styles.link}>
                     {item.label}
-                  </Link>
+                  </SmoothLink>
                 </li>
               ))}
             </ul>
@@ -103,9 +102,9 @@ export default function Footer() {
             <ul className={styles.list}>
               {footer.services.map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className={styles.link}>
+                  <SmoothLink href={item.href} className={styles.link}>
                     {item.label}
-                  </Link>
+                  </SmoothLink>
                 </li>
               ))}
             </ul>
@@ -138,9 +137,9 @@ export default function Footer() {
           <ul className={styles.legal}>
             {footer.legal.map((item) => (
               <li key={item.label}>
-                <Link href={item.href} className={styles.legalLink}>
+                <a href={item.href} className={styles.legalLink}>
                   {item.label}
-                </Link>
+                </a>
               </li>
             ))}
           </ul>
