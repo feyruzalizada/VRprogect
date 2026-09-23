@@ -2,6 +2,9 @@ export interface ServiceItem {
   icon: string;
   title: string;
   description: string;
+  /** clip for the left half of the card; without one the icon panel shows instead */
+  video?: string;
+  poster?: string;
 }
 
 export interface ServiceCounter {

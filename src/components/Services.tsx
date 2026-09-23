@@ -1,4 +1,5 @@
 import ServiceIcon from "./ServiceIcons";
+import ServiceVideo from "./ServiceVideo";
 import styles from "./Services.module.css";
 import { services } from "@/content/services";
 
@@ -18,15 +19,25 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
           <p className={styles.intro}>{services.intro}</p>
         </div>
 
-        <div className={styles.grid}>
+        <div className={styles.panel}>
           {services.items.map((item) => (
-            <div key={item.title} className={styles.card}>
-              <ServiceIcon name={item.icon} />
+            <article key={item.title} className={styles.card}>
+              <div className={styles.media}>
+                {item.video ? (
+                  <ServiceVideo src={item.video} poster={item.poster} />
+                ) : (
+                  <div className={styles.mediaFallback}>
+                    <ServiceIcon name={item.icon} />
+                  </div>
+                )}
+              </div>
 
-              <h5 className={styles.cardTitle}>{item.title}</h5>
-
-              <p className={styles.cardText}>{item.description}</p>
-            </div>
+              <div className={styles.body}>
+                <h3 className={styles.cardTitle}>{item.title}</h3>
+                <span className={styles.cardRule} aria-hidden />
+                <p className={styles.cardText}>{item.description}</p>
+              </div>
+            </article>
           ))}
         </div>
       </div>
