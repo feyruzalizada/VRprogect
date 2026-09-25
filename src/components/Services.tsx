@@ -1,8 +1,29 @@
+"use client";
+
+import { useState } from "react";
+
 import ServiceVideo from "./ServiceVideo";
 import styles from "./Services.module.css";
-import { services, VISIBLE_POINTS } from "@/content/services";
+import { serviceFilters, services, type ServicePoint } from "@/content/services";
+
+function Point({ point }: { point: ServicePoint }) {
+  if (typeof point === "string") return <li>{point}</li>;
+
+  return (
+    <li>
+      <strong className={styles.pointLabel}>{point.label}:</strong> {point.text}
+    </li>
+  );
+}
 
 export default function Services({ id = "kalkulyator" }: { id?: string }) {
+  const [active, setActive] = useState(serviceFilters[0].id);
+
+  const filter = serviceFilters.find((item) => item.id === active) ?? serviceFilters[0];
+  const items = filter.slugs.length
+    ? services.items.filter((item) => filter.slugs.includes(item.slug))
+    : services.items;
+
   return (
     <section id={id} className={styles.section}>
       <span className={`${styles.line} ${styles.lineLeft}`} aria-hidden />
@@ -18,45 +39,59 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
           <p className={styles.intro}>{services.intro}</p>
         </div>
 
+        <div className={styles.filters} role="group" aria-label={services.filterLabel}>
+          <span className={styles.filterLabel}>{services.filterLabel}</span>
+
+          <div className={styles.filterRow}>
+            {serviceFilters.map((item) => (
+              <button
+                key={item.id}
+                type="button"
+                className={`${styles.filter} ${item.id === active ? styles.filterOn : ""}`}
+                aria-pressed={item.id === active}
+                onClick={() => setActive(item.id)}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
         <div className={styles.panel}>
-          {services.items.map((item) => {
-            const shown = item.points.slice(0, VISIBLE_POINTS);
-            const rest = item.points.slice(VISIBLE_POINTS);
+          {items.map((item) => (
+            <article key={item.slug} className={styles.card}>
+              <div className={styles.media}>
+                {item.video ? <ServiceVideo src={item.video} poster={item.poster} /> : null}
+              </div>
 
-            return (
-              <article key={item.title} className={styles.card}>
-                <div className={styles.media}>
-                  {item.video ? <ServiceVideo src={item.video} poster={item.poster} /> : null}
-                </div>
+              <div className={styles.body}>
+                {item.badge ? <span className={styles.badge}>{item.badge}</span> : null}
 
-                <div className={styles.body}>
-                  <h3 className={styles.cardTitle}>{item.title}</h3>
-                  <span className={styles.cardRule} aria-hidden />
+                <h3 className={styles.cardTitle}>{item.title}</h3>
+                <span className={styles.cardRule} aria-hidden />
+                <p className={styles.cardText}>{item.description}</p>
+
+                <details className={styles.more}>
+                  <summary className={styles.moreToggle}>
+                    <span className={styles.moreOpen}>{services.moreLabel}</span>
+                    <span className={styles.moreClose}>{services.lessLabel}</span>
+                  </summary>
 
                   <ul className={styles.points}>
-                    {shown.map((point) => (
-                      <li key={point}>{point}</li>
+                    {item.points.map((point) => (
+                      <Point key={typeof point === "string" ? point : point.label} point={point} />
                     ))}
                   </ul>
 
-                  {rest.length > 0 ? (
-                    <details className={styles.more}>
-                      <summary className={styles.moreToggle}>
-                        <span className={styles.moreOpen}>{services.moreLabel}</span>
-                        <span className={styles.moreClose}>{services.lessLabel}</span>
-                      </summary>
+                  {item.note ? <p className={styles.note}>{item.note}</p> : null}
+                </details>
 
-                      <ul className={`${styles.points} ${styles.pointsRest}`}>
-                        {rest.map((point) => (
-                          <li key={point}>{point}</li>
-                        ))}
-                      </ul>
-                    </details>
-                  ) : null}
-                </div>
-              </article>
-            );
-          })}
+                <button type="button" className={styles.cta}>
+                  {item.cta}
+                </button>
+              </div>
+            </article>
+          ))}
         </div>
 
         <p className={styles.disclaimer}>{services.disclaimer}</p>
