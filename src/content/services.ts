@@ -306,7 +306,7 @@ export const serviceFilters: ServiceFilter[] = [
   },
   {
     id: "hesablama",
-    label: "Hesablama və təhsil",
+    label: "VR Akademiya",
     slugs: ["vr-adaptiv-yasayis", "vr-akademiya"],
   },
 ];
