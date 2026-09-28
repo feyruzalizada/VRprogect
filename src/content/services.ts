@@ -48,7 +48,7 @@ export const services: ServicesContent = {
   taglineTop: "Layihə • icra • nəzarət — bir məsuliyyət altında",
   intro:
     "Layihələndirmədən icraya, icradan audite qədər hər mərhələni VR standartları üzrə aparırıq. Ölçü otağa yox, insana görə seçilir; iş sənədlə təsdiqlənir; nəticə isə gözlə yox, rəqəmlə yoxlanılır.",
-  filterLabel: "Sizə nə lazımdır?",
+  filterLabel: "Xidməti seç",
   moreLabel: "Daxil olan xidmətlər",
   lessLabel: "Gizlət",
   disclaimer:
