@@ -290,7 +290,7 @@ export const serviceFilters: ServiceFilter[] = [
   { id: "hamisi", label: "Hamısı", slugs: [] },
   {
     id: "tikdirmek",
-    label: "Tikdirmək və təmir etdirmək istəyirəm",
+    label: "Tikinti və təmir xidmətləri",
     slugs: ["tikinti", "temir", "memarliq-dizayn", "layihe-idareetmesi"],
   },
   {
