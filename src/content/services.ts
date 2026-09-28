@@ -298,7 +298,7 @@ export const serviceFilters: ServiceFilter[] = [
     label: "Audit • Nəzarət • Yoxlama",
     slugs: ["texniki-audit", "tehvil-desteyi", "nezaret"],
   },
-  { id: "xerc", label: "Xərc və mübahisə məsələm var", slugs: ["smeta", "mubahiseler"] },
+  { id: "xerc", label: "Mübahisə • Hüquq • Mediasiya", slugs: ["smeta", "mubahiseler"] },
   {
     id: "material",
     label: "Material və texniki həll axtarıram",
