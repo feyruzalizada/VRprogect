@@ -301,7 +301,7 @@ export const serviceFilters: ServiceFilter[] = [
   { id: "xerc", label: "Mübahisə • Hüquq • Mediasiya", slugs: ["smeta", "mubahiseler"] },
   {
     id: "material",
-    label: "Material və texniki həll axtarıram",
+    label: "İzolyasiya • Dam • Fasad",
     slugs: ["izolyasiya", "material-avadanliq"],
   },
   {
