@@ -17,8 +17,11 @@ export interface ServiceItem {
 export interface ServiceFilter {
   id: string;
   label: string;
-  /** empty means every card */
   slugs: string[];
+  /** the one filter that shows every card */
+  all?: boolean;
+  /** shown in place of the cards while nothing is tagged yet */
+  empty?: string;
 }
 
 export interface ServiceCounter {
@@ -287,7 +290,7 @@ export const services: ServicesContent = {
 };
 
 export const serviceFilters: ServiceFilter[] = [
-  { id: "hamisi", label: "Hamısı", slugs: [] },
+  { id: "hamisi", label: "Hamısı", slugs: [], all: true },
   {
     id: "tikdirmek",
     label: "Tikinti və təmir xidmətləri",
@@ -308,5 +311,11 @@ export const serviceFilters: ServiceFilter[] = [
     id: "hesablama",
     label: "VR Akademiya",
     slugs: ["vr-adaptiv-yasayis", "vr-akademiya"],
+  },
+  {
+    id: "mebel",
+    label: "Mebel • Dekor",
+    slugs: [],
+    empty: "Bu bölmə üzrə xidmətlər tezliklə əlavə olunacaq.",
   },
 ];

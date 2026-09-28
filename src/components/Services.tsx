@@ -20,9 +20,9 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
   const [active, setActive] = useState(serviceFilters[0].id);
 
   const filter = serviceFilters.find((item) => item.id === active) ?? serviceFilters[0];
-  const items = filter.slugs.length
-    ? services.items.filter((item) => filter.slugs.includes(item.slug))
-    : services.items;
+  const items = filter.all
+    ? services.items
+    : services.items.filter((item) => filter.slugs.includes(item.slug));
 
   return (
     <section id={id} className={styles.section}>
@@ -57,7 +57,9 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
           </div>
         </div>
 
-        <div className={styles.panel}>
+        {items.length === 0 ? <p className={styles.empty}>{filter.empty}</p> : null}
+
+        <div className={styles.panel} hidden={items.length === 0}>
           {items.map((item) => (
             <article key={item.slug} className={styles.card}>
               <div className={styles.media}>
