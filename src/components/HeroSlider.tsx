@@ -9,6 +9,23 @@ const CHAR_STAGGER = 60;
 /** how long the outgoing text takes to leave before the next one enters */
 const EXIT_MS = 520;
 
+// iOS refuses to autoplay in Low Power Mode and draws its own play button over
+// the poster; start again on the first touch instead of leaving it frozen
+function playSoon(video: HTMLVideoElement) {
+  video.play().catch(() => {
+    const retry = () => {
+      video.play().catch(() => { });
+      window.removeEventListener("pointerdown", retry);
+      window.removeEventListener("touchstart", retry);
+      window.removeEventListener("scroll", retry);
+    };
+
+    window.addEventListener("pointerdown", retry, { passive: true });
+    window.addEventListener("touchstart", retry, { passive: true });
+    window.addEventListener("scroll", retry, { passive: true });
+  });
+}
+
 function YoutubeIcon() {
   return (
     <svg viewBox="0 0 24 24" className={styles.socialIcon} aria-hidden>
@@ -132,7 +149,7 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
     const video = videoRef.current;
     if (!video) return;
 
-    const start = () => video.play().catch(() => { });
+    const start = () => playSoon(video);
 
     // Safari plays HLS natively, everything else needs hls.js
     if (video.canPlayType("application/vnd.apple.mpegurl")) {
@@ -172,7 +189,7 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) video.play().catch(() => { });
+        if (entry.isIntersecting) playSoon(video);
         else video.pause();
       },
       { threshold: 0.1 },
