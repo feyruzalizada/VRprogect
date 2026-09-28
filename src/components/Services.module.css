@@ -128,7 +128,8 @@
   border-color: #1a1a1a;
 }
 
-.filterOn {
+.filterOn,
+.filterOn:hover {
   color: #fff;
   background-color: #1a1a1a;
   border-color: #1a1a1a;
