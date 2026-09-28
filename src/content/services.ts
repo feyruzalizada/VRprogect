@@ -89,8 +89,8 @@ export const services: ServicesContent = {
       description:
         "Məkanın imkanlarını, gündəlik istifadəni və estetik seçimləri birləşdirən layihə həlləri.",
       cta: "Layihə sifariş et",
-      video: "/video/services/layihe.mp4",
-      poster: "/images/services/layihe.jpg",
+      video: "/video/services/memarliq-dizayn.mp4",
+      poster: "/images/services/memarliq-dizayn.jpg",
       points: [
         "Memarlıq layihələndirməsi.",
         "İnteryer dizaynı.",
@@ -106,6 +106,8 @@ export const services: ServicesContent = {
       description:
         "Obyektin texniki vəziyyətini, görülmüş işlərin keyfiyyətini və aşkar edilə bilən uyğunsuzluqları qiymətləndirin.",
       cta: "Audit sifariş et",
+      video: "/video/services/texniki-audit.mp4",
+      poster: "/images/services/texniki-audit.jpg",
       points: [
         "Mənzil, fərdi ev və kommersiya obyektlərinin auditi.",
         "Əmlak alınmazdan əvvəl texniki baxış.",
@@ -205,6 +207,8 @@ export const services: ServicesContent = {
       description:
         "Su, rütubət və istilik itkisinə qarşı obyektin xüsusiyyətlərinə uyğun izolyasiya həlləri.",
       cta: "İzolyasiya üçün müraciət et",
+      video: "/video/services/izolyasiya.mp4",
+      poster: "/images/services/izolyasiya.jpg",
       points: [
         "Hidroizolyasiya.",
         "İstilik izolyasiyası.",
@@ -220,6 +224,8 @@ export const services: ServicesContent = {
       description:
         "Layihəyə uyğun məhsulların seçilməsi, təchizatı və ixtisaslaşmış partnyorlar vasitəsilə quraşdırılması.",
       cta: "Həlləri nəzərdən keçir",
+      video: "/video/services/material-avadanliq.mp4",
+      poster: "/images/services/material-avadanliq.jpg",
       points: [
         {
           label: "Qapı-pəncərə və şüşə",
