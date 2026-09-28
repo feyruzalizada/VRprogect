@@ -37,7 +37,7 @@
 .track {
   display: flex;
   width: max-content;
-  animation: marquee 25s linear infinite;
+  animation: marquee 18s linear infinite;
 }
 
 .track:hover {
@@ -50,7 +50,7 @@
   justify-content: center;
   flex: 0 0 120px;
   height: 150px;
-  margin-right: 130px;
+  margin-right: 60px;
 }
 
 .logo {
@@ -81,7 +81,7 @@
   .item {
     flex-basis: 160px;
     height: 190px;
-    margin-right: 150px;
+    margin-right: 70px;
   }
 
   .logo {
@@ -91,7 +91,7 @@
   /* the track got longer, so the duration grows with it and the strip keeps
      travelling at the same 140px a second */
   .track {
-    animation-duration: 31s;
+    animation-duration: 23s;
   }
 }
 
@@ -99,7 +99,7 @@
   .item {
     flex-basis: 100px;
     height: 130px;
-    margin-right: 86px;
+    margin-right: 44px;
   }
 
   .logo {
@@ -120,7 +120,7 @@
   .item {
     flex-basis: 80px;
     height: 110px;
-    margin-right: 56px;
+    margin-right: 32px;
   }
 
   .logo {
