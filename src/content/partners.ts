@@ -22,4 +22,6 @@ export const partners: Partner[] = [
   { logo: "/images/partners/general-lighting.png", name: "General Lighting", scale: 1.35 },
   { logo: "/images/partners/onelux.png", name: "onelux" },
   { logo: "/images/partners/advocaid.png", name: "Advocaid" },
+  { logo: "/images/partners/mutfakci.png", name: "Mutfakçı" },
+  { logo: "/images/partners/tis.png", name: "TIS" },
 ];
