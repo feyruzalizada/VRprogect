@@ -63,6 +63,7 @@ export const services: ServicesContent = {
       description:
         "Fərdi evlərdən sənaye obyektlərinədək tikinti işlərinin layihəyə uyğun təşkili və icra koordinasiyası.",
       cta: "Tikinti üçün müraciət et",
+      video: "/video/services/tikinti.mp4",
       points: [
         "Fərdi ev və villaların tikintisi.",
         "Yaşayış və qeyri-yaşayış obyektlərinin inşası.",
@@ -77,6 +78,7 @@ export const services: ServicesContent = {
       description:
         "Mənzil, ev və kommersiya məkanlarının təmiri, yarımçıq işlərin tamamlanması və qüsurların aradan qaldırılmasının təşkili.",
       cta: "Təmir üçün müraciət et",
+      video: "/video/services/temir.mp4",
       points: [
         "Mənzil, fərdi ev və villa təmiri.",
         "Ofis və kommersiya məkanlarının təmiri.",
@@ -127,6 +129,7 @@ export const services: ServicesContent = {
       description:
         "Şirkət, podratçı və ya ustanın təqdim etdiyi işi qəbul etməzdən əvvəl keyfiyyətini və tamamlanma vəziyyətini yoxladın.",
       cta: "Təhvil yoxlaması sifariş et",
+      video: "/video/services/tehvil-desteyi.mp4",
       points: [
         "Usta və briqadanın gördüyü işlərin yoxlanılması.",
         "Tikinti və təmir şirkətinin təhvil verdiyi işlərə baxış.",
@@ -143,6 +146,7 @@ export const services: ServicesContent = {
       description:
         "İşlər davam edərkən keyfiyyəti, tətbiq ardıcıllığını və razılaşdırılmış qrafiki mərhələli izləyin.",
       cta: "Nəzarət üçün müraciət et",
+      video: "/video/services/nezaret.mp4",
       points: [
         "Mənzillərdə təmirə nəzarət.",
         "Fərdi evlərdə tikinti və təmir monitorinqi.",
@@ -159,6 +163,7 @@ export const services: ServicesContent = {
       description:
         "Layihə, büdcə, iş qrafiki və icraçılar arasında əlaqəni vahid idarəetmə ilə təşkil edin.",
       cta: "Layihəni müzakirə et",
+      video: "/video/services/Layih%C9%99%20idar%C9%99etm%C9%99si%20v%C9%99%20koordinasiya.mp4",
       points: [
         "İş mərhələlərinin və ardıcıllığının planlaşdırılması.",
         "Sifarişçi, layihəçi, podratçı, usta və təchizatçıların əlaqələndirilməsi.",
@@ -175,6 +180,7 @@ export const services: ServicesContent = {
       description:
         "Tikinti və təmirə nə qədər xərc lazım olduğunu, görülmüş işlərin dəyərini və təqdim edilmiş hesabların uyğunluğunu müəyyənləşdirin.",
       cta: "Xərcləri hesablat",
+      video: "/video/services/Smeta%20v%C9%99%20faktiki%20x%C9%99rc%20hesablamalar%C4%B1.mp4",
       note: "Faktiki ödəniş sənədlə təsdiqlənir; sənəd və ya gizli işlər barədə məlumat çatışmadıqda nəticədə qiymətləndirmənin əsası və məhdudiyyəti göstərilir.",
       points: [
         "İlkin smeta və büdcənin hazırlanması.",
@@ -193,6 +199,7 @@ export const services: ServicesContent = {
       description:
         "Problemli tikinti və təmirdə texniki vəziyyətin, hesablaşmaların və hüquqi mövqeyin aydınlaşdırılması.",
       cta: "Probleminizi bildirin",
+      video: "/video/services/Mu%CC%88bahis%C9%99l%C9%99r%2C%20mediasiya%20v%C9%99%20hu%CC%88quqi%20d%C9%99st%C9%99k.mp4",
       points: [
         "Müştəri ilə şirkət, podratçı və ya usta arasındakı mübahisənin texniki araşdırılması.",
         "İşin keyfiyyəti, həcmi və tamamlanma vəziyyətinin qiymətləndirilməsi.",
@@ -247,6 +254,34 @@ export const services: ServicesContent = {
           label: "Təbii daş",
           text: "emal, ölçüyə kəsilmə, səthin işlənməsi, təchizat və üzlük işləri.",
         },
+      ],
+    },
+    {
+      slug: "mebel-dekor",
+      title: "Mebel və dekor",
+      description: "Mebel və dekor həllərinin seçilməsi və məkana uyğunlaşdırılması.",
+      cta: "Mebel və dekor üçün müraciət et",
+      video: "/video/services/Mebel%20Dekor.mp4",
+      points: ["Mebel və dekor həllərinin seçilməsi və məkana uyğunlaşdırılması."],
+    },
+    {
+      slug: "agilli-ev-sistemleri",
+      title: "Ağıllı ev sistemləri",
+      description:
+        "İşıqlandırma, iqlim, pərdə və təhlükəsizlik sistemlərinin vahid idarəetmə altında birləşdirilməsi və gündəlik ehtiyaclara uyğun avtomatlaşdırılması.",
+      cta: "Ağıllı ev üçün müraciət et",
+      video: "/video/services/VR%20agilliev.mp4",
+      points: [
+        "Ağıllı ev sisteminin layihələndirilməsi və uyğun avadanlıqların seçilməsi.",
+        "İşıqlandırma, parlaqlıq və işıq ssenarilərinin idarəsi.",
+        "İsitmə, soyutma və havalandırmanın avtomatlaşdırılması.",
+        "Motorlu pərdə, jalüz, darvaza və qaraj qapılarının idarəsi.",
+        "Video-domofon, elektron kilid, siqnalizasiya və videomüşahidənin inteqrasiyası.",
+        "Su sızması, tüstü və qaz sensorları ilə xəbərdarlıq sistemləri.",
+        "Enerji sərfiyyatının izlənməsi və seçilmiş cihazların avtomatik idarəsi.",
+        "Panel, mobil tətbiq və uyğun cihazlarda səsli əmrlə idarəetmə.",
+        "“Evdəyəm”, “Gecə” və “Tətil” kimi fərdi ssenarilərin qurulması.",
+        "Quraşdırma, proqramlaşdırma, sistem sınaqları və texniki xidmət.",
       ],
     },
     {
@@ -308,6 +343,11 @@ export const serviceFilters: ServiceFilter[] = [
     slugs: ["izolyasiya", "material-avadanliq"],
   },
   {
+    id: "agilli-ev",
+    label: "Ağıllı ev sistemləri",
+    slugs: ["agilli-ev-sistemleri"],
+  },
+  {
     id: "hesablama",
     label: "VR Akademiya",
     slugs: ["vr-akademiya"],
@@ -315,7 +355,6 @@ export const serviceFilters: ServiceFilter[] = [
   {
     id: "mebel",
     label: "Mebel • Dekor",
-    slugs: [],
-    empty: "Bu bölmə üzrə xidmətlər tezliklə əlavə olunacaq.",
+    slugs: ["mebel-dekor"],
   },
 ];
