@@ -8,8 +8,11 @@ import ProgressStats from "@/components/ProgressStats";
 import QuoteBanner from "@/components/QuoteBanner";
 import Services from "@/components/Services";
 import SideNavShowcase from "@/components/SideNavShowcase";
+import { getServices } from "@/lib/services";
 
-export default function Home() {
+export default async function Home() {
+  const services = await getServices();
+
   return (
     <>
       <Header />
@@ -19,11 +22,11 @@ export default function Home() {
         <SideNavShowcase />
         <AdaptiveCalc />
         <ProgressStats />
-        <Services id="xidmetler" />
+        <Services id="xidmetler" data={services} />
         <PartnerStrip />
         <PercentBand />
       </main>
-      <Footer />
+      <Footer services={services.items.map(({ id, title }) => ({ id, title }))} />
     </>
   );
 }

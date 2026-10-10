@@ -46,7 +46,7 @@ function SocialGlyph({ id }: { id: string }) {
   );
 }
 
-export default function Footer() {
+export default function Footer({ services }: { services: { id: string; title: string }[] }) {
   const year = new Date().getFullYear();
 
   return (
@@ -117,7 +117,7 @@ export default function Footer() {
           </div>
 
           <div className={styles.formCol}>
-            <RequestForm />
+            <RequestForm services={services} />
           </div>
         </div>
 

@@ -48,3 +48,6 @@ AGENTS.md
 public/video/*
 # except the short service loops, which must ship with the site
 !public/video/services/
+
+# payload uploads stored locally when no Blob token is set
+/media/

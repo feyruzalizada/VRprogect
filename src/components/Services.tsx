@@ -5,10 +5,10 @@ import { useState } from "react";
 import { REQUEST_EVENT } from "./RequestForm";
 import ServiceVideo from "./ServiceVideo";
 import styles from "./Services.module.css";
-import { serviceFilters, services, type ServicePoint } from "@/content/services";
+import type { ServicePoint, ServicesData } from "@/lib/services";
 
 function Point({ point }: { point: ServicePoint }) {
-  if (typeof point === "string") return <li>{point}</li>;
+  if (!point.label) return <li>{point.text}</li>;
 
   return (
     <li>
@@ -17,13 +17,12 @@ function Point({ point }: { point: ServicePoint }) {
   );
 }
 
-export default function Services({ id = "kalkulyator" }: { id?: string }) {
-  const [active, setActive] = useState(serviceFilters[0].id);
+export default function Services({ id = "kalkulyator", data }: { id?: string; data: ServicesData }) {
+  const { section, items: all, filters } = data;
+  const [active, setActive] = useState(filters[0]?.id);
 
-  const filter = serviceFilters.find((item) => item.id === active) ?? serviceFilters[0];
-  const items = filter.all
-    ? services.items
-    : services.items.filter((item) => filter.slugs.includes(item.slug));
+  const filter = filters.find((item) => item.id === active) ?? filters[0];
+  const items = !filter || filter.all ? all : all.filter((item) => filter.ids.includes(item.id));
 
   return (
     <section id={id} className={styles.section}>
@@ -32,37 +31,39 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
 
       <div className={styles.container}>
         <div className={styles.heading}>
-          <span className={styles.eyebrow}>{services.eyebrow}</span>
-          <h2 className={styles.title}>{services.heading}</h2>
+          <span className={styles.eyebrow}>{section.eyebrow}</span>
+          <h2 className={styles.title}>{section.heading}</h2>
           <span className={styles.rule} aria-hidden />
 
-          <p className={styles.tagline}>{services.taglineTop}</p>
-          <p className={styles.intro}>{services.intro}</p>
+          <p className={styles.tagline}>{section.tagline}</p>
+          <p className={styles.intro}>{section.intro}</p>
         </div>
 
-        <div className={styles.filters} role="group" aria-label={services.filterLabel}>
-          <span className={styles.filterLabel}>{services.filterLabel}</span>
+        {filter ? (
+          <div className={styles.filters} role="group" aria-label={section.filterLabel ?? undefined}>
+            <span className={styles.filterLabel}>{section.filterLabel}</span>
 
-          <div className={styles.filterRow}>
-            {serviceFilters.map((item) => (
-              <button
-                key={item.id}
-                type="button"
-                className={`${styles.filter} ${item.id === active ? styles.filterOn : ""}`}
-                aria-pressed={item.id === active}
-                onClick={() => setActive(item.id)}
-              >
-                {item.label}
-              </button>
-            ))}
+            <div className={styles.filterRow}>
+              {filters.map((item) => (
+                <button
+                  key={item.id}
+                  type="button"
+                  className={`${styles.filter} ${item.id === filter.id ? styles.filterOn : ""}`}
+                  aria-pressed={item.id === filter.id}
+                  onClick={() => setActive(item.id)}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
+        ) : null}
 
-        {items.length === 0 ? <p className={styles.empty}>{filter.empty}</p> : null}
+        {items.length === 0 ? <p className={styles.empty}>{filter?.empty}</p> : null}
 
         <div className={styles.panel} hidden={items.length === 0}>
           {items.map((item) => (
-            <article key={item.slug} className={styles.card}>
+            <article key={item.id} className={styles.card}>
               <div className={styles.media}>
                 {item.video ? <ServiceVideo src={item.video} poster={item.poster} /> : null}
               </div>
@@ -74,13 +75,13 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
 
                 <details className={styles.more}>
                   <summary className={styles.moreToggle}>
-                    <span className={styles.moreOpen}>{services.moreLabel}</span>
-                    <span className={styles.moreClose}>{services.lessLabel}</span>
+                    <span className={styles.moreOpen}>{section.moreLabel}</span>
+                    <span className={styles.moreClose}>{section.lessLabel}</span>
                   </summary>
 
                   <ul className={styles.points}>
-                    {item.points.map((point) => (
-                      <Point key={typeof point === "string" ? point : point.label} point={point} />
+                    {item.points.map((point, i) => (
+                      <Point key={i} point={point} />
                     ))}
                   </ul>
 
@@ -90,7 +91,7 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
                 <button
                   type="button"
                   className={styles.cta}
-                  onClick={() => window.dispatchEvent(new CustomEvent(REQUEST_EVENT, { detail: item.slug }))}
+                  onClick={() => window.dispatchEvent(new CustomEvent(REQUEST_EVENT, { detail: item.id }))}
                 >
                   {item.cta}
                 </button>
@@ -99,7 +100,7 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
           ))}
         </div>
 
-        <p className={styles.disclaimer}>{services.disclaimer}</p>
+        <p className={styles.disclaimer}>{section.disclaimer}</p>
       </div>
     </section>
   );

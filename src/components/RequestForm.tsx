@@ -4,15 +4,14 @@ import { useEffect, useRef, useState } from "react";
 
 import styles from "./RequestForm.module.css";
 import { request } from "@/content/request";
-import { services } from "@/content/services";
 
 type Status = "idle" | "sending" | "sent" | "failed";
 type Field = "name" | "phone" | "services";
 
-// fired by the service cards' buttons with the card's slug
+// fired by the service cards' buttons with the card's id
 export const REQUEST_EVENT = "vr:request";
 
-export default function RequestForm() {
+export default function RequestForm({ services }: { services: { id: string; title: string }[] }) {
   const formRef = useRef<HTMLFormElement>(null);
   const pickerRef = useRef<HTMLDivElement>(null);
   const [picked, setPicked] = useState<string[]>([]);
@@ -22,8 +21,8 @@ export default function RequestForm() {
 
   useEffect(() => {
     function onRequest(event: Event) {
-      const slug = (event as CustomEvent<string>).detail;
-      setPicked((current) => (current.includes(slug) ? current : [...current, slug]));
+      const id = (event as CustomEvent<string>).detail;
+      setPicked((current) => (current.includes(id) ? current : [...current, id]));
       setErrors((current) => ({ ...current, services: undefined }));
       setStatus("idle");
 
@@ -55,8 +54,8 @@ export default function RequestForm() {
     };
   }, [open]);
 
-  function toggle(slug: string) {
-    setPicked((current) => (current.includes(slug) ? current.filter((s) => s !== slug) : [...current, slug]));
+  function toggle(id: string) {
+    setPicked((current) => (current.includes(id) ? current.filter((s) => s !== id) : [...current, id]));
     setErrors((current) => ({ ...current, services: undefined }));
   }
 
@@ -97,8 +96,8 @@ export default function RequestForm() {
     }
   }
 
-  const summary = services.items
-    .filter((item) => picked.includes(item.slug))
+  const summary = services
+    .filter((item) => picked.includes(item.id))
     .map((item) => item.title)
     .join(", ");
 
@@ -185,14 +184,14 @@ export default function RequestForm() {
 
         {open ? (
           <ul className={styles.options} role="group" aria-labelledby="muraciet-xidmet">
-            {services.items.map((item) => (
-              <li key={item.slug}>
+            {services.map((item) => (
+              <li key={item.id}>
                 <label className={styles.option}>
                   <input
                     type="checkbox"
                     className={styles.check}
-                    checked={picked.includes(item.slug)}
-                    onChange={() => toggle(item.slug)}
+                    checked={picked.includes(item.id)}
+                    onChange={() => toggle(item.id)}
                   />
                   <span>{item.title}</span>
                 </label>
