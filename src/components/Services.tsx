@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { REQUEST_EVENT } from "./RequestForm";
 import ServiceVideo from "./ServiceVideo";
 import styles from "./Services.module.css";
 import { serviceFilters, services, type ServicePoint } from "@/content/services";
@@ -86,7 +87,11 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
                   {item.note ? <p className={styles.note}>{item.note}</p> : null}
                 </details>
 
-                <button type="button" className={styles.cta}>
+                <button
+                  type="button"
+                  className={styles.cta}
+                  onClick={() => window.dispatchEvent(new CustomEvent(REQUEST_EVENT, { detail: item.slug }))}
+                >
                   {item.cta}
                 </button>
               </div>

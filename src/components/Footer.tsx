@@ -1,5 +1,6 @@
 import styles from "./Footer.module.css";
 import { footer } from "@/content/footer";
+import RequestForm from "./RequestForm";
 import SmoothLink from "./SmoothLink";
 import { heroSocial } from "@/content/hero";
 
@@ -113,6 +114,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div className={styles.formCol}>
+            <RequestForm />
           </div>
         </div>
 
