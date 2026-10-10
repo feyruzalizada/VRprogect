@@ -67,8 +67,6 @@ export default function Services({ id = "kalkulyator" }: { id?: string }) {
               </div>
 
               <div className={styles.body}>
-                {item.badge ? <span className={styles.badge}>{item.badge}</span> : null}
-
                 <h3 className={styles.cardTitle}>{item.title}</h3>
                 <span className={styles.cardRule} aria-hidden />
                 <p className={styles.cardText}>{item.description}</p>

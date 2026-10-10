@@ -7,7 +7,6 @@ export interface ServiceItem {
   description: string;
   points: ServicePoint[];
   cta: string;
-  badge?: string;
   note?: string;
   /** clip for the left half of the card; without one the panel stays dark */
   video?: string;
@@ -282,22 +281,6 @@ export const services: ServicesContent = {
         "Panel, mobil tətbiq və uyğun cihazlarda səsli əmrlə idarəetmə.",
         "“Evdəyəm”, “Gecə” və “Tətil” kimi fərdi ssenarilərin qurulması.",
         "Quraşdırma, proqramlaşdırma, sistem sınaqları və texniki xidmət.",
-      ],
-    },
-    {
-      slug: "vr-adaptiv-yasayis",
-      title: "VR Adaptiv Yaşayış",
-      description:
-        "Ailənizin tərkibinə, fərdi ölçülərə və gündəlik ehtiyaclara uyğun ilkin məkan hesablamaları.",
-      cta: "Hesablamaya başla",
-      badge: "Pulsuz hesablama",
-      points: [
-        "Mənzil seçimi üçün sahə və otaq ehtiyacları.",
-        "Fərdi ev tikintisi üçün ilkin məkan proqramı.",
-        "Mənzil və fərdi ev təmiri üçün adaptiv erqonomik hesablamalar.",
-        "İnteryer elementləri üzrə fərdi ilkin ölçülər.",
-        "Uşaqların inkişafı və gələcək ailə ehtiyaclarının nəzərə alınması.",
-        "Funksional istifadə və əlçatanlıq ehtiyaclarının qiymətləndirilməsi.",
       ],
     },
     {
