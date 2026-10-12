@@ -45,9 +45,10 @@ CLAUDE.md
 AGENTS.md
 
 # source video lives outside the repo
-public/video/*
-# except the short service loops, which must ship with the site
-!public/video/services/
+public/video/
 
 # payload uploads stored locally when no Blob token is set
 /media/
+
+# vercel cli link
+.vercel
