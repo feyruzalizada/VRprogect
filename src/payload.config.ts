@@ -10,6 +10,7 @@ import { buildConfig } from "payload";
 import sharp from "sharp";
 
 import { Media } from "./collections/Media";
+import { Requests } from "./collections/Requests";
 import { ServiceFilters } from "./collections/ServiceFilters";
 import { Services } from "./collections/Services";
 import { Users } from "./collections/Users";
@@ -30,10 +31,11 @@ export default buildConfig({
         Logo: "/components/admin/Brand#Logo",
         Icon: "/components/admin/Brand#Icon",
       },
+      providers: ["/components/admin/RequestsBadge#RequestsBadge"],
     },
     importMap: { baseDir: path.resolve(dirname) },
   },
-  collections: [Services, ServiceFilters, Media, Users],
+  collections: [Requests, Services, ServiceFilters, Media, Users],
   globals: [ServicesSection],
   i18n: {
     supportedLanguages: { az, ru, en },

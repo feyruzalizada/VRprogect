@@ -67,6 +67,7 @@ export interface Config {
   };
   blocks: {};
   collections: {
+    requests: Request;
     services: Service;
     'service-filters': ServiceFilter;
     media: Media;
@@ -78,6 +79,7 @@ export interface Config {
   };
   collectionsJoins: {};
   collectionsSelect: {
+    requests: RequestsSelect<false> | RequestsSelect<true>;
     services: ServicesSelect<false> | ServicesSelect<true>;
     'service-filters': ServiceFiltersSelect<false> | ServiceFiltersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
@@ -124,6 +126,28 @@ export interface UserAuthOperations {
     email: string;
     password: string;
   };
+}
+/**
+ * Requests from the site form. Change the status to track them.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "requests".
+ */
+export interface Request {
+  id: number;
+  seen?: boolean | null;
+  status: 'new' | 'in-progress' | 'done';
+  /**
+   * Not shown to the client.
+   */
+  comment?: string | null;
+  name: string;
+  phone: string;
+  area?: number | null;
+  place?: string | null;
+  servicesText?: string | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * Drag rows in the list to change the order on the site.
@@ -237,6 +261,10 @@ export interface PayloadLockedDocument {
   id: number;
   document?:
     | ({
+        relationTo: 'requests';
+        value: number | Request;
+      } | null)
+    | ({
         relationTo: 'services';
         value: number | Service;
       } | null)
@@ -293,6 +321,22 @@ export interface PayloadMigration {
   batch?: number | null;
   updatedAt: string;
   createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "requests_select".
+ */
+export interface RequestsSelect<T extends boolean = true> {
+  seen?: T;
+  status?: T;
+  comment?: T;
+  name?: T;
+  phone?: T;
+  area?: T;
+  place?: T;
+  servicesText?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
