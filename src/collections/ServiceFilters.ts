@@ -13,7 +13,7 @@ export const ServiceFilters: CollectionConfig = {
   admin: {
     useAsTitle: "label",
     pagination: { defaultLimit: 100 },
-    defaultColumns: ["label", "showAll", "services"],
+    defaultColumns: ["label", "services"],
     group: { az: "Xidmətlər bölməsi", ru: "Раздел «Xidmətlər»", en: "Services section" },
     description: {
       az: "Birinci filtr saytda açıq gəlir. Sıranı siyahıda sürüşdürərək dəyişin.",
