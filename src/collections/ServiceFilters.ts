@@ -9,6 +9,7 @@ export const ServiceFilters: CollectionConfig = {
     plural: { az: "Filtrlər", ru: "Фильтры", en: "Filters" },
   },
   orderable: true,
+  versions: { maxPerDoc: 20 },
   defaultSort: "_order",
   admin: {
     useAsTitle: "label",

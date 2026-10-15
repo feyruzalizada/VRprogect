@@ -1,6 +1,21 @@
-import type { CollectionConfig } from "payload";
+import type { CollectionAfterDeleteHook, CollectionConfig } from "payload";
 
 import { revalidateHome } from "./revalidate";
+
+// a deleted card takes its clip and poster along, unless another card still uses them
+const dropUnusedFiles: CollectionAfterDeleteHook = async ({ doc, req }) => {
+  for (const file of [doc.video, doc.poster]) {
+    const id = typeof file === "object" ? file?.id : file;
+    if (!id) continue;
+
+    const used = await req.payload.count({
+      collection: "services",
+      where: { or: [{ video: { equals: id } }, { poster: { equals: id } }] },
+      req,
+    });
+    if (used.totalDocs === 0) await req.payload.delete({ collection: "media", id, req });
+  }
+};
 
 export const Services: CollectionConfig = {
   slug: "services",
@@ -9,6 +24,7 @@ export const Services: CollectionConfig = {
     plural: { az: "Xidmətlər", ru: "Услуги", en: "Services" },
   },
   orderable: true,
+  versions: { maxPerDoc: 20 },
   defaultSort: "_order",
   admin: {
     useAsTitle: "title",
@@ -23,7 +39,7 @@ export const Services: CollectionConfig = {
   },
   hooks: {
     afterChange: [revalidateHome],
-    afterDelete: [revalidateHome],
+    afterDelete: [revalidateHome, dropUnusedFiles],
   },
   fields: [
     {

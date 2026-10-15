@@ -1,5 +1,6 @@
 import * as migration_20261010_094808_initial from './20261010_094808_initial';
 import * as migration_20261012_203238_blob_storage from './20261012_203238_blob_storage';
+import * as migration_20261015_104122_versions from './20261015_104122_versions';
 
 export const migrations = [
   {
@@ -10,6 +11,11 @@ export const migrations = [
   {
     up: migration_20261012_203238_blob_storage.up,
     down: migration_20261012_203238_blob_storage.down,
-    name: '20261012_203238_blob_storage'
+    name: '20261012_203238_blob_storage',
+  },
+  {
+    up: migration_20261015_104122_versions.up,
+    down: migration_20261015_104122_versions.down,
+    name: '20261015_104122_versions'
   },
 ];

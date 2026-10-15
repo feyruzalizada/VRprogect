@@ -6,6 +6,7 @@ export const ServicesSection: GlobalConfig = {
   slug: "services-section",
   label: { az: "Bölmənin mətnləri", ru: "Тексты раздела", en: "Section texts" },
   admin: { group: { az: "Xidmətlər bölməsi", ru: "Раздел «Xidmətlər»", en: "Services section" } },
+  versions: { max: 20 },
   hooks: { afterChange: [revalidateHome] },
   fields: [
     { name: "eyebrow", type: "text", required: true, label: { az: "Üst yazı", ru: "Надзаголовок", en: "Eyebrow" } },
