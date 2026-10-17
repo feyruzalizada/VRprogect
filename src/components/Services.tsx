@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import ContactChoice from "./ContactChoice";
 import ServiceVideo from "./ServiceVideo";
 import styles from "./Services.module.css";
 import type { ServicePoint, ServicesData } from "@/lib/services";
@@ -87,9 +88,7 @@ export default function Services({ id = "kalkulyator", data }: { id?: string; da
                   {item.note ? <p className={styles.note}>{item.note}</p> : null}
                 </details>
 
-                <button type="button" className={styles.cta}>
-                  {item.cta}
-                </button>
+                <ContactChoice label={item.cta} service={item.title} />
               </div>
             </article>
           ))}
