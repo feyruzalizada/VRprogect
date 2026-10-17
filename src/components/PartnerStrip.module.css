@@ -37,7 +37,7 @@
 .track {
   display: flex;
   width: max-content;
-  animation: marquee 24s linear infinite;
+  animation: marquee 23s linear infinite;
 }
 
 .track:hover {
@@ -91,7 +91,7 @@
   /* the track got longer, so the duration grows with it and the strip keeps
      travelling at the same 140px a second */
   .track {
-    animation-duration: 30s;
+    animation-duration: 28.5s;
   }
 }
 
