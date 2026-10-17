@@ -17,7 +17,6 @@ export interface FooterContent {
   contacts: FooterContact[];
   socialHeading: string;
   copyright: string;
-  legal: FooterLink[];
 }
 
 export const footer: FooterContent = {
@@ -42,8 +41,4 @@ export const footer: FooterContent = {
   ],
   socialHeading: "Bizi izləyin",
   copyright: "VR Global Group. Bütün hüquqlar qorunur.",
-  legal: [
-    { label: "Məxfilik siyasəti", href: "#" },
-    { label: "İstifadə şərtləri", href: "#" },
-  ],
 };

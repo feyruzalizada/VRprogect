@@ -120,16 +120,6 @@ export default function Footer() {
           <p className={styles.copyright}>
             © {year} {footer.copyright}
           </p>
-
-          <ul className={styles.legal}>
-            {footer.legal.map((item) => (
-              <li key={item.label}>
-                <a href={item.href} className={styles.legalLink}>
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </footer>

@@ -173,10 +173,6 @@ a.contactValue:hover {
 }
 
 .bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
   padding: 26px 0 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -187,26 +183,6 @@ a.contactValue:hover {
   font-size: 14px;
   line-height: 24px;
   color: #8a8a8a;
-}
-
-.legal {
-  display: flex;
-  gap: 26px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.legalLink {
-  font-family: var(--font-raleway), sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  color: #8a8a8a;
-  transition: color 250ms linear;
-}
-
-.legalLink:hover {
-  color: #fff;
 }
 
 @media (max-width: 1024px) {
@@ -245,15 +221,5 @@ a.contactValue:hover {
     grid-template-columns: 1fr;
     gap: 36px;
     padding-bottom: 44px;
-  }
-
-  .bottom {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-  }
-
-  .legal {
-    gap: 18px;
   }
 }
