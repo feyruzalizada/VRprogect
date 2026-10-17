@@ -120,6 +120,8 @@
 
 .image {
   object-fit: cover;
+  /* the Facebook covers are portrait; faces sit in the upper third */
+  object-position: center 30%;
   transition: transform 600ms ease;
 }
 
