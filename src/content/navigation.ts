@@ -11,5 +11,6 @@ export const mainNav: NavItem[] = [
   { label: "Xidmətlər", href: "#xidmetler" },
   { label: "Rəsmi tərəfdaşlar", href: "#partnyorlar" },
   { label: "Uğurlar", href: "#ugurlar" },
+  { label: "Xəbərlər", href: "#xeberler" },
   { label: "Kontaktlar", href: "#kontaktlar" },
 ];

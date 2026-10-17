@@ -30,6 +30,7 @@ export const footer: FooterContent = {
     { label: "Xidmətlər", href: "#xidmetler" },
     { label: "Rəsmi tərəfdaşlar", href: "#partnyorlar" },
     { label: "Uğurlar", href: "#ugurlar" },
+    { label: "Xəbərlər", href: "#xeberler" },
   ],
   contactHeading: "Əlaqə",
   // TODO: real address, phone and mail from the client

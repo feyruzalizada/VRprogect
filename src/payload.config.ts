@@ -10,6 +10,7 @@ import { buildConfig } from "payload";
 import sharp from "sharp";
 
 import { Media } from "./collections/Media";
+import { News } from "./collections/News";
 import { ServiceFilters } from "./collections/ServiceFilters";
 import { Services } from "./collections/Services";
 import { Users } from "./collections/Users";
@@ -33,7 +34,7 @@ export default buildConfig({
     },
     importMap: { baseDir: path.resolve(dirname) },
   },
-  collections: [Services, ServiceFilters, Media, Users],
+  collections: [Services, ServiceFilters, News, Media, Users],
   globals: [ServicesSection],
   i18n: {
     supportedLanguages: { az, ru, en },

@@ -69,6 +69,7 @@ export interface Config {
   collections: {
     services: Service;
     'service-filters': ServiceFilter;
+    news: News;
     media: Media;
     users: User;
     'payload-kv': PayloadKv;
@@ -80,6 +81,7 @@ export interface Config {
   collectionsSelect: {
     services: ServicesSelect<false> | ServicesSelect<true>;
     'service-filters': ServiceFiltersSelect<false> | ServiceFiltersSelect<true>;
+    news: NewsSelect<false> | NewsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
@@ -187,6 +189,28 @@ export interface ServiceFilter {
   createdAt: string;
 }
 /**
+ * The site shows the 8 newest posts, by date.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "news".
+ */
+export interface News {
+  id: number;
+  title: string;
+  date: string;
+  image: number | Media;
+  /**
+   * Shown on the back of the card; long text scrolls inside it.
+   */
+  text: string;
+  /**
+   * Optional.
+   */
+  link?: string | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users".
  */
@@ -243,6 +267,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'service-filters';
         value: number | ServiceFilter;
+      } | null)
+    | ({
+        relationTo: 'news';
+        value: number | News;
       } | null)
     | ({
         relationTo: 'media';
@@ -326,6 +354,19 @@ export interface ServiceFiltersSelect<T extends boolean = true> {
   showAll?: T;
   services?: T;
   empty?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "news_select".
+ */
+export interface NewsSelect<T extends boolean = true> {
+  title?: T;
+  date?: T;
+  image?: T;
+  text?: T;
+  link?: T;
   updatedAt?: T;
   createdAt?: T;
 }
