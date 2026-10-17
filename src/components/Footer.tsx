@@ -1,6 +1,5 @@
 import styles from "./Footer.module.css";
 import { footer } from "@/content/footer";
-import RequestForm from "./RequestForm";
 import SmoothLink from "./SmoothLink";
 import { heroSocial } from "@/content/hero";
 
@@ -46,7 +45,7 @@ function SocialGlyph({ id }: { id: string }) {
   );
 }
 
-export default function Footer({ services }: { services: { id: string; title: string }[] }) {
+export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
@@ -114,10 +113,6 @@ export default function Footer({ services }: { services: { id: string; title: st
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div className={styles.formCol}>
-            <RequestForm services={services} />
           </div>
         </div>
 

@@ -26,7 +26,7 @@ export default async function Home() {
         <PartnerStrip />
         <PercentBand />
       </main>
-      <Footer services={services.items.map(({ id, title }) => ({ id, title }))} />
+      <Footer />
     </>
   );
 }
