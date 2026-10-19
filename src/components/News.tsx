@@ -1,4 +1,5 @@
 import NewsCard from "./NewsCard";
+import NewsTrack from "./NewsTrack";
 import styles from "./News.module.css";
 import { news } from "@/content/news";
 import type { NewsItem } from "@/lib/news";
@@ -25,13 +26,13 @@ export default function News({ items }: { items: NewsItem[] }) {
           <span className={styles.rule} aria-hidden />
         </div>
 
-        <ul className={styles.grid}>
+        <NewsTrack label={news.heading}>
           {items.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} className={styles.item}>
               <NewsCard item={item} date={dateFormat.format(new Date(item.date))} />
             </li>
           ))}
-        </ul>
+        </NewsTrack>
 
         <a className={styles.all} href={news.page} target="_blank" rel="noopener noreferrer">
           {news.all}
