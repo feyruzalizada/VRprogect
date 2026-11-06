@@ -1,6 +1,6 @@
 import { heroSocial } from "@/content/hero";
 
-export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://vr-project-umber.vercel.app").replace(/\/$/, "");
+export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.millistandart.az").replace(/\/$/, "");
 
 export const siteName = "VR Global Group";
 
