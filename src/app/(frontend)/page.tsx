@@ -1,6 +1,7 @@
 import AdaptiveCalc from "@/components/AdaptiveCalc";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import JsonLd from "@/components/JsonLd";
 import HeroSlider from "@/components/HeroSlider";
 import News from "@/components/News";
 import PartnerStrip from "@/components/PartnerStrip";
@@ -30,6 +31,7 @@ export default async function Home() {
         <News items={news} />
       </main>
       <Footer />
+      <JsonLd services={services.items} />
     </>
   );
 }

@@ -1,5 +1,8 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Exo_2, Raleway } from "next/font/google";
+
+import { siteDescription, siteKeywords, siteName, siteTitle, siteUrl } from "@/lib/site";
+
 import "./globals.css";
 
 const display = Exo_2({
@@ -14,33 +17,46 @@ const raleway = Raleway({
   display: "swap",
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://vr-project-umber.vercel.app";
-
-const title = "VR Global Group";
-const description =
-  "We create architectural and creative solutions to help people realize their vision and make them a reality.";
+const ogImage = { url: "/images/og.jpg", width: 1200, height: 630, alt: siteTitle, type: "image/jpeg" };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title,
-  description,
+  title: { default: siteTitle, template: `%s | ${siteName}` },
+  description: siteDescription,
+  applicationName: siteName,
+  keywords: siteKeywords,
+  authors: [{ name: siteName, url: siteUrl }],
+  creator: siteName,
+  publisher: siteName,
+  category: "construction",
   alternates: { canonical: "/" },
+  formatDetection: { telephone: false, email: false, address: false },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
+  verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined },
   openGraph: {
     type: "website",
     locale: "az_AZ",
     url: "/",
-    siteName: title,
-    title,
-    description,
-    images: [{ url: "/images/hero-poster.jpg", width: 1920, height: 1080 }],
+    siteName,
+    title: siteTitle,
+    description: siteDescription,
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
-    title,
-    description,
-    images: ["/images/hero-poster.jpg"],
+    title: siteTitle,
+    description: siteDescription,
+    images: [ogImage],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#1a1a1a",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
