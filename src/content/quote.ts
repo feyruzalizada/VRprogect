@@ -15,6 +15,6 @@ export const quoteBanner: QuoteBannerContent = {
   author: {
     name: "Novator Memar",
     role: "İnşaat məsələləri üzrə ekspert",
-    avatar: "/images/muxtar-erturan-v2.jpg",
+    avatar: "/images/muxtar-erturan-v3.jpg",
   },
 };
