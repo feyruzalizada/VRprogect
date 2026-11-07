@@ -6,7 +6,7 @@ export default function QuoteBanner() {
   const { motto, quote, author } = quoteBanner;
 
   return (
-    <section className={styles.section}>
+    <section id="sitat" className={styles.section}>
       <div className={styles.container}>
         <figure className={styles.figure}>
           <blockquote className={styles.quote}>

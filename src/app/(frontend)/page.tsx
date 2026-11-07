@@ -18,7 +18,7 @@ export default async function Home() {
 
   return (
     <>
-      <Header searchIndex={buildSearchIndex(services.items, news)} />
+      <Header searchIndex={buildSearchIndex(services, news)} />
       <main>
         <HeroSlider />
         <QuoteBanner />
