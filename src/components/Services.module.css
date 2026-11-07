@@ -363,6 +363,13 @@
   border-color: #1a1a1a;
 }
 
+/* a mouse means a computer that can't place a call */
+@media (hover: hover) and (pointer: fine) {
+  .touchOnly {
+    display: none;
+  }
+}
+
 .choiceIcon {
   width: 16px;
   height: 16px;
