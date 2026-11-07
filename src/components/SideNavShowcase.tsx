@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import BookReader from "./BookReader";
+import { scrollToElement } from "./navScroll";
 import styles from "./SideNavShowcase.module.css";
 import { sideNav, type SideNavLink } from "@/content/sidenav";
 
@@ -36,6 +37,20 @@ function Panel({ link, open }: { link: SideNavLink; open: boolean }) {
 export default function SideNavShowcase() {
   const [openId, setOpenId] = useState<string | null>(null);
   const introOpen = openId === sideNav.intro.id;
+
+  // the header search opens a panel by its id
+  useEffect(() => {
+    function onOpen(event: Event) {
+      const id = (event as CustomEvent<string>).detail;
+      setOpenId(id);
+      requestAnimationFrame(() => {
+        const button = document.querySelector(`[aria-controls="${id}"]`);
+        if (button) scrollToElement(button.closest("li") ?? button);
+      });
+    }
+    window.addEventListener("vr:open-panel", onOpen);
+    return () => window.removeEventListener("vr:open-panel", onOpen);
+  }, []);
 
   useEffect(() => {
     if (!openId) return;

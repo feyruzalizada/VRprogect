@@ -4,7 +4,9 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import styles from "./Header.module.css";
 import { handleNavClick } from "./navScroll";
+import SiteSearch from "./SiteSearch";
 import { mainNav } from "@/content/navigation";
+import type { SearchItem } from "@/lib/searchIndex";
 
 function CaretDown({ className }: { className?: string }) {
   return (
@@ -133,7 +135,7 @@ function LangDropdown({ lang, onPick }: { lang: Lang; onPick: (code: Lang) => vo
   );
 }
 
-export default function Header() {
+export default function Header({ searchIndex }: { searchIndex: SearchItem[] }) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [panelOpen, setPanelOpen] = useState(false);
   // visual only — no locale routing yet
@@ -206,7 +208,7 @@ export default function Header() {
             <button
               type="button"
               className={`${styles.action} ${styles.search}`}
-              aria-label="Search"
+              aria-label="Axtarış"
               aria-expanded={searchOpen}
               onClick={() => setSearchOpen((v) => !v)}
             >
@@ -244,7 +246,8 @@ export default function Header() {
             <button
               type="button"
               className={`${styles.action} ${styles.search}`}
-              aria-label="Search"
+              aria-label="Axtarış"
+              aria-expanded={searchOpen}
               onClick={() => setSearchOpen((v) => !v)}
             >
               <SearchIcon />
@@ -262,29 +265,7 @@ export default function Header() {
         </div>
       </div>
 
-      {searchOpen && (
-        <div className={styles.searchField}>
-          <form
-            className={styles.searchForm}
-            role="search"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <label htmlFor="site-search" className="sr-only">
-              Search for:
-            </label>
-            <input
-              id="site-search"
-              type="search"
-              name="s"
-              placeholder="SEARCH..."
-              className={styles.searchInput}
-            />
-            <button type="submit" className={styles.searchSubmit} aria-label="Submit search">
-              <SearchIcon />
-            </button>
-          </form>
-        </div>
-      )}
+      {searchOpen && <SiteSearch index={searchIndex} onDone={() => setSearchOpen(false)} />}
 
       {panelOpen && (
         <button

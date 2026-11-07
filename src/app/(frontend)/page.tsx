@@ -10,6 +10,7 @@ import QuoteBanner from "@/components/QuoteBanner";
 import Services from "@/components/Services";
 import SideNavShowcase from "@/components/SideNavShowcase";
 import { getNews } from "@/lib/news";
+import { buildSearchIndex } from "@/lib/searchIndex";
 import { getServices } from "@/lib/services";
 
 export default async function Home() {
@@ -17,7 +18,7 @@ export default async function Home() {
 
   return (
     <>
-      <Header />
+      <Header searchIndex={buildSearchIndex(services.items, news)} />
       <main>
         <HeroSlider />
         <QuoteBanner />

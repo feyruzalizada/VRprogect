@@ -28,7 +28,7 @@ export default function News({ items }: { items: NewsItem[] }) {
 
         <NewsTrack label={news.heading}>
           {items.map((item) => (
-            <li key={item.id} className={styles.item}>
+            <li key={item.id} id={`xeber-${item.id}`} className={styles.item}>
               <NewsCard item={item} date={dateFormat.format(new Date(item.date))} />
             </li>
           ))}
