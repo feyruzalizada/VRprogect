@@ -32,10 +32,10 @@ export const footer: FooterContent = {
     { label: "Xəbərlər", href: "#xeberler" },
   ],
   contactHeading: "Əlaqə",
-  // TODO: real address, phone and mail from the client
+  // TODO: street address and mail from the client
   contacts: [
     { label: "Ünvan", value: "Bakı, Azərbaycan" },
-    { label: "Telefon", value: "+994 00 000 00 00", href: "tel:+99400000000" },
+    { label: "Telefon", value: "+994 50 200 51 21", href: "tel:+994502005121" },
     { label: "E-poçt", value: "info@vrproject.az", href: "mailto:info@vrproject.az" },
     { label: "İş saatları", value: "B.e — Şən, 09:00 — 18:00" },
   ],
