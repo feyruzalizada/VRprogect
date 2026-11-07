@@ -301,7 +301,7 @@ export default function BookReader() {
             </section>
             <p className="detail">Kompüterdə kitab iki səhifə, telefonda bir səhifə ilə açılır. Düymələr, klaviaturanın ← → oxları və mobil sürüşdürmə ilə vərəqləyin.</p>
           </div>
-          <footer className="site-footer">© 2026 Vəliyev Muxtar Seyfəddin oğlu · PRINT-001/R14 · Ön və arxa üz: FINAL / TOXUNULMAZ. Bel: SINAQ. Bu, interaktiv baxış versiyasıdır; çap təsdiqi deyil.</footer>
+          <footer className="site-footer">© 2026 Vəliyev Muxtar Seyfəddin oğlu</footer>
         </div>
       </div>
 
