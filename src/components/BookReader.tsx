@@ -76,7 +76,10 @@ function mountReader(root: HTMLElement, col: HTMLElement) {
   function setPageImg(element: HTMLImageElement, n: number) { const p = path(n); if (p) { if (element.getAttribute("src") !== p) element.src = p; element.style.opacity = "1"; } else { element.removeAttribute("src"); element.style.opacity = "0"; } }
   function pair(n: number): [number, number] { const s = viewStart(n); return s === 1 ? [0, 1] : [s, s + 1]; }
   function pageLabel(n: number) { if (n === FRONT) return "Ön üz qabığı"; if (n === BACK) return "Arxa üz qabığı"; if (mobile.matches) return `Səhifə ${n} / ${N}`; const [l, r] = pair(n); return l ? `Səhifələr ${l}–${r} / ${N}` : `Səhifə 1 / ${N}`; }
+  // nothing of the book loads until it is about a screen away
+  let ready = false;
   function draw() {
+    if (!ready) return;
     $("coverStand").hidden = !(current === FRONT || current === BACK); $("desktopBook").hidden = current === FRONT || current === BACK;
     if (current === FRONT || current === BACK) { setPageImg($("coverImg"), current); } else { const [l, r] = pair(current); setPageImg($("leftImg"), l); setPageImg($("rightImg"), r); $("leftFolio").textContent = folio(l); $("rightFolio").textContent = folio(r); }
     setPageImg($("mobileImg"), current);
@@ -190,12 +193,19 @@ function mountReader(root: HTMLElement, col: HTMLElement) {
   });
   ro.observe(col);
 
-  draw();
+  const near = new IntersectionObserver(([entry]) => {
+    if (!entry.isIntersecting) return;
+    near.disconnect();
+    ready = true;
+    draw();
+  }, { rootMargin: "100% 0px" });
+  near.observe(col);
 
   return () => {
     ac.abort();
     io.disconnect();
     ro.disconnect();
+    near.disconnect();
     timers.forEach(clearTimeout);
     document.body.style.overflow = "";
   };
@@ -253,7 +263,7 @@ export default function BookReader() {
                   </div>
                   <div className="cover-stand" id="coverStand" role="button" tabIndex={0} aria-label="Kitabı aç">
                     <div className="closed-book">
-                      <img id="coverImg" src={FRONT_SRC} alt="VR Standartları 2026 kitabının təsdiqlənmiş ön üz qabığı" draggable={false} loading="lazy" />
+                      <img id="coverImg" alt="VR Standartları 2026 kitabının təsdiqlənmiş ön üz qabığı" draggable={false} />
                     </div>
                   </div>
                 </div>
@@ -261,7 +271,7 @@ export default function BookReader() {
               <section className="mobile-scene" aria-label="Mobil cihaz üçün tək səhifəli kitab">
                 <div className="mobile-book" id="mobileBook" role="button" tabIndex={0} aria-label="Növbəti səhifəyə keç">
                   <div className="mobile-body">
-                    <img id="mobileImg" alt="Kitabın hazırkı səhifəsi" src={FRONT_SRC} draggable={false} loading="lazy" />
+                    <img id="mobileImg" alt="Kitabın hazırkı səhifəsi" draggable={false} />
                     <div className="mobile-turn" id="mobileLeaf" hidden>
                       <div className="face front"><img id="mobileFront" alt="" draggable={false} /></div>
                       <div className="face back"><img id="mobileBack" alt="" draggable={false} /></div>
