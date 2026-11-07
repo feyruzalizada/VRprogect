@@ -26,7 +26,6 @@ export const footer: FooterContent = {
   nav: [
     { label: "VR standartları 2026", href: "#kitab" },
     { label: "VR adaptiv hesablama", href: "#kalkulyator" },
-    { label: "Üslub statistikası", href: "#uslub-statistikasi" },
     { label: "Xidmətlər", href: "#xidmetler" },
     { label: "Rəsmi tərəfdaşlar", href: "#partnyorlar" },
     { label: "Uğurlar", href: "#ugurlar" },

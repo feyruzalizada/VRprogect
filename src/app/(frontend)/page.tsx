@@ -6,7 +6,6 @@ import HeroSlider from "@/components/HeroSlider";
 import News from "@/components/News";
 import PartnerStrip from "@/components/PartnerStrip";
 import PercentBand from "@/components/PercentBand";
-import ProgressStats from "@/components/ProgressStats";
 import QuoteBanner from "@/components/QuoteBanner";
 import Services from "@/components/Services";
 import SideNavShowcase from "@/components/SideNavShowcase";
@@ -24,7 +23,6 @@ export default async function Home() {
         <QuoteBanner />
         <SideNavShowcase />
         <AdaptiveCalc />
-        <ProgressStats />
         <Services id="xidmetler" data={services} />
         <PartnerStrip />
         <PercentBand />
