@@ -1,0 +1,131 @@
+/* VR Standartları 2026 reader: styles as delivered, scoped to .vrbook; the page part sizes to its column
+   (vw → cqw, 760px query on the column), the dialogs keep the screen width */
+.vrbook{width:100%;line-height:normal;font-size:16px}
+.vrbook .vrbook-col{container:vrbook / inline-size}
+/* dialogs cover the site header (z-index 999–1001) */
+.vrbook .modal.modal{z-index:1100}
+.vrbook{--ink:#0b1521;--paper:#f8f7f3;--gold:#dfb972;--gold2:#f1d9a4;--border:#a48d665c;--muted:#9eafc3;--text:#eef2f6;--panel:#142234}
+.vrbook *{box-sizing:border-box}
+.vrbook [hidden]{display:none!important}
+.vrbook{margin:0;color:var(--text);font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;background:radial-gradient(ellipse at 52% -10%,#263e55 0,transparent 53%),radial-gradient(ellipse at 99% 81%,#1d3043 0,transparent 39%),#09111c;min-height:100vh}
+.vrbook button,.vrbook input,.vrbook select{font:inherit}
+.vrbook button{cursor:pointer}
+.vrbook button:disabled{opacity:.37;cursor:not-allowed}
+.vrbook button:focus-visible,.vrbook input:focus-visible,.vrbook select:focus-visible,.vrbook a:focus-visible,.vrbook .turn-target:focus-visible{outline:3px solid #f5d08b;outline-offset:3px}
+.vrbook a{color:inherit}
+.vrbook .shell{width:min(1400px,100%);margin:0 auto;padding:18px 25px 26px}
+.vrbook .top{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;padding:12px 2px 20px;border-bottom:1px solid var(--border)}
+.vrbook .brand{display:flex;align-items:center;gap:15px;min-width:0}
+.vrbook .brand-logo{width:53px;height:53px;border-radius:12px;background:linear-gradient(135deg,#0e2031,#263b4b);border:1px solid #d4b77699;color:#f2d39b;display:grid;place-items:center;font-weight:850;font-size:25px;letter-spacing:-3px;padding-right:3px;box-shadow:inset 0 0 17px #c396243b}
+.vrbook .brand-text strong{display:block;letter-spacing:.11em;font-size:16px;font-weight:700}
+.vrbook .brand-text small{display:block;color:#afbfcc;font-size:11px;letter-spacing:.075em;margin-top:5px}
+.vrbook .top-right{display:flex;align-items:center;flex-wrap:wrap;gap:10px}
+.vrbook .tag{border:1px solid var(--border);color:#dfc697;padding:9px 13px;border-radius:100px;font-size:12px;white-space:nowrap}
+.vrbook .tag.bold{background:linear-gradient(130deg,#b98d46,#f2d8a6);color:#162336;font-weight:700;border:0}
+.vrbook .toolbar{display:flex;align-items:center;flex-wrap:wrap;justify-content:center;gap:9px;margin:18px auto 6px}
+.vrbook .btn{border:1px solid #9f884f8c;background:linear-gradient(#23344a,#152334);color:#f0ede4;padding:11px 16px;min-height:44px;border-radius:11px;font-size:13px;font-weight:600;touch-action:manipulation}
+.vrbook .btn:hover:not(:disabled){border-color:#ecc88a;filter:brightness(1.12)}
+.vrbook .btn.gold{background:linear-gradient(120deg,#c69751,#f1ce8b);border-color:transparent;color:#182235}
+.vrbook .btn.icon{min-width:45px;padding:10px}
+.vrbook .nav-label{color:#c7d1df;font-size:12px;font-variant-numeric:tabular-nums;min-width:122px;text-align:center}
+.vrbook .reader{max-width:1210px;margin:6px auto 10px;position:relative}
+.vrbook .book-hint{text-align:center;color:#9eb0c0;font-size:11px;letter-spacing:.1em;min-height:18px;margin:2px auto 11px}
+.vrbook .desktop-wrap{width:100%;display:flex;align-items:center;justify-content:center;position:relative;min-height:280px}
+.vrbook .desktop-scene{width:min(1060px,96cqw,calc(64vh * 1.4142));aspect-ratio:1.4142;perspective:2100px;position:relative;filter:drop-shadow(0 18px 28px #000a)}
+.vrbook .desktop-scene::before{content:"";position:absolute;inset:1.5% 1.8% -1.7%;border-radius:9px;background:linear-gradient(90deg,#18202a,#c1a06c 1%,#0b1422 5%,#121a24 49%,#0b1321 52%,#121c29 95%,#957a55 99%,#0f1921);border:1px solid #b18c54a0;box-shadow:0 12px 45px #0009;pointer-events:none}
+.vrbook .desktop-book{position:absolute;inset:0;display:flex;transform-style:preserve-3d;isolation:isolate}
+.vrbook .page-panel{width:50%;height:100%;background:#f7f5f1;position:relative;overflow:hidden;border:1px solid #9b8b7278;box-shadow:inset 0 0 13px #0002;cursor:pointer}
+.vrbook .page-panel.left{border-radius:5px 0 0 6px;box-shadow:inset -18px 0 24px #44351a38}
+.vrbook .page-panel.right{border-radius:0 5px 6px 0;box-shadow:inset 18px 0 24px #44351a38}
+.vrbook .page-panel:after{content:"";position:absolute;top:0;bottom:0;width:20px;pointer-events:none;z-index:2}
+.vrbook .page-panel.left:after{right:0;background:linear-gradient(90deg,transparent,#34241520)}
+.vrbook .page-panel.right:after{left:0;background:linear-gradient(90deg,#34241520,transparent)}
+.vrbook .page-panel img{width:100%;height:100%;display:block;object-fit:contain;background:#fff;user-select:none;-webkit-user-drag:none}
+.vrbook .page-panel .folio{position:absolute;bottom:9px;left:0;right:0;z-index:3;color:#89837b;font-size:10px;text-align:center;pointer-events:none;background:#fff9;width:max-content;min-width:30px;margin:0 auto;border-radius:4px}
+.vrbook .cover-stand{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.vrbook .cover-stand .closed-book{height:98%;aspect-ratio:210/297;position:relative;transform:perspective(2000px) rotateY(-8deg);transform-origin:left;transition:transform .55s ease,opacity .55s ease;background:#090c16;border:1px solid #d2aa58;box-shadow:12px 8px 0 #d0c8b5,16px 10px 0 #2a2f34,20px 15px 24px #000b,0 0 0 3px #060b14}
+.vrbook .cover-stand .closed-book img{width:100%;height:100%;object-fit:contain;display:block}
+.vrbook .cover-stand.opening .closed-book{transform:perspective(1600px) rotateY(-72deg);opacity:.15}
+.vrbook .cover-stand.is-back .closed-book{transform:perspective(2000px) rotateY(8deg)}
+.vrbook .midline{position:absolute;top:0;left:calc(50% - 4px);width:8px;height:100%;z-index:8;pointer-events:none;background:linear-gradient(90deg,transparent,#6c4e2a35 25%,#ead5ad30 48%,#4c371c40 60%,transparent)}
+.vrbook .turn-leaf{position:absolute;top:0;left:50%;width:50%;height:100%;transform-origin:0 center;transform-style:preserve-3d;z-index:10;transition:transform .65s cubic-bezier(.23,.57,.28,1);pointer-events:none}
+.vrbook .turn-leaf.to-left{transform:rotateY(-180deg)}
+.vrbook .turn-leaf .face{position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;background:#f8f6f2;border:1px solid #e0d9ce;box-shadow:inset 8px 0 18px #29230a30,0 3px 12px #0005}
+.vrbook .turn-leaf .face.back{transform:rotateY(180deg);box-shadow:inset -8px 0 18px #29230a30,0 3px 12px #0005}
+.vrbook .turn-leaf .face img{width:100%;height:100%;object-fit:contain;display:block}
+.vrbook .page-turn-hit{position:absolute;inset:0;border:0;background:transparent;cursor:pointer}
+.vrbook .mobile-scene{display:none}
+.vrbook .under-controls{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;width:min(1060px,96%);margin:18px auto 0;padding:13px 15px;border:1px solid #b2976059;border-radius:13px;background:#121e2dc7}
+.vrbook .pagejump{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.vrbook .pagejump label{color:#c4d2dc;font-size:12px}
+.vrbook .pagejump input{width:84px;min-height:42px;border-radius:7px;border:1px solid #a78f5c6b;background:#0d1727;color:#fbf0dd;text-align:center;font-size:15px}
+.vrbook .pagejump .go{padding:8px 12px}
+.vrbook .pagerange{accent-color:#e9bb6d;flex:1;min-width:110px}
+.vrbook .chapter-bar{width:min(1060px,96%);margin:13px auto 0;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.vrbook .chapter-bar label{color:#aec0ce;font-size:12px}
+.vrbook .chapter-bar select{min-width:0;flex:1;background:#132436;border:1px solid #a68a5275;color:#eee7d9;min-height:44px;border-radius:9px;padding:8px 11px;font-size:13px}
+.vrbook .detail{color:#91a4b6;text-align:center;font-size:11px;line-height:1.7;margin:14px auto;width:min(1000px,98%)}
+.vrbook .detail a{color:#e4c693}
+.vrbook .site-footer{text-align:center;color:#778a9d;font-size:11px;margin-top:17px;line-height:1.7}
+.vrbook .modal{position:fixed;inset:0;z-index:200;background:#030811e9;backdrop-filter:blur(12px);display:flex;flex-direction:column}
+.vrbook .modal .modal-bar{min-height:66px;display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:10px 16px;border-bottom:1px solid #d2a96547;background:#101d2c}
+.vrbook .modal .modal-bar strong{color:#f1d49a;font-weight:600;font-size:13px}
+.vrbook .modal .modal-bar .modal-actions{display:flex;gap:6px;flex-wrap:wrap}
+.vrbook .modal .modal-scroller{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;padding:24px 12px;scrollbar-color:#b89255 #07101a}
+.vrbook .zoom-img{display:block;margin:0 auto;max-width:none;width: min(800px,95%);height:auto;box-shadow:0 20px 80px #0009}
+.vrbook .zoom-img.is-zoomed{width:1450px}
+.vrbook .search-panel{margin:auto;width:min(840px,96%);max-height:min(85vh,900px);background:#101c2b;border:1px solid #bd985f8c;border-radius:17px;display:flex;flex-direction:column;box-shadow:0 30px 100px #0009;overflow:hidden}
+.vrbook .search-head{display:flex;justify-content:space-between;align-items:center;padding:16px 19px;border-bottom:1px solid #997e5870}
+.vrbook .search-head h2{margin:0;font-size:17px;font-weight:650;letter-spacing:.06em}
+.vrbook .search-line{display:flex;gap:9px;padding:15px 18px}
+.vrbook .search-line input{min-width:0;flex:1;border:1px solid #8b795b;background:#0a1625;color:#fff;border-radius:9px;padding:11px 12px;font-size:16px}
+.vrbook .search-summary{padding:0 18px 9px;font-size:12px;color:#c6ac7c}
+.vrbook .search-results{overflow:auto;min-height:140px;max-height:55vh;padding:5px 14px 16px}
+.vrbook .search-result{display:block;background:#17293d;color:#e7edf4;text-align:left;width:100%;border:1px solid #59708161;border-radius:10px;margin:6px 0;padding:12px 14px}
+.vrbook .search-result:hover{border-color:#ddb66f}
+.vrbook .search-result strong{display:block;color:#f2d8a7;font-size:12px;margin-bottom:5px}
+.vrbook .search-result span{display:block;color:#b8c7d3;font-size:12px;line-height:1.5}
+@container vrbook (max-width: 760px){
+.vrbook .shell{padding:9px 11px 28px}
+.vrbook .top{padding:5px 0 12px;gap:9px}
+.vrbook .brand-logo{width:39px;height:39px;font-size:19px}
+.vrbook .brand-text strong{font-size:11px;letter-spacing:.08em}
+.vrbook .brand-text small{font-size:9px;margin-top:2px}
+.vrbook .top-right .tag:not(.bold){display:none}
+.vrbook .tag{padding:7px 9px;font-size:10px}
+.vrbook .toolbar{margin:11px 0 4px;gap:7px}
+.vrbook .btn{padding:10px 12px;font-size:12px;min-height:44px}
+.vrbook .toolbar .btn:not(.nav-btn){padding:10px}
+.vrbook .nav-label{order:-1;flex:1 0 100%;margin:1px 0;font-size:12px;min-width:0}
+.vrbook .desktop-wrap{display:none}
+.vrbook .mobile-scene{display:flex;width:100%;align-items:center;justify-content:center}
+.vrbook .mobile-book{width:min(88cqw,390px,calc(61vh * .707));min-width:min(245px,88cqw);aspect-ratio:210/297;perspective:1200px;position:relative;margin:4px auto 8px;filter:drop-shadow(0 18px 20px #000b);touch-action:pan-y}
+.vrbook .mobile-body{position:absolute;inset:0;background:#f8f6f1;box-shadow:7px 7px 0 #d7d0bd,10px 11px 0 #111c2a,13px 14px 28px #000b;border:2px solid #c5a267;overflow:visible;border-radius:3px}
+.vrbook .mobile-body>img{width:100%;height:100%;object-fit:contain;display:block;background:#fefefe}
+.vrbook .mobile-turn{position:absolute;inset:0;z-index:2;transform-origin:left center;transform-style:preserve-3d;transform:rotateY(0);transition:transform .47s cubic-bezier(.25,.6,.35,1);pointer-events:none}
+.vrbook .mobile-turn.to-left{transform:rotateY(-180deg)}
+.vrbook .mobile-turn .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;background:#fdfbf6;box-shadow:0 0 18px #0009}
+.vrbook .mobile-turn .face.back{transform:rotateY(180deg)}
+.vrbook .mobile-turn .face img{width:100%;height:100%;object-fit:contain;display:block}
+.vrbook .mobile-spine{position:absolute;top:0;bottom:0;left:0;width:10px;z-index:3;background:linear-gradient(90deg,#271b0a91,#ffffff29,transparent);pointer-events:none}
+.vrbook .under-controls{width:100%;padding:10px;margin:12px auto 0;gap:9px}
+.vrbook .pagerange{order:-1;flex-basis:100%}
+.vrbook .pagejump label{font-size:11px}
+.vrbook .pagejump input{width:66px}
+.vrbook .pagejump .go{min-height:42px}
+.vrbook .chapter-bar{width:100%;gap:7px}
+.vrbook .chapter-bar label{font-size:11px}
+.vrbook .chapter-bar select{flex-basis:100%;font-size:12px}
+.vrbook .book-hint{margin:7px auto 8px;font-size:10px}
+.vrbook .detail{font-size:10px}
+.vrbook .reader{margin:0 auto}
+}
+@media (max-width: 760px){
+.vrbook .modal .modal-bar{gap:5px}
+.vrbook .modal .modal-bar strong{font-size:11px}
+.vrbook .modal .btn{font-size:11px;min-height:40px;padding:8px 10px}
+.vrbook .zoom-img.is-zoomed{width:1200px}
+.vrbook .search-panel{max-height:91vh}
+.vrbook .search-results{max-height:62vh}
+}
+@media (prefers-reduced-motion:reduce){.vrbook *,.vrbook *:before,.vrbook *:after{transition-duration:0.001ms!important;animation-duration:0.001ms!important}}

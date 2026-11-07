@@ -14,15 +14,6 @@ export interface SideNavLink {
 export interface SideNavContent {
   intro: SideNavLink;
   links: SideNavLink[];
-  slides: string[];
-  mark: string;
-  heading: string[];
-  subtitle: string;
-  description: string[];
-  author: string;
-  authorRole: string;
-  ctaLabel: string;
-  ctaHref: string;
 }
 
 export const sideNav: SideNavContent = {
@@ -139,16 +130,4 @@ export const sideNav: SideNavContent = {
       ],
     },
   ],
-  slides: ["/images/showcase-1.jpg", "/images/showcase-2.jpg"],
-  mark: "/images/vr_logo.png",
-  heading: ["VR STANDARTLARI 2026"],
-  subtitle: "VR Adaptiv Erqonomik Ölçü Sistemi",
-  description: [
-    "Daxili məkanların insan mərkəzli planlaşdırılması, layihələndirilməsi, icrası və auditi üzrə metodoloji elmi əsər",
-    "2026-cı ilin “Şəhərsalma və Memarlıq İli” elan edilməsi münasibətilə hazırlanmışdır",
-  ],
-  author: "Müəllif: Muxtar Ərturan",
-  authorRole: "Novator-memar, inşaat məsələləri üzrə ekspert",
-  ctaLabel: "Kitabı yüklə",
-  ctaHref: "#",
 };

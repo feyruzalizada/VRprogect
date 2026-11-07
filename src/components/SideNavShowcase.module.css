@@ -171,120 +171,8 @@
 .stage {
   position: relative;
   flex: 1;
+  min-width: 0;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 110px 24px 60px;
-  overflow: hidden;
-}
-
-.slide {
-  object-fit: cover;
-  object-position: center;
-  opacity: 0;
-  transition: opacity 500ms ease;
-}
-
-.slideActive {
-  opacity: 1;
-}
-
-.stage::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    180deg,
-    rgba(26, 26, 26, 0.5) 0%,
-    rgba(26, 26, 26, 0.35) 45%,
-    rgba(26, 26, 26, 0.6) 100%
-  );
-}
-
-.content {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 24px;
-  text-align: center;
-}
-
-.mark {
-  width: 210px;
-  height: auto;
-  margin-bottom: 26px;
-}
-
-.heading {
-  margin: 0;
-  font-family: var(--font-display), sans-serif;
-  font-size: 72px;
-  font-weight: 200;
-  line-height: 80px;
-  color: #fff;
-}
-
-.subtitle {
-  margin: 14px 0 0;
-  font-family: var(--font-display), sans-serif;
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 34px;
-  letter-spacing: 0.5px;
-  color: #fff;
-}
-
-.description {
-  max-width: 820px;
-  text-wrap: balance;
-  margin: 12px 0 0;
-  font-family: var(--font-raleway), sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 28px;
-  color: rgba(255, 255, 255, 0.85);
-}
-
-.author {
-  margin: 60px 0 0;
-  font-family: var(--font-display), sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 0.5px;
-  color: #fff;
-}
-
-.authorRole {
-  display: block;
-  font-family: var(--font-raleway), sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 24px;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.button {
-  margin-top: 34px;
-  padding: 18px 41px;
-  border: 1px solid #fff;
-  background-color: #fff;
-  font-family: var(--font-display), sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 18.5px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: #1a1a1a;
-  transition: background-color 200ms ease, color 200ms ease;
-}
-
-.button:hover {
-  background-color: transparent;
-  color: #fff;
 }
 
 @media (max-width: 1200px) {
@@ -294,18 +182,6 @@
 
   .panel {
     width: min(560px, calc(100vw - 320px));
-  }
-}
-
-@media (max-width: 1240px) {
-  .heading {
-    font-size: 58px;
-    line-height: 66px;
-  }
-
-  .subtitle {
-    font-size: 21px;
-    line-height: 30px;
   }
 }
 
@@ -377,55 +253,14 @@
   }
 
   .stage {
-    flex-direction: column;
     min-height: 0;
-    padding: 70px 0 45px;
-  }
-
-  .heading {
-    font-size: 46px;
-    line-height: 54px;
-  }
-
-  .mark {
-    width: 150px;
-    margin-bottom: 22px;
   }
 }
 
 @media (max-width: 575px) {
-  .heading {
-    font-size: 30px;
-    line-height: 38px;
-  }
-
-  .subtitle {
-    font-size: 18px;
-    line-height: 26px;
-  }
-
-  .description {
-    font-size: 15px;
-    line-height: 25px;
-  }
-
-  .mark {
-    width: 110px;
-    margin-bottom: 18px;
-  }
-
   .asideTitle {
     margin-bottom: 26px;
     font-size: 25px;
     line-height: 33px;
-  }
-
-  .button {
-    margin-top: 28px;
-    padding: 14px 28px;
-  }
-
-  .stage {
-    padding: 55px 0 35px;
   }
 }

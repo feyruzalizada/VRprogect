@@ -42,6 +42,11 @@ const nextConfig: NextConfig = {
         ],
       },
       {
+        // book pages and covers never change under the same name
+        source: "/kitab/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+      },
+      {
         source: "/stream/:file*.mp4",
         headers: [
           { key: "Cache-Control", value: "public, max-age=31536000, immutable" },

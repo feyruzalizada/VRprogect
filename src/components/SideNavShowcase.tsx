@@ -1,12 +1,10 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
+import BookReader from "./BookReader";
 import styles from "./SideNavShowcase.module.css";
 import { sideNav, type SideNavLink } from "@/content/sidenav";
 
-const SLIDE_MS = 7000;
 const PANEL_MS = 50000;
 
 const blockStyle: Record<string, string> = {
@@ -36,17 +34,8 @@ function Panel({ link, open }: { link: SideNavLink; open: boolean }) {
 }
 
 export default function SideNavShowcase() {
-  const [active, setActive] = useState(0);
   const [openId, setOpenId] = useState<string | null>(null);
   const introOpen = openId === sideNav.intro.id;
-
-  useEffect(() => {
-    const id = setInterval(
-      () => setActive((i) => (i + 1) % sideNav.slides.length),
-      SLIDE_MS,
-    );
-    return () => clearInterval(id);
-  }, []);
 
   useEffect(() => {
     if (!openId) return;
@@ -100,54 +89,7 @@ export default function SideNavShowcase() {
       </aside>
 
       <div className={styles.stage}>
-        {sideNav.slides.map((src, index) => (
-          <Image
-            key={src}
-            src={src}
-            alt=""
-            fill
-            sizes="(max-width: 991px) 100vw, 80vw"
-            loading="lazy"
-            className={`${styles.slide} ${index === active ? styles.slideActive : ""}`}
-          />
-        ))}
-
-        <div className={styles.content}>
-          <Image
-            src={sideNav.mark}
-            alt=""
-            width={216}
-            height={217}
-            loading="lazy"
-            className={styles.mark}
-          />
-
-          <h2 className={styles.heading}>
-            {sideNav.heading.map((line, index) => (
-              <span key={line}>
-                {index > 0 && <br />}
-                {line}
-              </span>
-            ))}
-          </h2>
-
-          <p className={styles.subtitle}>{sideNav.subtitle}</p>
-
-          {sideNav.description.map((line) => (
-            <p key={line} className={styles.description}>
-              {line}
-            </p>
-          ))}
-
-          <p className={styles.author}>
-            {sideNav.author}
-            <span className={styles.authorRole}>{sideNav.authorRole}</span>
-          </p>
-
-          <Link href={sideNav.ctaHref} className={styles.button}>
-            {sideNav.ctaLabel}
-          </Link>
-        </div>
+        <BookReader />
       </div>
     </section>
   );
