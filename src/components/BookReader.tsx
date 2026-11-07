@@ -76,7 +76,7 @@ function mountReader(root: HTMLElement, col: HTMLElement) {
   function setPageImg(element: HTMLImageElement, n: number) { const p = path(n); if (p) { if (element.getAttribute("src") !== p) element.src = p; element.style.opacity = "1"; } else { element.removeAttribute("src"); element.style.opacity = "0"; } }
   function pair(n: number): [number, number] { const s = viewStart(n); return s === 1 ? [0, 1] : [s, s + 1]; }
   function pageLabel(n: number) { if (n === FRONT) return "Ön üz qabığı"; if (n === BACK) return "Arxa üz qabığı"; if (mobile.matches) return `Səhifə ${n} / ${N}`; const [l, r] = pair(n); return l ? `Səhifələr ${l}–${r} / ${N}` : `Səhifə 1 / ${N}`; }
-  // nothing of the book loads until it is about a screen away
+  // nothing of the book loads until it is about to scroll in
   let ready = false;
   function draw() {
     if (!ready) return;
@@ -198,7 +198,7 @@ function mountReader(root: HTMLElement, col: HTMLElement) {
     near.disconnect();
     ready = true;
     draw();
-  }, { rootMargin: "100% 0px" });
+  }, { rootMargin: "300px 0px" });
   near.observe(col);
 
   return () => {
