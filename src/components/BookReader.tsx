@@ -6,7 +6,7 @@ import { useEffect, useRef } from "react";
 import "./BookReader.css";
 
 const BASE = "/kitab/";
-const FRONT_SRC = `${BASE}assets/front_FINAL_TOXUNULMAZ.png`;
+const FRONT_SRC = `${BASE}assets/front_FINAL_TOXUNULMAZ.webp`;
 
 const CHAPTERS: [number, string][] = [
   [1, "Titul və nəşr rekvizitləri"],
@@ -57,7 +57,7 @@ function mountReader(root: HTMLElement, col: HTMLElement) {
     timers.add(t);
   };
 
-  const N = 889, FRONT = -1, BACK = 890, pdfPrefix = `${BASE}pages/p`, front = FRONT_SRC, back = `${BASE}assets/back_FINAL_TOXUNULMAZ.png`;
+  const N = 889, FRONT = -1, BACK = 890, pdfPrefix = `${BASE}pages/p`, front = FRONT_SRC, back = `${BASE}assets/back_FINAL_TOXUNULMAZ.webp`;
   const $ = <T extends HTMLElement = HTMLElement>(id: string) => root.querySelector(`#${id}`) as T;
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
   // the 760px switch follows the column, matching the @container rule
@@ -181,6 +181,17 @@ function mountReader(root: HTMLElement, col: HTMLElement) {
     if (searchOpen) return;
     if (e.key === "ArrowRight" || e.key === "PageDown") { e.preventDefault(); go(1); }
     if (e.key === "ArrowLeft" || e.key === "PageUp") { e.preventDefault(); go(-1); }
+  }, { signal });
+
+  // the header search hands its query over to the book
+  window.addEventListener("vr:book-search", (event) => {
+    const q = (event as CustomEvent<string>).detail;
+    // land on the book first: the open dialog locks scrolling
+    const bar = document.querySelector("header")?.offsetHeight ?? 0;
+    window.scrollTo({ top: root.getBoundingClientRect().top + window.scrollY - bar, behavior: "instant" });
+    openSearch();
+    $<HTMLInputElement>("searchInput").value = q;
+    if (q.length >= 2) void startSearch();
   }, { signal });
 
   const ro = new ResizeObserver(() => {
