@@ -1,5 +1,5 @@
 // English and Russian copy for the admin content, keyed by the Azerbaijani text it translates.
-// "VR" is the brand and stays as is; the book keeps its title "VR Standartları 2026".
+// "VR" is the brand and stays as is; the book is "VR Standards 2026" / «VR Стандарты 2026».
 
 type Point = { label?: string; text: string };
 type ServiceText = { title: string; description: string; points: Point[]; note?: string; cta: string };

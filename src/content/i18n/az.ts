@@ -40,6 +40,7 @@ export const az: SiteContent = {
     calcLabel: "VR adaptiv hesablama",
     servicesCatalog: "Xidmətlər",
     book: {
+      name: "VR STANDARTLARI 2026",
       subtitle: "İnteraktiv elektron kitab • R14",
       sampleBadge: "NÜMUNƏ · 24 / 889 SƏHİFƏ",
       overline: "Məkan insana uyğunlaşır",

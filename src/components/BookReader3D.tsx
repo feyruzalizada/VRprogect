@@ -240,7 +240,7 @@ export default function BookReader3D({ t }: { t: BookUi }) {
             <div className="mark">
               <div className="mark-icon" aria-hidden="true">VR</div>
               <div>
-                <strong>VR STANDARTLARI 2026</strong>
+                <strong>{t.name}</strong>
                 <small>{t.subtitle}</small>
               </div>
             </div>

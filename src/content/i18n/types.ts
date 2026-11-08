@@ -6,6 +6,7 @@ import type { SideNavContent } from "@/content/sidenav";
 export type HeroCueText = { watermark: string; title: string; description: string; trust: string };
 
 export type BookUi = {
+  name: string;
   subtitle: string;
   sampleBadge: string;
   overline: string;

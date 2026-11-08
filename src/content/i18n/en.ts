@@ -1,15 +1,15 @@
 import type { SiteContent } from "./types";
 
 // "VR" is the brand of VR Global Group, not virtual reality: it is never translated or expanded.
-// The book keeps its published title "VR Standartları 2026"; the legal name of the author stays as written.
+// The book is called "VR Standards 2026" in English; the legal name of the author stays as written.
 export const en: SiteContent = {
   meta: {
     title: "VR Global Group — construction, renovation, audit and technical supervision",
     description:
-      "Construction, renovation, expert audit and technical supervision under VR Standartları 2026. From design to handover, every stage is measured and confirmed in writing. Baku, Azerbaijan.",
+      "Construction, renovation, expert audit and technical supervision under VR Standards 2026. From design to handover, every stage is measured and confirmed in writing. Baku, Azerbaijan.",
     keywords: [
       "VR Global Group",
-      "VR Standartları 2026",
+      "VR Standards 2026",
       "construction",
       "renovation",
       "expert audit",
@@ -22,7 +22,7 @@ export const en: SiteContent = {
   },
   mainNav: [
     { label: "Home", href: "/" },
-    { label: "VR Standartları 2026", href: "#kitab" },
+    { label: "VR Standards 2026", href: "#kitab" },
     { label: "VR adaptive calculation", href: "#kalkulyator" },
     { label: "Services", href: "#xidmetler" },
     { label: "Official partners", href: "#partnyorlar" },
@@ -41,7 +41,7 @@ export const en: SiteContent = {
     { watermark: "SYSTEMS", title: "AUDIT OF BUILDING SERVICES", description: "A comprehensive audit of water, electrical, heating and ventilation systems.", trust: "SAFETY • EFFICIENCY • COMPLIANCE" },
     { watermark: "RENOVATION", title: "VR RENOVATION SERVICE", description: "From design to execution, from supervision to audit — a complete handover.", trust: "DESIGN • EXECUTION • SUPERVISION • HANDOVER" },
     { watermark: "SUPERVISION", title: "RENOVATION SUPERVISION IN APARTMENTS", description: "Defects found, resolved on site, contractors supervised.", trust: "STAGED INSPECTION • DEFECT LOG • HANDOVER AUDIT" },
-    { watermark: "DESIGN", title: "VR ADAPTIVE DESIGN", description: "Modern and tasteful, under VR standards.", trust: "VR STANDARTLARI 2026" },
+    { watermark: "DESIGN", title: "VR ADAPTIVE DESIGN", description: "Modern and tasteful, under VR standards.", trust: "VR STANDARDS 2026" },
     { watermark: "EXPERTISE", title: "VR AUDIT OF PRIVATE HOUSES", description: "Structure, ventilation, heating and cooling, insulation, safety and warranty.", trust: "BEFORE PURCHASE • BEFORE RENOVATION • AT HANDOVER" },
     { watermark: "INSULATION", title: "INSULATION SYSTEMS", description: "Sound, moisture, thermal, fire, heat and cold.", trust: "HEAT • WATER • SOUND" },
     { watermark: "EXPERT", title: "VR EXPERT GROUP", description: "A transparent opinion, a documented result and a well-founded decision.", trust: "OBJECTIVE, IMPARTIAL, COMPREHENSIVE EXPERT REVIEW" },
@@ -58,7 +58,7 @@ export const en: SiteContent = {
       id: "panel-intro",
       label: "WHAT ARE VR STANDARDS?",
       body: [
-        { kind: "p", text: "VR Standartları 2026 (VR Standards 2026) — the VR Adaptive Ergonomic Measurement System is a methodological textbook for planning, designing, building and inspecting homes and other interior spaces according to people’s real needs. It helps a citizen buying an apartment or building a private house understand what makes a space right, helps designers and architects turn the user’s needs into design decisions, and helps engineers and contractors check that those decisions are safe, measurable and buildable." },
+        { kind: "p", text: "VR Standards 2026 — the VR Adaptive Ergonomic Measurement System is a methodological textbook for planning, designing, building and inspecting homes and other interior spaces according to people’s real needs. It helps a citizen buying an apartment or building a private house understand what makes a space right, helps designers and architects turn the user’s needs into design decisions, and helps engineers and contractors check that those decisions are safe, measurable and buildable." },
         { kind: "p", text: "The core of the methodology is not to apply one dimension to everyone. A base value is assessed together with the user’s anthropometric and functional characteristics, the purpose of the room, how often it is used, safety, accessibility, building services and real-use testing. The book presents interior dimensions, the family and room programme, lighting, indoor air quality, heating and cooling, material documentation, risk management, audit of concealed works, handover and integration into teaching in a single methodological sequence." },
         { kind: "p", text: "Requirements in force in Azerbaijan, international and foreign practice, manufacturer data and the author’s VR values are not presented as having the same legal status. The book does not replace any official national or international standard; its purpose is to create a clear decision system that connects the status of each source, the design decision, the measurement, real use and audit evidence. The 2026 edition is presented as a baseline methodological version for scientific review, pilot application and future calibration." },
         { kind: "flow", text: "Mukhtar Erturan:" },
@@ -71,7 +71,7 @@ export const en: SiteContent = {
         label: "ADAPTIVE ERGONOMIC MEASUREMENT SYSTEM",
         body: [
           { kind: "p", text: "The VR Adaptive Ergonomic Measurement System is an author’s scientific and methodological model that adapts space to a person’s height, age, physical abilities, family composition and way of life." },
-          { kind: "p", text: "The author of the VR Adaptive Ergonomic Coefficient and the VR Adaptive Ergonomic Measurement System is the Azerbaijani Innovator Architect Mukhtar Erturan. The method was first presented systematically as his own discovery in “VR Standartları 2026”." },
+          { kind: "p", text: "The author of the VR Adaptive Ergonomic Coefficient and the VR Adaptive Ergonomic Measurement System is the Azerbaijani Innovator Architect Mukhtar Erturan. The method was first presented systematically as his own discovery in “VR Standards 2026”." },
           { kind: "p", text: "The VR coefficient provides the step from a base dimension to an individual result. P5, P50 and P95 values, age, sex, accessibility, the function of the space and safety limits are assessed within a single calculation logic:" },
           { kind: "quote", text: "Base dimension → adaptive calculation → anthropometric check → safety limit → design → execution → audit." },
           { kind: "p", text: "The result is not a fixed number; it is a range of dimensions refined by regulatory requirements and real-use testing. This approach is an original author’s contribution to the human-centred and scientific development of Azerbaijani architectural thought." },
@@ -83,7 +83,7 @@ export const en: SiteContent = {
         id: "panel-2",
         label: "NATIONAL STANDARDISATION MODEL",
         body: [
-          { kind: "p", text: "A strong state creates not only large projects but a unified system of quality, safety and responsibility. “VR Standartları 2026” is a national author’s model that serves to build a common technical language in Azerbaijan’s construction, renovation and design practice." },
+          { kind: "p", text: "A strong state creates not only large projects but a unified system of quality, safety and responsibility. “VR Standards 2026” is a national author’s model that serves to build a common technical language in Azerbaijan’s construction, renovation and design practice." },
           { kind: "p", text: "The methodology created by Mukhtar Erturan takes into account how people in Azerbaijan live, the local climate, building practice, the materials market and the regulations in force. International principles of ergonomics, accessibility and safety are applied as a comparative scientific basis." },
           { kind: "p", text: "For every decision the system defines its source, dimension, level of risk and method of verification. This approach serves the development of a building culture grounded in the rule of law, public safety and responsibility to the state." },
           { kind: "p", text: "The VR methodology does not currently replace any official national standard. It is a national scientific and methodological basis created for expert review, pilot application and future standardisation." },
@@ -96,7 +96,7 @@ export const en: SiteContent = {
         label: "A MODERN RENOVATION AND CONSTRUCTION ECOSYSTEM",
         body: [
           { kind: "p", text: "Modern renovation and construction is not only design and execution. It is a complete ecosystem that brings together human needs, the design, the cost estimate, materials, building services, audit, supervision and handover." },
-          { kind: "p", text: "“VR Standartları 2026” turns the client from an observer standing outside the process into an informed decision-maker. The user understands which documents to request, which works to have inspected before they are covered up, and on what evidence to accept the result." },
+          { kind: "p", text: "“VR Standards 2026” turns the client from an observer standing outside the process into an informed decision-maker. The user understands which documents to request, which works to have inspected before they are covered up, and on what evidence to accept the result." },
           { kind: "p", text: "Hidden errors in electrical, gas, water, ventilation, heating and waterproofing work are a serious risk to human life and to the country’s building stock. That is why the VR methodology puts safety before aesthetics. Concealed works are documented with measurements, photos, video, tests and signed certificates." },
           { kind: "p", text: "Mukhtar Erturan’s Innovator Architect approach moves trust between client and contractor away from verbal promises and builds it on the design, audit and evidence." },
           { kind: "flow", text: "Mukhtar Erturan:" },
@@ -108,7 +108,7 @@ export const en: SiteContent = {
         label: "A NEW STAGE IN PROFESSIONALISM",
         body: [
           { kind: "p", text: "The architect, designer and engineer of the new era is not only someone who produces a design, but a specialist who justifies each decision and is accountable for its outcome." },
-          { kind: "p", text: "“VR Standartları 2026” creates a single professional language for designers, engineers, contractors and auditors. Plans, working drawings, legend symbols, material specifications, engineering solutions and changes are managed within one system." },
+          { kind: "p", text: "“VR Standards 2026” creates a single professional language for designers, engineers, contractors and auditors. Plans, working drawings, legend symbols, material specifications, engineering solutions and changes are managed within one system." },
           { kind: "p", text: "A 3D visualisation is the visible part of a design. A professional design must show how the building will be built, which materials will be used, how the building services will be coordinated and how the result will be checked." },
           { kind: "p", text: "The VR Adaptive Ergonomic Coefficient replaces the mechanical use of ready-made dimensions with decisions based on the person, the function, safety and real use." },
           { kind: "p", text: "Mukhtar Erturan’s work as an Innovator Architect builds a national bridge of professionalism between theoretical knowledge and the construction site." },
@@ -121,7 +121,7 @@ export const en: SiteContent = {
         label: "HUMAN-CENTRED SAFE SPACE",
         body: [
           { kind: "p", text: "The main task of architecture is not only to create a space that looks beautiful, but one that protects people’s health, safety and dignified life." },
-          { kind: "p", text: "“VR Standartları 2026” puts the real person at the centre of the design. Height, age, physical abilities, family composition and daily habits become the key data for decisions about space. The same dimension does not give the same comfort to a child, an older person and a person with limited mobility." },
+          { kind: "p", text: "“VR Standards 2026” puts the real person at the centre of the design. Height, age, physical abilities, family composition and daily habits become the key data for decisions about space. The same dimension does not give the same comfort to a child, an older person and a person with limited mobility." },
           { kind: "p", text: "The VR Adaptive Ergonomic Coefficient helps adapt dimensions to the user. Safety, accessibility, engineering requirements and the minimums set by law always take precedence." },
           { kind: "p", text: "Lighting, ventilation, indoor air quality, temperature, material safety, comfortable passageways and evacuation routes are assessed within a single system. Audit ensures that these principles are kept from the design through to actual execution." },
           { kind: "p", text: "In Mukhtar Erturan’s view as an Innovator Architect, human safety is not an add-on to architecture but a professional duty to the state and society." },
@@ -134,7 +134,7 @@ export const en: SiteContent = {
         label: "NATIONAL DEVELOPMENT AND A DIGITAL FUTURE",
         body: [
           { kind: "p", text: "The development of modern Azerbaijan should be measured not only by the number of buildings but by their quality, their safety and the value they place on human life. A statesmanlike outlook calls for this quality to be systematised and passed on to future generations." },
-          { kind: "p", text: "“VR Standartları 2026” creates a digital link between dimension, source, decision and evidence. The VR Adaptive Atlas, the ergonomic calculator, the version register, electronic audit and the project history are the key tools of this future." },
+          { kind: "p", text: "“VR Standards 2026” creates a digital link between dimension, source, decision and evidence. The VR Adaptive Atlas, the ergonomic calculator, the version register, electronic audit and the project history are the key tools of this future." },
           { kind: "p", text: "A digital system should not only show a result; it should also explain on which data, coefficient and safety limit that result was based." },
           { kind: "p", text: "The declaration of 2026 as the “Year of Urban Planning and Architecture” makes the preservation of national traditions, the adoption of advanced approaches and sustainable settlement an important direction of the country’s development." },
           { kind: "p", text: "Mukhtar Erturan’s vision as an Innovator Architect foresees extending the VR system in future with dedicated modules for residential complexes, public buildings, urban spaces and infrastructure projects." },
@@ -147,7 +147,7 @@ export const en: SiteContent = {
         label: "MODERN AZERBAIJAN — A MODEL FOR THE WORLD",
         body: [
           { kind: "p", text: "Azerbaijan is a strong creative space where historical heritage meets modern development, and national architecture meets global practice. The aim is not to copy the world, but to present Azerbaijan’s experience to the world on a scientific basis." },
-          { kind: "p", text: "“VR Standartları 2026” is an author’s model created in our country and open to international professional dialogue. The system links the ergonomic, safety and accessibility principles of ISO, EN, BS, DIN, ADA and other authoritative sources with local legislation, climate, building practice and human needs." },
+          { kind: "p", text: "“VR Standards 2026” is an author’s model created in our country and open to international professional dialogue. The system links the ergonomic, safety and accessibility principles of ISO, EN, BS, DIN, ADA and other authoritative sources with local legislation, climate, building practice and human needs." },
           { kind: "p", text: "WUF13, held in Baku, brought the importance of safe, inclusive and sustainable cities to the global agenda. The human-centred philosophy of the VR methodology resonates with this broad vision of development." },
           { kind: "p", text: "Mukhtar Erturan’s Innovator Architect approach opens new opportunities to develop a culture of measurement, safety and audit in large residential, public, tourism and infrastructure projects." },
           { kind: "flow", text: "Mukhtar Erturan:" },
@@ -159,7 +159,7 @@ export const en: SiteContent = {
         label: "A NEW VISION IN DESIGN AND SPACE",
         body: [
           { kind: "p", text: "Design and architecture in the new era are not only colour and form. They are an art that unites human needs, function, engineering, safety and artistic idea in a single spatial solution." },
-          { kind: "p", text: "“VR Standartları 2026” raises design from subjective taste to a system of decisions that can be measured, justified and verified. Besides where each element is placed, it defines why it is there, who will use it and how its result will be accepted." },
+          { kind: "p", text: "“VR Standards 2026” raises design from subjective taste to a system of decisions that can be measured, justified and verified. Besides where each element is placed, it defines why it is there, who will use it and how its result will be accepted." },
           { kind: "p", text: "The VR Adaptive Ergonomic Coefficient ensures that the space is adapted to its real user. Electrical, water, ventilation, heating, acoustic, lighting and material solutions become the invisible but decisive part of design." },
           { kind: "p", text: "Mukhtar Erturan’s work as an Innovator Architect offers Azerbaijani architecture and design a new vision that unites national identity, human-centredness and technical precision. This work is a distinctive and strategic author’s mission for the development of our national architectural thought." },
           { kind: "flow", text: "Mukhtar Erturan:" },
@@ -173,7 +173,7 @@ export const en: SiteContent = {
       "From design to execution and from execution to audit, we carry out every stage under VR standards. Dimensions are chosen for the person, and the work is confirmed in writing.",
     navHeading: "Navigation",
     nav: [
-      { label: "VR Standartları 2026", href: "#kitab" },
+      { label: "VR Standards 2026", href: "#kitab" },
       { label: "VR adaptive calculation", href: "#kalkulyator" },
       { label: "Services", href: "#xidmetler" },
       { label: "Official partners", href: "#partnyorlar" },
@@ -215,6 +215,7 @@ export const en: SiteContent = {
     calcLabel: "VR adaptive calculation",
     servicesCatalog: "Services",
     book: {
+      name: "VR STANDARDS 2026",
       subtitle: "Interactive e-book • R14",
       sampleBadge: "SAMPLE · 24 / 889 PAGES",
       overline: "Space adapts to people",
@@ -255,7 +256,7 @@ export const en: SiteContent = {
       disclaimer: "The first 24 pages inside are taken unchanged as images from the 889-page PDF; the front and back covers are the approved original files. This is not a complete e-edition of the whole book.",
       controlsNote: "Controls:",
       swipe: "swipe.",
-      bookAria: "VR Standartları 2026 — 3D page-turning book",
+      bookAria: "VR Standards 2026 — 3D page-turning book",
       bookTitle: "Click the right side: forward; the left side: back",
       controlsAria: "Book controls",
       zoomDialog: "Close-up view of the page",
