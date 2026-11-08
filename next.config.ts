@@ -43,7 +43,7 @@ const nextConfig: NextConfig = {
       },
       {
         // book pages and covers never change under the same name
-        source: "/kitab/:path*",
+        source: "/kitab3d/:path*",
         headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
       {

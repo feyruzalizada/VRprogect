@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import BookReader from "./BookReader";
+import BookReader3D from "./BookReader3D";
 import { scrollToElement } from "./navScroll";
 import styles from "./SideNavShowcase.module.css";
 import { sideNav, type SideNavLink } from "@/content/sidenav";
@@ -104,7 +104,7 @@ export default function SideNavShowcase() {
       </aside>
 
       <div className={styles.stage}>
-        <BookReader />
+        <BookReader3D />
       </div>
     </section>
   );

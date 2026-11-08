@@ -8,7 +8,7 @@ import type { SearchItem, SearchTarget } from "@/lib/searchIndex";
 
 const MAX_RESULTS = 8;
 
-// same folding as the book search: case, ə/ı and diacritics don't matter
+// case, ə/ı and diacritics don't matter
 function fold(s: string) {
   return s
     .toLocaleLowerCase("az")
@@ -80,19 +80,15 @@ export default function SiteSearch({ index, onDone }: { index: SearchItem[]; onD
       .slice(0, MAX_RESULTS);
   }, [folded, q, words]);
 
-  // the last row hands the query to the book's own 889-page search
-  const rows = q.length >= 2 ? results.length + 1 : 0;
+  const rows = results.length;
+  const searched = q.length >= 2;
 
   useEffect(() => {
     inputRef.current?.focus();
   }, []);
 
   function pick(i: number) {
-    if (i < results.length) {
-      goTo(results[i].item.go);
-    } else {
-      window.dispatchEvent(new CustomEvent("vr:book-search", { detail: query.trim() }));
-    }
+    goTo(results[i].item.go);
     onDone();
   }
 
@@ -136,7 +132,7 @@ export default function SiteSearch({ index, onDone }: { index: SearchItem[]; onD
           }}
           onKeyDown={onKeyDown}
           role="combobox"
-          aria-expanded={rows > 0}
+          aria-expanded={searched}
           aria-controls="site-search-results"
           aria-activedescendant={rows ? `site-search-${cursor}` : undefined}
         />
@@ -148,9 +144,9 @@ export default function SiteSearch({ index, onDone }: { index: SearchItem[]; onD
         </button>
       </form>
 
-      {rows > 0 ? (
+      {searched ? (
         <ul id="site-search-results" className={styles.searchResults} role="listbox" aria-label="Nəticələr">
-          {results.length === 0 ? <li className={styles.searchEmpty}>Saytda uyğun nəticə yoxdur.</li> : null}
+          {rows === 0 ? <li className={styles.searchEmpty}>Saytda uyğun nəticə yoxdur.</li> : null}
           {results.map((r, i) => (
             <li
               key={`${r.item.kind}-${r.item.title}-${i}`}
@@ -166,17 +162,6 @@ export default function SiteSearch({ index, onDone }: { index: SearchItem[]; onD
               {r.item.text ? <span className={styles.searchSnippet}>{snippet(r.item.text, r.text, words[0])}</span> : null}
             </li>
           ))}
-          <li
-            id={`site-search-${results.length}`}
-            role="option"
-            aria-selected={cursor === results.length}
-            className={`${styles.searchResult} ${styles.searchBook} ${cursor === results.length ? styles.searchResultOn : ""}`}
-            onMouseEnter={() => setCursor(results.length)}
-            onClick={() => pick(results.length)}
-          >
-            <span className={styles.searchKind}>VR Standartları 2026 · 889 səhifə</span>
-            <span className={styles.searchTitle}>Kitabda axtar: «{query.trim()}»</span>
-          </li>
         </ul>
       ) : null}
     </div>
