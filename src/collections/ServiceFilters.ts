@@ -1,6 +1,7 @@
 import type { CollectionConfig } from "payload";
 
 import { revalidateHome } from "./revalidate";
+import { translate } from "./translations";
 
 export const ServiceFilters: CollectionConfig = {
   slug: "service-filters",
@@ -26,7 +27,7 @@ export const ServiceFilters: CollectionConfig = {
     afterChange: [revalidateHome],
     afterDelete: [revalidateHome],
   },
-  fields: [
+  fields: translate([
     {
       name: "label",
       type: "text",
@@ -54,5 +55,5 @@ export const ServiceFilters: CollectionConfig = {
       label: { az: "Xidmət olmayanda göstərilən mətn", ru: "Текст, если услуг нет", en: "Text when empty" },
       admin: { condition: (data) => !data?.showAll },
     },
-  ],
+  ], ["label", "empty"]),
 };

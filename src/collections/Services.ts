@@ -2,6 +2,7 @@ import type { CollectionConfig } from "payload";
 
 import { dropFilesOnDelete } from "./dropUnusedMedia";
 import { revalidateHome } from "./revalidate";
+import { translate } from "./translations";
 
 // a deleted card takes its clip and poster along, unless something else still uses them
 const files = dropFilesOnDelete("services", ["video", "poster"]);
@@ -31,7 +32,7 @@ export const Services: CollectionConfig = {
     beforeDelete: files.beforeDelete,
     afterDelete: [revalidateHome, ...files.afterDelete],
   },
-  fields: [
+  fields: translate([
     {
       name: "title",
       type: "text",
@@ -96,5 +97,5 @@ export const Services: CollectionConfig = {
         },
       ],
     },
-  ],
+  ], ["title", "description", "points", "note", "cta"]),
 };

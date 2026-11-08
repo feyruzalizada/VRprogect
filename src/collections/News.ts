@@ -2,6 +2,7 @@ import type { CollectionConfig } from "payload";
 
 import { dropFilesOnDelete } from "./dropUnusedMedia";
 import { revalidateHome } from "./revalidate";
+import { translate } from "./translations";
 
 // a deleted post takes its picture along, unless a service or another post still uses it
 const files = dropFilesOnDelete("news", ["image"]);
@@ -29,7 +30,7 @@ export const News: CollectionConfig = {
     beforeDelete: files.beforeDelete,
     afterDelete: [revalidateHome, ...files.afterDelete],
   },
-  fields: [
+  fields: translate([
     {
       name: "title",
       type: "text",
@@ -81,5 +82,5 @@ export const News: CollectionConfig = {
       validate: (value: string | null | undefined) =>
         !value || /^https?:\/\/\S+$/.test(value) || "https:// ilə başlayan link yazın.",
     },
-  ],
+  ], ["title", "text"]),
 };

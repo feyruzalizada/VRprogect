@@ -1,6 +1,7 @@
 import type { GlobalConfig } from "payload";
 
 import { revalidateHome } from "../collections/revalidate";
+import { translate } from "../collections/translations";
 
 export const ServicesSection: GlobalConfig = {
   slug: "services-section",
@@ -8,7 +9,7 @@ export const ServicesSection: GlobalConfig = {
   admin: { group: { az: "Xidmətlər bölməsi", ru: "Раздел «Xidmətlər»", en: "Services section" } },
   versions: { max: 20 },
   hooks: { afterChange: [revalidateHome] },
-  fields: [
+  fields: translate([
     { name: "eyebrow", type: "text", required: true, label: { az: "Üst yazı", ru: "Надзаголовок", en: "Eyebrow" } },
     { name: "heading", type: "text", required: true, label: { az: "Başlıq", ru: "Заголовок", en: "Heading" } },
     { name: "tagline", type: "text", label: { az: "Alt başlıq", ru: "Подзаголовок", en: "Tagline" } },
@@ -22,5 +23,5 @@ export const ServicesSection: GlobalConfig = {
       ],
     },
     { name: "disclaimer", type: "textarea", label: { az: "Aşağıdakı qeyd", ru: "Примечание внизу", en: "Disclaimer" } },
-  ],
+  ], ["eyebrow", "heading", "tagline", "intro", "filterLabel", "moreLabel", "lessLabel", "disclaimer"]),
 };

@@ -149,6 +149,32 @@ export interface Service {
   cta: string;
   video?: (number | null) | Media;
   poster?: (number | null) | Media;
+  en?: {
+    title?: string | null;
+    description?: string | null;
+    points?:
+      | {
+          label?: string | null;
+          text?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+    note?: string | null;
+    cta?: string | null;
+  };
+  ru?: {
+    title?: string | null;
+    description?: string | null;
+    points?:
+      | {
+          label?: string | null;
+          text?: string | null;
+          id?: string | null;
+        }[]
+      | null;
+    note?: string | null;
+    cta?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -185,6 +211,14 @@ export interface ServiceFilter {
   showAll?: boolean | null;
   services?: (number | Service)[] | null;
   empty?: string | null;
+  en?: {
+    label?: string | null;
+    empty?: string | null;
+  };
+  ru?: {
+    label?: string | null;
+    empty?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -207,6 +241,20 @@ export interface News {
    * Optional.
    */
   link?: string | null;
+  en?: {
+    title?: string | null;
+    /**
+     * Shown on the back of the card; long text scrolls inside it.
+     */
+    text?: string | null;
+  };
+  ru?: {
+    title?: string | null;
+    /**
+     * Shown on the back of the card; long text scrolls inside it.
+     */
+    text?: string | null;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -341,6 +389,36 @@ export interface ServicesSelect<T extends boolean = true> {
   cta?: T;
   video?: T;
   poster?: T;
+  en?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        points?:
+          | T
+          | {
+              label?: T;
+              text?: T;
+              id?: T;
+            };
+        note?: T;
+        cta?: T;
+      };
+  ru?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        points?:
+          | T
+          | {
+              label?: T;
+              text?: T;
+              id?: T;
+            };
+        note?: T;
+        cta?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -354,6 +432,18 @@ export interface ServiceFiltersSelect<T extends boolean = true> {
   showAll?: T;
   services?: T;
   empty?: T;
+  en?:
+    | T
+    | {
+        label?: T;
+        empty?: T;
+      };
+  ru?:
+    | T
+    | {
+        label?: T;
+        empty?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -367,6 +457,18 @@ export interface NewsSelect<T extends boolean = true> {
   image?: T;
   text?: T;
   link?: T;
+  en?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+      };
+  ru?:
+    | T
+    | {
+        title?: T;
+        text?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -466,6 +568,26 @@ export interface ServicesSection {
   moreLabel?: string | null;
   lessLabel?: string | null;
   disclaimer?: string | null;
+  en?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    tagline?: string | null;
+    intro?: string | null;
+    filterLabel?: string | null;
+    moreLabel?: string | null;
+    lessLabel?: string | null;
+    disclaimer?: string | null;
+  };
+  ru?: {
+    eyebrow?: string | null;
+    heading?: string | null;
+    tagline?: string | null;
+    intro?: string | null;
+    filterLabel?: string | null;
+    moreLabel?: string | null;
+    lessLabel?: string | null;
+    disclaimer?: string | null;
+  };
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -482,6 +604,30 @@ export interface ServicesSectionSelect<T extends boolean = true> {
   moreLabel?: T;
   lessLabel?: T;
   disclaimer?: T;
+  en?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        tagline?: T;
+        intro?: T;
+        filterLabel?: T;
+        moreLabel?: T;
+        lessLabel?: T;
+        disclaimer?: T;
+      };
+  ru?:
+    | T
+    | {
+        eyebrow?: T;
+        heading?: T;
+        tagline?: T;
+        intro?: T;
+        filterLabel?: T;
+        moreLabel?: T;
+        lessLabel?: T;
+        disclaimer?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

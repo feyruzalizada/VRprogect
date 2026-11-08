@@ -19,7 +19,7 @@ import { getServices } from "@/lib/services";
 // one page in three languages; each language route renders this with its own lang
 export default async function HomePage({ lang }: { lang: Lang }) {
   const c = getContent(lang);
-  const [services, news] = await Promise.all([getServices(), getNews()]);
+  const [services, news] = await Promise.all([getServices(lang), getNews(lang)]);
   // cue timings belong to the video, the words to the language
   const cues = heroCues.map((cue, i) => ({ ...cue, ...c.hero[i] }));
 
