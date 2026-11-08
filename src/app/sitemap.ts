@@ -2,6 +2,7 @@ import config from "@payload-config";
 import type { MetadataRoute } from "next";
 import { getPayload } from "payload";
 
+import { langHome, langs, type Lang } from "@/i18n/config";
 import { siteUrl } from "@/lib/site";
 
 export const revalidate = 3600;
@@ -22,13 +23,16 @@ async function lastChange() {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  return [
-    {
-      url: `${siteUrl}/`,
-      lastModified: await lastChange(),
-      changeFrequency: "weekly",
-      priority: 1,
-      images: [`${siteUrl}/images/og.jpg`],
-    },
-  ];
+  const lastModified = await lastChange();
+  const url = (lang: Lang) => `${siteUrl}${langHome[lang] === "/" ? "/" : langHome[lang]}`;
+  const languages = Object.fromEntries(langs.map((l) => [l, url(l)]));
+
+  return langs.map((lang) => ({
+    url: url(lang),
+    lastModified,
+    changeFrequency: "weekly",
+    priority: lang === "az" ? 1 : 0.8,
+    alternates: { languages },
+    images: [`${siteUrl}/images/og.jpg`],
+  }));
 }

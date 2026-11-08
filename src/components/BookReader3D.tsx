@@ -4,22 +4,24 @@
 import { useEffect, useRef } from "react";
 
 import "./BookReader3D.css";
+import type { BookUi } from "@/content/i18n/types";
+import { fmt } from "@/i18n/fmt";
 
 const BASE = "/kitab3d/";
 const N = 24;
 const asset = (key: string) => `${BASE}${key}.webp`;
 
 // the 3D sample's own script, scoped to this block
-function mountReader(root: HTMLElement) {
+function mountReader(root: HTMLElement, t: BookUi) {
   const ac = new AbortController();
   const signal = ac.signal;
   const $ = <T extends HTMLElement = HTMLElement>(id: string) => root.querySelector(`#${id}`) as T;
 
   type Face = { type: "image"; key: string; page?: number; label: string } | { type: "lining"; label: string };
   const sheetDefs: { kind: string; front: Face; back: Face }[] = [
-    { kind: "cover", front: { type: "image", key: "front", label: "Təsdiqlənmiş ön üz" }, back: { type: "lining", label: "Ön daxili üz" } },
-    ...Array.from({ length: N / 2 }, (_, j) => ({ kind: "paper", front: { type: "image" as const, key: "p" + (2 * j + 1), page: 2 * j + 1, label: "PDF səhifəsi " + (2 * j + 1) }, back: { type: "image" as const, key: "p" + (2 * j + 2), page: 2 * j + 2, label: "PDF səhifəsi " + (2 * j + 2) } })),
-    { kind: "cover", front: { type: "lining", label: "Arxa daxili üz" }, back: { type: "image", key: "back", label: "Təsdiqlənmiş arxa üz" } },
+    { kind: "cover", front: { type: "image", key: "front", label: t.faceFront }, back: { type: "lining", label: t.faceInnerFront } },
+    ...Array.from({ length: N / 2 }, (_, j) => ({ kind: "paper", front: { type: "image" as const, key: "p" + (2 * j + 1), page: 2 * j + 1, label: fmt(t.facePage, { n: 2 * j + 1 }) }, back: { type: "image" as const, key: "p" + (2 * j + 2), page: 2 * j + 2, label: fmt(t.facePage, { n: 2 * j + 2 }) } })),
+    { kind: "cover", front: { type: "lining", label: t.faceInnerBack }, back: { type: "image", key: "back", label: t.faceBack } },
   ];
   const book = $("book");
   const pageStatus = $("pageStatus");
@@ -40,7 +42,7 @@ function mountReader(root: HTMLElement) {
   const sheets: HTMLElement[] = [];
   let current = 0, locked = false, transitionTimer: ReturnType<typeof setTimeout> | undefined, zoomAt = 0, pointerStart: { x: number; y: number } | null = null, cancelClick = false;
   const maxSheets = sheetDefs.length;
-  const zoomItems = [{ key: "front", title: "Ön üz — FINAL" }, ...Array.from({ length: N }, (_, i) => ({ key: "p" + (i + 1), title: "Səhifə " + (i + 1) + " / 889" })), { key: "back", title: "Arxa üz — FINAL" }];
+  const zoomItems = [{ key: "front", title: t.zoomFront }, ...Array.from({ length: N }, (_, i) => ({ key: "p" + (i + 1), title: fmt(t.page, { n: i + 1 }) })), { key: "back", title: t.zoomBack }];
 
   // images get their src only once the book is about to scroll in
   const pending: HTMLImageElement[] = [];
@@ -71,23 +73,23 @@ function mountReader(root: HTMLElement) {
     sh.style.zIndex = String(maxSheets - i + 20);
     book.appendChild(sh); sheets.push(sh);
   });
-  const jumpOptions = [{ label: "Ön üz", value: 0 }];
+  const jumpOptions = [{ label: t.optFront, value: 0 }];
   for (let s = 1; s <= maxSheets - 1; s++) {
-    if (s === 1) jumpOptions.push({ label: "Səhifə 1", value: s });
-    else if (s === maxSheets - 1) jumpOptions.push({ label: "Səhifə 24", value: s });
-    else jumpOptions.push({ label: "Səhifələr " + (2 * s - 2) + "–" + (2 * s - 1), value: s });
+    if (s === 1) jumpOptions.push({ label: fmt(t.optPage, { n: 1 }), value: s });
+    else if (s === maxSheets - 1) jumpOptions.push({ label: fmt(t.optPage, { n: 24 }), value: s });
+    else jumpOptions.push({ label: fmt(t.optPages, { a: 2 * s - 2, b: 2 * s - 1 }), value: s });
   }
-  jumpOptions.push({ label: "Arxa üz", value: maxSheets });
+  jumpOptions.push({ label: t.optBack, value: maxSheets });
   jumpOptions.forEach((v) => { const o = document.createElement("option"); o.value = String(v.value); o.textContent = v.label; select.appendChild(o); });
   function reindex() {
     for (let i = 0; i < sheets.length; i++) sheets[i].style.zIndex = String(i < current ? maxSheets + 20 + i : maxSheets + 20 - i);
   }
   function pageLabel() {
-    if (current === 0) return "Ön üz qabığı";
-    if (current === maxSheets) return "Arxa üz qabığı";
-    if (current === 1) return "Səhifə 1 / 889";
-    if (current === maxSheets - 1) return "Səhifə 24 / 889";
-    return "Səhifələr " + (current * 2 - 2) + "–" + (current * 2 - 1) + " / 889";
+    if (current === 0) return t.frontCover;
+    if (current === maxSheets) return t.backCover;
+    if (current === 1) return fmt(t.page, { n: 1 });
+    if (current === maxSheets - 1) return fmt(t.page, { n: 24 });
+    return fmt(t.pages, { a: current * 2 - 2, b: current * 2 - 1 });
   }
   function updateControls() {
     pageStatus.textContent = pageLabel();
@@ -95,9 +97,9 @@ function mountReader(root: HTMLElement) {
     next.disabled = current === maxSheets || locked;
     slider.value = String(current); select.value = String(current);
     progressFill.style.width = ((current / maxSheets) * 100).toFixed(2) + "%";
-    if (current === 0) instructions.textContent = "Üz qabığına klikləyin — kitab açılacaq";
-    else if (current === maxSheets) instructions.textContent = "Arxa üz • sol tərəfə klikləyərək geri qayıdın";
-    else instructions.textContent = "Sağ səhifəyə klik — irəli · Sol səhifəyə klik — geri";
+    if (current === 0) instructions.textContent = t.hintCover;
+    else if (current === maxSheets) instructions.textContent = t.hintBack;
+    else instructions.textContent = t.hintPages;
     for (const n of thumbRow.querySelectorAll<HTMLElement>("[data-step]")) {
       n.classList.toggle("active", Number(n.dataset.step) === current);
     }
@@ -196,7 +198,7 @@ function mountReader(root: HTMLElement) {
     if (e.key === "End") { jump(maxSheets); e.preventDefault(); }
     if (e.key === "Enter" && document.activeElement === book) { flip(1); e.preventDefault(); }
   }, { signal });
-  const quick = [{ step: 0, label: "Üz qabığı", key: "front" }, { step: 1, label: "Titul", key: "p1" }, { step: 3, label: "Müəlliflik", key: "p5" }, { step: 4, label: "Mündəricat", key: "p7" }, { step: 8, label: "Mündəricatın davamı", key: "p15" }, { step: 12, label: "İlk bölmə", key: "p23" }, { step: maxSheets, label: "Arxa üz", key: "back" }];
+  const quick = [{ step: 0, label: t.quick.cover, key: "front" }, { step: 1, label: t.quick.title, key: "p1" }, { step: 3, label: t.quick.copyright, key: "p5" }, { step: 4, label: t.quick.contents, key: "p7" }, { step: 8, label: t.quick.contentsMore, key: "p15" }, { step: 12, label: t.quick.firstSection, key: "p23" }, { step: maxSheets, label: t.quick.back, key: "back" }];
   quick.forEach((q) => {
     const b = document.createElement("button"); b.type = "button"; b.className = "quick-link"; b.dataset.step = String(q.step);
     const im = document.createElement("img"); im.alt = ""; setSrc(im, asset(q.key)); im.loading = "lazy";
@@ -225,10 +227,10 @@ function mountReader(root: HTMLElement) {
   };
 }
 
-export default function BookReader3D() {
+export default function BookReader3D({ t }: { t: BookUi }) {
   const rootRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => mountReader(rootRef.current!), []);
+  useEffect(() => mountReader(rootRef.current!, t), [t]);
 
   return (
     <div ref={rootRef} className="vrbook3d">
@@ -239,70 +241,70 @@ export default function BookReader3D() {
               <div className="mark-icon" aria-hidden="true">VR</div>
               <div>
                 <strong>VR STANDARTLARI 2026</strong>
-                <small>İnteraktiv elektron kitab • R14</small>
+                <small>{t.subtitle}</small>
               </div>
             </div>
             <div className="head-badges">
               <span className="badge">PRINT-001/R14</span>
-              <span className="badge primary">NÜMUNƏ · 24 / 889 SƏHİFƏ</span>
+              <span className="badge primary">{t.sampleBadge}</span>
             </div>
           </header>
           <div className="intro">
-            <div className="overline">Məkan insana uyğunlaşır</div>
-            <h3 className="intro-title">Canlı səhifə çevirmə təcrübəsi</h3>
-            <p>Kitabın üz qabığına klikləyin və ya aşağıdakı keçid düymələrindən istifadə edin.</p>
+            <div className="overline">{t.overline}</div>
+            <h3 className="intro-title">{t.title}</h3>
+            <p>{t.intro}</p>
           </div>
           <div id="reader" className="reader">
             <div className="book-scene">
-              <div id="book" className="book" role="group" aria-label="VR Standartları 2026 — vərəqlənən 3D kitab" title="Sağ tərəfə klikləyin: irəli; sol tərəfə: geri" />
+              <div id="book" className="book" role="group" aria-label={t.bookAria} title={t.bookTitle} />
             </div>
-            <div className="page-edge-hint"><span>← Geri</span><span>İrəli →</span></div>
+            <div className="page-edge-hint"><span>{t.back}</span><span>{t.forward}</span></div>
           </div>
-          <section className="controls" aria-label="Kitab idarəetməsi">
+          <section className="controls" aria-label={t.controlsAria}>
             <div className="control-top">
               <div className="ctrl-group">
-                <button type="button" className="ctrl" id="previous" aria-label="Əvvəlki vərəq">← Geri</button>
-                <button type="button" className="ctrl main" id="next" aria-label="Növbəti vərəq">İrəli →</button>
+                <button type="button" className="ctrl" id="previous" aria-label={t.prevAria}>{t.back}</button>
+                <button type="button" className="ctrl main" id="next" aria-label={t.nextAria}>{t.forward}</button>
               </div>
-              <div className="status" id="pageStatus" aria-live="polite">Ön üz qabığı</div>
+              <div className="status" id="pageStatus" aria-live="polite">{t.frontCover}</div>
               <div className="ctrl-group">
-                <button type="button" id="zoomBtn" className="ctrl" title="Mövcud səhifəni böyük aç">⛶ Böyüt</button>
-                <button type="button" id="fullBtn" className="ctrl" title="Tam ekran">▣ Tam ekran</button>
+                <button type="button" id="zoomBtn" className="ctrl" title={t.zoomTitle}>{t.zoom}</button>
+                <button type="button" id="fullBtn" className="ctrl" title={t.fullscreenTitle}>{t.fullscreen}</button>
               </div>
             </div>
             <div className="control-bottom">
-              <input type="range" className="range" id="stepRange" min={0} max={14} defaultValue={0} aria-label="Kitabda keçid zolağı" />
-              <select id="pageJump" className="mini-select" aria-label="Səhifəyə keç" />
+              <input type="range" className="range" id="stepRange" min={0} max={14} defaultValue={0} aria-label={t.sliderAria} />
+              <select id="pageJump" className="mini-select" aria-label={t.jumpAria} />
             </div>
             <div className="progress"><div id="progressFill" /></div>
-            <div id="instructions" className="instructions">Üz qabığına klikləyin — kitab açılacaq</div>
+            <div id="instructions" className="instructions">{t.hintCover}</div>
           </section>
           <section className="quick-section">
             <div className="quick-header">
-              <h4 className="quick-title">Birbaşa keçid</h4>
-              <small>Yoxlama üçün seçilmiş səhifələr</small>
+              <h4 className="quick-title">{t.quickTitle}</h4>
+              <small>{t.quickNote}</small>
             </div>
             <div id="pageThumbs" className="page-thumbs" />
           </section>
           <footer className="disclaimer">
-            <b>İŞLƏK NÜMUNƏ · PRINT-001/R14.</b> İçəridəki ilk 24 səhifə təqdim etdiyiniz 889 səhifəlik PDF-dən dəyişdirilmədən görüntü kimi götürülüb; ön və arxa üzlər təsdiqlənmiş orijinal fayllardır. Bu, bütün kitabın tamamlanmış elektron nəşri deyil.
+            <b>{t.disclaimerLead}</b> {t.disclaimer}
             <br />
-            İdarəetmə: <kbd>←</kbd> <kbd>→</kbd> / <kbd>Page Up</kbd> <kbd>Page Down</kbd> / barmaqla sürüşdürmə.
+            {t.controlsNote} <kbd>←</kbd> <kbd>→</kbd> / <kbd>Page Up</kbd> <kbd>Page Down</kbd> / {t.swipe}
           </footer>
         </div>
       </div>
 
-      <div id="zoomModal" className="zoom-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Səhifəyə yaxından baxış">
+      <div id="zoomModal" className="zoom-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-label={t.zoomDialog}>
         <div className="zoom-bar">
-          <strong id="zoomPageLabel">Səhifə</strong>
+          <strong id="zoomPageLabel">{t.frontCover}</strong>
           <div className="zoom-nav">
             <button type="button" className="ctrl" id="zoomPrevious">←</button>
             <button type="button" className="ctrl" id="zoomNext">→</button>
-            <button type="button" className="ctrl main" id="modalClose">Bağla ✕</button>
+            <button type="button" className="ctrl main" id="modalClose">{t.close}</button>
           </div>
         </div>
         <div id="zoomViewport" className="zoom-viewport">
-          <img id="zoomImage" alt="Seçilmiş kitab səhifəsi" />
+          <img id="zoomImage" alt={t.zoomImageAlt} />
         </div>
       </div>
     </div>

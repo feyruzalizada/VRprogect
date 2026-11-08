@@ -1,3 +1,5 @@
+import { langHome } from "@/i18n/config";
+
 // the bar turns fixed once the page moves, so a tall block stops that much
 // short of it; a short one is parked in the middle of the screen
 export function scrollToElement(target: Element) {
@@ -13,11 +15,13 @@ export function scrollToElement(target: Element) {
 
 // the navbar only moves inside one page, so every item scrolls by hand and
 // leaves the address bar on "/" — a leftover #hash pulled the page back down
+const homes = new Set(Object.values(langHome));
+
 export function handleNavClick(event: React.MouseEvent, href: string) {
-  if (href !== "/" && !href.startsWith("#")) return;
+  if (!homes.has(href) && !href.startsWith("#")) return;
   event.preventDefault();
 
-  if (href === "/") {
+  if (homes.has(href)) {
     window.scrollTo({ top: 0, behavior: "smooth" });
   } else if (href.length > 1) {
     const target = document.querySelector(href);

@@ -1,9 +1,11 @@
 import { revalidatePath } from "next/cache";
 
-// the home page is static; any edit in the admin rebuilds it on the next visit
+import { langHome } from "@/i18n/config";
+
+// the home page is static in every language; any edit in the admin rebuilds them on the next visit
 export function revalidateHome() {
   try {
-    revalidatePath("/");
+    for (const path of Object.values(langHome)) revalidatePath(path);
   } catch {
     // outside a Next request (seed script, migrations) there is nothing to revalidate
   }

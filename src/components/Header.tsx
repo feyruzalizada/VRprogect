@@ -5,7 +5,9 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./Header.module.css";
 import { handleNavClick } from "./navScroll";
 import SiteSearch from "./SiteSearch";
-import { mainNav } from "@/content/navigation";
+import type { NavItem } from "@/content/navigation";
+import type { Ui } from "@/content/i18n/types";
+import { langHome, langLabel, langs, type Lang } from "@/i18n/config";
 import type { SearchItem } from "@/lib/searchIndex";
 
 function CaretDown({ className }: { className?: string }) {
@@ -41,41 +43,28 @@ function CloseIcon() {
   );
 }
 
-const LANGUAGES = ["AZ", "EN", "RU"] as const;
-
-type Lang = (typeof LANGUAGES)[number];
-
-function LangSwitch({
-  lang,
-  onPick,
-  className,
-}: {
-  lang: Lang;
-  onPick: (code: Lang) => void;
-  className: string;
-}) {
+function LangSwitch({ lang, className, label }: { lang: Lang; className: string; label: string }) {
   return (
-    <div className={className} role="group" aria-label="Language">
-      {LANGUAGES.map((code, index) => (
+    <div className={className} role="group" aria-label={label}>
+      {langs.map((code, index) => (
         <span key={code} className={styles.langOption}>
           {index > 0 && <span className={styles.langDivider} aria-hidden />}
-          <button
-            type="button"
-            onClick={() => onPick(code)}
-            aria-pressed={lang === code}
-            className={`${styles.langButton} ${
-              lang === code ? styles.langButtonActive : ""
-            }`}
+          <a
+            href={langHome[code]}
+            hrefLang={code}
+            lang={code}
+            aria-current={lang === code ? "true" : undefined}
+            className={`${styles.langButton} ${lang === code ? styles.langButtonActive : ""}`}
           >
-            {code}
-          </button>
+            {langLabel[code]}
+          </a>
         </span>
       ))}
     </div>
   );
 }
 
-function LangDropdown({ lang, onPick }: { lang: Lang; onPick: (code: Lang) => void }) {
+function LangDropdown({ lang, label }: { lang: Lang; label: string }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -104,30 +93,26 @@ function LangDropdown({ lang, onPick }: { lang: Lang; onPick: (code: Lang) => vo
         className={`${styles.langTrigger} ${open ? styles.langTriggerOpen : ""}`}
         aria-expanded={open}
         aria-haspopup="true"
-        aria-label="Language"
+        aria-label={label}
         onClick={() => setOpen((v) => !v)}
       >
-        {lang}
+        {langLabel[lang]}
         <CaretDown className={styles.langCaret} />
       </button>
 
       <ul className={`${styles.langMenu} ${open ? styles.langMenuOpen : ""}`}>
-        {LANGUAGES.map((code) => (
+        {langs.map((code) => (
           <li key={code}>
-            <button
-              type="button"
-              className={`${styles.langMenuItem} ${
-                lang === code ? styles.langMenuItemActive : ""
-              }`}
-              aria-pressed={lang === code}
+            <a
+              href={langHome[code]}
+              hrefLang={code}
+              lang={code}
+              className={`${styles.langMenuItem} ${lang === code ? styles.langMenuItemActive : ""}`}
+              aria-current={lang === code ? "true" : undefined}
               tabIndex={open ? 0 : -1}
-              onClick={() => {
-                onPick(code);
-                setOpen(false);
-              }}
             >
-              {code}
-            </button>
+              {langLabel[code]}
+            </a>
           </li>
         ))}
       </ul>
@@ -135,11 +120,20 @@ function LangDropdown({ lang, onPick }: { lang: Lang; onPick: (code: Lang) => vo
   );
 }
 
-export default function Header({ searchIndex }: { searchIndex: SearchItem[] }) {
+export default function Header({
+  searchIndex,
+  lang,
+  nav,
+  ui,
+}: {
+  searchIndex: SearchItem[];
+  lang: Lang;
+  nav: NavItem[];
+  ui: Pick<Ui, "search" | "menu">;
+}) {
+  const mainNav = nav.map((item) => (item.href === "/" ? { ...item, href: langHome[lang] } : item));
   const [searchOpen, setSearchOpen] = useState(false);
   const [panelOpen, setPanelOpen] = useState(false);
-  // visual only — no locale routing yet
-  const [lang, setLang] = useState<Lang>("AZ");
   const [stuck, setStuck] = useState(false);
 
   // an open panel used to leave the page scrolling behind it; hiding the
@@ -175,7 +169,7 @@ export default function Header({ searchIndex }: { searchIndex: SearchItem[] }) {
       <div className={styles.bar}>
         <div className={`${styles.inner} ${styles.desktopBar}`}>
           <div className={styles.colLogo}>
-            <Link href="/" className={styles.logo} aria-label="VR Global Group">
+            <Link href={langHome[lang]} className={styles.logo} aria-label="VR Global Group">
               <span className={styles.brand}>
                 <span>VR</span>
                 <span>Global</span>
@@ -185,7 +179,7 @@ export default function Header({ searchIndex }: { searchIndex: SearchItem[] }) {
           </div>
 
           <div className={styles.colMenu}>
-            <nav className={styles.nav} aria-label="Main">
+            <nav className={styles.nav} aria-label={ui.menu.main}>
               <ul className={styles.navList}>
                 {mainNav.map((item) => (
                   <li key={item.label} className={styles.navItem}>
@@ -203,12 +197,12 @@ export default function Header({ searchIndex }: { searchIndex: SearchItem[] }) {
           </div>
 
           <div className={styles.colActions}>
-            <LangDropdown lang={lang} onPick={setLang} />
+            <LangDropdown lang={lang} label={ui.menu.language} />
 
             <button
               type="button"
               className={`${styles.action} ${styles.search}`}
-              aria-label="Axtarış"
+              aria-label={ui.search.open}
               aria-expanded={searchOpen}
               onClick={() => setSearchOpen((v) => !v)}
             >
@@ -219,7 +213,7 @@ export default function Header({ searchIndex }: { searchIndex: SearchItem[] }) {
               <button
                 type="button"
                 className={styles.action}
-                aria-label="Open menu"
+                aria-label={ui.menu.open}
                 aria-expanded={panelOpen}
                 onClick={() => setPanelOpen(true)}
               >
@@ -230,7 +224,7 @@ export default function Header({ searchIndex }: { searchIndex: SearchItem[] }) {
         </div>
 
         <div className={styles.mobileBar}>
-          <Link href="/" className={styles.mobileLogo} aria-label="VR Global Group">
+          <Link href={langHome[lang]} className={styles.mobileLogo} aria-label="VR Global Group">
             <span className={styles.brand}>
               <span>VR</span>
               <span>Global</span>
@@ -240,13 +234,13 @@ export default function Header({ searchIndex }: { searchIndex: SearchItem[] }) {
           <div className={styles.mobileActions}>
             <LangSwitch
               lang={lang}
-              onPick={setLang}
+              label={ui.menu.language}
               className={styles.mobileLangSwitch}
             />
             <button
               type="button"
               className={`${styles.action} ${styles.search}`}
-              aria-label="Axtarış"
+              aria-label={ui.search.open}
               aria-expanded={searchOpen}
               onClick={() => setSearchOpen((v) => !v)}
             >
@@ -255,7 +249,7 @@ export default function Header({ searchIndex }: { searchIndex: SearchItem[] }) {
             <button
               type="button"
               className={styles.action}
-              aria-label="Open menu"
+              aria-label={ui.menu.open}
               aria-expanded={panelOpen}
               onClick={() => setPanelOpen(true)}
             >
@@ -265,13 +259,13 @@ export default function Header({ searchIndex }: { searchIndex: SearchItem[] }) {
         </div>
       </div>
 
-      {searchOpen && <SiteSearch index={searchIndex} onDone={() => setSearchOpen(false)} />}
+      {searchOpen && <SiteSearch index={searchIndex} t={ui.search} onDone={() => setSearchOpen(false)} />}
 
       {panelOpen && (
         <button
           type="button"
           className={styles.overlay}
-          aria-label="Close"
+          aria-label={ui.menu.close}
           onClick={() => setPanelOpen(false)}
         />
       )}
@@ -283,7 +277,7 @@ export default function Header({ searchIndex }: { searchIndex: SearchItem[] }) {
         <button
           type="button"
           className={styles.panelClose}
-          aria-label="Close menu"
+          aria-label={ui.menu.close}
           onClick={() => setPanelOpen(false)}
           tabIndex={panelOpen ? 0 : -1}
         >
@@ -298,7 +292,7 @@ export default function Header({ searchIndex }: { searchIndex: SearchItem[] }) {
           </span>
         </div>
 
-        <nav className={styles.panelNav} aria-label="Menu">
+        <nav className={styles.panelNav} aria-label={ui.menu.main}>
           <ul className={styles.panelNavList}>
             {mainNav.map((item) => (
               <li key={item.label}>

@@ -53,11 +53,11 @@ function Counter({ counter }: { counter: ServiceCounter }) {
   );
 }
 
-export default function Counters() {
+export default function Counters({ texts }: { texts?: { label: string; suffix?: string }[] }) {
   return (
     <div className={styles.counters}>
-      {services.counters.map((counter) => (
-        <Counter key={counter.label} counter={counter} />
+      {services.counters.map((counter, i) => (
+        <Counter key={counter.label} counter={texts?.[i] ? { ...counter, ...texts[i] } : counter} />
       ))}
     </div>
   );

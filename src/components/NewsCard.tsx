@@ -4,10 +4,11 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 
 import styles from "./News.module.css";
-import { news } from "@/content/news";
 import type { NewsItem } from "@/lib/news";
 
-export default function NewsCard({ item, date }: { item: NewsItem; date: string }) {
+type NewsCardText = { read: string; back: string; source: string };
+
+export default function NewsCard({ item, date, t }: { item: NewsItem; date: string; t: NewsCardText }) {
   const [flipped, setFlipped] = useState(false);
   const frontRef = useRef<HTMLButtonElement>(null);
   const backRef = useRef<HTMLButtonElement>(null);
@@ -44,7 +45,7 @@ export default function NewsCard({ item, date }: { item: NewsItem; date: string 
               {date}
             </time>
             <span className={styles.cardTitle}>{item.title}</span>
-            <span className={styles.read}>{news.read}</span>
+            <span className={styles.read}>{t.read}</span>
           </span>
         </button>
 
@@ -59,11 +60,11 @@ export default function NewsCard({ item, date }: { item: NewsItem; date: string 
           <div className={styles.actions}>
             {item.link ? (
               <a className={styles.source} href={item.link} target="_blank" rel="noopener noreferrer">
-                {news.source}
+                {t.source}
               </a>
             ) : null}
             <button ref={backRef} type="button" className={styles.backButton} onClick={() => flip(false)}>
-              {news.back}
+              {t.back}
             </button>
           </div>
         </div>

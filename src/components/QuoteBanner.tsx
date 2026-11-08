@@ -2,8 +2,12 @@ import Image from "next/image";
 import styles from "./QuoteBanner.module.css";
 import { quoteBanner } from "@/content/quote";
 
-export default function QuoteBanner() {
-  const { motto, quote, author } = quoteBanner;
+type QuoteText = { motto: string; quote: string; name: string; role: string };
+
+export default function QuoteBanner({ t }: { t?: QuoteText }) {
+  const motto = t?.motto ?? quoteBanner.motto;
+  const quote = t?.quote ?? quoteBanner.quote;
+  const author = { ...quoteBanner.author, ...(t ? { name: t.name, role: t.role } : {}) };
 
   return (
     <section id="sitat" className={styles.section}>

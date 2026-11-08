@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 
 import styles from "./Header.module.css";
 import { scrollToElement } from "./navScroll";
+import type { Ui } from "@/content/i18n/types";
 import type { SearchItem, SearchTarget } from "@/lib/searchIndex";
 
 const MAX_RESULTS = 8;
@@ -50,7 +51,7 @@ export function goTo(go: SearchTarget) {
   if (section) scrollToElement(section);
 }
 
-export default function SiteSearch({ index, onDone }: { index: SearchItem[]; onDone: () => void }) {
+export default function SiteSearch({ index, t, onDone }: { index: SearchItem[]; t: Ui["search"]; onDone: () => void }) {
   const [query, setQuery] = useState("");
   const [cursor, setCursor] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -115,7 +116,7 @@ export default function SiteSearch({ index, onDone }: { index: SearchItem[]; onD
         }}
       >
         <label htmlFor="site-search" className="sr-only">
-          Saytda axtar
+          {t.label}
         </label>
         <input
           ref={inputRef}
@@ -123,7 +124,7 @@ export default function SiteSearch({ index, onDone }: { index: SearchItem[]; onD
           type="search"
           name="s"
           autoComplete="off"
-          placeholder="AXTAR..."
+          placeholder={t.placeholder}
           className={styles.searchInput}
           value={query}
           onChange={(e) => {
@@ -136,7 +137,7 @@ export default function SiteSearch({ index, onDone }: { index: SearchItem[]; onD
           aria-controls="site-search-results"
           aria-activedescendant={rows ? `site-search-${cursor}` : undefined}
         />
-        <button type="submit" className={styles.searchSubmit} aria-label="Axtar">
+        <button type="submit" className={styles.searchSubmit} aria-label={t.submit}>
           <svg viewBox="0 0 22 22" fill="none" width="22" height="22" aria-hidden>
             <circle cx="9.5" cy="9.5" r="6.5" stroke="currentColor" strokeWidth="1.3" />
             <path d="m14.5 14.5 5 5" stroke="currentColor" strokeWidth="1.3" />
@@ -145,8 +146,8 @@ export default function SiteSearch({ index, onDone }: { index: SearchItem[]; onD
       </form>
 
       {searched ? (
-        <ul id="site-search-results" className={styles.searchResults} role="listbox" aria-label="Nəticələr">
-          {rows === 0 ? <li className={styles.searchEmpty}>Saytda uyğun nəticə yoxdur.</li> : null}
+        <ul id="site-search-results" className={styles.searchResults} role="listbox" aria-label={t.results}>
+          {rows === 0 ? <li className={styles.searchEmpty}>{t.empty}</li> : null}
           {results.map((r, i) => (
             <li
               key={`${r.item.kind}-${r.item.title}-${i}`}

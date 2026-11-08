@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import BookReader3D from "./BookReader3D";
 import { scrollToElement } from "./navScroll";
 import styles from "./SideNavShowcase.module.css";
-import { sideNav, type SideNavLink } from "@/content/sidenav";
+import type { BookUi } from "@/content/i18n/types";
+import { sideNav as azSideNav, type SideNavContent, type SideNavLink } from "@/content/sidenav";
 
 const PANEL_MS = 50000;
 
@@ -34,7 +35,7 @@ function Panel({ link, open }: { link: SideNavLink; open: boolean }) {
   );
 }
 
-export default function SideNavShowcase() {
+export default function SideNavShowcase({ sideNav = azSideNav, book }: { sideNav?: SideNavContent; book: BookUi }) {
   const [openId, setOpenId] = useState<string | null>(null);
   const introOpen = openId === sideNav.intro.id;
 
@@ -104,7 +105,7 @@ export default function SideNavShowcase() {
       </aside>
 
       <div className={styles.stage}>
-        <BookReader3D />
+        <BookReader3D t={book} />
       </div>
     </section>
   );

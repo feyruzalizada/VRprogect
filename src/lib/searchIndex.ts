@@ -1,12 +1,7 @@
-import { contact } from "@/content/contact";
-import { footer } from "@/content/footer";
-import { heroCues } from "@/content/hero";
-import { mainNav } from "@/content/navigation";
-import { news as newsCopy } from "@/content/news";
-import { partners, partnersHeading } from "@/content/partners";
-import { quoteBanner } from "@/content/quote";
-import { countersHeading, services as serviceCounters } from "@/content/services";
-import { sideNav } from "@/content/sidenav";
+import { contact as contactInfo } from "@/content/contact";
+import type { SiteContent } from "@/content/i18n/types";
+import { partners } from "@/content/partners";
+import { services as serviceCounters } from "@/content/services";
 import type { NewsItem } from "@/lib/news";
 import type { ServicesData } from "@/lib/services";
 
@@ -15,78 +10,80 @@ export type SearchTarget = { section: string; service?: string; news?: string; p
 export type SearchItem = { kind: string; title: string; text: string; go: SearchTarget };
 
 // everything the header search can find, built on the server from the same data the page renders
-export function buildSearchIndex({ section, items: services }: ServicesData, news: NewsItem[]): SearchItem[] {
+export function buildSearchIndex({ section, items: services }: ServicesData, news: NewsItem[], c: SiteContent): SearchItem[] {
+  const k = c.ui.search.kinds;
+
   // a section is also found by the copy around its cards
   const sectionText: Record<string, string> = {
     "#xidmetler": [section.eyebrow, section.heading, section.tagline, section.intro, section.disclaimer].filter(Boolean).join(" "),
-    "#xeberler": [newsCopy.eyebrow, newsCopy.all].join(" "),
-    "#ugurlar": countersHeading,
-    "#kontaktlar": [footer.about, footer.copyright].join(" "),
+    "#xeberler": [c.news.eyebrow, c.news.all].join(" "),
+    "#ugurlar": c.countersHeading,
+    "#kontaktlar": [c.footer.about, c.footer.copyright].join(" "),
   };
-  const sections = mainNav
+  const sections = c.mainNav
     .filter((item) => item.href.startsWith("#"))
-    .map((item) => ({ kind: "Bölmə", title: item.label, text: sectionText[item.href] ?? "", go: { section: item.href } }));
+    .map((item) => ({ kind: k.section, title: item.label, text: sectionText[item.href] ?? "", go: { section: item.href } }));
 
-  const hero = heroCues.map((cue) => ({
-    kind: "Ana səhifə",
+  const hero = c.hero.map((cue) => ({
+    kind: k.home,
     title: cue.title,
     text: [cue.description, cue.trust].join(" "),
     go: { section: "main" },
   }));
 
   const quote = {
-    kind: "Sitat",
-    title: quoteBanner.quote,
-    text: [quoteBanner.motto, quoteBanner.author.name, quoteBanner.author.role].join(" "),
+    kind: k.quote,
+    title: c.quote.quote,
+    text: [c.quote.motto, c.quote.name, c.quote.role].join(" "),
     go: { section: "#sitat" },
   };
 
-  const counters = serviceCounters.counters.map((c) => ({
-    kind: countersHeading,
-    title: c.label,
-    text: `${c.value}${c.suffix ?? ""}`,
+  const counters = serviceCounters.counters.map((counter, i) => ({
+    kind: c.countersHeading,
+    title: c.counters[i]?.label ?? counter.label,
+    text: `${counter.value}${c.counters[i]?.suffix ?? counter.suffix ?? ""}`,
     go: { section: "#ugurlar" },
   }));
 
-  const panels = [sideNav.intro, ...sideNav.links].map((link) => ({
-    kind: "VR Standartları",
+  const panels = [c.sideNav.intro, ...c.sideNav.links].map((link) => ({
+    kind: k.panel,
     title: link.label,
     text: link.body.map((block) => block.text).join(" "),
     go: { section: "#kitab", panel: link.id },
   }));
 
   const serviceItems = services.map((s) => ({
-    kind: "Xidmət",
+    kind: k.service,
     title: s.title,
     text: [s.description, ...s.points.map((p) => [p.label, p.text].filter(Boolean).join(": ")), s.note ?? "", s.cta].join(" "),
     go: { section: "#xidmetler", service: s.id },
   }));
 
   const newsItems = news.map((n) => ({
-    kind: "Xəbər",
+    kind: k.news,
     title: n.title,
     text: n.text,
     go: { section: "#xeberler", news: n.id },
   }));
 
   const partnerItems = partners.map((p) => ({
-    kind: partnersHeading,
+    kind: c.partnersHeading,
     title: p.name,
     text: "",
     go: { section: "#partnyorlar" },
   }));
 
-  const contacts = footer.contacts.map((c) => ({
-    kind: footer.contactHeading,
-    title: c.label,
-    text: c.value,
+  const contacts = c.footer.contacts.map((item) => ({
+    kind: c.footer.contactHeading,
+    title: item.label,
+    text: item.value,
     go: { section: "#kontaktlar" },
   }));
 
-  // what the card buttons offer, so "müraciət", "sifariş" or "zəng" lead somewhere useful
+  // what the card buttons offer, so a search for a request, an order or a call leads somewhere useful
   const reach = [
-    { kind: footer.contactHeading, title: "WhatsApp", text: `${contact.chooseLabel} Müraciət et, sifariş et — xidmət kartındakı düymə ilə`, go: { section: "#xidmetler" } },
-    { kind: footer.contactHeading, title: contact.callLabel, text: `${contact.phone} Telefonla müraciət`, go: { section: "#kontaktlar" } },
+    { kind: c.footer.contactHeading, title: "WhatsApp", text: `${c.contact.chooseLabel} ${c.ui.search.whatsapp}`, go: { section: "#xidmetler" } },
+    { kind: c.footer.contactHeading, title: c.contact.callLabel, text: `${contactInfo.phone} ${c.ui.search.call}`, go: { section: "#kontaktlar" } },
   ];
 
   return [...sections, ...serviceItems, ...hero, quote, ...panels, ...newsItems, ...counters, ...partnerItems, ...contacts, ...reach];

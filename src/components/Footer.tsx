@@ -1,5 +1,5 @@
 import styles from "./Footer.module.css";
-import { footer } from "@/content/footer";
+import { footer as azFooter, type FooterContent } from "@/content/footer";
 import SmoothLink from "./SmoothLink";
 import { heroSocial } from "@/content/hero";
 
@@ -45,7 +45,7 @@ function SocialGlyph({ id }: { id: string }) {
   );
 }
 
-export default function Footer() {
+export default function Footer({ t: footer = azFooter }: { t?: FooterContent }) {
   const year = new Date().getFullYear();
 
   return (

@@ -2,13 +2,13 @@ import Image from "next/image";
 import styles from "./PartnerStrip.module.css";
 import { partners, partnersHeading } from "@/content/partners";
 
-export default function PartnerStrip() {
+export default function PartnerStrip({ heading = partnersHeading }: { heading?: string }) {
   // the list is rendered twice so the track can loop without a jump
   const loop = [...partners, ...partners];
 
   return (
-    <section id="partnyorlar" className={styles.section} aria-label="Partners">
-      <h2 className={styles.heading}>{partnersHeading}</h2>
+    <section id="partnyorlar" className={styles.section} aria-label={heading}>
+      <h2 className={styles.heading}>{heading}</h2>
 
       <div className={styles.viewport}>
         <div className={styles.track}>

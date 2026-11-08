@@ -6,6 +6,7 @@ import ContactChoice from "./ContactChoice";
 import ServiceVideo from "./ServiceVideo";
 import { scrollToElement } from "./navScroll";
 import styles from "./Services.module.css";
+import type { SiteContent } from "@/content/i18n/types";
 import type { ServicePoint, ServicesData } from "@/lib/services";
 
 function Point({ point }: { point: ServicePoint }) {
@@ -27,7 +28,15 @@ function revealCard(pending: { current: string | null }) {
   scrollToElement(card);
 }
 
-export default function Services({ id = "kalkulyator", data }: { id?: string; data: ServicesData }) {
+export default function Services({
+  id = "kalkulyator",
+  data,
+  contact,
+}: {
+  id?: string;
+  data: ServicesData;
+  contact?: SiteContent["contact"];
+}) {
   const { section, items: all, filters } = data;
   const [active, setActive] = useState(filters[0]?.id);
 
@@ -119,7 +128,7 @@ export default function Services({ id = "kalkulyator", data }: { id?: string; da
                   {item.note ? <p className={styles.note}>{item.note}</p> : null}
                 </details>
 
-                <ContactChoice label={item.cta} service={item.title} />
+                <ContactChoice label={item.cta} service={item.title} t={contact} />
               </div>
             </article>
           ))}

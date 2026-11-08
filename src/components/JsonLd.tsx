@@ -1,7 +1,19 @@
 import type { ServiceCard } from "@/lib/services";
-import { siteDescription, siteName, sitePhone, siteSocial, siteUrl } from "@/lib/site";
+import { langHome, type Lang } from "@/i18n/config";
+import { siteName, sitePhone, siteSocial, siteUrl } from "@/lib/site";
 
-export default function JsonLd({ services }: { services: ServiceCard[] }) {
+export default function JsonLd({
+  services,
+  lang,
+  description,
+  catalog,
+}: {
+  services: ServiceCard[];
+  lang: Lang;
+  description: string;
+  catalog: string;
+}) {
+  const pageUrl = `${siteUrl}${langHome[lang] === "/" ? "/" : langHome[lang]}`;
   const org = `${siteUrl}/#organization`;
   const data = {
     "@context": "https://schema.org",
@@ -13,7 +25,7 @@ export default function JsonLd({ services }: { services: ServiceCard[] }) {
         url: `${siteUrl}/`,
         logo: `${siteUrl}/images/vr_logo.png`,
         image: `${siteUrl}/images/og.jpg`,
-        description: siteDescription,
+        description,
         telephone: sitePhone,
         address: { "@type": "PostalAddress", addressLocality: "Bakı", addressCountry: "AZ" },
         areaServed: { "@type": "Country", name: "Azərbaycan" },
@@ -26,7 +38,7 @@ export default function JsonLd({ services }: { services: ServiceCard[] }) {
         },
         hasOfferCatalog: {
           "@type": "OfferCatalog",
-          name: "Xidmətlər",
+          name: catalog,
           itemListElement: services.map((s) => ({
             "@type": "Offer",
             itemOffered: { "@type": "Service", name: s.title, description: s.description },
@@ -36,9 +48,9 @@ export default function JsonLd({ services }: { services: ServiceCard[] }) {
       {
         "@type": "WebSite",
         "@id": `${siteUrl}/#website`,
-        url: `${siteUrl}/`,
+        url: pageUrl,
         name: siteName,
-        inLanguage: "az",
+        inLanguage: lang,
         publisher: { "@id": org },
       },
     ],
