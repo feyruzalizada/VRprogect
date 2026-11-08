@@ -184,7 +184,7 @@ export const ru: SiteContent = {
     contacts: [
       { label: "Адрес", value: "Баку, Азербайджан" },
       { label: "Телефон", value: "+994 50 200 51 21", href: "tel:+994502005121" },
-      { label: "E-mail", value: "info@vrproject.az", href: "mailto:info@vrproject.az" },
+      { label: "E-mail", value: "info@millistandart.az", href: "mailto:info@millistandart.az" },
       { label: "Часы работы", value: "Пн — Сб, 09:00 — 18:00" },
     ],
     socialHeading: "Мы в соцсетях",

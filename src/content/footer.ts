@@ -36,7 +36,7 @@ export const footer: FooterContent = {
   contacts: [
     { label: "Ünvan", value: "Bakı, Azərbaycan" },
     { label: "Telefon", value: "+994 50 200 51 21", href: "tel:+994502005121" },
-    { label: "E-poçt", value: "info@vrproject.az", href: "mailto:info@vrproject.az" },
+    { label: "E-poçt", value: "info@millistandart.az", href: "mailto:info@millistandart.az" },
     { label: "İş saatları", value: "B.e — Şən, 09:00 — 18:00" },
   ],
   socialHeading: "Bizi izləyin",
