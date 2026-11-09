@@ -42,6 +42,14 @@ function fileUrl(file: number | Media | null | undefined) {
   return typeof file === "object" && file?.url ? file.url : undefined;
 }
 
+// the service clips were re-packed in place on 09.11.2026 (Premiere mp42 → isom) so every laptop can decode them;
+// bump this when blob files are overwritten again, so browsers holding the old copy fetch the new one
+const VIDEO_VERSION = 2;
+const videoUrl = (file: number | Media | null | undefined) => {
+  const url = fileUrl(file);
+  return url ? `${url}${url.includes("?") ? "&" : "?"}v=${VIDEO_VERSION}` : undefined;
+};
+
 // a translation shows where it was written; anything left empty falls back to the Azerbaijani text
 function pick<T>(az: T, tr: T | null | undefined): T {
   if (tr === null || tr === undefined || tr === "") return az;
@@ -82,7 +90,7 @@ export async function getServices(lang: Lang = "az"): Promise<ServicesData> {
         points: points.map(({ label, text }) => ({ label, text: text ?? "" })),
         note: pick(doc.note, tr?.note),
         cta: pick(doc.cta, tr?.cta),
-        video: fileUrl(doc.video),
+        video: videoUrl(doc.video),
         poster: fileUrl(doc.poster),
       };
     }),
