@@ -85,5 +85,37 @@ export type SiteContent = {
   partnersHeading: string;
   countersHeading: string;
   counters: { label: string; suffix?: string }[];
+  calc: CalcUi;
   ui: Ui;
+};
+
+export type CalcElement = { title: string; datum: string };
+
+// the VR Mini Demo calculator; {n} is the height, {r} the ratio, {d} the difference
+export type CalcUi = {
+  heading: string;
+  step: string;
+  heightLabel: string;
+  unitCm: string;
+  unitMm: string;
+  hint: string;
+  hintNote: string;
+  adult: string;
+  submit: string;
+  privacy: string;
+  resultTitle: string;
+  resultIdle: string;
+  badgeIdle: string;
+  badgeReady: string;
+  base: string;
+  candidate: string;
+  difference: string;
+  sourceNote: string;
+  elements: { switch: CalcElement; seat: CalcElement; worktop: CalcElement };
+  ratioNote: string;
+  live: string;
+  warningLead: string;
+  warning: string;
+  noscript: string;
+  errors: { empty: string; format: string; range: string; adult: string };
 };

@@ -17,6 +17,7 @@ export function buildSearchIndex({ section, items: services }: ServicesData, new
   const sectionText: Record<string, string> = {
     "#xidmetler": [section.eyebrow, section.heading, section.tagline, section.intro, section.disclaimer].filter(Boolean).join(" "),
     "#xeberler": [c.news.eyebrow, c.news.all].join(" "),
+    "#kalkulyator": [c.calc.heading, c.calc.heightLabel, ...Object.values(c.calc.elements).map((e) => e.title)].join(" "),
     "#ugurlar": c.countersHeading,
     "#kontaktlar": [c.footer.about, c.footer.copyright].join(" "),
   };
