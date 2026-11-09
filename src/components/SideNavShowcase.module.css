@@ -124,6 +124,39 @@
   transform: translateX(0);
 }
 
+/* stays in the corner while the panel's text scrolls */
+.panelClose {
+  position: sticky;
+  top: -20px;
+  float: right;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: -22px -24px 8px 16px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 200ms ease, border-color 200ms ease;
+}
+
+.panelClose:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: #fff;
+}
+
+.panelClose:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
 .panelTitle {
   margin: 0 0 22px;
   font-family: var(--font-display), sans-serif;
@@ -238,6 +271,14 @@
     max-height: 1400px;
     margin-top: 14px;
     padding: 22px 18px 26px;
+  }
+
+  .panelClose {
+    top: 0;
+    width: 36px;
+    height: 36px;
+    margin: -8px -4px 8px 12px;
+    font-size: 24px;
   }
 
   .panelTitle {
