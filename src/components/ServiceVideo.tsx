@@ -10,8 +10,8 @@ export default function ServiceVideo({ src, poster }: { src: string; poster?: st
     const video = ref.current;
     if (!video) return;
 
-    // without a poster the card would stay empty wherever the clip does not play
-    // (reduced motion, blocked autoplay), so its first frame is fetched once it is near
+    // without a poster the card would stay empty until the clip starts (or if autoplay is blocked),
+    // so its first frame is fetched once it is near
     const near = poster
       ? null
       : new IntersectionObserver(
@@ -25,8 +25,7 @@ export default function ServiceVideo({ src, poster }: { src: string; poster?: st
         );
     near?.observe(video);
 
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return () => near?.disconnect();
-
+    // plays like the hero clip whatever the system motion setting: these are short, muted loops
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) video.play().catch(() => {});
