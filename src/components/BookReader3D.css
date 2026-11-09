@@ -23,6 +23,12 @@
 .vrbook3d .overline{font-size:11px;letter-spacing:.32em;color:var(--gold);text-transform:uppercase}
 .vrbook3d .intro .intro-title{font-size:clamp(24px,3cqw,37px);font-weight:500;letter-spacing:.045em;margin:9px 0 5px}
 .vrbook3d .intro p{margin:0;color:#b6becc;font-size:13px}
+/* the heading is the order button: WhatsApp with the order text ready */
+.vrbook3d .intro .order{display:inline-flex;align-items:center;gap:12px;padding:13px 26px;border-radius:999px;background:linear-gradient(180deg,var(--gold-light),var(--gold));color:#111b28;font-size:clamp(18px,2cqw,24px);font-weight:700;letter-spacing:.02em;text-decoration:none;box-shadow:0 8px 28px #d9ae5e40,inset 0 1px 0 #fff6;transition:transform .18s,box-shadow .18s}
+.vrbook3d .intro .order:hover{transform:translateY(-2px);box-shadow:0 12px 34px #d9ae5e66,inset 0 1px 0 #fff6}
+.vrbook3d .intro .order:focus-visible{outline:3px solid var(--gold-light);outline-offset:4px}
+.vrbook3d .intro .order svg{flex:none}
+.vrbook3d .intro .order-arrow{font-size:.8em;opacity:.75}
 .vrbook3d .reader{position:relative;margin:0 auto;padding:20px 0 4px;max-width:1280px;isolation:isolate}
 .vrbook3d .reader:fullscreen{background:#08111c;max-width:100%;display:flex;align-items:center;justify-content:center;padding:48px 2vw}
 .vrbook3d .reader:fullscreen .book-scene{width:min(95vw,calc(84vh * 1.414))}
@@ -99,6 +105,7 @@ body.vrbook3d-lock{overflow:hidden}
 .vrbook3d .badge{padding:7px 9px;font-size:9px}
 .vrbook3d .intro{padding:22px 0 11px}
 .vrbook3d .intro .intro-title{font-size:24px}
+.vrbook3d .intro .order{font-size:17px;padding:11px 20px;gap:9px}
 .vrbook3d .intro p{font-size:11px}
 .vrbook3d .overline{font-size:9px}
 .vrbook3d .reader{padding:0}

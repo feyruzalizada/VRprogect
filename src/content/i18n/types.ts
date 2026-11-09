@@ -12,6 +12,9 @@ export type BookUi = {
   sampleBadge: string;
   overline: string;
   title: string;
+  // WhatsApp text sent when the book is ordered from its heading button
+  orderMessage: string;
+  orderAria: string;
   intro: string;
   back: string;
   forward: string;
