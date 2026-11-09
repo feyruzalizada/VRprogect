@@ -1,3 +1,4 @@
+import { calcDemoRu } from "@/content/calcDemo/ru";
 import type { SiteContent } from "./types";
 
 // «VR» — бренд VR Global Group, а не виртуальная реальность: не переводится и не расшифровывается.
@@ -199,6 +200,7 @@ export const ru: SiteContent = {
   partnersHeading: "Официальные партнёры",
   countersHeading: "Достижения",
   counters: [{ label: "Завершённых работ" }, { label: "Опыт", suffix: " года" }, { label: "Партнёров" }, { label: "Довольных клиентов", suffix: "%" }],
+  calcDemo: calcDemoRu,
   calc: {
     heading: "Сравните предварительные размеры",
     step: "01 / РОСТ",

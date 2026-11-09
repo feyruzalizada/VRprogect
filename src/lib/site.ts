@@ -23,6 +23,7 @@ export const siteKeywords = [
 ];
 
 export const sitePhone = "+994502005121";
+export const siteEmail = "info@millistandart.az";
 
 // profile links without share/tracking params
 export const siteSocial: string[] = [

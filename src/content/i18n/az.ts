@@ -1,3 +1,4 @@
+import { calcDemoAz } from "@/content/calcDemo/az";
 import { contact } from "@/content/contact";
 import { footer } from "@/content/footer";
 import { heroCues } from "@/content/hero";
@@ -24,6 +25,7 @@ export const az: SiteContent = {
   partnersHeading,
   countersHeading,
   counters: services.counters.map(({ label, suffix }) => ({ label, suffix })),
+  calcDemo: calcDemoAz,
   calc: {
     heading: "İlkin ölçülərinizi müqayisə edin",
     step: "01 / BOY GÖSTƏRİCİSİ",

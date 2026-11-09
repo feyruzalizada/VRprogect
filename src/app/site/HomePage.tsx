@@ -35,7 +35,7 @@ export default async function HomePage({ lang }: { lang: Lang }) {
         <HeroSlider cues={cues} />
         <QuoteBanner t={c.quote} />
         <SideNavShowcase sideNav={c.sideNav} book={c.ui.book} />
-        <AdaptiveCalc label={c.ui.calcLabel} t={c.calc} lang={lang} />
+        <AdaptiveCalc label={c.ui.calcLabel} t={c.calc} d={c.calcDemo} lang={lang} />
         <Services id="xidmetler" data={services} contact={c.contact} />
         <PartnerStrip heading={c.partnersHeading} />
         <PercentBand heading={c.countersHeading} counters={c.counters} />

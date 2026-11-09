@@ -1,3 +1,4 @@
+import type { CalcDemo } from "@/content/calcDemo/types";
 import type { FooterContent } from "@/content/footer";
 import type { NavItem } from "@/content/navigation";
 import type { SideNavContent } from "@/content/sidenav";
@@ -86,6 +87,7 @@ export type SiteContent = {
   countersHeading: string;
   counters: { label: string; suffix?: string }[];
   calc: CalcUi;
+  calcDemo: CalcDemo;
   ui: Ui;
 };
 
