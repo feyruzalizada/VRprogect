@@ -173,7 +173,7 @@
   margin: clamp(20px, 3.4vh, 48px) 0 0;
   font-family: var(--font-raleway), sans-serif;
   font-weight: 400;
-  font-size: clamp(15px, 1.15vw, 18px);
+  font-size: clamp(16px, calc(1.15vw + 1px), 19px);
   line-height: 1.7;
   color: #fff;
   animation: layerIn 900ms ease both;
