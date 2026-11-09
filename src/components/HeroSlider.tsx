@@ -244,7 +244,7 @@ export default function HeroSlider({ cues = heroCues }: { cues?: HeroCue[] }) {
 
       <ul className={styles.social}>
         {heroSocial.map((item) => (
-          <li key={item.id} className={styles.socialItem}>
+          <li key={item.id}>
             <a
               href={item.href}
               className={styles.socialLink}
