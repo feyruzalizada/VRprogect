@@ -288,16 +288,16 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  gap: 44px;
+  gap: 52px;
 }
 
 .socialLink {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: 10px;
   font-family: var(--font-display), sans-serif;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 15px;
   letter-spacing: 0.75px;
   line-height: 20px;
   text-transform: uppercase;
@@ -311,20 +311,20 @@
 }
 
 .socialIcon {
-  width: 18px;
-  height: 18px;
+  width: 22px;
+  height: 22px;
   flex-shrink: 0;
 }
 
 @media (max-height: 620px) {
   .socialLink {
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: 0.5px;
   }
 
   .socialIcon {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -364,14 +364,14 @@
   }
 
   .socialLink {
-    gap: 7px;
-    font-size: 12px;
+    gap: 8px;
+    font-size: 14px;
     letter-spacing: 0.5px;
   }
 
   .socialIcon {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
   }
 
   .description {
@@ -417,8 +417,8 @@
   }
 
   .socialIcon {
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
   }
 
   .description {
