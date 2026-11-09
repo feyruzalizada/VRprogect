@@ -235,7 +235,13 @@
 .scopeRule {
   width: 100%;
   height: 12px;
-  background: repeating-linear-gradient(90deg, #a8b4bb80 0, #a8b4bb80 1px, transparent 1px, transparent 16px);
+  background: repeating-linear-gradient(
+    90deg,
+    #a8b4bb80 0,
+    #a8b4bb80 1px,
+    transparent 1px,
+    transparent 16px
+  );
   border-bottom: 1px solid #ffffff2b;
 }
 
@@ -274,7 +280,9 @@
   font-size: 13px;
   font-weight: 600;
   line-height: 1.4;
-  transition: background 0.18s, transform 0.18s;
+  transition:
+    background 0.18s,
+    transform 0.18s;
 }
 
 .button:hover {
@@ -1643,5 +1651,216 @@
 @media (prefers-reduced-motion: reduce) {
   .button {
     transition: none;
+  }
+}
+
+/* larger reading sizes on laptops and desktops: every size below 16px steps up */
+@media (min-width: 851px) {
+  .eyebrow {
+    font-size: 15px;
+  }
+  .brandSub {
+    font-size: 14px;
+  }
+  .navRow nav a {
+    font-size: 16px;
+  }
+  .byline {
+    font-size: 16px;
+  }
+  .proLine {
+    font-size: 15px;
+  }
+  .accessLabel {
+    font-size: 13px;
+  }
+  .access strong {
+    font-size: 16px;
+  }
+  .accessMore {
+    font-size: 14px;
+  }
+  .scopeTitle {
+    font-size: 16px;
+  }
+  .scopeTitle span {
+    font-size: 14px;
+  }
+  .scopeNumber span {
+    font-size: 16px;
+  }
+  .heroAside p {
+    font-size: 17px;
+  }
+  .scopeBottom {
+    font-size: 15px;
+  }
+  .button {
+    font-size: 16px;
+  }
+  .email {
+    font-size: 16px;
+  }
+  .wideIntro > p {
+    font-size: 17px;
+  }
+  .capabilityIndex {
+    font-size: 14px;
+  }
+  .capabilityCard p {
+    font-size: 16px;
+  }
+  .capabilityTag {
+    font-size: 14px;
+  }
+  .callout {
+    font-size: 16px;
+  }
+  .sectionIntro > p:last-child {
+    font-size: 17px;
+  }
+  .methodStep > span {
+    font-size: 15px;
+  }
+  .methodStep p {
+    font-size: 16px;
+  }
+  .familyHead p:last-child {
+    font-size: 16px;
+  }
+  .familyStatus {
+    font-size: 16px;
+  }
+  .familyProfile h3 {
+    font-size: 17px;
+  }
+  .familyProfile p {
+    font-size: 16px;
+  }
+  .familyNumber span {
+    font-size: 16px;
+  }
+  .familyNote {
+    font-size: 16px;
+  }
+  .certHead .eyebrow {
+    font-size: 14px;
+  }
+  .certCopy p {
+    font-size: 16px;
+  }
+  .page .certCopy .certKey {
+    font-size: 17px;
+  }
+  .certSteps > div > span {
+    font-size: 15px;
+  }
+  .certSteps p {
+    font-size: 15px;
+  }
+  .certSmall {
+    font-size: 15px;
+  }
+  .pathwayKicker {
+    font-size: 13px;
+  }
+  .pathwayCard > p:not(.pathwayKicker) {
+    font-size: 16px;
+  }
+  .page .pathwayCard .pathwayNote {
+    font-size: 15px;
+  }
+  .page .pathwayAction {
+    font-size: 16px;
+  }
+  .accessNote {
+    font-size: 15px;
+  }
+  .badges > span {
+    font-size: 17px;
+  }
+  .disclaimer {
+    font-size: 16px;
+  }
+  .registryHeading > span {
+    font-size: 14px;
+  }
+  .registryCaption {
+    font-size: 16px;
+  }
+  .refGroup summary {
+    font-size: 16px;
+  }
+  .groupCount {
+    font-size: 13px;
+  }
+  .refNumber {
+    font-size: 13px;
+  }
+  .refRow h4 {
+    font-size: 16px;
+  }
+  .refRow p {
+    font-size: 15px;
+  }
+  .refKind {
+    font-size: 13px;
+  }
+  .officialList p {
+    font-size: 15px;
+  }
+  .contactCopy > p:not(.eyebrow) {
+    font-size: 17px;
+  }
+  .page .contactCopy .contactSmall {
+    font-size: 16px;
+  }
+  .contactRoute h3 {
+    font-size: 17px;
+  }
+  .channelActions .button {
+    font-size: 16px;
+  }
+  .addresses {
+    font-size: 16px;
+  }
+  .page .sendNote {
+    font-size: 15px;
+  }
+  .page .certNote {
+    font-size: 15px;
+  }
+  .websiteLink {
+    font-size: 15px;
+  }
+  .rights .eyebrow {
+    font-size: 13px;
+  }
+  .rights p {
+    font-size: 16px;
+  }
+  .page .rights .rightsSmall {
+    font-size: 14px;
+  }
+  .faq summary {
+    font-size: 16px;
+  }
+  .faq details p {
+    font-size: 16px;
+  }
+  .footer {
+    font-size: 15px;
+  }
+  .footer strong {
+    font-size: 16px;
+  }
+  .capabilityCard h3 {
+    font-size: 23px;
+  }
+  .methodStep h3 {
+    font-size: 19px;
+  }
+  .familyProfile h3 {
+    font-size: 18px;
   }
 }

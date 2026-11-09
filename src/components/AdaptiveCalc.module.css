@@ -161,7 +161,9 @@
   font-weight: 600;
   line-height: 1.4;
   cursor: pointer;
-  transition: background 0.18s, transform 0.18s;
+  transition:
+    background 0.18s,
+    transform 0.18s;
 }
 
 .primary:hover {
@@ -692,5 +694,78 @@
 @media (prefers-reduced-motion: reduce) {
   .primary {
     transition: none;
+  }
+}
+
+/* larger reading sizes on laptops and desktops: every size below 16px steps up */
+@media (min-width: 851px) {
+  .section {
+    font-size: 17px;
+  }
+  .step {
+    font-size: 14px;
+  }
+  .fieldLabel {
+    font-size: 17px;
+  }
+  .hint {
+    font-size: 15px;
+  }
+  .check {
+    font-size: 15px;
+  }
+  .primary {
+    font-size: 16px;
+  }
+  .error {
+    font-size: 16px;
+  }
+  .privacy p {
+    font-size: 14px;
+  }
+  .resultsHeading p {
+    font-size: 16px;
+  }
+  .badge {
+    font-size: 14px;
+  }
+  .index {
+    font-size: 14px;
+  }
+  .base {
+    font-size: 14px;
+  }
+  .base strong {
+    font-size: 16px;
+  }
+  .base strong span {
+    font-size: 14px;
+  }
+  .unit {
+    font-size: 16px;
+  }
+  .candidateLabel {
+    font-size: 14px;
+  }
+  .difference {
+    font-size: 14px;
+  }
+  .datum {
+    font-size: 14px;
+  }
+  .source {
+    font-size: 14px;
+  }
+  .source span {
+    font-size: 13px;
+  }
+  .note {
+    font-size: 14px;
+  }
+  .warning p {
+    font-size: 16px;
+  }
+  .card h3 {
+    font-size: 21px;
   }
 }
