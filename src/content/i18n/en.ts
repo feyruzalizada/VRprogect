@@ -196,7 +196,7 @@ export const en: SiteContent = {
     chooseLabel: "How should we get in touch?",
     message: "Hello! I am interested in the “{service}” service.",
   },
-  news: { eyebrow: "VR Project", heading: "News", read: "Read", back: "Back", source: "View on Facebook", all: "All news on Facebook" },
+  news: { eyebrow: "VR Project", heading: "News", read: "Read", back: "Back", source: "Source", all: "All news on Facebook" },
   partnersHeading: "Official partners",
   countersHeading: "Achievements",
   counters: [{ label: "Completed projects" }, { label: "Experience", suffix: " yrs" }, { label: "Partners" }, { label: "Client satisfaction", suffix: "%" }],

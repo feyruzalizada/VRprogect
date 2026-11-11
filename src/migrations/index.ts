@@ -5,6 +5,7 @@ import * as migration_20261017_151437_news from './20261017_151437_news';
 import * as migration_20261108_114209_translation_tabs from './20261108_114209_translation_tabs';
 import * as migration_20261108_120000_translation_copy from './20261108_120000_translation_copy';
 import * as migration_20261108_180000_vr_standards_names from './20261108_180000_vr_standards_names';
+import * as migration_20261111_054912_news_subtitle from './20261111_054912_news_subtitle';
 
 export const migrations = [
   {
@@ -40,6 +41,11 @@ export const migrations = [
   {
     up: migration_20261108_180000_vr_standards_names.up,
     down: migration_20261108_180000_vr_standards_names.down,
-    name: '20261108_180000_vr_standards_names'
+    name: '20261108_180000_vr_standards_names',
+  },
+  {
+    up: migration_20261111_054912_news_subtitle.up,
+    down: migration_20261111_054912_news_subtitle.down,
+    name: '20261111_054912_news_subtitle'
   },
 ];

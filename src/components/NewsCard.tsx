@@ -45,6 +45,7 @@ export default function NewsCard({ item, date, t }: { item: NewsItem; date: stri
               {date}
             </time>
             <span className={styles.cardTitle}>{item.title}</span>
+            {item.subtitle ? <span className={styles.cardSubtitle}>{item.subtitle}</span> : null}
             <span className={styles.read}>{t.read}</span>
           </span>
         </button>
@@ -54,6 +55,7 @@ export default function NewsCard({ item, date, t }: { item: NewsItem; date: stri
             {date}
           </time>
           <h3 className={styles.backTitle}>{item.title}</h3>
+          {item.subtitle ? <p className={styles.backSubtitle}>{item.subtitle}</p> : null}
           <div className={styles.text} tabIndex={0}>
             {item.text}
           </div>
@@ -61,6 +63,7 @@ export default function NewsCard({ item, date, t }: { item: NewsItem; date: stri
             {item.link ? (
               <a className={styles.source} href={item.link} target="_blank" rel="noopener noreferrer">
                 {t.source}
+                {item.source ? <>: <span className={styles.sourceName}>{item.source}</span></> : null}
               </a>
             ) : null}
             <button ref={backRef} type="button" className={styles.backButton} onClick={() => flip(false)}>

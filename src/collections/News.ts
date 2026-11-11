@@ -17,7 +17,7 @@ export const News: CollectionConfig = {
   defaultSort: "-date",
   admin: {
     useAsTitle: "title",
-    defaultColumns: ["title", "date", "image"],
+    defaultColumns: ["title", "subtitle", "date", "image"],
     pagination: { defaultLimit: 50 },
     description: {
       az: "Saytda ən yeni 8 xəbər göstərilir, tarixə görə.",
@@ -36,7 +36,16 @@ export const News: CollectionConfig = {
       type: "text",
       required: true,
       maxLength: 160,
-      label: { az: "Başlıq", ru: "Заголовок", en: "Title" },
+      label: { az: "Əsas başlıq", ru: "Заголовок", en: "Title" },
+    },
+    {
+      name: "subtitle",
+      type: "text",
+      maxLength: 200,
+      label: { az: "Kiçik başlıq", ru: "Подзаголовок", en: "Subtitle" },
+      admin: {
+        description: { az: "İstəyə bağlı. Əsas başlığın altında görünür.", ru: "Необязательно. Под заголовком.", en: "Optional. Shown under the title." },
+      },
     },
     {
       name: "date",
@@ -61,7 +70,7 @@ export const News: CollectionConfig = {
       name: "text",
       type: "textarea",
       required: true,
-      label: { az: "Mətn", ru: "Текст", en: "Text" },
+      label: { az: "Təsvir", ru: "Описание", en: "Description" },
       admin: {
         rows: 12,
         description: {
@@ -74,13 +83,17 @@ export const News: CollectionConfig = {
     {
       name: "link",
       type: "text",
-      label: { az: "Facebook linki", ru: "Ссылка на Facebook", en: "Facebook link" },
+      label: { az: "Mənbə linki", ru: "Ссылка на источник", en: "Source link" },
       admin: {
         position: "sidebar",
-        description: { az: "İstəyə bağlı.", ru: "Необязательно.", en: "Optional." },
+        description: {
+          az: "Xəbərin götürüldüyü sayt (Facebook, xəbər saytı və s.). İstəyə bağlı.",
+          ru: "Сайт, откуда взята новость. Необязательно.",
+          en: "The site the news was taken from. Optional.",
+        },
       },
       validate: (value: string | null | undefined) =>
         !value || /^https?:\/\/\S+$/.test(value) || "https:// ilə başlayan link yazın.",
     },
-  ], ["title", "text"]),
+  ], ["title", "subtitle", "text"]),
 };

@@ -3,7 +3,7 @@ export const news = {
   heading: "Xəbərlər",
   read: "Oxu",
   back: "Geri",
-  source: "Facebook-da bax",
+  source: "Mənbə",
   all: "Bütün xəbərlər Facebook-da",
   page: "https://www.facebook.com/vrprojectaz",
 };

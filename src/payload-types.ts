@@ -185,7 +185,6 @@ export interface Service {
 export interface Media {
   id: number;
   alt?: string | null;
-  _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -231,6 +230,10 @@ export interface ServiceFilter {
 export interface News {
   id: number;
   title: string;
+  /**
+   * Optional. Shown under the title.
+   */
+  subtitle?: string | null;
   date: string;
   image: number | Media;
   /**
@@ -238,11 +241,15 @@ export interface News {
    */
   text: string;
   /**
-   * Optional.
+   * The site the news was taken from. Optional.
    */
   link?: string | null;
   en?: {
     title?: string | null;
+    /**
+     * Optional. Shown under the title.
+     */
+    subtitle?: string | null;
     /**
      * Shown on the back of the card; long text scrolls inside it.
      */
@@ -250,6 +257,10 @@ export interface News {
   };
   ru?: {
     title?: string | null;
+    /**
+     * Optional. Shown under the title.
+     */
+    subtitle?: string | null;
     /**
      * Shown on the back of the card; long text scrolls inside it.
      */
@@ -453,6 +464,7 @@ export interface ServiceFiltersSelect<T extends boolean = true> {
  */
 export interface NewsSelect<T extends boolean = true> {
   title?: T;
+  subtitle?: T;
   date?: T;
   image?: T;
   text?: T;
@@ -461,12 +473,14 @@ export interface NewsSelect<T extends boolean = true> {
     | T
     | {
         title?: T;
+        subtitle?: T;
         text?: T;
       };
   ru?:
     | T
     | {
         title?: T;
+        subtitle?: T;
         text?: T;
       };
   updatedAt?: T;
@@ -478,7 +492,6 @@ export interface NewsSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
-  _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;

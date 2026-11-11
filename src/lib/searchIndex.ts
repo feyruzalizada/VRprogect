@@ -73,7 +73,7 @@ export function buildSearchIndex({ section, items: services }: ServicesData, new
   const newsItems = news.map((n) => ({
     kind: k.news,
     title: n.title,
-    text: n.text,
+    text: [n.subtitle, n.text].filter(Boolean).join(" "),
     go: { section: "#xeberler", news: n.id },
   }));
 
