@@ -127,9 +127,3 @@
     max-height: calc(38px * var(--logo-scale, 1));
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .track {
-    animation: none;
-  }
-}
