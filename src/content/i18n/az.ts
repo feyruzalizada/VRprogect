@@ -17,7 +17,7 @@ export const az: SiteContent = {
   meta: { title: siteTitle, description: siteDescription, keywords: siteKeywords },
   mainNav,
   hero: heroCues.map(({ watermark, title, description, trust }) => ({ watermark, title, description, trust })),
-  quote: { motto: quoteBanner.motto, quote: quoteBanner.quote, name: quoteBanner.author.name, role: quoteBanner.author.role },
+  quote: { motto: quoteBanner.motto, quote: quoteBanner.quote, name: quoteBanner.author.name, role: quoteBanner.author.role, bio: quoteBanner.bio },
   sideNav,
   footer,
   contact: { callLabel: contact.callLabel, chooseLabel: contact.chooseLabel, message: contact.message("{service}") },

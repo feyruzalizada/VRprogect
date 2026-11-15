@@ -81,7 +81,7 @@ export type SiteContent = {
   meta: { title: string; description: string; keywords: string[] };
   mainNav: NavItem[];
   hero: HeroCueText[];
-  quote: { motto: string; quote: string; name: string; role: string };
+  quote: { motto: string; quote: string; name: string; role: string; bio: string[] };
   sideNav: SideNavContent;
   footer: FooterContent;
   contact: { callLabel: string; chooseLabel: string; message: string };

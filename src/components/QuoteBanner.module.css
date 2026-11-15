@@ -21,6 +21,7 @@
   position: relative;
   z-index: 1;
   display: flex;
+  flex-direction: column;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -90,6 +91,26 @@
   color: #d0cfcf;
 }
 
+.bio {
+  max-width: 860px;
+  margin-top: 50px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  font-family: var(--font-raleway), sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  color: #d0cfcf;
+  text-align: center;
+}
+
+.bio p {
+  margin: 0;
+}
+
+.bio p + p {
+  margin-top: 16px;
+}
+
 @media (max-width: 991px) {
   .figure {
     flex-direction: column;
@@ -141,5 +162,12 @@
 
   .avatar {
     margin: 0 0 20px;
+  }
+
+  .bio {
+    margin-top: 36px;
+    padding-top: 30px;
+    font-size: 15px;
+    line-height: 26px;
   }
 }

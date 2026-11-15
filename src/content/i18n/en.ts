@@ -53,6 +53,11 @@ export const en: SiteContent = {
     quote: "Mukhtar Erturan",
     name: "Innovator Architect",
     role: "Construction expert",
+    bio: [
+      "Mukhtar Erturan is an Azerbaijani architect-designer, a specialist in human-centred urban planning and an expert in construction and renovation. His design approach joins two scales: in the city, public spaces accessible to people of every age and level of mobility; in the home, solutions fitted to the individual needs of the residents.",
+      "Mukhtar Erturan is the author of the scientific work “VR Standards 2026”, the VR Adaptive Ergonomic Coefficient and the VR Adaptive Ergonomic Measurement System. On the basis of the method he first presented systematically in the book, he developed the VR Adaptive Ergonomic Calculator. The tool helps architects and designers choose design dimensions from the user’s body measurements and reconcile the needs of family members in shared spaces.",
+      "Mukhtar Erturan applies the methodology in VR GLOBAL GROUP projects, and at VR Academy he teaches its practical foundations on real sites.",
+    ],
   },
   sideNav: {
     intro: {

@@ -2,12 +2,13 @@ import Image from "next/image";
 import styles from "./QuoteBanner.module.css";
 import { quoteBanner } from "@/content/quote";
 
-type QuoteText = { motto: string; quote: string; name: string; role: string };
+type QuoteText = { motto: string; quote: string; name: string; role: string; bio: string[] };
 
 export default function QuoteBanner({ t }: { t?: QuoteText }) {
   const motto = t?.motto ?? quoteBanner.motto;
   const quote = t?.quote ?? quoteBanner.quote;
   const author = { ...quoteBanner.author, ...(t ? { name: t.name, role: t.role } : {}) };
+  const bio = t?.bio ?? quoteBanner.bio;
 
   return (
     <section id="sitat" className={styles.section}>
@@ -33,6 +34,12 @@ export default function QuoteBanner({ t }: { t?: QuoteText }) {
             </div>
           </figcaption>
         </figure>
+
+        <div className={styles.bio}>
+          {bio.map((p) => (
+            <p key={p}>{p}</p>
+          ))}
+        </div>
       </div>
     </section>
   );

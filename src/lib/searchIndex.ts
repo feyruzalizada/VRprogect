@@ -45,7 +45,7 @@ export function buildSearchIndex({ section, items: services }: ServicesData, new
   const quote = {
     kind: k.quote,
     title: c.quote.quote,
-    text: [c.quote.motto, c.quote.name, c.quote.role].join(" "),
+    text: [c.quote.motto, c.quote.name, c.quote.role, ...c.quote.bio].join(" "),
     go: { section: "#sitat" },
   };
 
