@@ -291,6 +291,84 @@
   }
 }
 
+/* laptops and desktops: three wider cards with larger type */
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+    margin-top: 56px;
+  }
+
+  .card {
+    height: 540px;
+  }
+
+  .frontBody {
+    padding: 22px 26px 24px;
+  }
+
+  .date {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .cardTitle {
+    margin-top: 12px;
+    font-size: 21px;
+    line-height: 29px;
+  }
+
+  .cardSubtitle {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .read {
+    padding-top: 14px;
+    font-size: 12px;
+  }
+
+  .back {
+    padding: 28px 26px 22px;
+  }
+
+  .backTitle {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .backSubtitle {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .text {
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 27px;
+  }
+
+  .source {
+    font-size: 15px;
+  }
+
+  .backButton {
+    padding: 10px 18px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1360px;
+  }
+
+  .card {
+    height: 580px;
+  }
+}
+
 @media (max-width: 1024px) {
   .lineLeft {
     left: 0;

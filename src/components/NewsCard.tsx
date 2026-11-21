@@ -35,7 +35,7 @@ export default function NewsCard({ item, date, t }: { item: NewsItem; date: stri
                 src={item.image.url}
                 alt={item.image.alt}
                 fill
-                sizes="(max-width: 575px) 100vw, (max-width: 991px) 50vw, (max-width: 1199px) 33vw, 290px"
+                sizes="(max-width: 575px) 100vw, (max-width: 991px) 50vw, (max-width: 1599px) 33vw, 440px"
                 className={styles.image}
               />
             ) : null}
