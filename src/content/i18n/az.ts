@@ -21,7 +21,7 @@ export const az: SiteContent = {
   sideNav,
   footer,
   contact: { callLabel: contact.callLabel, chooseLabel: contact.chooseLabel, message: contact.message("{service}") },
-  news: { eyebrow: news.eyebrow, heading: news.heading, read: news.read, back: news.back, source: news.source },
+  news: { eyebrow: news.eyebrow, heading: news.heading, read: news.read, back: news.back, source: news.source, more: news.more },
   partnersHeading,
   countersHeading,
   counters: services.counters.map(({ label, suffix }) => ({ label, suffix })),

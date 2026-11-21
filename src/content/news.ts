@@ -4,4 +4,5 @@ export const news = {
   read: "Oxu",
   back: "Geri",
   source: "Mənbə",
+  more: "Hamısını göstər",
 };

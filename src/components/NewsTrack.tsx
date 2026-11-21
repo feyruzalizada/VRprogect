@@ -4,8 +4,9 @@ import { Children, useEffect, useRef, useState } from "react";
 
 import styles from "./News.module.css";
 
-// a grid on wide screens; below 992px the same list becomes a swipe row with dots under it
-export default function NewsTrack({ children, label }: { children: React.ReactNode; label: string }) {
+// a grid on wide screens (first 6, the rest behind a button); below 992px a swipe row with dots
+export default function NewsTrack({ children, label, more }: { children: React.ReactNode; label: string; more: string }) {
+  const [expanded, setExpanded] = useState(false);
   const listRef = useRef<HTMLUListElement>(null);
   const [active, setActive] = useState(0);
   const count = Children.count(children);
@@ -40,7 +41,7 @@ export default function NewsTrack({ children, label }: { children: React.ReactNo
 
   return (
     <>
-      <ul ref={listRef} className={styles.grid}>
+      <ul ref={listRef} className={`${styles.grid} ${expanded ? styles.expanded : ""}`}>
         {children}
       </ul>
 
@@ -56,6 +57,12 @@ export default function NewsTrack({ children, label }: { children: React.ReactNo
           />
         ))}
       </div>
+
+      {count > 6 && !expanded ? (
+        <button type="button" className={styles.more} onClick={() => setExpanded(true)}>
+          {more}
+        </button>
+      ) : null}
     </>
   );
 }

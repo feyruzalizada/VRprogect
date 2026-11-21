@@ -5,7 +5,7 @@ import { news as azNews } from "@/content/news";
 import { dateLocale, type Lang } from "@/i18n/config";
 import type { NewsItem } from "@/lib/news";
 
-type NewsText = { eyebrow: string; heading: string; read: string; back: string; source: string };
+type NewsText = { eyebrow: string; heading: string; read: string; back: string; source: string; more: string };
 
 export default function News({ items, lang = "az", t = azNews }: { items: NewsItem[]; lang?: Lang; t?: NewsText }) {
   if (items.length === 0) return null;
@@ -28,7 +28,7 @@ export default function News({ items, lang = "az", t = azNews }: { items: NewsIt
           <span className={styles.rule} aria-hidden />
         </div>
 
-        <NewsTrack label={t.heading}>
+        <NewsTrack label={t.heading} more={t.more}>
           {items.map((item) => (
             <li key={item.id} id={`xeber-${item.id}`} className={styles.item}>
               <NewsCard item={item} date={dateFormat.format(new Date(item.date))} t={t} />

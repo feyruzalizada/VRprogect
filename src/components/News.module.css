@@ -284,6 +284,31 @@
   display: none;
 }
 
+.grid:not(.expanded) > .item:nth-child(n + 7) {
+  display: none;
+}
+
+.more {
+  display: table;
+  margin: 44px auto 0;
+  padding: 13px 26px;
+  cursor: pointer;
+  font-family: var(--font-display), sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  background: none;
+  border: 1px solid #1a1a1a;
+  transition: color 250ms linear, background-color 250ms linear;
+}
+
+.more:hover {
+  color: #fff;
+  background-color: #1a1a1a;
+}
+
 
 @media (max-width: 1199px) {
   .grid {
@@ -397,9 +422,15 @@
     display: none;
   }
 
-  .item {
+  .item,
+  .grid:not(.expanded) > .item:nth-child(n + 7) {
+    display: block;
     flex: 0 0 min(82%, 340px);
     scroll-snap-align: center;
+  }
+
+  .more {
+    display: none;
   }
 
   .card {

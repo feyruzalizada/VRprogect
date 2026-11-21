@@ -28,7 +28,7 @@ export async function getNews(lang: Lang = "az"): Promise<NewsItem[]> {
   const { docs } = await payload.find({
     collection: "news",
     sort: "-date",
-    limit: 8,
+    limit: 60,
     depth: 1,
   });
 

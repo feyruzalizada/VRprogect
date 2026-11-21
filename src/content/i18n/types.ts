@@ -85,7 +85,7 @@ export type SiteContent = {
   sideNav: SideNavContent;
   footer: FooterContent;
   contact: { callLabel: string; chooseLabel: string; message: string };
-  news: { eyebrow: string; heading: string; read: string; back: string; source: string };
+  news: { eyebrow: string; heading: string; read: string; back: string; source: string; more: string };
   partnersHeading: string;
   countersHeading: string;
   counters: { label: string; suffix?: string }[];
