@@ -201,7 +201,7 @@ export const ru: SiteContent = {
     chooseLabel: "Как с вами связаться?",
     message: "Здравствуйте! Меня интересует услуга «{service}».",
   },
-  news: { eyebrow: "VR Project", heading: "Новости", read: "Читать", back: "Назад", source: "Источник", all: "Все новости в Facebook" },
+  news: { eyebrow: "VR Project", heading: "Новости", read: "Читать", back: "Назад", source: "Источник" },
   partnersHeading: "Официальные партнёры",
   countersHeading: "Достижения",
   counters: [{ label: "Завершённых работ" }, { label: "Опыт", suffix: " года" }, { label: "Партнёров" }, { label: "Довольных клиентов", suffix: "%" }],

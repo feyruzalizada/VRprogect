@@ -16,7 +16,7 @@ export function buildSearchIndex({ section, items: services }: ServicesData, new
   // a section is also found by the copy around its cards
   const sectionText: Record<string, string> = {
     "#xidmetler": [section.eyebrow, section.heading, section.tagline, section.intro, section.disclaimer].filter(Boolean).join(" "),
-    "#xeberler": [c.news.eyebrow, c.news.all].join(" "),
+    "#xeberler": [c.news.eyebrow, c.news.heading].join(" "),
     "#kalkulyator": [
       c.calc.heading,
       c.calc.heightLabel,

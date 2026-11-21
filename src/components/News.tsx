@@ -5,7 +5,7 @@ import { news as azNews } from "@/content/news";
 import { dateLocale, type Lang } from "@/i18n/config";
 import type { NewsItem } from "@/lib/news";
 
-type NewsText = { eyebrow: string; heading: string; read: string; back: string; source: string; all: string };
+type NewsText = { eyebrow: string; heading: string; read: string; back: string; source: string };
 
 export default function News({ items, lang = "az", t = azNews }: { items: NewsItem[]; lang?: Lang; t?: NewsText }) {
   if (items.length === 0) return null;
@@ -35,10 +35,6 @@ export default function News({ items, lang = "az", t = azNews }: { items: NewsIt
             </li>
           ))}
         </NewsTrack>
-
-        <a className={styles.all} href={azNews.page} target="_blank" rel="noopener noreferrer">
-          {t.all}
-        </a>
       </div>
     </section>
   );
